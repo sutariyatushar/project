@@ -273,7 +273,7 @@ background: linear-gradient(90deg,rgba(44, 89, 44, 1) 0%, rgba(59, 209, 91, 0.98
   display: block;
 }
 
-.read-more {
+.read-more { 
   margin-top: 10px;
   background-color: #1976d2;
   color: white;
