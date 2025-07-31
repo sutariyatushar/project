@@ -418,3 +418,50 @@ background: linear-gradient(90deg,rgba(44, 89, 44, 1) 0%, rgba(59, 209, 91, 0.98
       transform: translateX(10px);
       border-left: 4px solid #4caf50;
     }
+
+
+    
+    .event-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 255, 240, 0.95) 100%);
+      border-radius: 15px;
+      padding: 2rem;
+      display: flex;
+      gap: 2rem;
+      box-shadow: 0 15px 40px rgba(76, 175, 80, 0.2);
+      margin-bottom: 2rem;
+      border: 2px solid rgba(76, 175, 80, 0.1);
+      transition: all 0.4s ease;
+      animation: eventGlow 8s ease-in-out infinite;
+    }
+
+    @keyframes eventGlow {
+      0%, 100% { box-shadow: 0 15px 40px rgba(76, 175, 80, 0.2); }
+      50% { box-shadow: 0 20px 50px rgba(76, 175, 80, 0.3); }
+    }
+
+    .event-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 60px rgba(76, 175, 80, 0.3);
+    }
+
+    .event-card img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid rgba(76, 175, 80, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .event-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .event-card h3 {
+      color: #1b5e20;
+      margin-bottom: 1rem;
+    }
+
+    .event-card p {
+      color: #2e7d32;
+    }
