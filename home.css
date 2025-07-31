@@ -284,128 +284,170 @@ a:hover {
     background-size: 110%;
   }
 }
-
+/* Main Hero Title Enhanced */
 .main-title {
-  font-size: 3.5rem;
-  color: #fff;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  text-shadow: 2px 2px #000;
-  animation: fadeInDown 2s ease;
+  font-size: 4rem;
+  color: #080808;
+  font-family: 'Lucida Sans', sans-serif;
+  text-shadow: 23px 23px 28px rgb(255, 255, 255);
+  animation: titleFadeZoom 3s ease-in-out forwards, glowPulse 4s infinite alternate;
+  position: relative;
+  z-index: 3;
 }
 
-/* Bubble Animation */
+/* Subtitle */
+.overlay p {
+  font-size: 1.5rem;
+  color: #afee66;
+  margin-top: 0.5rem;
+  text-shadow: 1px 1px 4px #000;
+  animation: fadeInUp 2s ease-in-out;
+  z-index: 3;
+  position: relative;
+}
+
+/* Overlay background */
+.overlay {
+ text-shadow:  1px 1px 4px #000;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Bubble Container */
 .bubbles {
   position: absolute;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: 2;
+  z-index: 1;
+  pointer-events: none;
 }
 
+/* Bubble Style */
 .bubbles li {
   position: absolute;
   list-style: none;
-  display: block;
-  background: rgba(255, 255, 255, 0.2);
-  bottom: -100px;
+  background: rgba(255, 255, 255, 0.25);
+  bottom: -150px;
   border-radius: 50%;
-  animation: rise 10s linear infinite;
+  animation: riseUp 12s linear infinite, rotateBubble 20s linear infinite;
+  opacity: 0.7;
 }
 
-/* Bubble styles for each li */
+/* Unique bubble configs */
 .bubbles li:nth-child(1) {
-  left: 10%;
+  left: 5%;
   width: 40px;
   height: 40px;
-  animation-duration: 15s;
+  animation-delay: 0s;
 }
-
 .bubbles li:nth-child(2) {
-  left: 25%;
+  left: 20%;
   width: 20px;
   height: 20px;
-  animation-duration: 18s;
   animation-delay: 2s;
 }
-
 .bubbles li:nth-child(3) {
-  left: 40%;
+  left: 35%;
   width: 25px;
   height: 25px;
-  animation-duration: 20s;
   animation-delay: 4s;
 }
-
 .bubbles li:nth-child(4) {
-  left: 60%;
+  left: 50%;
   width: 15px;
   height: 15px;
-  animation-duration: 12s;
   animation-delay: 1s;
 }
-
 .bubbles li:nth-child(5) {
-  left: 75%;
+  left: 65%;
   width: 30px;
   height: 30px;
-  animation-duration: 17s;
   animation-delay: 3s;
 }
-
 .bubbles li:nth-child(6) {
-  left: 90%;
+  left: 80%;
   width: 10px;
   height: 10px;
-  animation-duration: 22s;
   animation-delay: 5s;
 }
-
 .bubbles li:nth-child(7) {
   left: 90%;
   width: 20px;
   height: 30px;
-  animation-duration: 12s;
-  animation-delay: 5s;
+  animation-delay: 6s;
 }
-
 .bubbles li:nth-child(8) {
-  left: 90%;
+  left: 75%;
   width: 40px;
   height: 60px;
-  animation-duration: 12s;
-  animation-delay: 5s;
+  animation-delay: 2.5s;
+}
+.bubbles li:nth-child(9) {
+  left: 10%;
+  width: 35px;
+  height: 35px;
+  animation-delay: 7s;
 }
 
-
-/* Keyframes to animate upward movement */
-@keyframes rise {
+/* Animations */
+@keyframes riseUp {
   0% {
-    bottom: -100px;
     transform: translateY(0) scale(1);
     opacity: 0.5;
   }
   50% {
-    opacity: 1;
+    transform: translateY(-50vh) scale(1.2);
+    opacity: 0.9;
   }
   100% {
-    bottom: 100%;
-    transform: translateY(-1000px) scale(1.5);
+    transform: translateY(-100vh) scale(0.8);
     opacity: 0;
   }
 }
 
-/* Repeat for more bubbles */
+@keyframes rotateBubble {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
-@keyframes rise {
+@keyframes titleFadeZoom {
   0% {
-    bottom: 0;
-    transform: translateY(0);
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
   }
   100% {
-    bottom: 100%;
-    transform: translateY(-1000px);
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
+
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .card .extra-content {
   display: none;
