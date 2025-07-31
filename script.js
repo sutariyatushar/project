@@ -7,9 +7,8 @@ AOS.init({
 // ✅ Mobile Menu Toggle
 function toggleMenu() {
   const navLinks = document.querySelector('.nav-links');
-  navLinks.classList.toggle('active');
+  navLinks.classList.toggle('show');
 }
-
 
 // ✅ Slideshow Logic (only for gallery page)
 let slideIndex = 0;
