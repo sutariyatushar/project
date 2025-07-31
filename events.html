@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events | Goradka</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  </head>
+  <body>
+
+    <nav class="navbar">
+      <div class="nav-container">
+        <h2 class="logo">Goradka</h2>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="slider-wrapper">
+      <div class="slider-track">
+        <div class="slide"><img src="img1.jpg" alt="Event 1"></div>
+        <div class="slide"><img src="img2.jpg" alt="Event 2"></div>
+        <div class="slide"><img src="pexels-pixabay-161097.jpg"
+            alt="Event 3"></div>
+        <div class="slide"><img src="pexels-tobiasbjorkli-1940038.jpg"
+            alt="Event 4"></div>
+      </div>
+      <div class="slider-overlay">
+        <h1>Events at Goradka</h1>
+      </div>
+    </header>
+
+    <section class="event-section">
+      <div class="event-card">
+        <h3>Annual Cultural Fair</h3>
+        <p>Join us for a day of cultural celebration with music, food, and
+          performances.</p>
+
+        <div class="extra-content">
+          <p>Experience the rich traditions of Goradka through vibrant dance,
+            delicious food, and engaging activities. Everyone is welcome!</p>
+          <div class="extra-images">
+            <img src="images/event1.jpg" alt>
+            <img src="images/event2.jpg" alt>
+            <img src="images/pexels-pixabay-161097.jpg" alt>
+            <img src="images/pexels-parijb-1483142.jpg" alt>
+          </div>
+        </div>
+
+        <button class="read-more-btn">Read More</button>
+      </div>
+    </section>
+
+    <section class="upcoming-section" data-aos="fade-up">
+      <h2>📅 Upcoming Events</h2>
+      <div class="upcoming-card">
+        <h3>Farmers Awareness Camp</h3>
+        <p>Date: August 10, 2025<br>Location: Goradka School Ground</p>
+      </div>
+      <div class="upcoming-card">
+        <h3>Women Empowerment Seminar</h3>
+        <p>Date: September 5, 2025<br>Location: Community Hall</p>
+      </div>
+    </section>
+
+    <section class="submit-event-section" data-aos="fade-up">
+      <div class="submit-content">
+        <h2>🎉 Ready to Host Your Own Event in Goradka?</h2>
+        <p>We’d love to showcase your special moments! Submit your event and let
+          Goradka know.</p>
+
+        <div class="readmore-box">
+          <!-- <button id="readMoreBtn">📖 Read More</button> -->
+          <div id="moreText" class="hidden">
+            <p>
+              Past events in Goradka include cultural fairs, music nights, and
+              spiritual gatherings.
+              We welcome all types of social and cultural events to strengthen
+              our community bonds.
+            </p>
+            <div class="more-images">
+              <img src="https://via.placeholder.com/300x200"
+                alt="Cultural Event" />
+              <img src="https://via.placeholder.com/300x200"
+                alt="Spiritual Gathering" />
+              <img src="https://via.placeholder.com/300x200"
+                alt="Music Night" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Event Submission Form -->
+        <section class="submit-section" data-aos="zoom-in">
+          <h2>📩 Submit Your Event</h2>
+          <form action="https://api.web3forms.com/submit" method="POST"
+            id="eventForm" class="event-form">
+            <input type="hidden" name="access_key"
+              value="24cab8c0-5fa6-42af-ba52-39bb0a41d22c">
+
+            <input type="text" id="name" name="name" placeholder="Your Name"
+              required>
+            <input type="text" id="event" name="event_title"
+              placeholder="Event Title" required>
+            <textarea id="message" name="event_details" rows="4"
+              placeholder="Event Details..." required></textarea>
+
+            <button type="submit" class="submit-btn">Submit Event</button>
+            <p id="successMsg" class="success-message" style="display: none;">✅
+              Event successfully submitted!</p>
+          </form>
+        </section>
+
+        <a href="tel:+919999999999" class="call-btn">📞 Call Us</a>
+        <a href="#" class="back-to-top">⬆️ Back to Top</a>
+      </div>
+    </section>
+
+    <footer>
+      <p> This Created By <a href="https://ts.unaux.com">Tushar
+          Sutariya</a></p><br>
+      <p><i class="fab fa-facebook"></i><i class="fab fa-instagram"></i><i
+          class="fab fa-twitter"></i></p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | Goradka</title>
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <nav class="navbar">
+    <div class="nav-container">
+      <h2 class="logo">Goradka</h2>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="gallery" data-aos="zoom-in-up">
+    <h2 style="text-align: center;">📸 Goradka Memories</h2>
+
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="img1.jpg" alt="Goradka Nature 1">
+      </div>
+      <div class="mySlides fade">
+        <img src="img2.jpg" alt="Goradka Temple">
+      </div>
+      <div class="mySlides fade">
+        <img src="img3.jpg" alt="Goradka Festival">
+      </div>
+      <div class="mySlides fade">
+        <img src="img4.jpg" alt="Goradka River">
+      </div>
+    </div>
+
+    <h2 style="text-align: center;">Gallery Photos</h2>
+    <div class="grid">
+      <img src="img1.jpg" alt="Gallery" onclick="openLightbox(this)">
+      <img src="img7.jpg" alt="Gallery" onclick="openLightbox(this)">
+      <img src="img3.jpg" alt="Gallery" onclick="openLightbox(this)">
+      <img src="img4.jpg" alt="Gallery" onclick="openLightbox(this)">
+      <img src="img5.jpg" alt="Gallery" onclick="openLightbox(this)">
+      <img src="img6.jpg" alt="Gallery" onclick="openLightbox(this)">
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Goradka Village. All Rights Reserved.</p>
+    <p>
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-twitter"></i>
+    </p>
+  </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

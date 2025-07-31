@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Goradka Village</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+  <!-- Sticky Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <h2 class="logo">Goradka</h2>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" style="background-image: url('img1.jpg');">
+    <div class="overlay">
+      <h1>About Goradka</h1>
+      <p>Your Village | Your Pride</p>
+    </div>
+  </header>
+
+  <!-- Main Paragraph -->
+  <section data-aos="fade-up">
+    <h2>Our Roots</h2>
+    <p>
+      Goradka is a small and peaceful village in Gujarat with a close-knit community. 
+      The village is known for its cultural traditions, strong unity among its people, and scenic beauty. 
+      Surrounded by fields and trees, it offers a calm and simple lifestyle rooted in values.
+    </p>
+  </section>
+
+  <!-- Cards for People, Houses, Area -->
+<section class="cards" data-aos="zoom-in-up">
+  <!-- People Card -->
+  <div class="card">
+    <img src="pexels-pixabay-325520.jpg" alt="People of Goradka" />
+    <p><strong>People:</strong> Over 1,500 residents live here with strong community bonds and cultural pride.</p>
+    <div class="more-text">
+      <p>The people of Goradka actively participate in festivals, farming, and support village development activities. Their hospitality and unity are remarkable.</p>
+    </div>
+    <button class="read-more">Read More</button>
+  </div>
+
+  <!-- Houses Card -->
+  <div class="card">
+    <img src="pexels-lina-1005615.jpg" alt="Houses of Goradka" />
+    <p><strong>Houses:</strong> Most homes are traditional and eco-friendly, built using local materials.</p>
+    <div class="more-text">
+      <p>Homes are typically built from mud bricks and lime plaster, helping regulate temperature naturally. Many families also maintain small gardens.</p>
+    </div>
+    <button class="read-more">Read More</button>
+  </div>
+
+  <!-- Area Card -->
+  <div class="card">
+    <img src="pexels-quark-studio-2507014.jpg" alt="Area of Goradka" />
+    <p><strong>Area:</strong> The village spans ~3 sq. km surrounded by green farmland.</p>
+    <div class="more-text">
+      <p>The region includes schools, temples, and a few small shops. It's a quiet, nature-rich area that supports agriculture and livestock.</p>
+    </div>
+    <button class="read-more">Read More</button>
+  </div>
+</section>
+
+  <!-- Google Map Embed -->
+  <section data-aos="fade-up">
+    <h2>Our Location</h2>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.7260123789015!2d71.33974841479559!3d21.21068118590415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39593044327d2e3b%3A0x7ad89cb70c51c98!2sGoradka%2C%20Gujarat%20364370!5e0!3m2!1sen!2sin!4v1688374402077!5m2!1sen!2sin" 
+      width="100%" 
+      height="250" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+  </section>
+
+
+   <section class="testimonial-section">
+    <h2>What Villagers Say</h2>
+    <div class="testimonial" data-aos="fade-right">
+      <p>"Goradka is not just a village, it’s my family. Every person here is like a brother or sister." – Jay Patel</p>
+    </div>
+    <div class="testimonial" data-aos="fade-left">
+      <p>"I've seen Goradka grow over the decades, and I’m proud of what we’ve become." – Gopal Joshi</p>
+    </div>
+  </section>
+
+  <section class="timeline">
+    <h2>Timeline of Goradka</h2>
+    <div class="timeline-event" data-aos="fade-up">
+      <h4>1950</h4>
+      <p>Goradka was founded by early settlers near the riverbank.</p>
+    </div>
+    <div class="timeline-event" data-aos="fade-up">
+      <h4>1985</h4>
+      <p>First school built with support from villagers and local leaders.</p>
+    </div>
+    <div class="timeline-event" data-aos="fade-up">
+      <h4>2000</h4>
+      <p>Road connectivity and electricity reached all parts of the village.</p>
+    </div>
+  </section>
+
+  <section class="carousel-section">
+    <h2>Explore Goradka</h2>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="gallery1.jpg" alt="Goradka Image 1"></div>
+        <div class="swiper-slide"><img src="gallery2.jpg" alt="Goradka Image 2"></div>
+        <div class="swiper-slide"><img src="gallery3.jpg" alt="Goradka Image 3"></div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Goradka Village. All Rights Reserved.</p>
+    <p><i class="fab fa-facebook"></i><i class="fab fa-instagram"></i><i class="fab fa-twitter"></i></p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
