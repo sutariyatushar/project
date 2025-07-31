@@ -732,7 +732,38 @@
       color: #2e7d32;
     }
 
-   
+    #panchayat ul, #services {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 255, 240, 0.95) 100%);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 15px 40px rgba(76, 175, 80, 0.2);
+      border: 2px solid rgba(76, 175, 80, 0.1);
+      animation: sectionPulse 10s ease-in-out infinite;
+    }
+
+    @keyframes sectionPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.01); }
+    }
+
+    #panchayat ul {
+      list-style: none;
+    }
+
+    #panchayat li {
+      padding: 1rem;
+      border-bottom: 2px solid rgba(76, 175, 80, 0.1);
+      color: #2e7d32;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+
+    #panchayat li:hover {
+      background: rgba(76, 175, 80, 0.1);
+      transform: translateX(10px);
+      border-left: 4px solid #4caf50;
+    }
 
     .weather-container {
       background: linear-gradient(135deg, #2e7d32 0%, #388e3c 50%, #4caf50 100%);

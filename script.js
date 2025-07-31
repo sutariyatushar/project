@@ -10,6 +10,7 @@ function toggleMenu() {
   navLinks.classList.toggle('active');
 }
 
+
 // ✅ Slideshow Logic (only for gallery page)
 let slideIndex = 0;
 function showSlides() {
