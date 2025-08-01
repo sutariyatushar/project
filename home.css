@@ -315,185 +315,92 @@ a:hover {
     display: block;
   }
 }
-
-.hero {
-  position: relative;
+.hero-section {
+  height: 100vh;
+  background-image: url('g1.jpeg'); /* Use your image */
   background-size: cover;
   background-position: center;
-  padding: 120px 20px;
+  border-bottom-left-radius: 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 5vw;
 }
 
-@keyframes zoom {
-  from {
-    background-size: 100%;
-  }
-  to {
-    background-size: 110%;
-  }
+.overlay-content {
+  max-width: 90%;
+  color: #222;
 }
-/* Main Hero Title Enhanced */
+
 .main-title {
-  font-size: 4rem;
-  color: #080808;
-  font-family: 'Lucida Sans', sans-serif;
-  text-shadow: 23px 23px 28px rgb(255, 255, 255);
-  animation: titleFadeZoom 3s ease-in-out forwards, glowPulse 4s infinite alternate;
-  position: relative;
-  z-index: 3;
+  font-size: 2.5rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  animation: zoomFade 6s ease-in-out infinite;
 }
 
-/* Subtitle */
-.overlay p {
-  font-size: 1.5rem;
-  color: #afee66;
-  margin-top: 0.5rem;
-  text-shadow: 1px 1px 4px #000;
-  animation: fadeInUp 2s ease-in-out;
-  z-index: 3;
-  position: relative;
+@keyframes zoomFade {
+  0% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
 }
 
-/* Overlay background */
-.overlay {
- text-shadow:  1px 1px 4px #000;
-  width: 100%;
-  height: 100%;
+.overlay-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.explore {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 2;
+  text-decoration: none;
+  font-weight: 500;
+  color: #000;
 }
 
-/* Bubble Container */
-.bubbles {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 1;
-  pointer-events: none;
+.arrow {
+  font-size: 1.8rem;
+  animation: bounce 2s infinite;
+  margin-top: 0.3rem;
 }
 
-/* Bubble Style */
-.bubbles li {
-  position: absolute;
-  list-style: none;
-  background: rgba(255, 255, 255, 0.25);
-  bottom: -150px;
-  border-radius: 50%;
-  animation: riseUp 12s linear infinite, rotateBubble 20s linear infinite;
-  opacity: 0.7;
-}
-
-/* Unique bubble configs */
-.bubbles li:nth-child(1) {
-  left: 5%;
-  width: 40px;
-  height: 40px;
-  animation-delay: 0s;
-}
-.bubbles li:nth-child(2) {
-  left: 20%;
-  width: 20px;
-  height: 20px;
-  animation-delay: 2s;
-}
-.bubbles li:nth-child(3) {
-  left: 35%;
-  width: 25px;
-  height: 25px;
-  animation-delay: 4s;
-}
-.bubbles li:nth-child(4) {
-  left: 50%;
-  width: 15px;
-  height: 15px;
-  animation-delay: 1s;
-}
-.bubbles li:nth-child(5) {
-  left: 65%;
-  width: 30px;
-  height: 30px;
-  animation-delay: 3s;
-}
-.bubbles li:nth-child(6) {
-  left: 80%;
-  width: 10px;
-  height: 10px;
-  animation-delay: 5s;
-}
-.bubbles li:nth-child(7) {
-  left: 90%;
-  width: 20px;
-  height: 30px;
-  animation-delay: 6s;
-}
-.bubbles li:nth-child(8) {
-  left: 75%;
-  width: 40px;
-  height: 60px;
-  animation-delay: 2.5s;
-}
-.bubbles li:nth-child(9) {
-  left: 10%;
-  width: 35px;
-  height: 35px;
-  animation-delay: 7s;
-}
-
-/* Animations */
-@keyframes riseUp {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 0.5;
-  }
-  50% {
-    transform: translateY(-50vh) scale(1.2);
-    opacity: 0.9;
-  }
-  100% {
-    transform: translateY(-100vh) scale(0.8);
-    opacity: 0;
-  }
-}
-
-@keyframes rotateBubble {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes titleFadeZoom {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px) scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes glowPulse {
-  0% {
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-  }
-  100% {
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-  }
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
+@keyframes bounce {
+  0%, 100% {
     transform: translateY(0);
   }
+  50% {
+    transform: translateY(8px);
+  }
 }
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding-left: 6vw;
+    justify-content: flex-start;
+  }
+
+  .main-title {
+    font-size: 2rem;
+  }
+
+  .overlay-content p {
+    font-size: 1rem;
+  }
+}
+
+
+
 
 
 .card .extra-content {
@@ -677,10 +584,14 @@ a:hover {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   position: relative;
   border-radius: 100em;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(51, 194, 38, 0.75);
   box-shadow:
     -0.15em -0.15em 0.15em -0.075em rgba(5, 5, 5, 0.25),
     0.0375em 0.0375em 0.0675em 0 rgba(5, 5, 5, 0.1);
+
+  /* 👇 Add these lines to control size */
+  font-size: 13px;      /* Reduce text size */
+  padding: 4px 9px;    /* Smaller inner spacing */
 }
 
 .button::after {
@@ -694,7 +605,7 @@ a:hover {
   border-radius: inherit;
   background: linear-gradient(
     -135deg,
-    rgba(5, 5, 5, 0.5),
+    rgba(107, 214, 93, 0.5),
     transparent 20%,
     transparent 100%
   );
@@ -730,8 +641,8 @@ a:hover {
   padding: 1em 1.5em;
   background-image: linear-gradient(
     135deg,
-    rgba(230, 230, 230, 1),
-    rgba(180, 180, 180, 1)
+    #0a0f0a,
+   #55b459,
   );
   transition:
     box-shadow 300ms ease,
@@ -747,7 +658,7 @@ a:hover {
     /* 2 */ -0.05em -0.05em 0.05em 0 inset rgba(5, 5, 5, 0.25),
     /* 3 */ 0 0 0 0 inset rgba(5, 5, 5, 0.1),
     /* 4 */ 0 0 0.05em 0.2em inset rgba(255, 255, 255, 0.25),
-    /* 5 */ 0.025em 0.05em 0.1em 0 inset rgba(255, 255, 255, 1),
+    /* 5 */ 0.025em 0.05em 0.1em 0 inset rgb(86, 243, 125),
     /* 6 */ 0.12em 0.12em 0.12em inset rgba(255, 255, 255, 0.25),
     /* 7 */ -0.075em -0.25em 0.25em 0.1em inset rgba(5, 5, 5, 0.25);
 }
@@ -768,17 +679,17 @@ a:hover {
     /* 7 */ -0.075em -0.12em 0.2em 0.1em inset rgba(5, 5, 5, 0.25);
 }
 
-.button .button-inner span {
+.button .button-inner span {  
   position: relative;
   z-index: 4;
   font-family: "Inter", sans-serif;
   letter-spacing: -0.05em;
   font-weight: 500;
-  color: rgba(0, 0, 0, 0);
+  color: rgba(72, 202, 101, 0);
   background-image: linear-gradient(
     135deg,
-    rgba(25, 25, 25, 1),
-    rgba(75, 75, 75, 1)
+    rgb(49, 82, 54),
+    rgb(0, 0, 0)
   );
   -webkit-background-clip: text;
   background-clip: text;
