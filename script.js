@@ -215,3 +215,20 @@ document.addEventListener('DOMContentLoaded', function () {
   loadWeather();
   initializeMap();
 });
+
+
+  document.querySelectorAll('.read-more').forEach(button => {
+    button.addEventListener('click', function () {
+      const card = this.closest('.card');
+      card.classList.toggle('expanded');
+
+      const moreText = card.querySelector('.more-text');
+      if (moreText.style.display === "block") {
+        moreText.style.display = "none";
+        this.textContent = "Read More";
+      } else {
+        moreText.style.display = "block";
+        this.textContent = "Read Less";
+      }
+    });
+  });

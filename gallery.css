@@ -242,6 +242,12 @@ a:hover {
   transition: background 0.3s ease;
 }
 
+ .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 24px;
+    }
+
 .navbar {
   background: #2c592c;
   background: linear-gradient(
