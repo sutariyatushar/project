@@ -59,18 +59,17 @@ function openLightbox(img) {
 }
 
 // ✅ Expand card functionality
-function expandCard(button) {
-  const card = button.parentElement;
-  const extraContent = card.querySelector('.extra-content');
-
-  if (extraContent.style.display === 'none' || !extraContent.style.display) {
-    extraContent.style.display = 'block';
-    button.textContent = 'Read Less';
+function expandCard(btn) {
+  const extra = btn.nextElementSibling;
+  if (extra.style.display === 'none') {
+    extra.style.display = 'block';
+    btn.textContent = 'Read Less';
   } else {
-    extraContent.style.display = 'none';
-    button.textContent = 'Read More';
+    extra.style.display = 'none';
+    btn.textContent = 'Read More';
   }
 }
+
 
 // ✅ Contact form submission
 document.getElementById('contact-form')?.addEventListener('submit', function (e) {
