@@ -507,19 +507,23 @@ a:hover {
     rgba(240, 255, 240, 0.95) 100%
   );
   border-radius: 15px;
-  padding: 2rem;
+  padding: 1.5rem;
   display: flex;
-  gap: 2rem;
+  flex-direction: column; /* ⬅️ Stack image and content vertically */
+  align-items: center;
+  gap: 1rem;
   box-shadow: 0 15px 40px rgba(76, 175, 80, 0.2);
   margin-bottom: 2rem;
   border: 2px solid rgba(76, 175, 80, 0.1);
   transition: all 0.4s ease;
   animation: eventGlow 8s ease-in-out infinite;
+  max-width: 400px;
+  margin-inline: auto;
+  text-align: center;
 }
 
 @keyframes eventGlow {
-  0%,
-  100% {
+  0%, 100% {
     box-shadow: 0 15px 40px rgba(76, 175, 80, 0.2);
   }
   50% {
@@ -533,8 +537,8 @@ a:hover {
 }
 
 .event-card img {
-  width: 200px;
-  height: 100%  ;
+  width: 100%;
+  max-height: 220px;
   object-fit: cover;
   border-radius: 10px;
   border: 2px solid rgba(76, 175, 80, 0.2);
@@ -542,17 +546,19 @@ a:hover {
 }
 
 .event-card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .event-card h3 {
   color: #1b5e20;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .event-card p {
   color: #2e7d32;
+  font-size: 0.95rem;
 }
+
 
 
 .map-section {
