@@ -45,20 +45,48 @@
       <p>🌾 Goradka is a peaceful and culturally rich village known for its natural beauty and warm-hearted people.
 🛕 Surrounded by farms and small temples, it reflects traditional values with a touch of modern growth.
 🤝 The villagers live in harmony, celebrating festivals, farming, and preserving the roots of Gujarati heritage.</p><br>
-      <section class="map-section" data-aos="fade-up">
-        <h2>Our Location</h2>
-        <div class="map-container">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.726006589238!2d71.3420668!3d21.2106904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39593044327d2e3b%3A0x7ad89cb70c51c98!2sGoradka%2C%20Gujarat%20364370!5e0!3m2!1sen!2sin!4v1722401800000!5m2!1sen!2sin"
-            width="100%"
-            height="300"
-            style="border:0; border-radius: 12px;"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-      </section>
+<!-- Map Section Start -->
+<section id="live-map" style="padding: 40px 20px; background: #f9f9f9;">
+  <h2 style="text-align: center; font-size: 32px; color: #2c3e50; margin-bottom: 10px;">
+    📍 Live Location – Goradka Village
+  </h2>
+  <p style="text-align: center; color: #555; font-size: 18px; margin-bottom: 30px;">
+    Explore the live map below to find key spots like Shiv Mandir, Lake, School, and Market.
+  </p>
+
+  <div style="position: relative; max-width: 1000px; margin: auto;">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.7290529502587!2d70.89889229999999!3d21.498525599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDI5JzU0LjciTiA3MMKwNTMnNTUuMCJF!5e0!3m2!1sen!2sin!4v1691234567890"
+      width="100%"
+      height="400"
+      style="border:0; border-radius: 15px; box-shadow: 0 8px 16px rgba(0,0,0,0.1);"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    <!-- Direction Button -->
+    <a href="https://maps.app.goo.gl/6hT34EgRU9RFEscm8" target="_blank"
+      style="
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background: #2ecc71;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 12px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        transition: 0.3s ease;
+      "
+      onmouseover="this.style.background='#27ae60'"
+      onmouseout="this.style.background='#2ecc71'">
+      🧭 Get Directions
+    </a>
+  </div>
+</section>
+
 
     </section>
 
@@ -140,14 +168,23 @@
       <div id="forecast" class="forecast-grid"></div>
     </section>
 
-    <section id="contact" data-aos="fade-up">
-      <h2>Feedback</h2>
-      <form id="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit">Send</button>
-      </form>
-    </section>
+ <section class="submit-section" data-aos="zoom-in">
+          <h2>Feedback</h2>
+          <form action="https://api.web3forms.com/submit" method="POST"
+            id="eventForm" class="event-form">
+            <input type="hidden" name="access_key"
+              value="24cab8c0-5fa6-42af-ba52-39bb0a41d22c">
+
+            <input type="text" id="name" name="name" placeholder="Your Name"
+              required>
+          
+            <textarea id="message" name="event_details" rows="4"
+              placeholder="Your Message..." required></textarea>
+
+            <button type="submit" class="submit-btn">Submit Event</button>
+          
+          </form>
+        </section>
 
     <footer>
       <div class="footer-container">

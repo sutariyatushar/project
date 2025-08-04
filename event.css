@@ -318,3 +318,8 @@ a:hover {
 .extra-content.hidden {
   display: none;
 }
+.event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

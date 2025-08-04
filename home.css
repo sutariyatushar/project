@@ -493,7 +493,7 @@ a:hover {
   border-left: 4px solid #4caf50;
 }
 
-.event-card {
+. -card {
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.95) 0%,
