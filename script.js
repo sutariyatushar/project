@@ -234,3 +234,28 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  const readMoreButtons = document.querySelectorAll(".read-more-btn");
+
+  readMoreButtons.forEach(button => {
+    button.addEventListener("click", function () {
+      const card = button.closest(".event-card");
+      const extraContent = card.querySelector(".extra-content");
+
+      extraContent.classList.toggle("hidden");
+
+      if (extraContent.classList.contains("hidden")) {
+        button.textContent = "Read More";
+      } else {
+        button.textContent = "Show Less";
+      }
+    });
+  });
+});
+
+
+  const waveText = document.querySelector('.wave-text');
+  const text = waveText.textContent;
+  waveText.innerHTML = [...text].map((char, i) => {
+    return `<span style="--i:${i + 1}">${char}</span>`;
+  }).join('');
