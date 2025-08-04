@@ -5,7 +5,7 @@ AOS.init({
 });
 
 // ✅ Mobile Menu Toggle
-function toggleMenu() {
+  function toggleMenu() {
   const navLinks = document.querySelector('.nav-links');
   navLinks.classList.toggle('show');
 }
@@ -232,3 +232,5 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+
+
