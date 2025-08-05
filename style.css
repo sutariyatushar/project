@@ -242,11 +242,17 @@ a:hover {
   transition: background 0.3s ease;
 }
 
- .menu-toggle {
-      display: none;
-      cursor: pointer;
-      font-size: 24px;
-    }
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+}
 
 .navbar {
   background: #2c592c;
@@ -397,11 +403,7 @@ a:hover {
 
 
 
-.menu-toggle {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
+
 
 /* about */
 
