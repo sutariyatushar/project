@@ -1091,3 +1091,31 @@ event card stle */
 }
 
 
+  .extra-images {
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  .extra-images img {
+    width: 200px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  #read-more-btn {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #3a9b3f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #read-more-btn:hover {
+    background-color: #32b143;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+  }

@@ -259,3 +259,18 @@ document.addEventListener("DOMContentLoaded", function () {
   waveText.innerHTML = [...text].map((char, i) => {
     return `<span style="--i:${i + 1}">${char}</span>`;
   }).join('');
+
+
+  
+  function eventReadmore() {
+    const extraImages = document.querySelector("#event-Read-more .extra-images");
+    const btn = document.getElementById("read-more-btn");
+
+    if (extraImages.style.display === "none" || extraImages.style.display === "") {
+      extraImages.style.display = "flex"; // show images
+      btn.textContent = "Read Less";
+    } else {
+      extraImages.style.display = "none"; // hide images
+      btn.textContent = "Read More";
+    }
+  }
