@@ -3,140 +3,110 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Events | Goradka</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="style.css" />
+  <title>Animated Mobile Navbar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      background: #f5f5f5;
+    }
+
+    header {
+      background: #4CAF50;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .menu-toggle {
+      font-size: 1.8rem;
+      cursor: pointer;
+      display: none;
+    }
+
+    nav.nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav.nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      position: relative;
+    }
+
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav.nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%) scaleY(0);
+        background: white;
+        width: 80%;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.4s ease;
+        transform-origin: top center;
+        z-index: 99;
+      }
+
+      nav.nav-links a {
+        color: #333;
+        font-size: 1.2rem;
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+      }
+
+      nav.nav-links.show {
+        transform: translateX(-50%) scaleY(1);
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="nav-container">
-    <h2 class="logo">Goradka</h2>
+  <header>
+    <div class="logo">🌿 Goradka</div>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+    <nav class="nav-links" id="navLinks">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Gallery</a>
+      <a href="#">Events</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
 
-<!-- Hero Swiper Banner -->
-<header class="hero-swiper">
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide" style="background-image: url('g1.jpeg')">
-        <div class="overlay-text">
-          <h2>Garba Night</h2>
-          <p>Oct 2025 | Temple Ground</p>
-        </div>
-      </div>
-      <div class="swiper-slide" style="background-image: url('g2.jpeg')">
-        <div class="overlay-text">
-          <h2>Annual Fair</h2>
-          <p>Dec 2025 | Main Chowk</p>
-        </div>
-      </div>
-      <!-- Add more slides -->
-    </div>
-  </div>
-  <svg viewBox="0 0 1440 320"><path fill="#f9f9f9" fill-opacity="1" d="M0,128L48,133.3C96,139,192,149,288,160C384,171,480,181,576,160C672,139,768,85,864,80C960,75,1056,117,1152,149.3C1248,181,1344,203,1392,213.3L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
-</header>
-
-<!-- Upcoming Events -->
-<section class="upcoming-section" data-aos="fade-up">
-  <h2>📅 Upcoming Events</h2>
-  <div class="event-grid">
-    <div class="upcoming-card">
-      <img src="images/farmer-event.jpg" alt="Event 1">
-      <h3>Farmers Awareness Camp</h3>
-      <p>📍 School Ground<br>🗓️ August 10, 2025</p>
-    </div>
-    <div class="upcoming-card">
-      <img src="images/women-seminar.jpg" alt="Event 2">
-      <h3>Women Empowerment Seminar</h3>
-      <p>📍 Community Hall<br>🗓️ September 5, 2025</p>
-    </div>
-  </div>
-</section>
-
-<!-- Video Highlights -->
-<section class="video-section" data-aos="zoom-in">
-  <h2>🎥 Past Event Highlights</h2>
-  <div class="video-gallery">
-    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-    <!-- Add more iframes -->
-  </div>
-</section>
-
-<!-- Filterable Gallery (Placeholder for MixItUp.js) -->
-<section class="filter-gallery" data-aos="fade-up">
-  <h2>📂 Browse Past Events</h2>
-  <div class="controls">
-    <button type="button" data-filter="all">All</button>
-    <button type="button" data-filter=".religious">Religious</button>
-    <button type="button" data-filter=".cultural">Cultural</button>
-    <button type="button" data-filter=".sports">Sports</button>
-  </div>
-  <div class="mix-gallery">
-    <div class="mix cultural"><img src="images/cultural1.jpg" alt=""></div>
-    <div class="mix religious"><img src="images/religious1.jpg" alt=""></div>
-    <div class="mix sports"><img src="images/sports1.jpg" alt=""></div>
-    <!-- More gallery items -->
-  </div>
-</section>
-
-<!-- Countdown Timer -->
-<section class="countdown-section" data-aos="fade-up">
-  <h2>⏳ Countdown to Next Event</h2>
-  <div id="countdown"></div>
-</section>
-
-<!-- Footer -->
-<footer>
-  <div class="footer-container">
-    <div class="footer-left">
-      <p>Follow us on Instagram <a href="https://instagram.com/goradka_nagari01" target="_blank"><i class="fab fa-instagram"></i></a></p>
-    </div>
-    <div class="footer-right">
-      <p>Created By <a href="https://ts.unaux.com" target="_blank">Tushar Sutariya</a></p>
-    </div>
-  </div>
-</footer>
-
-<!-- Scripts -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/mixitup/dist/mixitup.min.js"></script>
-<script>
-  AOS.init();
-
-  new Swiper('.mySwiper', {
-    loop: true,
-    autoplay: { delay: 3000 },
-    effect: 'fade'
-  });
-
-  mixitup('.mix-gallery');
-
-  // Countdown Timer
-  const eventDate = new Date("2025-10-15T18:00:00").getTime();
-  const countdown = document.getElementById("countdown");
-  setInterval(() => {
-    const now = new Date().getTime();
-    const distance = eventDate - now;
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-  }, 1000);
-</script>
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
+  </script>
 
 </body>
 </html>
