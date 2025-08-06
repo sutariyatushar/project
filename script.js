@@ -274,3 +274,6 @@ document.addEventListener("DOMContentLoaded", function () {
       btn.textContent = "Read More";
     }
   }
+
+
+  

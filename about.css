@@ -280,18 +280,6 @@ footer i:hover {
       }
     }
 
-.hero {
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation: zoom 20s ease-in-out infinite alternate;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
 
 @keyframes zoom {
   0% {
@@ -624,16 +612,16 @@ footer i:hover {
 .swiper-wrapper {
   display: flex;
   gap: 10px;
-  justify-content: center;
+  justify-content: flex-start; /* align from start, not center */
   align-items: center;
-  overflow-x: auto; /* enables manual scroll if more images */
+  overflow-x: auto; /* horizontal scroll */
   scroll-behavior: smooth;
   padding-bottom: 10px;
 }
 
 .swiper-slide {
-  flex: 0 0 auto;
-  width: 300px; /* fixed width for each image */
+  flex: 0 0 auto; /* don't shrink or stretch */
+  width: 500px; /* adjust to show more at once */
 }
 
 .swiper-slide img {
@@ -642,6 +630,7 @@ footer i:hover {
   object-fit: cover;
   border-radius: 8px;
 }
+
 
 /* Optional: auto slide animation */
 @keyframes autoSlide {
@@ -654,3 +643,4 @@ footer i:hover {
 .swiper-wrapper.auto {
   animation: autoSlide 8s infinite linear;
 }
+
