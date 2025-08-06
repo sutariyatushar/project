@@ -25,7 +25,7 @@ function showSlides() {
   slides[slideIndex - 1].style.display = "block";
   slides[slideIndex - 1].classList.add("fade");
 
-  setTimeout(showSlides, 17000); // change every 3 seconds
+  setTimeout(showSlides, 3000); // change every 3 seconds
 }
 window.onload = showSlides;
 
