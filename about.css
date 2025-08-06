@@ -451,10 +451,14 @@ footer i:hover {
 }
 
 .card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
+  width: 120px;         /* set small fixed size */
+  height: 120px;        /* same as width for a perfect circle */
+  border-radius: 50%;   /* makes it circular */
+  object-fit: cover;    /* keeps the image aspect ratio */
+  display: block;       /* remove inline gaps */
+  margin: 0 auto;       /* center horizontally */
 }
+
 
 .card p {
   padding: 1rem;
