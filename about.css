@@ -126,67 +126,108 @@
     }
 
 footer {
-  background: #004d40;
+  background: linear-gradient(
+    270deg,
+    rgba(44, 89, 44, 1),
+    rgba(59, 209, 91, 0.98),
+    rgba(60, 117, 65, 1)
+  );
+  background-size: 600% 600%;
+  animation: gradientShift 15s ease infinite;
   color: white;
-  padding: 1rem 2rem;
+  padding: 2rem 1rem;
   font-size: 1rem;
 }
 
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
   max-width: 1200px;
   margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-.footer-left,
-.footer-right {
+.footer-section {
   flex: 1;
   min-width: 250px;
-  margin: 0.5rem 0;
 }
 
-.footer-left p,
-.footer-right p {
+.footer-section h2,
+.footer-section h3 {
+  margin-bottom: 1rem;
+}
+
+.footer-section p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
   margin: 0;
 }
 
-footer a {
+.footer-section ul li {
+  margin: 0.5rem 0;
+}
+
+.footer-section a {
   color: #ffeb3b;
   text-decoration: none;
-  font-weight: bold;
-  margin-left: 5px;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-footer a:hover {
+.footer-section a:hover {
   color: #cddc39;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
-footer i {
-  margin-left: 5px;
-  font-size: 1.2rem;
+.social-icons {
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-size: 1.4rem;
   transition: transform 0.3s ease;
 }
 
-footer i:hover {
+.social-icons a:hover {
   transform: scale(1.3) rotate(10deg);
 }
 
+/* Created by text styling */
+.created-by {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Mobile Responsive */
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
     text-align: center;
   }
-
-  .footer-left,
-  .footer-right {
-    margin: 0.5rem 0;
+  .social-icons a {
+    margin: 0 0.5rem;
   }
 }
+
 
 .navbar {
       background: linear-gradient(
