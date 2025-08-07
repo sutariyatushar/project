@@ -689,6 +689,9 @@ header h1 {
   width: 100%;
   text-align: left;
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .new-event-card:hover {
@@ -697,13 +700,13 @@ header h1 {
 
 .new-event-card img {
   width: 100%;
-  height: auto;
-  max-height: 250px;
+  height: 90%;
+  max-height: 200px; /* optional limit */
   border-radius: 12px;
   display: block;
-  margin: 0 auto 15px;
-  animation: zoomInOut 4s ease-in-out infinite;
   object-fit: cover;
+  animation: zoomInOut 4s ease-in-out infinite;
+  margin-bottom: 15px;
 }
 
 .new-event-card h3 {
@@ -737,11 +740,12 @@ header h1 {
   }
 
   .new-event-card img {
-    max-height: 300px;
+    height: 100vh;
     width: 100%;
-    height: auto;
+    object-fit: cover;
   }
 }
+
 
 
 
@@ -956,17 +960,33 @@ event card stle */
 }
 
 
+/* General Contact Section */
 
-  
-/* contect */
-
-    
-    .hero-contact {
-  text-align: center;
-  color: white;
-  padding: 40px 20px;
-  background: #f7f7f7;
+.hero-contact {
   position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  background: url('g5.jpeg') no-repeat center center / cover;
+  overflow: hidden;
+}
+
+.hero-contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.2));
+  animation: backgroundMove 15s linear infinite alternate;
+  z-index: 0;
+}
+
+@keyframes backgroundMove {
+  0% { transform: translateX(0); } 
+  100% { transform: translateX(-20%); }
 }
 
 .hero-circle-img {
@@ -975,8 +995,16 @@ event card stle */
   height: 180px;
   border-radius: 50%;
   overflow: hidden;
+  margin-bottom: 20px;
+  z-index: 1;
   border: 5px solid white;
   animation: rippleWave 2.5s ease-in-out infinite;
+}
+
+.hero-circle-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @keyframes rippleWave {
@@ -988,7 +1016,27 @@ event card stle */
   }
 }
 
+.hero-contact h1 {
+  font-size: 3rem;
+  z-index: 1;
+}
 
+@media (max-width: 768px) {
+  .hero-contact {
+    padding: 20px;
+    height: auto;
+  }
+  .hero-contact h1 {
+    font-size: 2.2rem;
+  }
+  .hero-circle-img {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+
+/* Contact Cards */
 
 .contact-section-container {
   max-width: 1200px;
@@ -1015,6 +1063,16 @@ event card stle */
   align-items: center;
   padding: 15px;
   transition: 0.3s ease;
+  animation: floatCard 3s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 .contact-img {
@@ -1052,186 +1110,71 @@ event card stle */
   }
 }
 
-    /* Hero Section Styling */
-    .hero-contact {
-      position: relative;
-      height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      color: white;
-      text-align: center;
-      background: url('contact-bg.jpg') no-repeat center center/cover;
-      overflow: hidden;
-    }
 
-    .hero-contact::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 200%;
-      height: 100%;
-      background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.2));
-      animation: backgroundMove 15s linear infinite alternate;
-      z-index: 0;
-    }
+/* Panchayat & Services Section */
 
-    @keyframes backgroundMove {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-20%); }
-    }
+#panchayat ul,
+#services {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 255, 240, 0.95) 100%);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(76, 175, 80, 0.2);
+  border: 2px solid rgba(76, 175, 80, 0.1);
+  animation: sectionPulse 10s ease-in-out infinite;
+}
 
-    .hero-circle-img {
-      position: relative;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin-bottom: 20px;
-      z-index: 1;
-      border: 5px solid white;
-    }
+@keyframes sectionPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+}
 
-    .hero-circle-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+#panchayat ul {
+  list-style: none;
+}
 
-    .hero-contact h1 {
-      
-      font-size: 3rem;
-      z-index: 1;
-    }
+#panchayat li {
+  padding: 1rem;
+  border-bottom: 2px solid rgba(76, 175, 80, 0.1);
+  color: #2e7d32;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
 
-    /* Animated Contact Cards */
-    .contact-card {
-      animation: floatCard 3s ease-in-out infinite;
-    }
-
-    @keyframes floatCard {
-      0%, 100% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-8px);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .hero-contact {
-        padding: 20px;
-        height: auto;
-      }
-      .hero-contact h1 {
-        font-size: 2.2rem;
-      }
-      .hero-circle-img {
-        width: 140px;
-        height: 140px;
-      }
-    }
+#panchayat li:hover {
+  background: rgba(76, 175, 80, 0.1);
+  transform: translateX(10px);
+  border-left: 4px solid #4caf50;
+}
 
 
-    /* home */
+/* Extra Images and Read More Button */
 
+.extra-images {
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
 
+.extra-images img {
+  width: 200px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 8px;
+}
 
-
-/* /////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////// */
-
-
- #panchayat ul, #services {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 255, 240, 0.95) 100%);
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 15px 40px rgba(76, 175, 80, 0.2);
-      border: 2px solid rgba(76, 175, 80, 0.1);
-      animation: sectionPulse 10s ease-in-out infinite;
-    }
-
-    @keyframes sectionPulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.01); }
-    }
-
-    #panchayat ul {
-      list-style: none;
-    }
-
-    #panchayat li {
-      padding: 1rem;
-      border-bottom: 2px solid rgba(76, 175, 80, 0.1);
-      color: #2e7d32;
-      transition: all 0.3s ease;
-      border-radius: 8px;
-      margin-bottom: 0.5rem;
-    }
-
-    #panchayat li:hover {
-      background: rgba(76, 175, 80, 0.1);
-      transform: translateX(10px);
-      border-left: 4px solid #4caf50;
-    }
-
-    /* //////////////////// about in home page ////////////////////// */
-
-
-
-.hero-contact {
-  background: url('g5.jpeg') no-repeat center center/cover;
-  height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+#read-more-btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #3a9b3f;
   color: white;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.hero-contact::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3); /* semi-dark overlay */
-  z-index: 0;
-}
-
-.hero-contact h1,
-.hero-circle-img {
-  z-index: 1;
-}
-
-
-  .extra-images {
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 10px;
-  }
-
-  .extra-images img {
-    width: 200px;
-    height: 130px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-
-  #read-more-btn {
-    margin-top: 10px;
-    padding: 8px 16px;
-    background-color: #3a9b3f;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  #read-more-btn:hover {
-    background-color: #32b143;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
   transition: background-color 0.3s ease, box-shadow 0.2s ease;
-  }
+}
+
+#read-more-btn:hover {
+  background-color: #32b143;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}

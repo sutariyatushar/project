@@ -1,112 +1,700 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Animated Mobile Navbar</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supercharge Your Workflow - Framer Clone</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: sans-serif;
-      background: #f5f5f5;
-    }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f5f4f0 0%, #e8e5dc 100%);
+            overflow-x: hidden;
+        }
 
-    header {
-      background: #4CAF50;
-      color: white;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-    }
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px;
+            text-align: center;
+        }
 
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 700;
+            color: #2c2c2c;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
 
-    .menu-toggle {
-      font-size: 1.8rem;
-      cursor: pointer;
-      display: none;
-    }
+        .hero-subtitle {
+            font-size: clamp(1rem, 3vw, 1.25rem);
+            color: #666;
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
 
-    nav.nav-links {
-      display: flex;
-      gap: 20px;
-    }
+        .cta-button {
+            background: #000;
+            color: white;
+            padding: 16px 28px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-bottom: 3rem;
+        }
 
-    nav.nav-links a {
-      color: white;
-      text-decoration: none;
-      font-size: 1rem;
-      position: relative;
-    }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
 
-    /* Mobile styles */
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
+        .arrow {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
 
-      nav.nav-links {
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 50%;
-        transform: translateX(-50%) scaleY(0);
-        background: white;
-        width: 80%;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.4s ease;
-        transform-origin: top center;
-        z-index: 99;
-      }
+        /* Scrolling Cards Container */
+        .scrolling-cards-section {
+            position: relative;
+            padding: 100px 0;
+            overflow: hidden;
+        }
 
-      nav.nav-links a {
-        color: #333;
-        font-size: 1.2rem;
-        padding: 10px 0;
-        border-bottom: 1px solid #ddd;
-      }
+        .cards-track {
+            display: flex;
+            width: calc(280px * 24);
+            animation: scroll-left 60s linear infinite;
+        }
 
-      nav.nav-links.show {
-        transform: translateX(-50%) scaleY(1);
-        opacity: 1;
-        pointer-events: auto;
-      }
-    }
-  </style>
+        .cards-track:hover {
+            animation-play-state: paused;
+        }
+
+        .profile-card {
+            width: 220px;
+            height: 300px;
+            margin: 0 30px;
+            border-radius: 20px;
+            overflow: hidden;
+            flex-shrink: 0;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 2;
+        }
+
+        .profile-card:hover::before {
+            opacity: 1;
+        }
+
+        .profile-card:hover {
+            transform: scale(1.05) translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .profile-card:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Half-Circle Animation Container */
+        .half-circle-container {
+            position: relative;
+            height: 400px;
+            margin: 80px 0;
+            overflow: hidden;
+        }
+
+        .half-circle-track {
+            position: absolute;
+            width: 200%;
+            height: 100%;
+            left: -50%;
+        }
+
+        .half-circle-card {
+            position: absolute;
+            width: 180px;
+            height: 240px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .half-circle-card:hover {
+            transform: scale(1.08);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .half-circle-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Positioning cards in half-circle */
+        .half-circle-card:nth-child(1) {
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%) rotate(-30deg);
+            animation: half-circle-1 20s linear infinite;
+        }
+
+        .half-circle-card:nth-child(2) {
+            top: 30%;
+            left: 20%;
+            transform: translateY(-50%) rotate(-20deg);
+            animation: half-circle-2 22s linear infinite;
+        }
+
+        .half-circle-card:nth-child(3) {
+            top: 15%;
+            left: 35%;
+            transform: translateY(-50%) rotate(-10deg);
+            animation: half-circle-3 24s linear infinite;
+        }
+
+        .half-circle-card:nth-child(4) {
+            top: 10%;
+            left: 50%;
+            transform: translateY(-50%) rotate(0deg);
+            animation: half-circle-4 26s linear infinite;
+        }
+
+        .half-circle-card:nth-child(5) {
+            top: 15%;
+            left: 65%;
+            transform: translateY(-50%) rotate(10deg);
+            animation: half-circle-5 28s linear infinite;
+        }
+
+        .half-circle-card:nth-child(6) {
+            top: 30%;
+            left: 80%;
+            transform: translateY(-50%) rotate(20deg);
+            animation: half-circle-6 30s linear infinite;
+        }
+
+        .half-circle-card:nth-child(7) {
+            top: 50%;
+            left: 90%;
+            transform: translateY(-50%) rotate(30deg);
+            animation: half-circle-7 32s linear infinite;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #2c2c2c;
+            margin-bottom: 1rem;
+        }
+
+        .feature-description {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Animations */
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-280px * 12));
+            }
+        }
+
+        @keyframes half-circle-1 {
+            0% {
+                transform: translateY(-50%) rotate(-30deg) translateX(0px);
+            }
+            50% {
+                transform: translateY(-50%) rotate(-30deg) translateX(100px);
+            }
+            100% {
+                transform: translateY(-50%) rotate(-30deg) translateX(0px);
+            }
+        }
+
+        @keyframes half-circle-2 {
+            0% {
+                transform: translateY(-50%) rotate(-20deg) translateX(0px);
+            }
+            50% {
+                transform: translateY(-50%) rotate(-20deg) translateX(-80px);
+            }
+            100% {
+                transform: translateY(-50%) rotate(-20deg) translateX(0px);
+            }
+        }
+
+        @keyframes half-circle-3 {
+            0% {
+                transform: translateY(-50%) rotate(-10deg) translateX(0px);
+            }
+            50% {
+                transform: translateY(-50%) rotate(-10deg) translateX(60px);
+            }
+            100% {
+                transform: translateY(-50%) rotate(-10deg) translateX(0px);
+            }
+        }
+
+        @keyframes half-circle-4 {
+            0% {
+                transform: translateY(-50%) rotate(0deg) translateY(0px);
+            }
+            50% {
+                transform: translateY(-50%) rotate(0deg) translateY(-40px);
+            }
+            100% {
+                transform: translateY(-50%) rotate(0deg) translateY(0px);
+            }
+        }
+
+        @keyframes half-circle-5 {
+            0% {
+                transform: translateY(-50%) rotate(10deg) translateX(0px);
+            }
+            50% {
+                transform: translateY(-50%) rotate(10deg) translateX(-60px);
+            }
+            100% {
+                transform: translateY(-50%) rotate(10deg) translateX(0px);
+            }
+        }
+
+        @keyframes half-circle-6 {
+            0% {
+                transform: translateY(-50%) rotate(20deg) translateX(0px);
+            }
+            50% {
+                transform: translateY(-50%) rotate(20deg) translateX(80px);
+            }
+            100% {
+                transform: translateY(-50%) rotate(20deg) translateX(0px);
+            }
+        }
+
+        @keyframes half-circle-7 {
+            0% {
+                transform: translateY(-50%) rotate(30deg) translateX(0px);
+            }
+            50% {
+                transform: translateY(-50%) rotate(30deg) translateX(-100px);
+            }
+            100% {
+                transform: translateY(-50%) rotate(30deg) translateX(0px);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .cta-button {
+                padding: 14px 24px;
+                font-size: 0.9rem;
+            }
+
+            .profile-card {
+                width: 160px;
+                height: 220px;
+                margin: 0 15px;
+            }
+
+            .cards-track {
+                width: calc(190px * 24);
+                animation: scroll-left-mobile 40s linear infinite;
+            }
+
+            .half-circle-container {
+                height: 300px;
+                margin: 60px 0;
+            }
+
+            .half-circle-card {
+                width: 120px;
+                height: 160px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .feature-card {
+                padding: 30px 15px;
+            }
+
+            .feature-title {
+                font-size: 1.2rem;
+            }
+
+            .feature-description {
+                font-size: 0.9rem;
+            }
+        }
+
+        @keyframes scroll-left-mobile {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-190px * 12));
+            }
+        }
+
+        /* Extra small mobile */
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 0 15px;
+                min-height: 90vh;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .profile-card {
+                width: 140px;
+                height: 200px;
+                margin: 0 10px;
+            }
+
+            .cards-track {
+                width: calc(160px * 24);
+            }
+
+            @keyframes scroll-left-mobile {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc(-160px * 12));
+                }
+            }
+
+            .half-circle-card {
+                width: 100px;
+                height: 140px;
+            }
+
+            .feature-card {
+                padding: 25px 10px;
+            }
+        }
+
+        /* Section dividers */
+        .section-divider {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            color: #2c2c2c;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1 class="hero-title">Streamline Your Team,<br>Supercharge Your Workflow</h1>
+        <p class="hero-subtitle">
+            All-in-one platform to plan, collaborate,<br>
+            and deliver — faster and smarter.
+        </p>
+        
+        <a href="#features" class="cta-button">
+            Get started for Free
+            <svg class="arrow" viewBox="0 0 24 24">
+                <path d="M5 12h14m-7-7l7 7-7 7"/>
+            </svg>
+        </a>
+    </div>
 
-  <header>
-    <div class="logo">🌿 Goradka</div>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <nav class="nav-links" id="navLinks">
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Gallery</a>
-      <a href="#">Events</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
+    <!-- Scrolling Cards Section -->
+    <div class="scrolling-cards-section">
+        <div class="cards-track">
+            <!-- First set of cards -->
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1596815064285-45ed8a9c5c7c?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <!-- Duplicate set for seamless loop -->
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1596815064285-45ed8a9c5c7c?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="profile-card">
+                <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+        </div>
+    </div>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("show");
-    }
-  </script>
+    <!-- Section Divider -->
+    <div class="section-divider">
+        <h2 class="section-title">Loved by Teams Around the World</h2>
+        <p class="section-subtitle">From startups to global companies, thousands of teams trust our app to stay organized, connected, and productive—every single day.</p>
+    </div>
 
+    <!-- Half-Circle Animation Section -->
+    <div class="half-circle-container">
+        <div class="half-circle-track">
+            <div class="half-circle-card">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="half-circle-card">
+                <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="half-circle-card">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="half-circle-card">
+                <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="half-circle-card">
+                <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="half-circle-card">
+                <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+            <div class="half-circle-card">
+                <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&h=600&fit=crop&crop=face" alt="Team member">
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features-section" id="features">
+        <div class="section-divider">
+            <h2 class="section-title">Everything Your Team Needs</h2>
+            <p class="section-subtitle">From task tracking to real-time chat, our features are built to keep your team connected, organized, and moving forward—together.</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3 class="feature-title">Real-Time Collaboration</h3>
+                <p class="feature-description">
+                    Communicate seamlessly and keep everyone in sync with built-in messaging, file sharing, and live updates.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3 class="feature-title">Task & Project Tracking</h3>
+                <p class="feature-description">
+                    Assign tasks, set deadlines, and visualize progress with boards, lists, and timelines tailored to your team's style.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h3 class="feature-title">Performance Insights</h3>
+                <p class="feature-description">
+                    Make smarter decisions with analytics that show productivity trends, bottlenecks, and team workload balance.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll for CTA button
+        document.querySelector('.cta-button').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelector('#features').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        // Pause animations on hover for better UX
+        const scrollTrack = document.querySelector('.cards-track');
+        scrollTrack.addEventListener('mouseenter', () => {
+            scrollTrack.style.animationPlayState = 'paused';
+        });
+        scrollTrack.addEventListener('mouseleave', () => {
+            scrollTrack.style.animationPlayState = 'running';
+        });
+
+        // Enhanced mobile touch interactions
+        let isTouch = false;
+        document.addEventListener('touchstart', () => {
+            isTouch = true;
+        });
+
+        // Add touch-friendly interactions for mobile
+        if ('ontouchstart' in window) {
+            document.querySelectorAll('.profile-card, .half-circle-card').forEach(card => {
+                card.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(1.05)';
+                });
+                card.addEventListener('touchend', function() {
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 100);
+                });
+            });
+        }
+
+        // Optimize animations for mobile performance
+        function optimizeForMobile() {
+            if (window.innerWidth <= 768) {
+                document.documentElement.style.setProperty('--animation-duration', '40s');
+            } else {
+                document.documentElement.style.setProperty('--animation-duration', '60s');
+            }
+        }
+
+        window.addEventListener('resize', optimizeForMobile);
+        optimizeForMobile();
+    </script>
 </body>
 </html>
