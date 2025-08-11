@@ -13,22 +13,22 @@
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://goradka.netlify.app/about</loc>
+  <loc>https://goradka.netlify.app/about.html</loc>
   <lastmod>2025-08-08T09:12:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://goradka.netlify.app/gallery</loc>
+  <loc>https://goradka.netlify.app/gallery.html</loc>
   <lastmod>2025-08-08T09:12:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://goradka.netlify.app/events</loc>
+  <loc>https://goradka.netlify.app/events.html</loc>
   <lastmod>2025-08-08T09:12:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://goradka.netlify.app/contact</loc>
+  <loc>https://goradka.netlify.app/contact.html</loc>
   <lastmod>2025-08-08T09:12:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
