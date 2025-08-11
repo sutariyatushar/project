@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://goradka.netlify.app/sitemap.xml
