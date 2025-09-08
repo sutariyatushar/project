@@ -10,6 +10,7 @@ AOS.init({
   navLinks.classList.toggle('show');
 }
 
+
 // ✅ Slideshow Logic (only for gallery page)
 let slideIndex = 0;
 function showSlides() {

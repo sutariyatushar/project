@@ -526,6 +526,17 @@ footer {
   }
 }
 
+#panchayat a {
+  color: #2e7d32;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#panchayat a:hover {
+  color: #1b5e20;
+  text-decoration: none;
+}
+
 #panchayat ul {
   list-style: none;
 }
@@ -544,6 +555,101 @@ footer {
   transform: translateX(10px);
   border-left: 4px solid #4caf50;
 }
+
+
+#services {
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f0fdf4, #ffffff);
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(76, 175, 80, 0.2);
+  animation: sectionPulse 10s ease-in-out infinite;
+}
+
+#services h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #2e7d32;
+}
+
+/* ✅ 2-column grid (2 left, 2 right) */
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 30px; /* row gap + column gap */
+  max-width: 900px;
+  margin: 0 auto; /* center align */
+}
+
+.service-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: cardGlow 3s ease-in-out infinite;
+  text-align: left;
+}
+
+.service-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(46, 125, 50, 0.3);
+}
+
+.service-card span {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.service-card h3 {
+  color: #2e7d32;
+  margin-bottom: 5px;
+}
+
+.service-card p {
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.call-btn {
+  display: inline-block;
+  padding: 10px 16px;
+  background: #2e7d32;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.call-btn:hover {
+  background: #1b5e20;
+  transform: scale(1.1);
+}
+
+@keyframes sectionPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+}
+
+@keyframes cardGlow {
+  0%, 100% { box-shadow: 0 8px 20px rgba(76, 175, 80, 0.15); }
+  50% { box-shadow: 0 8px 30px rgba(76, 175, 80, 0.35); }
+}
+
+/* ✅ Mobile: stack vertically */
+@media (max-width: 768px) {
+  .service-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
 
 .event-card {
   background: linear-gradient(
