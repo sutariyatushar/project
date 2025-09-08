@@ -1059,6 +1059,23 @@ event card stle */
   }
 }
 
+.card-details a {
+  text-decoration: none;
+  color: #25d366; /* WhatsApp green */
+  font-weight: bold;
+}
+
+.card-details p a {
+  color: #000000; /* Phone link blue */
+  font-weight: normal;
+}
+
+.card-details p a:hover {
+  text-decoration: none;
+  color: #34b83f;
+}
+
+
     /* Hero Section Styling */
     .hero-contact {
       position: relative;
@@ -1204,7 +1221,6 @@ event card stle */
 
 /* Hero Base */
 .saas-hero {
-  background: #FBF4EA;
   text-align: center;
   padding: 60px 20px;
   max-width: 1400px;
@@ -1297,18 +1313,6 @@ event card stle */
 
 .portrait-card:hover ~ .portrait-card {
   filter: saturate(0.5);
-}
-
-/* Bottom shadow illusion */
-.portrait-arc::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 40px;
-  bottom: 0;
-  left: 0;
-  background: radial-gradient(ellipse at center, rgba(0,0,0,0.2), transparent 70%);
-  pointer-events: none;
 }
 
 /* Features Section */
