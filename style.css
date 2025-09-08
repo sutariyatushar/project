@@ -1142,51 +1142,6 @@ event card stle */
     }
 
 
-    /* home */
-
-
-
-
-/* /////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////// */
-
-
- #panchayat ul, #services {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 255, 240, 0.95) 100%);
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 15px 40px rgba(76, 175, 80, 0.2);
-      border: 2px solid rgba(76, 175, 80, 0.1);
-      animation: sectionPulse 10s ease-in-out infinite;
-    }
-
-    @keyframes sectionPulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.01); }
-    }
-
-    #panchayat ul {
-      list-style: none;
-    }
-
-    #panchayat li {
-      padding: 1rem;
-      border-bottom: 2px solid rgba(76, 175, 80, 0.1);
-      color: #2e7d32;
-      transition: all 0.3s ease;
-      border-radius: 8px;
-      margin-bottom: 0.5rem;
-    }
-
-    #panchayat li:hover {
-      background: rgba(76, 175, 80, 0.1);
-      transform: translateX(10px);
-      border-left: 4px solid #4caf50;
-    }
-
-    /* //////////////////// about in home page ////////////////////// */
-
-
 
 .hero-contact {
   background: url('g5.jpeg') no-repeat center center/cover;
@@ -1244,4 +1199,219 @@ event card stle */
   }
 
   
-  
+  /* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&family=Poppins:wght@400;600;700&display=swap');
+
+/* Hero Base */
+.saas-hero {
+  background: #FBF4EA;
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 1400px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.hero-topline {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.hero-headline {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 15px;
+}
+
+.hero-subtext {
+  font-family: 'Poppins', sans-serif;
+  color: #666;
+  font-size: 1rem;
+  max-width: 500px;
+  margin: 0 auto 25px;
+}
+
+.cta-btn {
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  box-shadow: inset 0 2px 4px rgba(255,255,255,0.2);
+  transition: 0.3s;
+}
+.cta-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Portrait Arc Row */
+.portrait-arc {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 15px;
+  margin-top: 50px;
+  padding-bottom: 50px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.portrait-card {
+  flex: 0 0 auto;
+  width: 120px;
+  height: 180px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #ffe9ec, #eaf7ff);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-5deg) scale(0.9);
+  transition: transform 0.3s, filter 0.3s;
+  scroll-snap-align: center;
+}
+
+.portrait-card.center {
+  transform: rotate(0deg) scale(1.1);
+  z-index: 2;
+}
+
+.portrait-card img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.portrait-card:hover {
+  transform: rotate(0deg) scale(1.05);
+  filter: saturate(1.2);
+  z-index: 3;
+}
+
+.portrait-card:hover ~ .portrait-card {
+  filter: saturate(0.5);
+}
+
+/* Bottom shadow illusion */
+.portrait-arc::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  bottom: 0;
+  left: 0;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.2), transparent 70%);
+  pointer-events: none;
+}
+
+/* Features Section */
+.features {
+  background: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.features-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.feature i {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #111;
+}
+.feature h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.feature p {
+  color: #555;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-headline {
+    font-size: 1.8rem;
+  }
+  .portrait-card {
+    width: 100px;
+    height: 150px;
+  }
+}
+
+  /* Mobile Fix for Portrait Arc */
+@media (max-width: 768px) {
+  .portrait-arc {
+    padding-left: 20px;   /* add breathing room so 1st card is fully visible */
+    padding-right: 20px;
+    justify-content: flex-start; /* no forced centering */
+  }
+
+  .portrait-card {
+    scroll-snap-align: start;  /* snap from left, not center */
+  }
+}
+
+  /* home */
+
+
+
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+ #panchayat ul, #services {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 255, 240, 0.95) 100%);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 15px 40px rgba(76, 175, 80, 0.2);
+      border: 2px solid rgba(76, 175, 80, 0.1);
+      animation: sectionPulse 10s ease-in-out infinite;
+    }
+
+    @keyframes sectionPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.01); }
+    }
+
+    #panchayat ul {
+      list-style: none;
+    }
+
+    #panchayat li {
+      padding: 1rem;
+      border-bottom: 2px solid rgba(76, 175, 80, 0.1);
+      color: #2e7d32;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+
+    #panchayat li:hover {
+      background: rgba(76, 175, 80, 0.1);
+      transform: translateX(10px);
+      border-left: 4px solid #4caf50;
+    }
+
+    /* //////////////////// about in home page ////////////////////// */

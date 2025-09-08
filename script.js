@@ -10,6 +10,14 @@ AOS.init({
   navLinks.classList.toggle('show');
 }
 
+// Smooth snap scrolling
+const arc = document.querySelector('.portrait-arc');
+arc.addEventListener('wheel', (e) => {
+  e.preventDefault();
+  arc.scrollLeft += e.deltaY;
+});
+
+
 
 // ✅ Slideshow Logic (only for gallery page)
 let slideIndex = 0;

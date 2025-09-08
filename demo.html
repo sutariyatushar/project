@@ -1,64 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SaaS Hero Section</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #FBF4EA;
+      color: #111;
+    }
 
+    /* Hero Section */
+    .hero-saas {
+      text-align: center;
+      padding: 60px 20px 40px;
+      max-width: 1400px;
+      margin: auto;
+    }
 
+    .hero-subtitle {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1rem;
+      margin: 0 0 10px;
+    }
 
-    <title>Document</title>
+    .hero-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin: 0 0 15px;
+    }
+
+    .hero-text {
+      color: #666;
+      max-width: 500px;
+      margin: 0 auto 25px;
+    }
+
+    .cta-btn {
+      background: #111;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: inset 0 2px 4px rgba(255,255,255,0.2);
+      transition: all 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* Portrait Arc */
+    .portrait-arc {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      margin-top: 50px;
+      gap: 15px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 20px 0;
+      position: relative;
+    }
+
+    .portrait-arc::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 10%;
+      width: 80%;
+      height: 40px;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,0.15), transparent 70%);
+      filter: blur(6px);
+      z-index: 0;
+    }
+
+    .portrait-card {
+      flex: 0 0 auto;
+      width: 110px;
+      height: 170px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(145deg,#f9f9f9,#f0f0f0);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transform: rotate(-5deg);
+      transition: all 0.3s ease;
+      scroll-snap-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .portrait-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .portrait-card.center {
+      width: 150px;
+      height: 220px;
+      transform: rotate(0deg);
+    }
+
+    .portrait-card:hover {
+      transform: scale(1.05) rotate(0deg);
+      z-index: 2;
+      filter: saturate(1.2);
+    }
+
+    .portrait-card:not(:hover) {
+      filter: saturate(0.8);
+    }
+
+    /* Features Section */
+    .features {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    .features h2 span {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+      gap: 25px;
+    }
+
+    .feature {
+      background: white;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 1.8rem;
+      }
+      .portrait-card {
+        width: 90px;
+        height: 140px;
+      }
+      .portrait-card.center {
+        width: 120px;
+        height: 170px;
+      }
+    }
+  </style>
 </head>
-<style>
-    .card {
-  flex: 0 0 auto;
-  width: 280px;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 15px;
-  scroll-snap-align: start;
-  display: flex;
-  flex-direction: column;
-  transition: all 0.4s ease; /* smooth expand */
-  overflow: hidden;
-}
-
-/* collapsed state */
-.extra-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
-}
-
-/* expanded state */
-.card.expanded .extra-content {
-  max-height: 800px; /* enough height for text+images */
-}
-
-</style>
 <body>
-    <div class="card">
-  <img src="sivmain.jpeg" />
-  <p>Shiv Mandir</p>
-  <button onclick="expandCard(this)">Read More</button>
-  <div class="extra-content">
-    <p>The Shiv Temple of Goradka is a serene and spiritual center...</p>
-    <img src="sivm2.jpeg"><img src="shivm3.jpeg"><img src="sivmandir1.jpeg">
-  </div>
-</div>
-<script>
-    // ✅ Expand card functionality with height transition
-function expandCard(btn) {
-  const card = btn.closest(".card"); // find parent card
-  card.classList.toggle("expanded");
+  <!-- Hero Section -->
+  <header class="hero-saas">
+    <p class="hero-subtitle">No stress. Just flow.</p>
+    <h1 class="hero-title">Ready to Reclaim Your Time?</h1>
+    <p class="hero-text">Start organizing, prioritizing, and crushing your goals today.</p>
+    <button class="cta-btn">Try it for Free →</button>
 
-  if (card.classList.contains("expanded")) {
-    btn.textContent = "Read Less";
-  } else {
-    btn.textContent = "Read More";
-  }
-}
+    <!-- Portrait Arc Row -->
+    <div class="portrait-arc">
+      <div class="portrait-card"><img src="p1.jpg" alt></div>
+      <div class="portrait-card"><img src="p2.jpg" alt></div>
+      <div class="portrait-card"><img src="p3.jpg" alt></div>
+      <div class="portrait-card center"><img src="p4.jpg" alt></div>
+      <div class="portrait-card"><img src="p5.jpg" alt></div>
+      <div class="portrait-card"><img src="p6.jpg" alt></div>
+      <div class="portrait-card"><img src="p7.jpg" alt></div>
+    </div>
+  </header>
 
-</script>
+  <!-- Features Section -->
+  <section class="features">
+    <h2>Work <span>Smarter</span> Every Day</h2>
+    <div class="features-grid">
+      <div class="feature">
+        <h3>⚡ Quick Setup</h3>
+        <p>Get started in minutes with our easy onboarding flow.</p>
+      </div>
+      <div class="feature">
+        <h3>📊 Smart Analytics</h3>
+        <p>Track performance and progress with clean dashboards.</p>
+      </div>
+      <div class="feature">
+        <h3>🤝 Team Collaboration</h3>
+        <p>Invite teammates and work together seamlessly.</p>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
