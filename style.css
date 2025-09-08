@@ -1272,7 +1272,7 @@ event card stle */
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: rotate(-5deg) scale(0.9);
+  transform: rotate(-6deg) scale(0.9);
   transition: transform 0.3s, filter 0.3s;
   scroll-snap-align: center;
 }

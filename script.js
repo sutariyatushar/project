@@ -1,96 +1,137 @@
 // ✅ AOS Init (only once)
 AOS.init({
   duration: 1000,
-  once: true
+  once: true,
 });
 
 // ✅ Mobile Menu Toggle
-  function toggleMenu() {
-  const navLinks = document.querySelector('.nav-links');
-  navLinks.classList.toggle('show');
+function toggleMenu() {
+  const navLinks = document.querySelector(".nav-links");
+  navLinks.classList.toggle("show");
 }
-
-// Smooth snap scrolling
-const arc = document.querySelector('.portrait-arc');
-arc.addEventListener('wheel', (e) => {
-  e.preventDefault();
-  arc.scrollLeft += e.deltaY;
-});
-
-
 
 // ✅ Slideshow Logic (only for gallery page)
 let slideIndex = 0;
-function showSlides() {
-  const slides = document.getElementsByClassName("mySlides");
+const slides = document.querySelectorAll(".slide");
+let slideTimer;
 
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+function showSlides(n = null) {
+  slides.forEach(slide => slide.style.display = "none");
+
+  if (n !== null) {
+    slideIndex = n;
+  } else {
+    slideIndex++;
   }
 
-  slideIndex++;
   if (slideIndex > slides.length) slideIndex = 1;
+  if (slideIndex < 1) slideIndex = slides.length;
 
   slides[slideIndex - 1].style.display = "block";
-  slides[slideIndex - 1].classList.add("fade");
 
-  setTimeout(showSlides, 2000); // change every 3 seconds
+  // Clear previous timer and set new 3s timer
+  clearTimeout(slideTimer);
+  slideTimer = setTimeout(showSlides, 3000);
 }
-window.onload = showSlides;
+
+// Arrow button handler
+function plusSlides(n) {
+  showSlides(slideIndex + n - 1); // Pass new slide index
+}
+
+window.onload = () => showSlides();
+
 
 // ✅ Lightbox Image Popup
 function openLightbox(img) {
-  const lightbox = document.createElement('div');
-  lightbox.style.position = 'fixed';
+  // Create lightbox container
+  const lightbox = document.createElement("div");
+  lightbox.style.position = "fixed";
   lightbox.style.top = 0;
   lightbox.style.left = 0;
-  lightbox.style.width = '100%';
-  lightbox.style.height = '100%';
-  lightbox.style.background = 'rgba(0, 0, 0, 0.9)';
-  lightbox.style.display = 'flex';
-  lightbox.style.alignItems = 'center';
-  lightbox.style.justifyContent = 'center';
-  lightbox.style.zIndex = '9999';
-  lightbox.style.cursor = 'pointer';
+  lightbox.style.width = "100%";
+  lightbox.style.height = "100%";
+  lightbox.style.background = "rgba(0, 0, 0, 0.9)";
+  lightbox.style.display = "flex";
+  lightbox.style.flexDirection = "column";
+  lightbox.style.alignItems = "center";
+  lightbox.style.justifyContent = "center";
+  lightbox.style.zIndex = "9999";
+  lightbox.style.cursor = "pointer";
 
-  const lightboxImg = document.createElement('img');
+  // Create image element
+  const lightboxImg = document.createElement("img");
   lightboxImg.src = img.src;
-  lightboxImg.style.maxWidth = '90%';
-  lightboxImg.style.maxHeight = '90%';
-  lightboxImg.style.borderRadius = '10px';
+  lightboxImg.style.maxWidth = "90%";
+  lightboxImg.style.maxHeight = "80%";
+  lightboxImg.style.borderRadius = "10px";
+
+  // Create download button
+  const downloadBtn = document.createElement("button");
+  downloadBtn.innerText = "Download";
+  downloadBtn.style.marginTop = "20px";
+  downloadBtn.style.padding = "10px 20px";
+  downloadBtn.style.fontSize = "1rem";
+  downloadBtn.style.border = "none";
+  downloadBtn.style.borderRadius = "5px";
+  downloadBtn.style.backgroundColor = "#4CAF50";
+  downloadBtn.style.color = "#fff";
+  downloadBtn.style.cursor = "pointer";
+  downloadBtn.style.transition = "0.3s";
+  downloadBtn.addEventListener("mouseenter", () => downloadBtn.style.backgroundColor = "#45a049");
+  downloadBtn.addEventListener("mouseleave", () => downloadBtn.style.backgroundColor = "#4CAF50");
+
+  // Download image when button clicked
+  downloadBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); // Prevent closing lightbox
+    const a = document.createElement("a");
+    a.href = img.src;
+    a.download = img.src.split("/").pop(); // File name from src
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  });
 
   lightbox.appendChild(lightboxImg);
+  lightbox.appendChild(downloadBtn);
   document.body.appendChild(lightbox);
 
-  lightbox.addEventListener('click', function () {
+  // Click outside image or button to close lightbox
+  lightbox.addEventListener("click", function () {
     document.body.removeChild(lightbox);
   });
+
+  // Prevent click on image or button from closing
+  lightboxImg.addEventListener("click", (e) => e.stopPropagation());
+  downloadBtn.addEventListener("click", (e) => e.stopPropagation());
 }
+
 
 // ✅ Expand card functionality
 function expandCard(btn) {
   const extra = btn.nextElementSibling;
-  if (extra.style.display === 'none') {
-    extra.style.display = 'block';
-    btn.textContent = 'Read Less';
+  if (extra.style.display === "none") {
+    extra.style.display = "block";
+    btn.textContent = "Read Less";
   } else {
-    extra.style.display = 'none';
-    btn.textContent = 'Read More';
+    extra.style.display = "none";
+    btn.textContent = "Read More";
   }
 }
 
-
 // ✅ Contact form submission
-document.getElementById('contact-form')?.addEventListener('submit', function (e) {
-  e.preventDefault();
-  alert('Thank you for your feedback! We will get back to you soon.');
-  this.reset();
-});
+document
+  .getElementById("contact-form")
+  ?.addEventListener("submit", function (e) {
+    e.preventDefault();
+    alert("Thank you for your feedback! We will get back to you soon.");
+    this.reset();
+  });
 
 // ✅ Weather functionality with real API (simulated)
 function loadWeather() {
-  const currentWeather = document.getElementById('current-weather');
-  const forecast = document.getElementById('forecast');
+  const currentWeather = document.getElementById("current-weather");
+  const forecast = document.getElementById("forecast");
 
   currentWeather.innerHTML = `
     <div style="font-size: 2rem; margin-bottom: 1rem; animation: spin 2s linear infinite;">🌐</div>
@@ -99,7 +140,8 @@ function loadWeather() {
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
-      position => fetchWeatherData(position.coords.latitude, position.coords.longitude),
+      (position) =>
+        fetchWeatherData(position.coords.latitude, position.coords.longitude),
       () => fetchWeatherData(21.2107, 71.3397)
     );
   } else {
@@ -108,18 +150,25 @@ function loadWeather() {
 }
 
 function fetchWeatherData(lat, lon) {
-  const currentWeather = document.getElementById('current-weather');
-  const forecast = document.getElementById('forecast');
+  const currentWeather = document.getElementById("current-weather");
+  const forecast = document.getElementById("forecast");
 
   setTimeout(() => {
     const weatherConditions = [
-      { temp: 28, condition: '🌤️', desc: 'Partly Cloudy', wind: 12, humidity: 65 },
-      { temp: 32, condition: '☀️', desc: 'Sunny', wind: 8, humidity: 45 },
-      { temp: 26, condition: '🌦️', desc: 'Light Rain', wind: 15, humidity: 80 },
-      { temp: 30, condition: '🌅', desc: 'Clear Sky', wind: 10, humidity: 55 }
+      {
+        temp: 28,
+        condition: "🌤️",
+        desc: "Partly Cloudy",
+        wind: 12,
+        humidity: 65,
+      },
+      { temp: 32, condition: "☀️", desc: "Sunny", wind: 8, humidity: 45 },
+      { temp: 26, condition: "🌦️", desc: "Light Rain", wind: 15, humidity: 80 },
+      { temp: 30, condition: "🌅", desc: "Clear Sky", wind: 10, humidity: 55 },
     ];
 
-    const currentCondition = weatherConditions[Math.floor(Math.random() * weatherConditions.length)];
+    const currentCondition =
+      weatherConditions[Math.floor(Math.random() * weatherConditions.length)];
 
     currentWeather.innerHTML = `
       <div style="font-size: 3rem; margin-bottom: 1rem; animation: bounce 2s ease-in-out infinite;">${currentCondition.condition}</div>
@@ -131,18 +180,27 @@ function fetchWeatherData(lat, lon) {
       </div>
     `;
 
-    const days = ['Today', 'Tomorrow', 'Wednesday', 'Thursday', 'Friday'];
-    forecast.innerHTML = days.map((day, i) => {
-      const cond = weatherConditions[Math.floor(Math.random() * weatherConditions.length)];
-      const temp = cond.temp + Math.floor(Math.random() * 6) - 3;
-      return `
-        <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 15px; text-align: center; border: 2px solid rgba(255,255,255,0.2); animation: slideUp 0.6s ease-out ${i * 0.1}s both;">
+    const days = ["Today", "Tomorrow", "Wednesday", "Thursday", "Friday"];
+    forecast.innerHTML = days
+      .map((day, i) => {
+        const cond =
+          weatherConditions[
+            Math.floor(Math.random() * weatherConditions.length)
+          ];
+        const temp = cond.temp + Math.floor(Math.random() * 6) - 3;
+        return `
+        <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 15px; text-align: center; border: 2px solid rgba(255,255,255,0.2); animation: slideUp 0.6s ease-out ${
+          i * 0.1
+        }s both;">
           <div style="font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">${day}</div>
-          <div style="font-size: 2.5rem; margin: 1rem 0; animation: bounce 3s ease-in-out infinite ${i * 0.2}s;">${cond.condition}</div>
+          <div style="font-size: 2.5rem; margin: 1rem 0; animation: bounce 3s ease-in-out infinite ${
+            i * 0.2
+          }s;">${cond.condition}</div>
           <div style="font-size: 1.3rem; font-weight: bold;">${temp}°C</div>
         </div>
       `;
-    }).join('');
+      })
+      .join("");
   }, 1500);
 }
 
@@ -153,41 +211,45 @@ function showPlaceInfo(place, dotElement) {
   hideAllInfo();
   const infoCard = document.getElementById(`info-${place}`);
   if (infoCard) {
-    infoCard.classList.add('show');
-    dotElement.classList.add('active');
+    infoCard.classList.add("show");
+    dotElement.classList.add("active");
     currentActive = place;
   }
 }
 
 function hideAllInfo() {
-  document.querySelectorAll('.place-info').forEach(el => el.classList.remove('show'));
-  document.querySelectorAll('.map-dot').forEach(dot => dot.classList.remove('active'));
+  document
+    .querySelectorAll(".place-info")
+    .forEach((el) => el.classList.remove("show"));
+  document
+    .querySelectorAll(".map-dot")
+    .forEach((dot) => dot.classList.remove("active"));
   currentActive = null;
 }
 
 function initializeMap() {
-  document.querySelectorAll('.map-dot').forEach(dot => {
-    dot.addEventListener('click', function (e) {
+  document.querySelectorAll(".map-dot").forEach((dot) => {
+    dot.addEventListener("click", function (e) {
       e.stopPropagation();
-      const place = this.getAttribute('data-place');
+      const place = this.getAttribute("data-place");
       showPlaceInfo(place, this);
     });
   });
 
-  document.addEventListener('click', function (e) {
-    if (!e.target.closest('.place-info') && !e.target.closest('.map-dot')) {
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".place-info") && !e.target.closest(".map-dot")) {
       hideAllInfo();
     }
   });
 }
 
 // ✅ Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
+    const target = document.querySelector(this.getAttribute("href"));
     if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   });
 });
@@ -215,38 +277,36 @@ const additionalStyles = `
   }
 `;
 
-const styleSheet = document.createElement('style');
+const styleSheet = document.createElement("style");
 styleSheet.textContent = additionalStyles;
 document.head.appendChild(styleSheet);
 
 // ✅ Load weather and initialize map on page load
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
   loadWeather();
   initializeMap();
 });
 
+document.querySelectorAll(".read-more").forEach((button) => {
+  button.addEventListener("click", function () {
+    const card = this.closest(".card");
+    card.classList.toggle("expanded");
 
-  document.querySelectorAll('.read-more').forEach(button => {
-    button.addEventListener('click', function () {
-      const card = this.closest('.card');
-      card.classList.toggle('expanded');
-
-      const moreText = card.querySelector('.more-text');
-      if (moreText.style.display === "block") {
-        moreText.style.display = "none";
-        this.textContent = "Read More";
-      } else {
-        moreText.style.display = "block";
-        this.textContent = "Read Less";
-      }
-    });
+    const moreText = card.querySelector(".more-text");
+    if (moreText.style.display === "block") {
+      moreText.style.display = "none";
+      this.textContent = "Read More";
+    } else {
+      moreText.style.display = "block";
+      this.textContent = "Read Less";
+    }
   });
-
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   const readMoreButtons = document.querySelectorAll(".read-more-btn");
 
-  readMoreButtons.forEach(button => {
+  readMoreButtons.forEach((button) => {
     button.addEventListener("click", function () {
       const card = button.closest(".event-card");
       const extraContent = card.querySelector(".extra-content");
@@ -262,25 +322,33 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
-  const waveText = document.querySelector('.wave-text');
-  const text = waveText.textContent;
-  waveText.innerHTML = [...text].map((char, i) => {
+const waveText = document.querySelector(".wave-text");
+const text = waveText.textContent;
+waveText.innerHTML = [...text]
+  .map((char, i) => {
     return `<span style="--i:${i + 1}">${char}</span>`;
-  }).join('');
+  })
+  .join("");
 
+function eventReadmore() {
+  const extraImages = document.querySelector("#event-Read-more .extra-images");
+  const btn = document.getElementById("read-more-btn");
 
-  
-  function eventReadmore() {
-    const extraImages = document.querySelector("#event-Read-more .extra-images");
-    const btn = document.getElementById("read-more-btn");
-
-    if (extraImages.style.display === "none" || extraImages.style.display === "") {
-      extraImages.style.display = "flex"; // show images
-      btn.textContent = "Read Less";
-    } else {
-      extraImages.style.display = "none"; // hide images
-      btn.textContent = "Read More";
-    }
+  if (
+    extraImages.style.display === "none" ||
+    extraImages.style.display === ""
+  ) {
+    extraImages.style.display = "flex"; // show images
+    btn.textContent = "Read Less";
+  } else {
+    extraImages.style.display = "none"; // hide images
+    btn.textContent = "Read More";
   }
+}
 
+// Smooth snap scrolling
+const arc = document.querySelector(".portrait-arc");
+arc.addEventListener("wheel", (e) => {
+  e.preventDefault();
+  arc.scrollLeft += e.deltaY;
+});

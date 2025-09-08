@@ -6,215 +6,140 @@
   <title>SaaS Hero Section</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #FBF4EA;
-      color: #111;
-    }
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  position: relative;
+}
 
-    /* Hero Section */
-    .hero-saas {
-      text-align: center;
-      padding: 60px 20px 40px;
-      max-width: 1400px;
-      margin: auto;
-    }
+/* Each slide */
+.mySlides {
+  display: none;
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
-    .hero-subtitle {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1rem;
-      margin: 0 0 10px;
-    }
+/* Slide images */
+.mySlides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
 
-    .hero-title {
-      font-size: 2.4rem;
-      font-weight: 700;
-      margin: 0 0 15px;
-    }
+/* Fade + slide animation */
+.fade {
+  animation: fadeSlide 1s ease-in-out;
+}
 
-    .hero-text {
-      color: #666;
-      max-width: 500px;
-      margin: 0 auto 25px;
-    }
+@keyframes fadeSlide {
+  0% {opacity: 0; transform: translateY(30px);}
+  50% {opacity: 0.7; transform: translateY(-10px);}
+  100% {opacity: 1; transform: translateY(0);}
+}
 
-    .cta-btn {
-      background: #111;
-      color: white;
-      border: none;
-      padding: 14px 28px;
-      border-radius: 999px;
-      font-size: 1rem;
-      cursor: pointer;
-      box-shadow: inset 0 2px 4px rgba(255,255,255,0.2);
-      transition: all 0.3s ease;
-    }
+/* Navigation arrows */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 12px;
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  user-select: none;
+  transform: translateY(-50%);
+  transition: background 0.3s;
+  z-index: 5;
+}
 
-    .cta-btn:hover {
-      transform: scale(1.05);
-    }
+.prev:hover, .next:hover {
+  background: rgba(0,0,0,0.8);
+}
 
-    /* Portrait Arc */
-    .portrait-arc {
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      margin-top: 50px;
-      gap: 15px;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      padding: 20px 0;
-      position: relative;
-    }
+.prev { left: 10px; }
+.next { right: 10px; }
 
-    .portrait-arc::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 10%;
-      width: 80%;
-      height: 40px;
-      background: radial-gradient(ellipse at center, rgba(0,0,0,0.15), transparent 70%);
-      filter: blur(6px);
-      z-index: 0;
-    }
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .mySlides { height: 250px; }
+  .prev, .next { font-size: 1.5rem; padding: 8px; }
+}
 
-    .portrait-card {
-      flex: 0 0 auto;
-      width: 110px;
-      height: 170px;
-      border-radius: 24px;
-      overflow: hidden;
-      background: linear-gradient(145deg,#f9f9f9,#f0f0f0);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      transform: rotate(-5deg);
-      transition: all 0.3s ease;
-      scroll-snap-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .portrait-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .portrait-card.center {
-      width: 150px;
-      height: 220px;
-      transform: rotate(0deg);
-    }
-
-    .portrait-card:hover {
-      transform: scale(1.05) rotate(0deg);
-      z-index: 2;
-      filter: saturate(1.2);
-    }
-
-    .portrait-card:not(:hover) {
-      filter: saturate(0.8);
-    }
-
-    /* Features Section */
-    .features {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .features h2 {
-      font-size: 2rem;
-      margin-bottom: 40px;
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-    }
-
-    .features h2 span {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-      gap: 25px;
-    }
-
-    .feature {
-      background: white;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
-    }
-
-    .feature:hover {
-      transform: translateY(-5px);
-    }
-
-    .feature h3 {
-      margin-bottom: 10px;
-      font-size: 1.2rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero-title {
-        font-size: 1.8rem;
-      }
-      .portrait-card {
-        width: 90px;
-        height: 140px;
-      }
-      .portrait-card.center {
-        width: 120px;
-        height: 170px;
-      }
-    }
   </style>
 </head>
 <body>
-  <!-- Hero Section -->
-  <header class="hero-saas">
-    <p class="hero-subtitle">No stress. Just flow.</p>
-    <h1 class="hero-title">Ready to Reclaim Your Time?</h1>
-    <p class="hero-text">Start organizing, prioritizing, and crushing your goals today.</p>
-    <button class="cta-btn">Try it for Free →</button>
+<header>
+  <section id="gallery" data-aos="zoom-in-up">
+    <h2 style="text-align: center;">📸 Goradka Memories</h2>
 
-    <!-- Portrait Arc Row -->
-    <div class="portrait-arc">
-      <div class="portrait-card"><img src="p1.jpg" alt></div>
-      <div class="portrait-card"><img src="p2.jpg" alt></div>
-      <div class="portrait-card"><img src="p3.jpg" alt></div>
-      <div class="portrait-card center"><img src="p4.jpg" alt></div>
-      <div class="portrait-card"><img src="p5.jpg" alt></div>
-      <div class="portrait-card"><img src="p6.jpg" alt></div>
-      <div class="portrait-card"><img src="p7.jpg" alt></div>
-    </div>
-  </header>
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="g5.jpeg" alt="Goradka Nature 1">
+      </div>
+      <div class="mySlides fade">
+        <img src="g6.jpeg" alt="Goradka Temple">
+      </div>
+      <div class="mySlides fade">
+        <img src="g7.jpeg" alt="Goradka Festival">
+      </div>
+      <div class="mySlides fade">
+        <img src="g4.jpeg" alt="Goradka River">
+      </div>
 
-  <!-- Features Section -->
-  <section class="features">
-    <h2>Work <span>Smarter</span> Every Day</h2>
-    <div class="features-grid">
-      <div class="feature">
-        <h3>⚡ Quick Setup</h3>
-        <p>Get started in minutes with our easy onboarding flow.</p>
-      </div>
-      <div class="feature">
-        <h3>📊 Smart Analytics</h3>
-        <p>Track performance and progress with clean dashboards.</p>
-      </div>
-      <div class="feature">
-        <h3>🤝 Team Collaboration</h3>
-        <p>Invite teammates and work together seamlessly.</p>
-      </div>
+      <!-- Navigation Arrows -->
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
     </div>
   </section>
+</header>
+<script>
+let slideIndex = 1;
+const slides = document.getElementsByClassName("mySlides");
+const totalSlides = slides.length;
+
+// Show slide function
+function showSlides(n) {
+  if (n > totalSlides) slideIndex = 1;
+  else if (n < 1) slideIndex = totalSlides;
+  else slideIndex = n;
+
+  for (let i = 0; i < totalSlides; i++) slides[i].style.display = "none";
+
+  slides[slideIndex - 1].style.display = "block";
+}
+
+// Initialize first slide
+window.onload = () => showSlides(slideIndex);
+
+// Next / Prev Controls
+document.querySelector(".prev").addEventListener("click", () => showSlides(slideIndex - 1));
+document.querySelector(".next").addEventListener("click", () => showSlides(slideIndex + 1));
+
+// Auto-play every 3 seconds
+setInterval(() => { showSlides(slideIndex + 1); }, 3000);
+
+// Mobile Swipe Support
+let startX = 0;
+let endX = 0;
+const container = document.querySelector(".slideshow-container");
+
+container.addEventListener("touchstart", (e) => { startX = e.touches[0].clientX; });
+container.addEventListener("touchend", (e) => {
+  endX = e.changedTouches[0].clientX;
+  if (startX - endX > 50) showSlides(slideIndex + 1); // swipe left
+  if (startX - endX < -50) showSlides(slideIndex - 1); // swipe right
+});
+
+</script>
 </body>
 </html>
