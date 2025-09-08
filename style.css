@@ -684,8 +684,9 @@ header h1 {
   background: #fdfdfd;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
+  height: 100%;
   padding: 20px;
-  max-width: 350px;
+  max-width: 650px;
   width: 100%;
   text-align: left;
   transition: transform 0.3s ease;
@@ -697,13 +698,19 @@ header h1 {
 
 .new-event-card img {
   width: 100%;
-  height: auto;
-  max-height: 80px;
+  height: 100%; /* fixed height for consistent card layout */
   border-radius: 12px;
   display: block;
   margin: 0 auto 15px;
-  animation: zoomInOut 4s ease-in-out infinite;
-  object-fit: cover;
+  animation: zoomInOut 6s ease-in-out infinite; /* slower smooth animation */
+  object-fit: cover; /* ensures full image fills the box without stretching */
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .new-event-card img {
+    height: 80%; /* taller on mobile for better view */
+  }
 }
 
 .new-event-card h3 {
@@ -726,18 +733,18 @@ header h1 {
 }
 
 /* Responsive layout */
-@media (max-width: 768px) {
+@media (max-width: 100%) {
   .event-grid {
     flex-direction: column;
     align-items: center;
   }
 
   .new-event-card {
-    width: 90%;
+    width: 100%;
   }
 
   .new-event-card img {
-    max-height: 300px;
+    max-height: 100%;
     width: 100%;
     height: auto;
   }
