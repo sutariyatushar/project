@@ -9,6 +9,48 @@ function toggleMenu() {
   const navLinks = document.querySelector(".nav-links");
   navLinks.classList.toggle("show");
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".home-slider-container .home-slide");
+  let slideIndex = 0;
+  let timer;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === index);
+      const vid = slide.querySelector("video");
+      if (vid && i !== index) {
+        vid.pause();
+        vid.currentTime = 0;
+      }
+    });
+
+    const currentSlide = slides[index];
+    const video = currentSlide.querySelector("video");
+
+    clearTimeout(timer);
+
+    if (video) {
+      video.muted = true;
+      video.play().catch(() => { /* autoplay blocked */ });
+      video.onended = () => { nextSlide(); };
+    } else {
+      const duration = parseInt(currentSlide.getAttribute("data-duration")) || 4000;
+      timer = setTimeout(nextSlide, duration);
+    }
+  }
+
+  function nextSlide() {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+  }
+
+  // start
+  showSlide(slideIndex);
+});
+
+
+
 //slideshow only for gallery 
 document.addEventListener("DOMContentLoaded", () => {
   let slideIndex = 0;
@@ -55,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
     } else {
       // If image → wait 3s
-      slideTimer = setTimeout(showSlides, 3000);
+      slideTimer = setTimeout(showSlides, 4000);
     }
   }
 
@@ -408,11 +450,3 @@ function toggleMute(btn) {
   btn.textContent = video.muted ? "🔇" : "🔊";
 }
 
-// 📸 Lightbox for Video
-function showLightbox(videoEl) {
-  const src = videoEl.getAttribute("src");
-  const popup = window.open("", "VideoPopup", "width=800,height=500");
-  popup.document.write(`
-    <video src="${src}" controls autoplay style="width:100%;height:auto;"></video>
-  `);
-}
