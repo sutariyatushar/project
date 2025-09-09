@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
     } else {
       // If image → wait 3s
-      slideTimer = setTimeout(showSlides, 6000);
+      slideTimer = setTimeout(showSlides, 10000);
     }
   }
 
