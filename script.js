@@ -16,7 +16,14 @@ const slides = document.querySelectorAll(".slide");
 let slideTimer;
 
 function showSlides(n = null) {
-  slides.forEach(slide => slide.style.display = "none");
+  slides.forEach(slide => {
+    slide.style.display = "none";
+    const vid = slide.querySelector("video");
+    if (vid) {
+      vid.pause();
+      vid.currentTime = 0;
+    }
+  });
 
   if (n !== null) {
     slideIndex = n;
@@ -27,16 +34,28 @@ function showSlides(n = null) {
   if (slideIndex > slides.length) slideIndex = 1;
   if (slideIndex < 1) slideIndex = slides.length;
 
-  slides[slideIndex - 1].style.display = "block";
+  const currentSlide = slides[slideIndex - 1];
+  currentSlide.style.display = "block";
 
-  // Clear previous timer and set new 3s timer
+  const video = currentSlide.querySelector("video");
+
   clearTimeout(slideTimer);
-  slideTimer = setTimeout(showSlides, 3000);
+
+  if (video) {
+    video.play();
+    video.muted = true; // 🔊 unmute
+    // When video ends → go next
+    video.onended = () => {
+      showSlides();
+    };
+  } else {
+    // If image → wait 3s
+    slideTimer = setTimeout(showSlides, 3000);
+  }
 }
 
-// Arrow button handler
 function plusSlides(n) {
-  showSlides(slideIndex + n - 1); // Pass new slide index
+  showSlides(slideIndex + n - 1);
 }
 
 window.onload = () => showSlides();
@@ -352,3 +371,42 @@ arc.addEventListener("wheel", (e) => {
   e.preventDefault();
   arc.scrollLeft += e.deltaY;
 });
+
+// ▶ Play / Pause
+function togglePlay(btn) {
+  const card = btn.closest(".video-card");
+  const video = card.querySelector("video");
+  const progress = card.querySelector(".progress");
+
+  if (video.paused) {
+    video.play();
+    btn.textContent = "⏸";
+  } else {
+    video.pause();
+    btn.textContent = "▶";
+  }
+
+  video.ontimeupdate = () => {
+    const percent = (video.currentTime / video.duration) * 100;
+    progress.style.width = percent + "%";
+  };
+}
+
+// 🔇 Mute / Unmute
+function toggleMute(btn) {
+  const card = btn.closest(".video-card");
+  const video = card.querySelector("video");
+
+  video.muted = !video.muted;
+  btn.textContent = video.muted ? "🔇" : "🔊";
+}
+
+// 📸 Lightbox for Video
+function openLightbox(videoEl) {
+  // Example simple popup
+  const src = videoEl.getAttribute("src");
+  const popup = window.open("", "VideoPopup", "width=800,height=500");
+  popup.document.write(`
+    <video src="${src}" controls autoplay style="width:100%;height:auto;"></video>
+  `);
+}

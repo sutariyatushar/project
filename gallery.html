@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gallery | Goradka</title>
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="gallery.css">
   </head>
   <body>
 
-
-   <nav class="navbar">
+    <nav class="navbar">
       <div class="nav-container">
         <h2 class="logo">Goradka</h2>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -25,96 +25,144 @@
       </div>
     </nav>
 
+    <section id="gallery" data-aos="zoom-in-up">
+      <h2 style="text-align: center;">📸 Goradka Memories</h2>
 
-  <section id="gallery" data-aos="zoom-in-up">
-    <h2 style="text-align: center;">📸 Goradka Memories</h2>
+      <div class="slideshow-container">
 
-<div class="slideshow-container">
-
+  <!-- Image Slide -->
   <div class="slide">
     <img src="img/g5.jpeg" alt="Goradka Nature 1">
     <div class="caption">Beautiful nature view in Goradka</div>
   </div>
 
+  <!-- Video Slide -->
+  <div class="slide">
+    <video src="img/kishan-bapu.mp4" preload="metadata"></video>
+    <div class="caption">Kishan Bapu Celebration</div>
+  </div>
+
+  <!-- Image Slide -->
   <div class="slide">
     <img src="img/g6.jpeg" alt="Goradka Temple">
     <div class="caption">Historic Goradka Temple</div>
   </div>
 
+  <!-- Video Slide -->
   <div class="slide">
-    <img src="img/g7.jpeg" alt="Goradka Festival">
-    <div class="caption">Colorful festival celebrations</div>
+    <video src="img/shivmandir.mp4" preload="metadata"></video>
+    <div class="caption">Shiv Mandir Festival</div>
   </div>
-
-  <div class="slide">
-    <img src="img/g4.jpeg" alt="Goradka River">
-    <div class="caption">Serene Goradka River view</div>
-  </div>
-
-  <!-- Navigation buttons
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
 
 </div>
 
-    <h2 style="text-align: center;">Gallery Photos</h2>
-    <div class="grid">
-      <img src="img/g3.jpeg" alt="Gallery" onclick="openLightbox(this)">
-      <img src="img/librery (2).jpeg" alt="Gallery" onclick="openLightbox(this)">
-      <img src="img/get2.jpeg" alt="Gallery" onclick="openLightbox(this)">
-      <img src="img/shivm3.jpeg" alt="Gallery" onclick="openLightbox(this)">
-      <img src="img/villagers.png" alt="Gallery" onclick="openLightbox(this)">
-      <img src="img/g6.jpeg" alt="Gallery" onclick="openLightbox(this)">
-    </div>
-  </section>
 
+      <h2 style="text-align: center;">Gallery Photos</h2>
+      <div class="grid">
+        <img src="img/g3.jpeg" alt="Gallery" onclick="openLightbox(this)">
+        <img src="img/librery (2).jpeg" alt="Gallery"
+          onclick="openLightbox(this)">
+        <img src="img/get2.jpeg" alt="Gallery" onclick="openLightbox(this)">
+        <img src="img/shivm3.jpeg" alt="Gallery" onclick="openLightbox(this)">
+        <img src="img/villagers.png" alt="Gallery" onclick="openLightbox(this)">
+        <img src="img/g6.jpeg" alt="Gallery" onclick="openLightbox(this)">
+      </div>
 
-  <footer>
-  <div class="footer-container">
-    <div class="footer-section about">
-      <h2>Goradka™</h2>
-      <p>
-       Goradka – where tradition meets progress in every corner.
-A peaceful community built on unity, culture, and pride.
+     <!-- 🎥 Video Gallery Section -->
+<section id="videos" data-aos="zoom-in-up">
+  <h2 style="text-align: center;">🎶 Village Moments (Videos)</h2>
 
-      </p>
-      <div class="social-icons">
-        <a href="https://www.instagram.com/goradka_nagari01?igsh=Z29pa29nMjBzdWwx" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a 
-  href="https://wa.me/919574750680  ?text=હેલ્લો%2C%20કૃપા%20કરીને%20મને%20ગોરડકા%20ગ્રૂપમાં%20જોડાવાનો%20લિંક%20મોકલો."
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <i class="fab fa-whatsapp"></i>
-</a>
+  <div class="video-grid">
+    <!-- Video 1 -->
+    <div class="video-card">
+      <video src="img/kishan-bapu.mp4" preload="metadata" onclick="openLightbox(this)"></video>
 
+      <!-- Controls -->
+      <div class="video-controls">
+        <button class="play-btn" onclick="togglePlay(this)">▶</button>
+        <button class="mute-btn" onclick="toggleMute(this)">🔇</button>
+        <a class="download-btn" href="img/kishan-bapu.mp4" download>⬇</a>
+        <div class="progress-bar"><div class="progress"></div></div>
+      </div>
+
+      <!-- Description -->
+      <div class="video-description">
+        <h3>Kishan Bapu Event</h3>
+        <p>📍 Location: Goradka Village Square<br>
+        🎤 About: Special garba performance by villagers.</p>
       </div>
     </div>
-    <div class="footer-section links">
-      <h3>View all Pages</h3>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="contact.html">content</a></li>
-      </ul>
-    </div>
-    <div class="footer-section contact">
-      <h3>Contact</h3>
-      <p>Tushar Sutariya <br> fore any type of queries</p> <br>
-      <!-- <p><a href="mailto:email@example.com">email@example.com</a></p>
-      <p><a href="tel:+16555555555">(555) 555-5555</a></p> -->
-      <p class="created-by">
-       ❤ Created by <a href="https://ts.unaux.com" target="_blank" rel="noopener noreferrer">Tushar Sutariya</a>
-      </p>
+
+    <!-- Video 2 -->
+    <div class="video-card">
+      <video src="img/shivmandir.mp4" preload="metadata" onclick="openLightbox(this)"></video>
+
+      <div class="video-controls">
+        <button class="play-btn" onclick="togglePlay(this)">▶</button>
+        <button class="mute-btn" onclick="toggleMute(this)">🔇</button>
+        <a class="download-btn" href="videos/v2.mp4" download>⬇</a>
+        <div class="progress-bar"><div class="progress"></div></div>
+      </div>
+
+      <div class="video-description">
+        <h3>Shiv Mandir Darshan</h3>
+        <p>📍 Location: Shiv Mandir, Goradka<br>
+        🙏 About: Morning prayers and temple darshan.</p>
+      </div>
     </div>
   </div>
-</footer>
+</section>
+
+    </section>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section about">
+          <h2>Goradka™</h2>
+          <p>
+            Goradka – where tradition meets progress in every corner.
+            A peaceful community built on unity, culture, and pride.
+
+          </p>
+          <div class="social-icons">
+            <a
+              href="https://www.instagram.com/goradka_nagari01?igsh=Z29pa29nMjBzdWwx"
+              target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a
+              href="https://wa.me/919574750680  ?text=હેલ્લો%2C%20કૃપા%20કરીને%20મને%20ગોરડકા%20ગ્રૂપમાં%20જોડાવાનો%20લિંક%20મોકલો."
+              target="_blank"
+              rel="noopener noreferrer">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+
+          </div>
+        </div>
+        <div class="footer-section links">
+          <h3>View all Pages</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">content</a></li>
+          </ul>
+        </div>
+        <div class="footer-section contact">
+          <h3>Contact</h3>
+          <p>Tushar Sutariya <br> fore any type of queries</p> <br>
+          <!-- <p><a href="mailto:email@example.com">email@example.com</a></p>
+      <p><a href="tel:+16555555555">(555) 555-5555</a></p> -->
+          <p class="created-by">
+            ❤ Created by <a href="https://ts.unaux.com" target="_blank"
+              rel="noopener noreferrer">Tushar Sutariya</a>
+          </p>
+        </div>
+      </div>
+    </footer>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js"></script>
