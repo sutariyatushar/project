@@ -93,14 +93,20 @@ h2 {
 
 /* 🎬 Video */
 .video-card video {
-  width: 100%;
-  height: auto;          /* Keep natural video height */
-  object-fit: contain;   /* Show full video, no crop */
-  background: #000;      /* Black bars if aspect ratio doesn’t match */
-  cursor: pointer;
   display: block;
+  margin: 0 auto;          /* Center horizontally */
+  max-width: 100%;         /* Don’t overflow card */
+  height: auto;            /* Keep aspect ratio */
+  object-fit: contain;     /* Show full video */
+  background: #000;        /* Black background */
 }
-
+/* 📱 Extra for mobile */
+@media (max-width: 600px) {
+  .video-card video {
+    width: 90%;           /* Slight margin from sides */
+    border-radius: 10px;  /* Optional: rounded corners */
+  }
+}
 
 /* 🎛️ Controls */
 .video-controls {
@@ -132,7 +138,7 @@ h2 {
 .progress {
   height: 100%;
   width: 0%;
-  background: red;
+  background: rgb(46, 151, 55);
 }
 
 /* 📝 Description */

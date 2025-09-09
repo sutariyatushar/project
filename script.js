@@ -9,56 +9,63 @@ function toggleMenu() {
   const navLinks = document.querySelector(".nav-links");
   navLinks.classList.toggle("show");
 }
+//slideshow only for gallery 
+document.addEventListener("DOMContentLoaded", () => {
+  let slideIndex = 0;
+  const slides = document.querySelectorAll(".slideshow-container .slide");
+  let slideTimer;
 
-// ✅ Slideshow Logic (only for gallery page)
-let slideIndex = 0;
-const slides = document.querySelectorAll(".slide");
-let slideTimer;
+  function showSlides(n = null) {
+    // Hide all and reset videos
+    slides.forEach(slide => {
+      slide.style.display = "none";
+      const vid = slide.querySelector("video");
+      if (vid) {
+        vid.pause();
+        vid.currentTime = 0;
+      }
+    });
 
-function showSlides(n = null) {
-  slides.forEach(slide => {
-    slide.style.display = "none";
-    const vid = slide.querySelector("video");
-    if (vid) {
-      vid.pause();
-      vid.currentTime = 0;
+    // Slide index logic
+    if (n !== null) {
+      slideIndex = n;
+    } else {
+      slideIndex++;
     }
-  });
 
-  if (n !== null) {
-    slideIndex = n;
-  } else {
-    slideIndex++;
+    if (slideIndex > slides.length) slideIndex = 1;
+    if (slideIndex < 1) slideIndex = slides.length;
+
+    // Show current slide
+    const currentSlide = slides[slideIndex - 1];
+    currentSlide.style.display = "block";
+
+    // Handle video vs image
+    const video = currentSlide.querySelector("video");
+
+    clearTimeout(slideTimer);
+
+    if (video) {
+      video.muted = true; // start muted
+      video.play().catch(err => console.log("Autoplay blocked:", err));
+
+      // When video ends → go next slide
+      video.onended = () => {
+        showSlides();
+      };
+    } else {
+      // If image → wait 3s
+      slideTimer = setTimeout(showSlides, 3000);
+    }
   }
 
-  if (slideIndex > slides.length) slideIndex = 1;
-  if (slideIndex < 1) slideIndex = slides.length;
-
-  const currentSlide = slides[slideIndex - 1];
-  currentSlide.style.display = "block";
-
-  const video = currentSlide.querySelector("video");
-
-  clearTimeout(slideTimer);
-
-  if (video) {
-    video.play();
-    video.muted = true; // 🔊 unmute
-    // When video ends → go next
-    video.onended = () => {
-      showSlides();
-    };
-  } else {
-    // If image → wait 3s
-    slideTimer = setTimeout(showSlides, 3000);
+  function plusSlides(n) {
+    showSlides(slideIndex + n - 1);
   }
-}
 
-function plusSlides(n) {
-  showSlides(slideIndex + n - 1);
-}
-
-window.onload = () => showSlides();
+  // Start slideshow once DOM is ready
+  showSlides();
+});
 
 
 // ✅ Lightbox Image Popup
