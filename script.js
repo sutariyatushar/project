@@ -402,8 +402,7 @@ function toggleMute(btn) {
 }
 
 // 📸 Lightbox for Video
-function openLightbox(videoEl) {
-  // Example simple popup
+function showLightbox(videoEl) {
   const src = videoEl.getAttribute("src");
   const popup = window.open("", "VideoPopup", "width=800,height=500");
   popup.document.write(`
