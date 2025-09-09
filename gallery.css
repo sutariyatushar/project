@@ -72,7 +72,7 @@ h2 {
 /* 🎥 Video Grid */
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
   margin-top: 20px;
 }
@@ -92,21 +92,28 @@ h2 {
 }
 
 /* 🎬 Video */
+/* Video inside card */
 .video-card video {
-  display: block;
-  margin: 0 auto;          /* Center horizontally */
-  max-width: 100%;         /* Don’t overflow card */
-  height: auto;            /* Keep aspect ratio */
-  object-fit: contain;     /* Show full video */
-  background: #000;        /* Black background */
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  background: #000;
+  border-radius: 10px;
 }
-/* 📱 Extra for mobile */
+
+/* 📱 Mobile tweaks */
 @media (max-width: 600px) {
+  .video-card {
+    height: auto;             /* allow card to grow */
+    padding: 5px;
+  }
+  
   .video-card video {
-    width: 90%;           /* Slight margin from sides */
-    border-radius: 10px;  /* Optional: rounded corners */
+    width: 100%;
+    height: 100%;
   }
 }
+
 
 /* 🎛️ Controls */
 .video-controls {
