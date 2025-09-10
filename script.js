@@ -175,6 +175,67 @@ function openLightbox(img) {
 }
 
 
+// contect directory//
+
+ const search = document.getElementById("search");
+    const contactList = document.getElementById("contactList");
+    const errorMsg = document.getElementById("errorMsg");
+
+    // Directory Data
+    const contacts = [
+      { name: "Jay Goti", number: "9876543210" },
+      { name: "Rohit Patel", number: "9123456780" },
+      { name: "Milan Shah", number: "9988776655" },
+      { name: "Yug Thakor", number: "9090909090" },
+      { name: "Jay Goti", number: "9898989898" }, // duplicate test
+      { name: "Divay Joshi", number: "8000000000" },
+    ];
+
+    function renderContacts(list) {
+      contactList.innerHTML = "";
+      list.forEach(c => {
+        const li = document.createElement("li");
+        li.className = "contact-item";
+        li.innerHTML = `<span>${c.name} - ${c.number}</span>
+                        <a href="tel:${c.number}">Call</a>`;
+        contactList.appendChild(li);
+      });
+    }
+
+    // On search input
+    search.addEventListener("keyup", function() {
+      const value = this.value.toLowerCase().trim();
+
+      if (value === "") {
+        // Show default contacts
+        contactList.innerHTML = `
+          <li class="contact-item default">
+            <span>Default One - 9876543210</span>
+            <a href="tel:9876543210">Call</a>
+          </li>
+          <li class="contact-item default">
+            <span>Default Two - 9123456780</span>
+            <a href="tel:9123456780">Call</a>
+          </li>`;
+        errorMsg.style.display = "none";
+        return;
+      }
+
+      // Filter contacts
+      const filtered = contacts.filter(c =>
+        c.name.toLowerCase().includes(value) ||
+        c.number.includes(value)
+      );
+
+      if (filtered.length > 0) {
+        renderContacts(filtered);
+        errorMsg.style.display = "none";
+      } else {
+        contactList.innerHTML = "";
+        errorMsg.style.display = "block";
+      }
+    });
+
 // ✅ Expand card functionality
 function expandCard(btn) {
   const extra = btn.nextElementSibling;

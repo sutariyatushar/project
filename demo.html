@@ -1,145 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SaaS Hero Section</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Directory</title>
   <style>
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  margin: 40px auto;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-  position: relative;
-}
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+    .search-box {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 2px solid #4CAF50;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .contact-item {
+      background: #fff;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .contact-item span {
+      font-size: 16px;
+      font-weight: 500;
+      color: #333;
+    }
+    .contact-item a {
+      margin-top: 8px;
+      background: #4CAF50;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+    .contact-item a:hover {
+      background: #45a049;
+    }
+    .error {
+      text-align: center;
+      color: red;
+      font-size: 16px;
+      margin-top: 20px;
+      display: none;
+    }
 
-/* Each slide */
-.mySlides {
-  display: none;
-  width: 100%;
-  height: 400px;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-/* Slide images */
-.mySlides img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-/* Fade + slide animation */
-.fade {
-  animation: fadeSlide 1s ease-in-out;
-}
-
-@keyframes fadeSlide {
-  0% {opacity: 0; transform: translateY(30px);}
-  50% {opacity: 0.7; transform: translateY(-10px);}
-  100% {opacity: 1; transform: translateY(0);}
-}
-
-/* Navigation arrows */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  padding: 12px;
-  color: white;
-  font-weight: bold;
-  font-size: 2rem;
-  border-radius: 50%;
-  background: rgba(0,0,0,0.5);
-  user-select: none;
-  transform: translateY(-50%);
-  transition: background 0.3s;
-  z-index: 5;
-}
-
-.prev:hover, .next:hover {
-  background: rgba(0,0,0,0.8);
-}
-
-.prev { left: 10px; }
-.next { right: 10px; }
-
-/* Responsive for mobile */
-@media (max-width: 768px) {
-  .mySlides { height: 250px; }
-  .prev, .next { font-size: 1.5rem; padding: 8px; }
-}
-
+    /* Responsive */
+    @media (max-width: 600px) {
+      .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .contact-item a {
+        width: 100%;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
-<header>
-  <section id="gallery" data-aos="zoom-in-up">
-    <h2 style="text-align: center;">📸 Goradka Memories</h2>
 
-    <div class="slideshow-container">
-      <div class="mySlides fade">
-        <img src="g5.jpeg" alt="Goradka Nature 1">
-      </div>
-      <div class="mySlides fade">
-        <img src="g6.jpeg" alt="Goradka Temple">
-      </div>
-      <div class="mySlides fade">
-        <img src="g7.jpeg" alt="Goradka Festival">
-      </div>
-      <div class="mySlides fade">
-        <img src="g4.jpeg" alt="Goradka River">
-      </div>
+  <h2>📞 Contact Directory</h2>
+  <input type="text" id="search" class="search-box" placeholder="Search by name, surname, or number...">
 
-      <!-- Navigation Arrows -->
-      <a class="prev">&#10094;</a>
-      <a class="next">&#10095;</a>
-    </div>
-  </section>
-</header>
-<script>
-let slideIndex = 1;
-const slides = document.getElementsByClassName("mySlides");
-const totalSlides = slides.length;
+  <ul class="contact-list" id="contactList">
+    <!-- Default Contacts -->
+    <li class="contact-item default">
+      <span>Default One - 9876543210</span>
+      <a href="tel:9876543210">Call</a>
+    </li>
+    <li class="contact-item default">
+      <span>Default Two - 9123456780</span>
+      <a href="tel:9123456780">Call</a>
+    </li>
+  </ul>
 
-// Show slide function
-function showSlides(n) {
-  if (n > totalSlides) slideIndex = 1;
-  else if (n < 1) slideIndex = totalSlides;
-  else slideIndex = n;
+  <p class="error" id="errorMsg">❌ Not found. Submit your details to <b>Tushar Sutariya</b>.</p>
 
-  for (let i = 0; i < totalSlides; i++) slides[i].style.display = "none";
+  <script>
+    const search = document.getElementById("search");
+    const contactList = document.getElementById("contactList");
+    const errorMsg = document.getElementById("errorMsg");
 
-  slides[slideIndex - 1].style.display = "block";
-}
+    // Directory Data
+    const contacts = [
+      { name: "Jay Goti", number: "9876543210" },
+      { name: "Rohit Patel", number: "9123456780" },
+      { name: "Milan Shah", number: "9988776655" },
+      { name: "Yug Thakor", number: "9090909090" },
+      { name: "Jay Goti", number: "9898989898" }, // duplicate test
+      { name: "Divay Joshi", number: "8000000000" },
+    ];
 
-// Initialize first slide
-window.onload = () => showSlides(slideIndex);
+    function renderContacts(list) {
+      contactList.innerHTML = "";
+      list.forEach(c => {
+        const li = document.createElement("li");
+        li.className = "contact-item";
+        li.innerHTML = `<span>${c.name} - ${c.number}</span>
+                        <a href="tel:${c.number}">Call</a>`;
+        contactList.appendChild(li);
+      });
+    }
 
-// Next / Prev Controls
-document.querySelector(".prev").addEventListener("click", () => showSlides(slideIndex - 1));
-document.querySelector(".next").addEventListener("click", () => showSlides(slideIndex + 1));
+    // On search input
+    search.addEventListener("keyup", function() {
+      const value = this.value.toLowerCase().trim();
 
-// Auto-play every 3 seconds
-setInterval(() => { showSlides(slideIndex + 1); }, 3000);
+      if (value === "") {
+        // Show default contacts
+        contactList.innerHTML = `
+          <li class="contact-item default">
+            <span>Default One - 9876543210</span>
+            <a href="tel:9876543210">Call</a>
+          </li>
+          <li class="contact-item default">
+            <span>Default Two - 9123456780</span>
+            <a href="tel:9123456780">Call</a>
+          </li>`;
+        errorMsg.style.display = "none";
+        return;
+      }
 
-// Mobile Swipe Support
-let startX = 0;
-let endX = 0;
-const container = document.querySelector(".slideshow-container");
+      // Filter contacts
+      const filtered = contacts.filter(c =>
+        c.name.toLowerCase().includes(value) ||
+        c.number.includes(value)
+      );
 
-container.addEventListener("touchstart", (e) => { startX = e.touches[0].clientX; });
-container.addEventListener("touchend", (e) => {
-  endX = e.changedTouches[0].clientX;
-  if (startX - endX > 50) showSlides(slideIndex + 1); // swipe left
-  if (startX - endX < -50) showSlides(slideIndex - 1); // swipe right
-});
+      if (filtered.length > 0) {
+        renderContacts(filtered);
+        errorMsg.style.display = "none";
+      } else {
+        contactList.innerHTML = "";
+        errorMsg.style.display = "block";
+      }
+    });
+  </script>
 
-</script>
 </body>
 </html>
