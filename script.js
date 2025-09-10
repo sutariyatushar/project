@@ -111,39 +111,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // contect directory/////////////////////////////////////////////////////////////////////////////////////////////
 
- document.addEventListener("DOMContentLoaded", () => {
-    const search = document.getElementById("directorySearch");
-    const contactList = document.getElementById("directoryList");
-    const errorMsg = document.getElementById("directoryError");
+document.addEventListener("DOMContentLoaded", () => {
+  const search = document.getElementById("directorySearch");
+  const contactList = document.getElementById("directoryList");
+  const errorMsg = document.getElementById("directoryError");
 
-    // Directory Data
-    const contacts = [
-      { name: "Jay Goti", number: "9876543210" },
-      { name: "Rohit Patel", number: "9123456780" },
-      { name: "Milan Shah", number: "9988776655" },
-      { name: "Yug Thakor", number: "9090909090" },
-      { name: "Jay Goti", number: "9898989898" }, // duplicate test
-      { name: "Divay Joshi", number: "8000000000" },
-    ];
+  // Directory Data
+  const contacts = [
+    { name: "Jay Goti", number: "9876543210" },
+    { name: "Romin Sutariya", number: "6352946201" },
+    { name: "Milan Shah", number: "9988776655" },
+    { name: "Yug Thakor", number: "9090909090" },
+    { name: "Jay v. Yadav", number: "7096970615" }, // duplicate test
+    { name: "Divay Joshi", number: "8000000000" },
+    { name: "Tushar Sutariya", number: "8780805275" },
+    { name: "Khodidas Gopani", number: "9825776857" },
+    { name: "Pragnesh Vallabhbhai Sutariya", number: "9924483782" },
+    { name: "Kishan Sorathiya", number: "9558394296" },
+    { name: "Thakarshibhai Gopani", number: "9925880060" },
+    { name: "Jay Baraiya", number: "9099236428" },
+    { name: "Gopal.R Mer", number: "7096584896" },
 
-    function renderContacts(list) {
-      contactList.innerHTML = "";
-      list.forEach(c => {
-        const li = document.createElement("li");
-        li.className = "directory-item";
-        li.innerHTML = `<span>${c.name} - ${c.number}</span>
+  ];
+
+  function renderContacts(list) {
+    contactList.innerHTML = "";
+    list.forEach(c => {
+      const li = document.createElement("li");
+      li.className = "directory-item";
+      li.innerHTML = `<span>${c.name} - ${c.number}</span>
                         <a href="tel:${c.number}">Call</a>`;
-        contactList.appendChild(li);
-      });
-    }
+      contactList.appendChild(li);
+    });
+  }
 
-    // On search input
-    search.addEventListener("keyup", function () {
-      const value = this.value.toLowerCase().trim();
+  // On search input
+  search.addEventListener("keyup", function () {
+    const value = this.value.toLowerCase().trim();
 
-      if (value === "") {
-        // Show default contacts
-        contactList.innerHTML = `
+    if (value === "") {
+      // Show default contacts
+      contactList.innerHTML = `
           <li class="directory-item default">
             <span>Default One - 9876543210</span>
             <a href="tel:9876543210">Call</a>
@@ -152,25 +160,25 @@ document.addEventListener("DOMContentLoaded", () => {
             <span>Default Two - 9123456780</span>
             <a href="tel:9123456780">Call</a>
           </li>`;
-        errorMsg.style.display = "none";
-        return;
-      }
+      errorMsg.style.display = "none";
+      return;
+    }
 
-      // Filter contacts
-      const filtered = contacts.filter(c =>
-        c.name.toLowerCase().includes(value) ||
-        c.number.includes(value)
-      );
+    // Filter contacts
+    const filtered = contacts.filter(c =>
+      c.name.toLowerCase().includes(value) ||
+      c.number.includes(value)
+    );
 
-      if (filtered.length > 0) {
-        renderContacts(filtered);
-        errorMsg.style.display = "none";
-      } else {
-        contactList.innerHTML = "";
-        errorMsg.style.display = "block";
-      }
-    });
+    if (filtered.length > 0) {
+      renderContacts(filtered);
+      errorMsg.style.display = "none";
+    } else {
+      contactList.innerHTML = "";
+      errorMsg.style.display = "block";
+    }
   });
+});
 
 
 // ✅ Lightbox Image Popup/////////////////////////////////////////////////////////////////////
@@ -318,16 +326,14 @@ function fetchWeatherData(lat, lon) {
       .map((day, i) => {
         const cond =
           weatherConditions[
-            Math.floor(Math.random() * weatherConditions.length)
+          Math.floor(Math.random() * weatherConditions.length)
           ];
         const temp = cond.temp + Math.floor(Math.random() * 6) - 3;
         return `
-        <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 15px; text-align: center; border: 2px solid rgba(255,255,255,0.2); animation: slideUp 0.6s ease-out ${
-          i * 0.1
-        }s both;">
+        <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 15px; text-align: center; border: 2px solid rgba(255,255,255,0.2); animation: slideUp 0.6s ease-out ${i * 0.1
+          }s both;">
           <div style="font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">${day}</div>
-          <div style="font-size: 2.5rem; margin: 1rem 0; animation: bounce 3s ease-in-out infinite ${
-            i * 0.2
+          <div style="font-size: 2.5rem; margin: 1rem 0; animation: bounce 3s ease-in-out infinite ${i * 0.2
           }s;">${cond.condition}</div>
           <div style="font-size: 1.3rem; font-weight: bold;">${temp}°C</div>
         </div>
