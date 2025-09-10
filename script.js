@@ -4,7 +4,7 @@ AOS.init({
   once: true,
 });
 
-// ✅ Mobile Menu Toggle
+// ✅ Mobile Menu Toggle/////////////////////////////////////////////////////
 function toggleMenu() {
   const navLinks = document.querySelector(".nav-links");
   navLinks.classList.toggle("show");
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-//slideshow only for gallery 
+//slideshow only for gallery /////////////////////////////////////////////////////////////////////////////////
 document.addEventListener("DOMContentLoaded", () => {
   let slideIndex = 0;
   const slides = document.querySelectorAll(".slideshow-container .slide");
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
     } else {
       // If image → wait 3s
-      slideTimer = setTimeout(showSlides, 10000);
+      slideTimer = setTimeout(showSlides, 3000);
     }
   }
 
@@ -109,8 +109,71 @@ document.addEventListener("DOMContentLoaded", () => {
   showSlides();
 });
 
+// contect directory/////////////////////////////////////////////////////////////////////////////////////////////
 
-// ✅ Lightbox Image Popup
+ document.addEventListener("DOMContentLoaded", () => {
+    const search = document.getElementById("directorySearch");
+    const contactList = document.getElementById("directoryList");
+    const errorMsg = document.getElementById("directoryError");
+
+    // Directory Data
+    const contacts = [
+      { name: "Jay Goti", number: "9876543210" },
+      { name: "Rohit Patel", number: "9123456780" },
+      { name: "Milan Shah", number: "9988776655" },
+      { name: "Yug Thakor", number: "9090909090" },
+      { name: "Jay Goti", number: "9898989898" }, // duplicate test
+      { name: "Divay Joshi", number: "8000000000" },
+    ];
+
+    function renderContacts(list) {
+      contactList.innerHTML = "";
+      list.forEach(c => {
+        const li = document.createElement("li");
+        li.className = "directory-item";
+        li.innerHTML = `<span>${c.name} - ${c.number}</span>
+                        <a href="tel:${c.number}">Call</a>`;
+        contactList.appendChild(li);
+      });
+    }
+
+    // On search input
+    search.addEventListener("keyup", function () {
+      const value = this.value.toLowerCase().trim();
+
+      if (value === "") {
+        // Show default contacts
+        contactList.innerHTML = `
+          <li class="directory-item default">
+            <span>Default One - 9876543210</span>
+            <a href="tel:9876543210">Call</a>
+          </li>
+          <li class="directory-item default">
+            <span>Default Two - 9123456780</span>
+            <a href="tel:9123456780">Call</a>
+          </li>`;
+        errorMsg.style.display = "none";
+        return;
+      }
+
+      // Filter contacts
+      const filtered = contacts.filter(c =>
+        c.name.toLowerCase().includes(value) ||
+        c.number.includes(value)
+      );
+
+      if (filtered.length > 0) {
+        renderContacts(filtered);
+        errorMsg.style.display = "none";
+      } else {
+        contactList.innerHTML = "";
+        errorMsg.style.display = "block";
+      }
+    });
+  });
+
+
+// ✅ Lightbox Image Popup/////////////////////////////////////////////////////////////////////
 function openLightbox(img) {
   // Create lightbox container
   const lightbox = document.createElement("div");
@@ -175,66 +238,7 @@ function openLightbox(img) {
 }
 
 
-// contect directory//
 
- const search = document.getElementById("search");
-    const contactList = document.getElementById("contactList");
-    const errorMsg = document.getElementById("errorMsg");
-
-    // Directory Data
-    const contacts = [
-      { name: "Jay Goti", number: "9876543210" },
-      { name: "Rohit Patel", number: "9123456780" },
-      { name: "Milan Shah", number: "9988776655" },
-      { name: "Yug Thakor", number: "9090909090" },
-      { name: "Jay Goti", number: "9898989898" }, // duplicate test
-      { name: "Divay Joshi", number: "8000000000" },
-    ];
-
-    function renderContacts(list) {
-      contactList.innerHTML = "";
-      list.forEach(c => {
-        const li = document.createElement("li");
-        li.className = "contact-item";
-        li.innerHTML = `<span>${c.name} - ${c.number}</span>
-                        <a href="tel:${c.number}">Call</a>`;
-        contactList.appendChild(li);
-      });
-    }
-
-    // On search input
-    search.addEventListener("keyup", function() {
-      const value = this.value.toLowerCase().trim();
-
-      if (value === "") {
-        // Show default contacts
-        contactList.innerHTML = `
-          <li class="contact-item default">
-            <span>Default One - 9876543210</span>
-            <a href="tel:9876543210">Call</a>
-          </li>
-          <li class="contact-item default">
-            <span>Default Two - 9123456780</span>
-            <a href="tel:9123456780">Call</a>
-          </li>`;
-        errorMsg.style.display = "none";
-        return;
-      }
-
-      // Filter contacts
-      const filtered = contacts.filter(c =>
-        c.name.toLowerCase().includes(value) ||
-        c.number.includes(value)
-      );
-
-      if (filtered.length > 0) {
-        renderContacts(filtered);
-        errorMsg.style.display = "none";
-      } else {
-        contactList.innerHTML = "";
-        errorMsg.style.display = "block";
-      }
-    });
 
 // ✅ Expand card functionality
 function expandCard(btn) {
