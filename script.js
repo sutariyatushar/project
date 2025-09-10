@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Directory Data
   const contacts = [
-    { name: "Jay Goti", number: "9876543210" },
+    { name: "Rohit.J Dharajiya", number: "000000000" },
     { name: "Romin Sutariya", number: "6352946201" },
     { name: "Milan Shah", number: "9988776655" },
     { name: "Yug Thakor", number: "9090909090" },
