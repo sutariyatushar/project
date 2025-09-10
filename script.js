@@ -249,16 +249,21 @@ function openLightbox(img) {
 
 
 // ✅ Expand card functionality
-function expandCard(btn) {
-  const extra = btn.nextElementSibling;
-  if (extra.style.display === "none") {
-    extra.style.display = "block";
-    btn.textContent = "Read Less";
-  } else {
-    extra.style.display = "none";
-    btn.textContent = "Read More";
-  }
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll(".attraction-read-more");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const card = btn.closest(".attraction-card");
+      card.classList.toggle("expanded");
+
+      btn.textContent = card.classList.contains("expanded")
+        ? "Read Less"
+        : "Read More";
+    });
+  });
+});
+
 
 // ✅ Contact form submission
 document
