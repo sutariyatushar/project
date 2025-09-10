@@ -131,6 +131,9 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "Thakarshibhai Gopani", number: "9925880060" },
     { name: "Jay Baraiya", number: "9099236428" },
     { name: "Gopal.R Mer", number: "7096584896" },
+    { name: "Bharat.M Yadav", number: "9904367436" },
+    { name: "Darshan.D Gohil", number: "9316021319" },
+    { name: "Budhabhai Mer", number: "9904846410" },
 
   ];
 
