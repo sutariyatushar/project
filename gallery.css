@@ -9,6 +9,8 @@ body {
   background: hsl(0, 0%, 93%);
   color: #333;
   line-height: 1.6;
+  display: block;
+  min-height: 100vh;
 }
 
 header.hero {
@@ -347,6 +349,7 @@ footer {
   color: #cddc39;
   transform: scale(1.05);
 }
+
 
 .social-icons {
   margin-top: 1rem;
