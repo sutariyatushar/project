@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
     } else {
       const duration =
-        parseInt(currentSlide.getAttribute("data-duration")) || 4000;
+        parseInt(currentSlide.getAttribute("data-duration")) || 9000;
       timer = setTimeout(nextSlide, duration);
     }
   }
