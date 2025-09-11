@@ -58,26 +58,51 @@
 </header>
 
 
-    <section class="event-section">
-      <div class="event-card">
-        <h3>Goradka Utsav 2025</h3>
-        <p>Join us for a day of cultural celebration with music, food, and
-          performances.</p>
-        <div id="event-Read-more">
-          <p>Experience the rich traditions of Goradka through vibrant dance,
-            delicious food, and engaging activities. Everyone is welcome!</p>
+  <section class="event-section">
+  <div class="event-card">
+    <h3>Goradka Utsav 2025</h3>
+    <p>
+      Join us for a day of cultural celebration with music, food, and
+      performances.
+    </p>
 
-          <div class="extra-images" style="display: none;">
-            <img src="img/g2.jpeg" alt="Event Image 1">
-            <img src="img/g8.jpeg" alt="Event Image 2">
-            <img src="img/g9 (2).jpeg" alt="Event Image 3">
-            <img src="img/g9 (3).jpeg" alt="Event Image 4">
+    <div id="event-Read-more" class="extra-content">
+      <div class="video-card" style="display: none;">
+        <video
+          src="img/janmastami.mp4"
+          preload="metadata"
+          onclick="showLightbox(this)"
+        ></video>
+
+        <div class="video-controls">
+          <button class="play-btn" onclick="togglePlay(this)">
+            <i class="fa-solid fa-play"></i>
+          </button>
+          <button class="mute-btn" onclick="toggleMute(this)">
+            <i class="fa-solid fa-volume-xmark"></i>
+          </button>
+          <a class="download-btn" href="img/shivmandir.mp4" download>
+            <i class="fa-solid fa-download"></i>
+          </a>
+          <div class="progress-bar">
+            <div class="progress"></div>
           </div>
         </div>
 
-        <button id="read-more-btn" onclick="eventReadmore()">Read More</button>
+        <div class="video-description">
+          <h3>janmastami</h3>
+          <p>
+            📍 Location: Ramji Mandir<br />
+            🙏 About: Dahihandi Utsav.
+          </p>
+        </div>
+      </div>
+    </div>
 
-      </section>
+    <button id="read-more-btn" onclick="eventReadmore()">Read More</button>
+  </div>
+</section>
+
 
   <section class="upcoming-section" data-aos="fade-up">
   <h2>📅 Upcoming Events</h2>

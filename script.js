@@ -478,20 +478,18 @@ waveText.innerHTML = [...text]
   .join("");
 
 function eventReadmore() {
-  const extraImages = document.querySelector("#event-Read-more .extra-images");
+  const videoCard = document.querySelector("#event-Read-more .video-card");
   const btn = document.getElementById("read-more-btn");
 
-  if (
-    extraImages.style.display === "none" ||
-    extraImages.style.display === ""
-  ) {
-    extraImages.style.display = "flex"; // show images
+  if (videoCard.style.display === "none" || videoCard.style.display === "") {
+    videoCard.style.display = "block"; // show video
     btn.textContent = "Read Less";
   } else {
-    extraImages.style.display = "none"; // hide images
+    videoCard.style.display = "none"; // hide video
     btn.textContent = "Read More";
   }
 }
+
 
 // Smooth snap scrolling
 const arc = document.querySelector(".portrait-arc");
