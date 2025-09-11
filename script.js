@@ -143,6 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "Bharat.M Yadav", number: "9904367436" },
     { name: "Darshan.D Gohil", number: "9316021319" },
     { name: "Budhabhai Mer", number: "9904846410" },
+    { name: "Rajubhai V. Solanki", number: "9737421120" },
   ];
 
   function renderContacts(list) {
