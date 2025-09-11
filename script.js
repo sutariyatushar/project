@@ -11,7 +11,9 @@ function toggleMenu() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const slides = document.querySelectorAll(".home-slider-container .home-slide");
+  const slides = document.querySelectorAll(
+    ".home-slider-container .home-slide"
+  );
   let slideIndex = 0;
   let timer;
 
@@ -32,10 +34,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (video) {
       video.muted = true;
-      video.play().catch(() => { /* autoplay blocked */ });
-      video.onended = () => { nextSlide(); };
+      video.play().catch(() => {
+        /* autoplay blocked */
+      });
+      video.onended = () => {
+        nextSlide();
+      };
     } else {
-      const duration = parseInt(currentSlide.getAttribute("data-duration")) || 4000;
+      const duration =
+        parseInt(currentSlide.getAttribute("data-duration")) || 4000;
       timer = setTimeout(nextSlide, duration);
     }
   }
@@ -49,8 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
   showSlide(slideIndex);
 });
 
-
-
 //slideshow only for gallery /////////////////////////////////////////////////////////////////////////////////
 document.addEventListener("DOMContentLoaded", () => {
   let slideIndex = 0;
@@ -59,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showSlides(n = null) {
     // Hide all and reset videos
-    slides.forEach(slide => {
+    slides.forEach((slide) => {
       slide.style.display = "none";
       const vid = slide.querySelector("video");
       if (vid) {
@@ -89,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (video) {
       video.muted = true; // start muted
-      video.play().catch(err => console.log("Autoplay blocked:", err));
+      video.play().catch((err) => console.log("Autoplay blocked:", err));
 
       // When video ends → go next slide
       video.onended = () => {
@@ -128,18 +133,20 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "Khodidas Gopani", number: "9825776857" },
     { name: "Pragnesh Vallabhbhai Sutariya", number: "9924483782" },
     { name: "Kishan Sorathiya", number: "9558394296" },
+    { name: "Rangpara Ankit Bhai", number: "7622939396" },
+    { name: "Ranjit Samjibhai Solanki", number: "7096455843" },
+    { name: "Pravinbhai Sarvaiya", number: "9924249804" },
     { name: "Thakarshibhai Gopani", number: "9925880060" },
     { name: "Jay Baraiya", number: "9099236428" },
     { name: "Gopal.R Mer", number: "7096584896" },
     { name: "Bharat.M Yadav", number: "9904367436" },
     { name: "Darshan.D Gohil", number: "9316021319" },
     { name: "Budhabhai Mer", number: "9904846410" },
-
   ];
 
   function renderContacts(list) {
     contactList.innerHTML = "";
-    list.forEach(c => {
+    list.forEach((c) => {
       const li = document.createElement("li");
       li.className = "directory-item";
       li.innerHTML = `<span>${c.name} - ${c.number}</span>
@@ -168,9 +175,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Filter contacts
-    const filtered = contacts.filter(c =>
-      c.name.toLowerCase().includes(value) ||
-      c.number.includes(value)
+    const filtered = contacts.filter(
+      (c) => c.name.toLowerCase().includes(value) || c.number.includes(value)
     );
 
     if (filtered.length > 0) {
@@ -182,7 +188,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
 
 // ✅ Lightbox Image Popup/////////////////////////////////////////////////////////////////////
 function openLightbox(img) {
@@ -220,8 +225,14 @@ function openLightbox(img) {
   downloadBtn.style.color = "#fff";
   downloadBtn.style.cursor = "pointer";
   downloadBtn.style.transition = "0.3s";
-  downloadBtn.addEventListener("mouseenter", () => downloadBtn.style.backgroundColor = "#45a049");
-  downloadBtn.addEventListener("mouseleave", () => downloadBtn.style.backgroundColor = "#4CAF50");
+  downloadBtn.addEventListener(
+    "mouseenter",
+    () => (downloadBtn.style.backgroundColor = "#45a049")
+  );
+  downloadBtn.addEventListener(
+    "mouseleave",
+    () => (downloadBtn.style.backgroundColor = "#4CAF50")
+  );
 
   // Download image when button clicked
   downloadBtn.addEventListener("click", (e) => {
@@ -248,9 +259,6 @@ function openLightbox(img) {
   downloadBtn.addEventListener("click", (e) => e.stopPropagation());
 }
 
-
-
-
 // ✅ Expand card functionality
 document.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll(".attraction-read-more");
@@ -266,7 +274,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
 
 // ✅ Contact form submission
 document
@@ -334,14 +341,16 @@ function fetchWeatherData(lat, lon) {
       .map((day, i) => {
         const cond =
           weatherConditions[
-          Math.floor(Math.random() * weatherConditions.length)
+            Math.floor(Math.random() * weatherConditions.length)
           ];
         const temp = cond.temp + Math.floor(Math.random() * 6) - 3;
         return `
-        <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 15px; text-align: center; border: 2px solid rgba(255,255,255,0.2); animation: slideUp 0.6s ease-out ${i * 0.1
-          }s both;">
+        <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 15px; text-align: center; border: 2px solid rgba(255,255,255,0.2); animation: slideUp 0.6s ease-out ${
+          i * 0.1
+        }s both;">
           <div style="font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">${day}</div>
-          <div style="font-size: 2.5rem; margin: 1rem 0; animation: bounce 3s ease-in-out infinite ${i * 0.2
+          <div style="font-size: 2.5rem; margin: 1rem 0; animation: bounce 3s ease-in-out infinite ${
+            i * 0.2
           }s;">${cond.condition}</div>
           <div style="font-size: 1.3rem; font-weight: bold;">${temp}°C</div>
         </div>
@@ -490,7 +499,6 @@ function eventReadmore() {
   }
 }
 
-
 // Smooth snap scrolling
 const arc = document.querySelector(".portrait-arc");
 arc.addEventListener("wheel", (e) => {
@@ -526,4 +534,3 @@ function toggleMute(btn) {
   video.muted = !video.muted;
   btn.textContent = video.muted ? "🔇" : "🔊";
 }
-
