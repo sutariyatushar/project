@@ -1,216 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | Goradka Village</title>
-   <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Goradka Village</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
     <!-- Common SEO -->
-  <meta name="application-name" content="Goradka" />
-  <meta property="og:site_name" content="Goradka Village" />
+    <meta name="application-name" content="Goradka" />
+    <meta property="og:site_name" content="Goradka Village" />
 
-  <!-- Open Graph for social sharing -->
-  <meta property="og:title" content="About – Goradka Village" />
-  <meta property="og:description" content="History and culture of Goradka Village." />
-  <meta property="og:image" content="https://goradka.netlify.app/img/about-banner.jpg" />
-  <link rel="stylesheet"
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="About – Goradka Village" />
+    <meta property="og:description"
+      content="History and culture of Goradka Village." />
+    <meta property="og:image"
+      content="https://goradka.netlify.app/img/about-banner.jpg" />
+    <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="stylesheet" href="about.css"/>
-</head>
-<body>
-  <!-- Sticky Navbar -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <h2 class="logo">Goradka</h2>
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-<header class="hero" style="background-image: url('img/g6.jpeg');">
-  <div class="overlay">
-    <div class="hero-content">
-      <p class="top-text">About the</p>
-      <h1 class="main-title">Goradka</h1>
-      <p class="subtitle">Your best memorable destination begins here</p>
-    </div>
-    <div class="bottom-wave"></div>
-  </div>
-</header>
-
-  <!-- Main Paragraph -->
-  <section data-aos="fade-up">
-    <h2>Our Roots</h2>
-    <p>
-    Tucked away in the serene embrace of Gujarat’s countryside, Goradka is more than just a village—it is a living tapestry of traditions, smiles, and shared memories. Golden fields sway gently in the breeze, while the banyan-shaded chowk becomes the heart of evening conversations. The aroma of freshly brewed tea mingles with the distant sound of temple bells, and every path seems to lead to a story told by its people. Here, life moves at its own gentle pace, bound together by trust, warmth, and the laughter of children playing under the wide open skies. To visit Goradka is to feel the soul of rural Gujarat—simple, vibrant, and timeless.
-    </p>
-  </section>
-
-  <!-- Cards for People, Houses, Area -->
-<section class="cards" data-aos="zoom-in-up">
-  <!-- People Card -->
-  <div class="card">
-    <img src="img/villagers.png" alt="People of Goradka" />
-    <p><strong>People:</strong> Total population: 5,449  Male: 2,777 <br>Female: 2,672</p>
-    <div class="more-text">
-      <p>The people of Goradka are the heart of the village.
-Every smile tells a story of warmth and kindness.
-They work hard in the fields under the golden sun,
-yet always find time to help their neighbors.
-In joy, they celebrate together; in hardship, they stand united.
-Here, every guest is welcomed as one of their own.
-
-</p>
-    </div>
-    <button class="read-more">Read More</button>
-  </div>
-
-  <!-- Houses Card -->
-  <div class="card">
-    <img src="img/houses.png" alt="Houses of Goradka" />
-    <p><strong>Houses:</strong>Households	989</p>
-    <div class="more-text">
-      <p>The houses of Goradka reflect the village’s charm.
-Some are built with modern designs, others with traditional walls of mud and brick.
-Colorful doors and windows brighten every street.
-Courtyards are filled with plants, grain baskets, and children’s laughter.
-Many homes have verandas where families gather in the evenings.
-Each house tells a story of love, tradition, and togetherness.</p>
-    </div>
-    <button class="read-more">Read More</button>
-  </div>
-
-  <!-- Area Card -->
-  <div class="card">
-    <img src="img/area.png" alt="Area of Goradka" />
-    <p><strong>Area:</strong>Total geographic area: 1,049.14 hectares (~10.49 km²) </p>
-    <div class="more-text">
-      <p>Goradka spreads peacefully across Gujarat’s green countryside.
-Golden fields surround the village on every side.
-Narrow lanes lead to the bustling central chowk.
-Shaded trees offer rest to travelers and villagers alike.
-The air is fresh, carrying the scent of crops and earth.
-Every corner of the area feels calm, welcoming, and full of life.</p>
-    </div>
-    <button class="read-more">Read More</button>
-  </div>
-</section>
-
-  <!-- Google Map Embed -->
-  <section data-aos="fade-up">
-    <h2>Our Location</h2>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17704.455631526347!2d71.6030403120919!3d22.016539521256284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3958c19bf1adb97b%3A0x57d041cb1ad3dd13!2sGoradka%2C%20Gujarat!5e1!3m2!1sen!2sin!4v1706181938173!5m2!1sen!2sin" width="100%" height="300"  style="border:0; border-radius: 15px; box-shadow: 0 8px 16px rgba(0,0,0,0.1);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </section>
-
-
-   <section class="testimonial-section">
-    <h2>What Villagers Say (Feedback)</h2>
-    <div class="testimonial" data-aos="fade-right">
-      <p>""Goradka is our pride. From the green fields to the evening talks at the chowk, every corner holds a memory." – Rohit Dharajiya</p>
-    </div>
-    <div class="testimonial" data-aos="fade-left">
-      <p>"Life here is simple, but the love is big. Once you come to Goradka, you’ll never forget its warmth." – Jay Yadav</p>
-    </div>
-  </section>
-
-  <section class="timeline">
-    <h2>Timeline of Goradka</h2>
-    <div class="timeline-event" data-aos="fade-up">
-      <h4>1952</h4>
-      <p>First households settled on riverbank.</p>
-    </div>
-    <div class="timeline-event" data-aos="fade-up">
-      <h4>1975</h4>
-      <p> Primary school inaugurated by local leaders.</p>
-    </div>
-    <div class="timeline-event" data-aos="fade-up">
-      <h4>1998</h4>
-      <p> Road connection completed linking to Gadhada.</p>
-    </div>
-     <div class="timeline-event" data-aos="fade-up">
-      <h4>2002</h4>
-      <p> Full village electrification under rural electrification scheme.</p>
-    </div>
-  </section>
-
-  <section class="carousel-section">
-    <h2>Explore Goradka</h2>
-    <div class="swiper-wrapper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="img/g9 (1).jpeg" alt="Goradka Image 1"></div>
-        <div class="swiper-slide"><img src="img/g9 (2).jpeg" alt="Goradka Image 2"></div>
-        <div class="swiper-slide"><img src="img/g9 (3).jpeg" alt="Goradka Image 3"></div>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="about.css" />
+  </head>
+  <body>
+    <!-- Sticky Navbar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <h2 class="logo">Goradka</h2>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </div>
-    </div>
-  </section>
+    </nav>
 
-  
+    <!-- Hero -->
+    <header class="hero" style="background-image: url('img/g6.jpeg');">
+      <div class="overlay">
+        <div class="hero-content">
+          <p class="top-text">About the</p>
+          <h1 class="main-title">Goradka</h1>
+          <p class="subtitle">Your best memorable destination begins here</p>
+        </div>
+        <div class="bottom-wave"></div>
+      </div>
+    </header>
 
-  <!-- Footer -->
- 
-   <footer>
-  <div class="footer-container">
-    <div class="footer-section about">
-      <h2>Goradka™</h2>
+    <!-- Main Paragraph -->
+    <section data-aos="fade-up">
+      <h2>Our Village</h2>
       <p>
-       Goradka – where tradition meets progress in every corner.
-A peaceful community built on unity, culture, and pride.
-
+        <strong>Goradka</strong> is a peaceful village in
+        <strong>Taluka: Gadhda, District: Botad, Gujarat (Pincode:
+          364765)</strong>.
+        Surrounded by greenery, it reflects rural charm and strong community
+        spirit.
       </p>
-      <div class="social-icons">
-        <a href="https://www.instagram.com/goradka_nagari01?igsh=Z29pa29nMjBzdWwx" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a 
-  href="https://wa.me/919574750680  ?text=હેલ્લો%2C%20કૃપા%20કરીને%20મને%20ગોરડકા%20ગ્રૂપમાં%20જોડાવાનો%20લિંક%20મોકલો."
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <i class="fab fa-whatsapp"></i>
-</a>
 
+      <h3>📍 Location</h3>
+      <p>Nearest city: <strong>Botad</strong> • Nearby villages: <strong>Gadhda,
+          Ugamedi, Gala, Tatam</strong></p>
+
+      <h3>🌿 Culture</h3>
+      <p>Festivals like <strong>Navratri, Uttarayan, Holi, Diwali,
+          Janmashtami</strong> are celebrated with joy, along with folk dances
+        and fairs.</p>
+
+      <h3>🚜 Economy</h3>
+      <p>Mainly <strong>agriculture</strong> (cotton, groundnut, wheat, bajra,
+        vegetables) plus animal husbandry, diamond-related businesses, shops,
+        small businesses, and jobs.</p>
+
+      <h3>🛕 Temples & Attractions</h3>
+      <p><strong>Shiv Mandir, Hanuman Mandir, Ram Mandir</strong> inside
+        village. Nearby: <strong>Swaminarayan Temple (Gadhda), BAPS Mandir,
+          Bhavnagar coastline</strong>.</p>
+
+      <h3>🏫 Facilities</h3>
+      <p>Primary & secondary schools, health centre, road connectivity, nearest
+        railway station at <strong>Botad</strong>.</p>
+
+      <h3>🌟 Specialty</h3>
+      <p>Known for <strong>hospitality, unity, traditions, and natural
+          beauty</strong>, Goradka shines as one of the most respected villages
+        in Botad district.</p>
+    </section>
+
+    <!-- Cards for People, Houses, Area -->
+    <section class="cards" data-aos="zoom-in-up">
+      <!-- People Card -->
+      <div class="card">
+        <img src="img/villagers.png" alt="People of Goradka" />
+        <p><strong>People:</strong> Total population: 5,449 Male: 2,777
+          <br>Female: 2,672</p>
+        <div class="more-text">
+          <p>The people of Goradka are the heart of the village.
+            Every smile tells a story of warmth and kindness.
+            They work hard in the fields under the golden sun,
+            yet always find time to help their neighbors.
+            In joy, they celebrate together; in hardship, they stand united.
+            Here, every guest is welcomed as one of their own.
+
+          </p>
+        </div>
+        <button class="read-more">Read More</button>
       </div>
-    </div>
-    <div class="footer-section links">
-      <h3>View all Pages</h3>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="contact.html">content</a></li>
-      </ul>
-    </div>
-    <div class="footer-section contact">
-      <h3>Contact</h3>
-      <p>Tushar Sutariya <br> fore any type of queries</p> <br>
-      <!-- <p><a href="mailto:email@example.com">email@example.com</a></p>
-      <p><a href="tel:+16555555555">(555) 555-5555</a></p> -->
-      <p class="created-by">
-       ❤ Created by <a href="https://ts.unaux.com" target="_blank" rel="noopener noreferrer">Tushar Sutariya</a>
-      </p>
-    </div>
-  </div>
-</footer>
 
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
+      <!-- Houses Card -->
+      <div class="card">
+        <img src="img/houses.png" alt="Houses of Goradka" />
+        <p><strong>Houses:</strong>Households 989</p>
+        <div class="more-text">
+          <p>The houses of Goradka reflect the village’s charm.
+            Some are built with modern designs, others with traditional walls of
+            mud and brick.
+            Colorful doors and windows brighten every street.
+            Courtyards are filled with plants, grain baskets, and children’s
+            laughter.
+            Many homes have verandas where families gather in the evenings.
+            Each house tells a story of love, tradition, and togetherness.</p>
+        </div>
+        <button class="read-more">Read More</button>
+      </div>
+
+      <!-- Area Card -->
+      <div class="card">
+        <img src="img/area.png" alt="Area of Goradka" />
+        <p><strong>Area:</strong>Total geographic area: 1,049.14 hectares
+          (~10.49 km²) </p>
+        <div class="more-text">
+          <p>Goradka spreads peacefully across Gujarat’s green countryside.
+            Golden fields surround the village on every side.
+            Narrow lanes lead to the bustling central chowk.
+            Shaded trees offer rest to travelers and villagers alike.
+            The air is fresh, carrying the scent of crops and earth.
+            Every corner of the area feels calm, welcoming, and full of
+            life.</p>
+        </div>
+        <button class="read-more">Read More</button>
+      </div>
+    </section>
+
+    <!-- Google Map Embed -->
+    <section data-aos="fade-up">
+      <h2>Our Location</h2>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17704.455631526347!2d71.6030403120919!3d22.016539521256284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3958c19bf1adb97b%3A0x57d041cb1ad3dd13!2sGoradka%2C%20Gujarat!5e1!3m2!1sen!2sin!4v1706181938173!5m2!1sen!2sin"
+        width="100%" height="300"
+        style="border:0; border-radius: 15px; box-shadow: 0 8px 16px rgba(0,0,0,0.1);"
+        allowfullscreen loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <section class="testimonial-section">
+      <h2>What Villagers Say (Feedback)</h2>
+      <div class="testimonial" data-aos="fade-right">
+        <p>""Goradka is our pride. From the green fields to the evening talks at the chowk, every corner holds a memory."
+          – Rohit Dharajiya</p>
+      </div>
+      <div class="testimonial" data-aos="fade-left">
+        <p>"Life here is simple, but the love is big. Once you come to Goradka, you’ll never forget its warmth."
+          – Jay Yadav</p>
+      </div>
+    </section>
+
+    <section class="timeline">
+      <h2>Timeline of Goradka</h2>
+      <div class="timeline-event" data-aos="fade-up">
+        <h4>1952</h4>
+        <p>First households settled on riverbank.</p>
+      </div>
+      <div class="timeline-event" data-aos="fade-up">
+        <h4>1975</h4>
+        <p> Primary school inaugurated by local leaders.</p>
+      </div>
+      <div class="timeline-event" data-aos="fade-up">
+        <h4>1998</h4>
+        <p> Road connection completed linking to Gadhada.</p>
+      </div>
+      <div class="timeline-event" data-aos="fade-up">
+        <h4>2002</h4>
+        <p> Full village electrification under rural electrification scheme.</p>
+      </div>
+    </section>
+
+    <section class="carousel-section">
+      <h2>Explore Goradka</h2>
+      <div class="swiper-wrapper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="img/g9 (1).jpeg"
+              alt="Goradka Image 1"></div>
+          <div class="swiper-slide"><img src="img/g9 (2).jpeg"
+              alt="Goradka Image 2"></div>
+          <div class="swiper-slide"><img src="img/g9 (3).jpeg"
+              alt="Goradka Image 3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section about">
+          <h2>Goradka™</h2>
+          <p>
+            Goradka – where tradition meets progress in every corner.
+            A peaceful community built on unity, culture, and pride.
+
+          </p>
+          <div class="social-icons">
+            <a
+              href="https://www.instagram.com/goradka_nagari01?igsh=Z29pa29nMjBzdWwx"
+              target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a
+              href="https://wa.me/919574750680  ?text=હેલ્લો%2C%20કૃપા%20કરીને%20મને%20ગોરડકા%20ગ્રૂપમાં%20જોડાવાનો%20લિંક%20મોકલો."
+              target="_blank"
+              rel="noopener noreferrer">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+
+          </div>
+        </div>
+        <div class="footer-section links">
+          <h3>View all Pages</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">content</a></li>
+          </ul>
+        </div>
+        <div class="footer-section contact">
+          <h3>Contact</h3>
+          <p>Tushar Sutariya <br> fore any type of queries</p> <br>
+          <!-- <p><a href="mailto:email@example.com">email@example.com</a></p>
+      <p><a href="tel:+16555555555">(555) 555-5555</a></p> -->
+          <p class="created-by">
+            ❤ Created by <a href="https://ts.unaux.com" target="_blank"
+              rel="noopener noreferrer">Tushar Sutariya</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
   AOS.init(); // This stays
 </script>
-  <!-- Scripts -->
-  <script src="script.js"></script>
-</body>
+    <!-- Scripts -->
+    <script src="script.js"></script>
+  </body>
 </html>
