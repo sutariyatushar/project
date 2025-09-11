@@ -128,6 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "Milan Shah", number: "9988776655" },
     { name: "Yug Thakor", number: "9090909090" },
     { name: "Jay v. Yadav", number: "7096970615" }, // duplicate test
+    { name: "Rajubhai B. Sutariya", number: "9904818098" }, // duplicate test
     { name: "Divay Joshi", number: "8000000000" },
     { name: "Tushar Sutariya", number: "8780805275" },
     { name: "Khodidas Gopani", number: "9825776857" },
