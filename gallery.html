@@ -21,19 +21,30 @@
     <link rel="stylesheet" href="gallery.css" />
   </head>
   <body>
-    <nav class="navbar">
-      <div class="nav-container">
-        <h2 class="logo">Goradka</h2>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
+   <nav class="navbar">
+  <div class="nav-container">
+    <h2 class="logo">Goradka</h2>
+
+    <!-- New Hamburger (only mobile visible) -->
+    <div class="hamburgers">
+      <label class="hamburger">
+        <input type="checkbox" id="menuToggle" onclick="toggleMenu()" />
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </label>
+    </div>
+
+    <!-- Nav links (desktop + mobile) -->
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
     <section id="gallery" data-aos="zoom-in-up">
       <h2 style="text-align: center">📸 Goradka Memories</h2>
