@@ -548,32 +548,6 @@ footer {
   background-color: hwb(133 13% 47%);
 }
 
-/* Other Buttons */
-.call-btn, .back-to-top {
-  display: inline-block;
-  margin: 8px;
-  color:  #fff;
-  padding: 10px 20px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  
-}
-.call-btn {
-  background-color: hwb(133 13% 47%);
-  color: #fff;
-}
-.call-btn:hover {
-  background-color:hwb(133 15% 31%);
-}
-.back-to-top {
-  background-color:hwb(133 13% 47%);
-  color: #fff;
-}
-.back-to-top:hover {
-  background-color:hwb(133 15% 31%);
-}
-
 
 
 .event-form {

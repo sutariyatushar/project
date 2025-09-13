@@ -343,16 +343,14 @@ function fetchWeatherData(lat, lon) {
       .map((day, i) => {
         const cond =
           weatherConditions[
-            Math.floor(Math.random() * weatherConditions.length)
+          Math.floor(Math.random() * weatherConditions.length)
           ];
         const temp = cond.temp + Math.floor(Math.random() * 6) - 3;
         return `
-        <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 15px; text-align: center; border: 2px solid rgba(255,255,255,0.2); animation: slideUp 0.6s ease-out ${
-          i * 0.1
-        }s both;">
+        <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 15px; text-align: center; border: 2px solid rgba(255,255,255,0.2); animation: slideUp 0.6s ease-out ${i * 0.1
+          }s both;">
           <div style="font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">${day}</div>
-          <div style="font-size: 2.5rem; margin: 1rem 0; animation: bounce 3s ease-in-out infinite ${
-            i * 0.2
+          <div style="font-size: 2.5rem; margin: 1rem 0; animation: bounce 3s ease-in-out infinite ${i * 0.2
           }s;">${cond.condition}</div>
           <div style="font-size: 1.3rem; font-weight: bold;">${temp}°C</div>
         </div>
