@@ -130,6 +130,10 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "Jay v. Yadav", number: "7096970615" }, // duplicate test
     { name: "Rajubhai B. Sutariya", number: "9904818098" }, // duplicate test
     { name: "Divay Joshi", number: "8000000000" },
+    { name: "Pradip Solanki", number: "9313604900" },
+    { name: "Ronak Solanki", number: "9537925155" },
+    { name: "Milan Sutariya", number: "6353599200" },
+    { name: "Mer Dhaval Bharwad", number: "7096543858" },
     { name: "Tushar Sutariya", number: "8780805275" },
     { name: "Khodidas Gopani", number: "9825776857" },
     { name: "Pragnesh Vallabhbhai Sutariya", number: "9924483782" },
@@ -343,14 +347,16 @@ function fetchWeatherData(lat, lon) {
       .map((day, i) => {
         const cond =
           weatherConditions[
-          Math.floor(Math.random() * weatherConditions.length)
+            Math.floor(Math.random() * weatherConditions.length)
           ];
         const temp = cond.temp + Math.floor(Math.random() * 6) - 3;
         return `
-        <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 15px; text-align: center; border: 2px solid rgba(255,255,255,0.2); animation: slideUp 0.6s ease-out ${i * 0.1
-          }s both;">
+        <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 15px; text-align: center; border: 2px solid rgba(255,255,255,0.2); animation: slideUp 0.6s ease-out ${
+          i * 0.1
+        }s both;">
           <div style="font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">${day}</div>
-          <div style="font-size: 2.5rem; margin: 1rem 0; animation: bounce 3s ease-in-out infinite ${i * 0.2
+          <div style="font-size: 2.5rem; margin: 1rem 0; animation: bounce 3s ease-in-out infinite ${
+            i * 0.2
           }s;">${cond.condition}</div>
           <div style="font-size: 1.3rem; font-weight: bold;">${temp}°C</div>
         </div>
