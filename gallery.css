@@ -71,6 +71,14 @@ h2 {
   transform: scale(1.05);
 }
 
+/* Mobile: 3 images per row */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
 /* 🎥 Video Grid */
 .video-grid {
   display: grid;
