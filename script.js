@@ -298,6 +298,12 @@ backBtn.addEventListener("click", (e) => {
   lightboxImg.addEventListener("click", (e) => e.stopPropagation());
   downloadBtn.addEventListener("click", (e) => e.stopPropagation());
 }
+
+// ✅ Open Gallery Upload Form
+  function openGalleryForm() {
+    window.open("https://forms.gle/iv1nieQV2YQ2dmEm7", "_blank");
+  }
+
 // ✅ Expand card functionality
 document.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll(".attraction-read-more");

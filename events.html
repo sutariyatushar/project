@@ -173,27 +173,40 @@
       </section>
 
           <!-- Event Submission Form -->
-          <section class="submit-section" data-aos="zoom-in">
-            <h2>📩 Submit Your Event</h2>
-            <form action="https://api.web3forms.com/submit" method="POST"
-              id="eventForm" class="event-form">
-              <input type="hidden" name="access_key"
-                value="24cab8c0-5fa6-42af-ba52-39bb0a41d22c">
+         <section class="submit-section" data-aos="zoom-in">
+  <h2>📩 Submit Your Event</h2>
+  <form action="https://api.web3forms.com/submit" method="POST"
+    id="eventForm" class="event-form">
 
-              <input type="text" id="name" name="name" placeholder="Your Name"
-                required>
-               <input type="email" id="email" name="email" placeholder="Your Email" required>
-              <input type="text" id="event" name="event_title"
-                placeholder="Event Title" required>
-              <textarea id="message" name="event_details" rows="4"
-                placeholder="Event Details..." required></textarea>
+    <input type="hidden" name="access_key"
+      value="24cab8c0-5fa6-42af-ba52-39bb0a41d22c">
 
-              <button type="submit" class="submit-btn">Submit Event</button>
-              <p id="successMsg" class="success-message"
-                style="display: none;">✅
-                Event successfully submitted!</p>
-            </form>
-          </section>
+    <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+    <!-- 📱 Mobile Number Field without spinner -->
+    <input 
+      type="number" 
+      id="number" 
+      name="number"
+      placeholder="Your Mobile Number"
+      maxlength="10"
+      pattern="[0-9]{10}"
+      oninput="this.value=this.value.slice(0,10)" 
+      required
+      class="no-spinner"
+    >
+
+    <input type="text" id="event" name="event_title" placeholder="Event Title" required>
+
+    <textarea id="message" name="event_details" rows="4"
+      placeholder="Event Details..." required></textarea>
+
+    <button type="submit" class="submit-btn">Submit Event</button>
+    <p id="successMsg" class="success-message" style="display: none;">
+      ✅ Event successfully submitted!
+    </p>
+  </form>
+</section>
 
       
     
