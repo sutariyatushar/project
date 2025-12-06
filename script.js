@@ -212,6 +212,36 @@ function openLightbox(img) {
   lightbox.style.zIndex = "9999";
   lightbox.style.cursor = "pointer";
 
+ // Create Back Arrow Button (Top Left)
+const backBtn = document.createElement("button");
+backBtn.innerHTML = "←"; // Arrow
+backBtn.style.position = "fixed";
+backBtn.style.top = "15px";
+backBtn.style.left = "15px";
+backBtn.style.fontSize = "1.1rem";
+backBtn.style.padding = "6px 14px";
+backBtn.style.border = "none";
+backBtn.style.borderRadius = "6px";
+backBtn.style.backgroundColor = "#333";
+backBtn.style.color = "#fff";
+backBtn.style.cursor = "pointer";
+backBtn.style.zIndex = "10000";
+backBtn.style.transition = "0.3s";
+
+// Hover effect
+backBtn.addEventListener("mouseenter", () => {
+  backBtn.style.backgroundColor = "#555";
+});
+backBtn.addEventListener("mouseleave", () => {
+  backBtn.style.backgroundColor = "#333";
+});
+
+// Close on click
+backBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  document.body.removeChild(lightbox);
+});
+
   // Create image element
   const lightboxImg = document.createElement("img");
   lightboxImg.src = img.src;
@@ -230,7 +260,8 @@ function openLightbox(img) {
   downloadBtn.style.backgroundColor = "#4CAF50";
   downloadBtn.style.color = "#fff";
   downloadBtn.style.cursor = "pointer";
-  downloadBtn.style.transition = "0.3s";
+
+  // Hover effect
   downloadBtn.addEventListener(
     "mouseenter",
     () => (downloadBtn.style.backgroundColor = "#45a049")
@@ -240,31 +271,33 @@ function openLightbox(img) {
     () => (downloadBtn.style.backgroundColor = "#4CAF50")
   );
 
-  // Download image when button clicked
+  // Download image
   downloadBtn.addEventListener("click", (e) => {
-    e.stopPropagation(); // Prevent closing lightbox
+    e.stopPropagation();
     const a = document.createElement("a");
     a.href = img.src;
-    a.download = img.src.split("/").pop(); // File name from src
+    a.download = img.src.split("/").pop();
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
   });
 
+  // Append items
+  lightbox.appendChild(backBtn);
   lightbox.appendChild(lightboxImg);
   lightbox.appendChild(downloadBtn);
+
   document.body.appendChild(lightbox);
 
-  // Click outside image or button to close lightbox
-  lightbox.addEventListener("click", function () {
+  // Close when clicking outside
+  lightbox.addEventListener("click", () => {
     document.body.removeChild(lightbox);
   });
 
-  // Prevent click on image or button from closing
+  // Prevent closing when clicking on image or button
   lightboxImg.addEventListener("click", (e) => e.stopPropagation());
   downloadBtn.addEventListener("click", (e) => e.stopPropagation());
 }
-
 // ✅ Expand card functionality
 document.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll(".attraction-read-more");
