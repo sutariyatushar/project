@@ -663,6 +663,62 @@ footer {
   color: #2e7d32;
 }
 
+/* #####################################################################  */
+
+
+.about-more-btn {
+  background-color: #189c46c6;
+  color: white;
+  font-size: 12px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.about-more-btn:hover {
+  background-color: #227a1a;
+  transform: scale(1.05);
+}
+
+.about-more-btn:active {
+  transform: scale(0.95);
+}
+
+.about-more-btn .arrow {
+  font-size: 12px;
+  line-height: 0.7;
+  margin-left: 5px;
+  margin-bottom: 4px;
+  animation: moveArrow 1s infinite ease-in-out;
+  display: inline-block;
+}
+
+/* Space below button */
+.about-btn-wrapper {
+  margin-top: -15px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.about-more-btn .arrow {
+  display: inline-block;
+  margin-left: 5px;
+  animation: moveArrow 1s infinite ease-in-out;
+}
+
+@keyframes moveArrow {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+
+
+
+
 /* ✅ 2-column grid (2 left, 2 right) */
 .service-cards {
   display: grid;
