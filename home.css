@@ -740,28 +740,27 @@ footer {
 
 
 
-
-/* ✅ 2-column grid (2 left, 2 right) */
+/* 2-column grid */
 .service-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px 30px; /* row gap + column gap */
+  gap: 20px 30px;
   max-width: 900px;
-  margin: 0 auto; /* center align */
+  margin: 0 auto;
 }
 
+/* Card */
 .service-card {
   background: #ffffff;
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  animation: cardGlow 3s ease-in-out infinite;
   text-align: left;
+  transition: box-shadow 0.3s ease;
 }
 
+/* Only shadow on hover — NO zoom */
 .service-card:hover {
-  transform: translateY(-8px) scale(1.05);
   box-shadow: 0 12px 25px rgba(46, 125, 50, 0.3);
 }
 
@@ -781,48 +780,49 @@ footer {
   margin-bottom: 15px;
 }
 
+/* Aesthetic Call Button */
 .call-btn {
   display: inline-block;
-  padding: 10px 16px;
-  background: #2e7d32;
+  padding: 12px 20px;
+  background: #179c46f2;
   color: #fff;
-  border-radius: 8px;
+  border-radius: 12px;
   text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease, transform 0.3s ease;
+  font-weight: 600;
+  font-size: 15px;
+
+  /* smooth animation */
+  transition: 
+    background 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+
+  /* soft glow */
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.4);
 }
 
+/* Hover (Desktop) */
 .call-btn:hover {
   background: #1b5e20;
-  transform: scale(1.1);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 15px rgba(46, 125, 50, 0.5);
 }
 
-@keyframes sectionPulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.01);
-  }
-}
-
-@keyframes cardGlow {
-  0%,
-  100% {
-    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.15);
-  }
-  50% {
-    box-shadow: 0 8px 30px rgba(76, 175, 80, 0.35);
+/* Mobile Tap Effect */
+@media (max-width: 768px) {
+  .call-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 3px 10px rgba(46, 125, 50, 0.4);
   }
 }
 
-/* ✅ Mobile: stack vertically */
+/* MOBILE: show only 1 card per row (same as original) */
 @media (max-width: 768px) {
   .service-cards {
     grid-template-columns: 1fr;
   }
 }
+
 
 .event-card {
   background: linear-gradient(
