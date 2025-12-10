@@ -500,9 +500,9 @@ footer {
   inset: 0;
   background: linear-gradient(
     to top,
-    hsla(0, 0%, 93%, 0.50) 0%,      /* 🔥 bottom — your color */
-    hsla(0, 0%, 93%, 0.195) 45%,  /* ⭐ middle fade */
-    hsla(0, 0%, 93%, 0.056) 85%,  /* ✨ upper mild fade */
+    hsla(1, 0%, 93%, 0.30) 0%,      /* 🔥 bottom — your color */
+    hsla(0, 0%, 93%, 0.122) 45%,  /* ⭐ middle fade */
+    hsla(0, 0%, 93%, 0.005) 85%,  /* ✨ upper mild fade */
     hsla(0, 0%, 99%, 0) 100%     /* 🔼 top transparent */
   );
   z-index: 1;
