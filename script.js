@@ -579,3 +579,21 @@ function toggleMute(btn) {
   video.muted = !video.muted;
   btn.textContent = video.muted ? "🔇" : "🔊";
 }
+ 
+// home page event section modal popup/////////////////////////////////////////////////////
+
+  function openEvent(title, img, desc) {
+    document.getElementById("modalTitle").innerText = title;
+    document.getElementById("modalImg").src = img;
+    document.getElementById("modalDesc").innerText = desc;
+    document.getElementById("eventModal").style.display = "flex";
+  }
+
+  function closeEvent() {
+    document.getElementById("eventModal").style.display = "none";
+  }
+
+  document.getElementById("eventModal").addEventListener("click", function (e) {
+    if (e.target === this) closeEvent();
+  });
+// ================= EVENTS SECTION END ================= //
