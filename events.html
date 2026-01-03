@@ -51,24 +51,17 @@
 </nav>
 
 
-<header class="event-slider-wrapper">
-  <div class="event-track">
-    <div class="event-slide"><img src="img/15augast.png" alt="Event 1" /></div>
-    <div class="event-slide"><img src="img/janmastami.png" alt="Event 2" /></div>
-    <div class="event-slide"><img src="img/garba.png" alt="Event 3" /></div>
-    <div class="event-slide"><img src="img/diwali.png" alt="Event 4" /></div>
-    <div class="event-slide"><img src="img/navratri.png" alt="Event 5" /></div>
+<div class="events-hero">
+  <div class="events-hero-content">
+    <h1 class="events-title">Events</h1>
+    <p class="events-description">
+      Goradka village celebrates its culture through vibrant festivals and
+      community gatherings. From Navratri Garba nights to Diwali celebrations,
+      every event reflects unity, tradition, and joy.
+    </p>
   </div>
-  <div class="event-slider-overlay">
-    <h1 class="event-heading-animated">
-      <span>E</span><span>v</span><span>e</span><span>n</span><span>t</span><span>s</span>
-      <span>&nbsp;</span>
-      <span>a</span><span>t</span>
-      <span>&nbsp;</span>
-      <span>G</span><span>o</span><span>r</span><span>a</span><span>d</span><span>k</span><span>a</span>
-    </h1>
-  </div>
-</header>
+</div>
+
 
 
   <section class="event-section">
@@ -117,30 +110,101 @@
 </section>
 
 
-  <section class="upcoming-section" data-aos="fade-up">
-  <h2>📅 Upcoming Events</h2>
+<section class="events-section">
+  <h2 class="events-title">Events</h2>
 
-  <div class="event-grid">
-    <div class="new-event-card">
+  <div class="events-grid" id="eventsGrid">
+
+    <!-- EVENT 1 -->
+    <div class="event-item">
       <img src="img/garba.png" alt="Navratri">
-      <h3>Navratri 2025</h3>
-      <p>
-        📍 Mataji temple<br>
-        🗓️ September 22 to October 2, 2025<br>
-        Villagers of Goradka gathered at mataji temple to celebrate Navratri, joining in traditional dances and festivities.
-      </p>
+      <h3>NAVRATRI</h3>
+      <p>Traditional Garba & Dandiya</p>
+
+      <div class="event-expand">
+        <button class="close-btn">✕</button>
+        <h4>Navratri Celebration</h4>
+        <p>
+          📍 Mataji Temple, Goradka<br>
+          🗓️ Sept 22 – Oct 2, 2025<br><br>
+          Nightly Garba, devotion, music and village unity.
+        </p>
+      </div>
     </div>
 
-    <div class="new-event-card">
-      <img src="img/diwali.png" alt="diwali">
-      <h3>Goradka Diwali Mahotsav</h3>
-      <p>
-        📍 Goradka<br>
-        🗓️ Diwali<br>
-        Celebrate the divine light of Lord Rama's return to Ayodhya with devotional songs, vibrant dances, and festive joy at Goradka Diwali Mahotsav.
-      </p>
+    <!-- EVENT 2 -->
+    <div class="event-item">
+      <img src="img/diwali.png" alt="Diwali">
+      <h3>DIWALI</h3>
+      <p>Festival of lights</p>
+
+      <div class="event-expand">
+        <button class="close-btn">✕</button>
+        <h4>Diwali Mahotsav</h4>
+        <p>
+          📍 Goradka Village<br>
+          🗓️ Diwali Day<br><br>
+          Diyas, rangoli, fireworks and cultural programs.
+        </p>
+      </div>
     </div>
+
+    <!-- EVENT 3 -->
+    <div class="event-item">
+      <img src="img/utaryan.png" alt="Utarayan">
+      <h3>UTARAYAN</h3>
+      <p>Kite flying festival</p>
+
+      <div class="event-expand">
+        <button class="close-btn">✕</button>
+        <h4>Utarayan Festival</h4>
+        <p>
+          📍 Open Grounds<br>
+          🗓️ January 14<br><br>
+          Colorful kites and joyful celebration.
+        </p>
+      </div>
+    </div>
+
+    <!-- EVENT 4 (HIDDEN INITIALLY) -->
+    <div class="event-item hidden-event">
+      <img src="img/fair.png" alt="Village Fair">
+      <h3>VILLAGE FAIR</h3>
+      <p>Annual cultural fair</p>
+
+      <div class="event-expand">
+        <button class="close-btn">✕</button>
+        <h4>Village Fair</h4>
+        <p>
+          📍 Goradka<br>
+          🗓️ March<br><br>
+          Food stalls, folk music and games.
+        </p>
+      </div>
+    </div>
+
+    <!-- EVENT 5 (HIDDEN INITIALLY) -->
+    <div class="event-item hidden-event">
+      <img src="img/independence.png" alt="Independence Day">
+      <h3>INDEPENDENCE DAY</h3>
+      <p>National celebration</p>
+
+      <div class="event-expand">
+        <button class="close-btn">✕</button>
+        <h4>Independence Day</h4>
+        <p>
+          📍 School Ground<br>
+          🗓️ August 15<br><br>
+          Flag hoisting and patriotic programs.
+        </p>
+      </div>
+    </div>
+
   </div>
+
+  <button class="all-events-btn" id="allEventsBtn">
+    All Events
+  </button>
 </section>
 
 

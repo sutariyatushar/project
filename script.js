@@ -523,6 +523,48 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// event main page card expand collapse /////////////////////////////////////////////////////
+
+  const grid = document.getElementById("eventsGrid");
+  const allEventsBtn = document.getElementById("allEventsBtn");
+  const hiddenEvents = document.querySelectorAll(".hidden-event");
+
+  let isExpanded = false;
+
+  // Expand card
+  grid.addEventListener("click", (e) => {
+    const item = e.target.closest(".event-item");
+    if (!item) return;
+
+    document.querySelectorAll(".event-item")
+      .forEach(i => i.classList.remove("active"));
+
+    item.classList.add("active");
+  });
+
+  // Close card
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("close-btn")) {
+      e.stopPropagation();
+      e.target.closest(".event-item").classList.remove("active");
+    }
+  });
+
+  // Show / Hide Events
+  allEventsBtn.addEventListener("click", () => {
+    isExpanded = !isExpanded;
+
+    hiddenEvents.forEach(event => {
+      event.style.display = isExpanded ? "block" : "none";
+    });
+
+    allEventsBtn.textContent = isExpanded ? "Show Less" : "All Events";
+  });
+
+
+
+
+
 const waveText = document.querySelector(".wave-text");
 const text = waveText.textContent;
 waveText.innerHTML = [...text]
