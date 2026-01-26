@@ -608,3 +608,18 @@ arc.addEventListener("wheel", (e) => {
     if (e.target === this) closeEvent();
   });
 // ================= EVENTS SECTION END ================= //
+
+  function changeMedia(src, type) {
+    const main = document.getElementById("galleryMain");
+
+    if (type === "video") {
+      main.innerHTML = `<video src="${src}" controls autoplay></video>`;
+    } else {
+      main.innerHTML = `<img src="${src}" alt="Goradka Gallery">`;
+    }
+
+    document.querySelectorAll('.gallery-thumbs img, .gallery-thumbs video')
+      .forEach(el => el.classList.remove('active-thumb'));
+
+    event.target.classList.add('active-thumb');
+  }

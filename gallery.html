@@ -54,47 +54,45 @@
 </nav>
 
     <section id="gallery" data-aos="zoom-in-up">
-      <h2 style="text-align: center">📸 Goradka Memories</h2>
+      <h2 class="gallery-title">📸 Goradka Memories</h2>
 
-      <div class="slideshow-container">
-        <!-- Image Slide -->
-        <div class="slide">
-          <img src="img/g5.jpeg" alt="Goradka Nature 1" />
-          <div class="caption">Beautiful nature view in Goradka</div>
-        </div>
+<section class="gallery-showcase">
+  <!-- LEFT: Gallery Cards -->
+  <div class="gallery-visual">
+    <div class="gallery-main" id="galleryMain">
+      <img src="img/g5.jpeg" alt="Goradka Nature">
+    </div>
 
-        <!-- Image Slide -->
-        <div class="slide">
-          <img src="img/n1 (3).jpeg" alt="Goradka Nature 1" />
-          <div class="caption">Khandeshvar Mahadev</div>
-        </div>
+    <div class="gallery-thumbs">
+      <img src="img/g5.jpeg" onclick="changeMedia('img/g5.jpeg','img')" />
+      <img src="img/n1 (3).jpeg" onclick="changeMedia('img/n1 (3).jpeg','img')" />
+      <video src="img/goradka1.mp4" onclick="changeMedia('img/goradka1.mp4','video')"></video>
+      <img src="img/g6.jpeg" onclick="changeMedia('img/g6.jpeg','img')" />
+      <video src="img/shiv1.mp4" onclick="changeMedia('img/shiv1.mp4','video')"></video>
+    </div>
+  </div>
 
-        <!-- Video Slide -->
-        <div class="slide">
-          <video src="img/goradka1.mp4" preload="metadata"></video>
-          <div class="caption">Kishan Bapu Celebration</div>
-        </div>
+  <!-- RIGHT: Content -->
+  <div class="gallery-content">
+    <h3>A Glimpse of Goradka</h3>
+    <p>
+      Goradka is filled with timeless memories — from peaceful nature views and
+      sacred temples to vibrant village festivals.  
+      Our gallery captures the heart of Goradka through moments that reflect
+      tradition, culture, and everyday village life.
+    </p>
+    <p>
+      Explore a blend of photos and videos that tell real stories of Goradka’s
+      beauty and celebrations.
+    </p>
 
-        <!-- Image Slide -->
-        <div class="slide">
-          <img src="img/g6.jpeg" alt="Goradka Temple" />
-          <div class="caption">Historic Goradka Temple</div>
-        </div>
+    <a href="#gallery-photos" class="gallery-btn">View Full Gallery</a>
 
-        <!-- Image Slide -->
-        <div class="slide">
-          <img src="img/n1 (5).jpeg" alt="Goradka Temple" />
-          <div class="caption">Goradka</div>
-        </div>
+  </div>
+</section>
+      <!-- 📸 Image Gallery Section -->
+      <h2 id="gallery-photos" style="text-align: center">Gallery Photos</h2>
 
-        <!-- Video Slide -->
-        <div class="slide">
-          <video src="img/shiv1.mp4" preload="metadata"></video>
-          <div class="caption">Shiv Mandir Festival</div>
-        </div>
-      </div>
-
-      <h2 style="text-align: center">Gallery Photos</h2>
       <div class="grid">
         <img src="img/g3.jpeg" alt="Gallery" onclick="openLightbox(this)" />
         <img
