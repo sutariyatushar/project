@@ -71,48 +71,77 @@
 
 
   <section class="event-section">
-  <div class="event-card">
-    <h3>Goradka Utsav 2025</h3>
+  <h1>Goradka Village Events</h1>
+
+  <p>
+    Goradka is a vibrant village where community, culture, and tradition come together through a variety of events throughout the year. 
+    From cultural festivals and religious celebrations to local fairs and village gatherings, Goradka offers something for everyone. 
+    These events are not only moments of joy but also a way to preserve our heritage and bring the community closer.
+  </p>
+
+  <!-- Read More Content -->
+  <div id="event-full-content" class="extra-content" style="display: none; margin-top: 20px;">
+
+    <h2>Understanding Goradka Village Events</h2>
     <p>
-      Join us for a day of cultural celebration with music, food, and
-      performances.
+      Events in Goradka are designed to strengthen community ties, celebrate culture, and provide fun and learning for people of all ages. 
+      These can include large-scale festivals, seasonal fairs, religious gatherings, cultural programs, workshops, sports competitions, and even informal community meetups. 
+      Every event, big or small, reflects the traditions and spirit of Goradka.
     </p>
 
-    <div id="event-Read-more" class="extra-content">
-      <div class="video-card" style="display: none;">
-        <video
-          src="img/janmastami.mp4"
-          preload="metadata"
-          onclick="showLightbox(this)"
-        ></video>
+    <h2>How New Events are Created</h2>
+    <p>
+      If you wish to organize a new event in Goradka, the process is simple and community-oriented. 
+      Villagers usually discuss the purpose, date, and type of event in a local committee or during community meetings. 
+      Once agreed upon, necessary preparations are made, including assigning roles for organization, decoration, food arrangements, and activities. 
+      Every villager is encouraged to participate and contribute ideas to make the event enjoyable and inclusive.
+    </p>
 
-        <div class="video-controls">
-          <button class="play-btn" onclick="togglePlay(this)">
-            <i class="fa-solid fa-play"></i>
-          </button>
-          <button class="mute-btn" onclick="toggleMute(this)">
-            <i class="fa-solid fa-volume-xmark"></i>
-          </button>
-          <a class="download-btn" href="img/shivmandir.mp4" download>
-            <i class="fa-solid fa-download"></i>
-          </a>
-          <div class="progress-bar">
-            <div class="progress"></div>
-          </div>
-        </div>
+    <h2>Types of Village Events</h2>
+    <p>
+      Goradka hosts a variety of events that cater to different interests and age groups:
+    </p>
+    <ul>
+      <li><strong>Cultural Events:</strong> Folk music, dance performances, traditional art exhibitions, and local handicraft displays.</li>
+      <li><strong>Religious Celebrations:</strong> Festivals like Janmashtami, Diwali, Holi, Makar Sankranti, and Navratri where villagers come together for prayers and rituals.</li>
+      <li><strong>Seasonal Fairs:</strong> Markets showcasing local food, handicrafts, games for children, and activities for adults.</li>
+      <li><strong>Community Workshops:</strong> Art, craft, storytelling, and educational activities designed to engage all age groups.</li>
+      <li><strong>Sports & Competitions:</strong> Kite flying, traditional games, and competitions for youth and elders, promoting fun and camaraderie.</li>
+    </ul>
 
-        <div class="video-description">
-          <h3>janmastami</h3>
-          <p>
-            📍 Location: Ramji Mandir<br />
-            🙏 About: Dahihandi Utsav.
-          </p>
-        </div>
-      </div>
-    </div>
+    <h2>Celebrating Together</h2>
+    <p>
+      Every event in Goradka is about community spirit. Villagers, regardless of age, gender, or background, participate actively. 
+      Families work together to prepare food, organize activities, and decorate spaces. Children learn about traditions through interactive participation, while elders guide and mentor younger members. 
+      Events foster unity, cultural pride, and a sense of belonging.
+    </p>
 
-    <button id="read-more-btn" onclick="eventReadmore()">Read More</button>
+    <h2>Tips for Participating</h2>
+    <p>
+      To fully enjoy Goradka’s events, visitors and villagers alike are encouraged to: 
+    </p>
+    <ul>
+      <li>Engage in cultural and recreational activities actively.</li>
+      <li>Learn about the history and significance of each festival or event.</li>
+      <li>Support local artisans and food vendors by exploring their stalls.</li>
+      <li>Contribute ideas or volunteer in organizing events.</li>
+      <li>Capture and share memories while respecting traditions.</li>
+    </ul>
+
+    <h2>Why Goradka’s Events Matter</h2>
+    <p>
+      Village events in Goradka are more than celebrations; they are a living record of our culture and traditions. 
+      They create opportunities for social bonding, learning, and passing down heritage to younger generations. 
+      Each event strengthens the identity of Goradka, making it not just a village but a thriving community where every festival and gathering is a story waiting to be shared.
+    </p>
+
+    <p>
+      Whether you are organizing a new festival, joining a seasonal fair, or participating in a cultural workshop, Goradka’s events offer a space to celebrate life, culture, and togetherness.
+    </p>
   </div>
+
+  <!-- Read More Button -->
+  <button id="read-more-btn" onclick="toggleEventContent()" style="margin-top: 20px;">Read More</button>
 </section>
 
 
@@ -252,7 +281,7 @@
 
               <input type="text" id="name" name="name" placeholder="Your Name"
                 required>
-               <input type="email" id="email" name="email" placeholder="Your Email" required>
+              <input type="number" id="mobile" name="mobile" placeholder="Your Mobile Number" required class="no-spinner">
               <input type="text" id="event" name="event_title"
                 placeholder="Event Title" required>
               <textarea id="message" name="event_details" rows="4"

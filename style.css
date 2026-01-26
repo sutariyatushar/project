@@ -800,6 +800,16 @@ header h1 {
   }
 }
 
+/* Remove number input arrows (spinner) */
+.no-spinner::-webkit-outer-spin-button,
+.no-spinner::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.no-spinner {
+  -moz-appearance: textfield; /* Firefox */
+}
 
 
     /* red more */

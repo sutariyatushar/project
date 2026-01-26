@@ -305,21 +305,17 @@ backBtn.addEventListener("click", (e) => {
   }
 
 // ✅ Expand card functionality
-document.addEventListener("DOMContentLoaded", () => {
-  const buttons = document.querySelectorAll(".attraction-read-more");
-
-  buttons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const card = btn.closest(".attraction-card");
-      card.classList.toggle("expanded");
-
-      btn.textContent = card.classList.contains("expanded")
-        ? "Read Less"
-        : "Read More";
-    });
-  });
-});
-
+ function toggleEventContent() {
+    const content = document.getElementById("event-full-content");
+    const btn = document.getElementById("read-more-btn");
+    if (content.style.display === "block") {
+      content.style.display = "none";
+      btn.innerText = "Read More";
+    } else {
+      content.style.display = "block";
+      btn.innerText = "Read Less";
+    }
+  }
 // ✅ Contact form submission
 document
   .getElementById("contact-form")
@@ -593,34 +589,7 @@ arc.addEventListener("wheel", (e) => {
   arc.scrollLeft += e.deltaY;
 });
 
-// ▶ Play / Pause
-function togglePlay(btn) {
-  const card = btn.closest(".video-card");
-  const video = card.querySelector("video");
-  const progress = card.querySelector(".progress");
 
-  if (video.paused) {
-    video.play();
-    btn.textContent = "⏸";
-  } else {
-    video.pause();
-    btn.textContent = "▶";
-  }
-
-  video.ontimeupdate = () => {
-    const percent = (video.currentTime / video.duration) * 100;
-    progress.style.width = percent + "%";
-  };
-}
-
-// 🔇 Mute / Unmute
-function toggleMute(btn) {
-  const card = btn.closest(".video-card");
-  const video = card.querySelector("video");
-
-  video.muted = !video.muted;
-  btn.textContent = video.muted ? "🔇" : "🔊";
-}
  
 // home page event section modal popup/////////////////////////////////////////////////////
 
