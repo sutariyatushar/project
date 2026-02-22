@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -197,8 +197,8 @@
               box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
               transition: 0.3s ease;
             "
-            onmouseover="this.style.background='#27ae60'"
-            onmouseout="this.style.background='#2ecc71'"
+            onmouseover="this.style.background = '#27ae60'"
+            onmouseout="this.style.background = '#2ecc71'"
           >
             🧭 Get Directions
           </a>
@@ -311,31 +311,37 @@
         <img
           src="img/diwali.png"
           alt="Diwali Festival Goradka"
-          onclick="openEvent(
-        'Diwali – Festival of Lights',
-        'img/diwali.png',
-        'Diwali in Goradka represents prosperity and happiness. Homes are decorated with lamps and rangoli, prayers are offered, and families come together to celebrate peace, positivity, and new beginnings.'
-      )"
+          onclick="
+            openEvent(
+              'Diwali – Festival of Lights',
+              'img/diwali.png',
+              'Diwali in Goradka represents prosperity and happiness. Homes are decorated with lamps and rangoli, prayers are offered, and families come together to celebrate peace, positivity, and new beginnings.',
+            )
+          "
         />
 
         <img
           src="img/holi.webp"
           alt="Holi Celebration Goradka"
-          onclick="openEvent(
-        'Holi – Festival of Colors',
-        'img/holi.webp',
-        'Holi in Goradka is filled with joy, laughter, and vibrant colors. The festival strengthens friendships and brings villagers together in a spirit of harmony and happiness.'
-      )"
+          onclick="
+            openEvent(
+              'Holi – Festival of Colors',
+              'img/holi.webp',
+              'Holi in Goradka is filled with joy, laughter, and vibrant colors. The festival strengthens friendships and brings villagers together in a spirit of harmony and happiness.',
+            )
+          "
         />
 
         <img
           src="img/janmastami.png"
           alt="Janmashtami Festival Goradka"
-          onclick="openEvent(
-        'Janmashtami Celebration',
-        'img/janmastami.png',
-        'Janmashtami is celebrated with devotion and cultural programs honoring Lord Krishna. Bhajans, decorations, and spiritual gatherings fill the village with faith and peace.'
-      )"
+          onclick="
+            openEvent(
+              'Janmashtami Celebration',
+              'img/janmastami.png',
+              'Janmashtami is celebrated with devotion and cultural programs honoring Lord Krishna. Bhajans, decorations, and spiritual gatherings fill the village with faith and peace.',
+            )
+          "
         />
       </div>
 
@@ -527,11 +533,13 @@
           required
         />
 
+        <input type="tel" name="phone" placeholder="Your Number" required />
+
         <input
-          type="number"
+          type="email"
           id="email"
           name="email"
-          placeholder="Your Number"
+          placeholder="Your Email"
           required
         />
 
