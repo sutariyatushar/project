@@ -519,6 +519,30 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+  // ############################################### home page redemore botton ################################
+
+
+
+  document.querySelectorAll(".attraction-read-more").forEach(button => {
+  button.addEventListener("click", function () {
+    const card = this.closest(".attraction-card");
+    card.classList.toggle("expanded");
+
+    if (card.classList.contains("expanded")) {
+      this.textContent = "Read Less";
+      card.appendChild(this); // move button to bottom
+    } else {
+      this.textContent = "Read More";
+      const title = card.querySelector("p");
+      title.after(this); // move button back under title
+    }
+  });
+});
+
+
+
+
+
 // event main page card expand collapse /////////////////////////////////////////////////////
 
   const grid = document.getElementById("eventsGrid");
