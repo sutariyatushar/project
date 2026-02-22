@@ -543,6 +543,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+
 // event main page card expand collapse /////////////////////////////////////////////////////
 
   const grid = document.getElementById("eventsGrid");
