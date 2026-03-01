@@ -886,7 +886,7 @@ footer {
 /* Card */
 .service-card {
   background: #ffffff;
-  padding: 12px;
+  padding: 22px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   text-align: left;
@@ -970,13 +970,56 @@ footer {
 }
 
 /* MOBILE: show only 1 card per row (same as original) */
-@media (max-width: 768px) {
+/* PERFECT MOBILE CARD FIX */
+@media (max-width: 600px) {
+
   .service-cards {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .service-card {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  /* Image container fixed ratio */
+  .img-container {
+    height: 100px;          /* fixed balanced height */
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;       /* extra content hide */
+  }
+
+  /* Emoji or icon perfectly center */
+  .img-container span {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  /* Text icon fix */
+  .img-container span.text-icon {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  .card-details h3 {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+  }
+
+  .card-details p {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+
+  .call-btn {
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 8px;
   }
 }
-
 /* ================= EVENTS SECTION ================= */
 .events-section {
   max-width: 1100px;
