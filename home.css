@@ -213,35 +213,100 @@ h2 {
 
 
 
-/* ######################################################### */
+/* --- Feedback Form Section --- */
+.submit-section {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(46, 125, 50, 0.1);
+  margin: 40px auto;
+  max-width: 600px;
+  text-align: center;
+}
 
+.submit-section h2 {
+  color: #2e7d32;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.submit-section h2::after {
+  content: '';
+  width: 50%;
+  height: 3px;
+  background: #4caf50;
+  position: absolute;
+  bottom: -10px;
+  left: 25%;
+  border-radius: 5px;
+}
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
 }
 
 form input,
 form textarea {
-  padding: 1rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
   width: 100%;
+  font-size: 1rem;
+  background: #fafafa;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  color: #333;
 }
 
+form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Form floating focus effect */
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #4caf50;
+  background: #ffffff;
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.15);
+  transform: translateY(-2px);
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: #999;
+}
+
+/* Submit Button Theme */
 form button {
-  background: #68d388;
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
   color: white;
-  padding: 0.75rem;
+  padding: 14px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  margin-top: 10px;
 }
 
 form button:hover {
-  background: #004d40;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(46, 125, 50, 0.4);
+}
+
+form button:active {
+  transform: scale(0.97);
 }
 
 footer {
