@@ -562,6 +562,21 @@ footer {
   margin-bottom: 20px;
 }
 
+.arch-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center 620px; 
+  z-index: 1;
+}
+
+@keyframes archSway {
+  0% { transform: rotate(20deg); }
+  100% { transform: rotate(-20deg); }
+}
+
 .arch-item {
   position: absolute;
   top: 20px;
@@ -683,13 +698,17 @@ footer {
   .arch-slider {
     height: 380px; 
   }
+  .arch-circle {
+    transform-origin: center 450px;
+    animation: archSway 12s ease-in-out infinite alternate;
+  }
   .arch-item {
     top: 50px;
-    width: 100px;
-    height: 120px;
-    margin-left: -50px;
+    width: 120px;
+    height: 140px;
+    margin-left: -60px;
     transform-origin: center 400px; 
-    transform: rotate(calc(var(--i) * 15deg));
+    transform: rotate(calc(var(--i) * 16deg));
   }
   .arch-item img, .arch-item video {
     border-radius: 10px;
@@ -710,20 +729,25 @@ footer {
   }
   .arch-slider {
     height: 250px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+  }
+  .arch-circle {
+    transform-origin: center 250px;
+    animation: archSway 10s ease-in-out infinite alternate;
   }
   .arch-item {
-    top: 40px;
-    width: 60px;
-    height: 80px;
-    margin-left: -30px;
-    transform-origin: center 180px; 
-    transform: rotate(calc(var(--i) * 18deg));
+    top: 30px;
+    width: 90px;
+    height: 110px;
+    margin-left: -45px;
+    transform-origin: center 260px; 
+    transform: rotate(calc(var(--i) * 20deg));
     padding: 3px;
     border-radius: 12px;
   }
   .arch-item:hover {
-    transform: rotate(calc(var(--i) * 18deg)) scale(1.15) translateY(-10px);
+    transform: rotate(calc(var(--i) * 20deg)) scale(1.15) translateY(-10px);
   }
 }
 .active-thumb {
