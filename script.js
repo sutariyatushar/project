@@ -195,10 +195,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
+
 // ✅ Lightbox Image Popup/////////////////////////////////////////////////////////////////////
 function openLightbox(img) {
+  // Check if it's already open
+  if (document.getElementById("custom-lightbox")) return;
+
   // Create lightbox container
   const lightbox = document.createElement("div");
+  lightbox.id = "custom-lightbox";
   lightbox.style.position = "fixed";
   lightbox.style.top = 0;
   lightbox.style.left = 0;
@@ -211,6 +217,8 @@ function openLightbox(img) {
   lightbox.style.justifyContent = "center";
   lightbox.style.zIndex = "9999";
   lightbox.style.cursor = "pointer";
+  lightbox.style.opacity = "0"; // Start hidden
+  lightbox.style.transition = "opacity 0.4s ease";
 
  // Create Back Arrow Button (Top Left)
 const backBtn = document.createElement("button");
@@ -236,10 +244,21 @@ backBtn.addEventListener("mouseleave", () => {
   backBtn.style.backgroundColor = "#333";
 });
 
+// Close on click function with animation
+function closeLightbox() {
+  lightbox.style.opacity = "0";
+  lightboxImg.style.transform = "scale(0.8)";
+  setTimeout(() => {
+    if (document.body.contains(lightbox)) {
+      document.body.removeChild(lightbox);
+    }
+  }, 400);
+}
+
 // Close on click
 backBtn.addEventListener("click", (e) => {
   e.stopPropagation();
-  document.body.removeChild(lightbox);
+  closeLightbox();
 });
 
   // Create image element
@@ -248,6 +267,8 @@ backBtn.addEventListener("click", (e) => {
   lightboxImg.style.maxWidth = "90%";
   lightboxImg.style.maxHeight = "80%";
   lightboxImg.style.borderRadius = "10px";
+  lightboxImg.style.transform = "scale(0.8)"; // Start zoomed out
+  lightboxImg.style.transition = "transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)";
 
   // Create download button
   const downloadBtn = document.createElement("button");
@@ -289,9 +310,15 @@ backBtn.addEventListener("click", (e) => {
 
   document.body.appendChild(lightbox);
 
+  // Trigger animation
+  requestAnimationFrame(() => {
+    lightbox.style.opacity = "1";
+    lightboxImg.style.transform = "scale(1)";
+  });
+
   // Close when clicking outside
   lightbox.addEventListener("click", () => {
-    document.body.removeChild(lightbox);
+    closeLightbox();
   });
 
   // Prevent closing when clicking on image or button
@@ -529,12 +556,9 @@ document.addEventListener("DOMContentLoaded", function () {
     card.classList.toggle("expanded");
 
     if (card.classList.contains("expanded")) {
-      this.textContent = "Read Less";
-      card.appendChild(this); // move button to bottom
+      this.innerHTML = 'Read Less <i class="fa-solid fa-arrow-up"></i>';
     } else {
-      this.textContent = "Read More";
-      const title = card.querySelector("p");
-      title.after(this); // move button back under title
+      this.innerHTML = 'Read More <i class="fa-solid fa-arrow-right"></i>';
     }
   });
 });
