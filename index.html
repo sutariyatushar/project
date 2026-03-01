@@ -227,7 +227,12 @@
       <div class="attraction-cards">
         <!-- Shiv Mandir Card -->
         <div class="attraction-card">
-          <img src="img/sivmain.jpeg" alt="Shiv Mandir" class="main-image" />
+          <img
+            src="img/sivmain.jpeg"
+            alt="Shiv Mandir"
+            class="main-image"
+            loading="lazy"
+          />
           <p>Shiv Mandir</p>
           <button class="attraction-read-more">Read More</button>
           <div class="attraction-extra-content">
@@ -242,15 +247,28 @@
               but also a symbol of unity, tradition, and the spiritual heritage
               of Goradka.
             </p>
-            <img src="img/sivm2.jpeg" alt="Shiv Mandir View" />
-            <img src="img/shivm3.jpeg" alt="Shiv Mandir Inside" />
-            <img src="img/sivmandir1.jpeg" alt="Shiv Mandir Surroundings" />
+            <img src="img/sivm2.jpeg" alt="Shiv Mandir View" loading="lazy" />
+            <img
+              src="img/shivm3.jpeg"
+              alt="Shiv Mandir Inside"
+              loading="lazy"
+            />
+            <img
+              src="img/sivmandir1.jpeg"
+              alt="Shiv Mandir Surroundings"
+              loading="lazy"
+            />
           </div>
         </div>
 
         <!-- Library Card -->
         <div class="attraction-card">
-          <img src="img/librery.jpeg" alt="Library" class="main-image" />
+          <img
+            src="img/librery.jpeg"
+            alt="Library"
+            class="main-image"
+            loading="lazy"
+          />
           <p>Library</p>
           <button class="attraction-read-more">Read More</button>
           <div class="attraction-extra-content">
@@ -383,122 +401,72 @@
         </li>
       </ul>
     </section>
-    <!-- ===== Home Gallery Slider Section ===== -->
-    <!-- <section class="home-gallery-section" data-aos="zoom-in-up">
-      <h1 class="home-gallery-title" style="text-align:center;"
-        data-aos="fade-up">📊 Services</h1>
-
-      <div class="home-slider-container"> -->
-
-    <!-- Slide 1: Image -->
-    <!-- <div class="home-slide" data-duration="9000">
-          <img src="img/dron.jpeg" alt="Goradka Nature 1" />
-          <div class="home-slide-card">
-            <h3>🌍 Location: Goradka </h3>
-            <p><strong>👤 Name:</strong> Solanki Hareshbhai</p>
-            <p><strong>📞 Number:</strong> <a href="tel:7202071733">+ 72020
-                71733</a></p>
-            <p><strong>ℹ️ About:</strong> હનુમંત ફાર્મર સર્વિસીસ આધુનિક કૃષિ
-              સેવાઓ આપે છે જેમ કે ડ્રોનથી છંટકાવ, જમીન અને પાકનું નિરીક્ષણ, અને
-              ઉપજ વધારવા માટે રાસાયણિક/જીવજંતુ નિયંત્રણ. મદદ માટે સંપર્ક કરો</p>
-          </div>
-        </div> -->
-
-    <!-- Slide 2: Image
-    <div class="home-slide" data-duration="4000">
-      <img src="img/n1 (3).jpeg" alt="Khandeshvar Mahadev" />
-      <div class="home-slide-card">
-        <h3>🌍 Location: Khandeshvar Mahadev</h3>
-        <p><strong>👤 Name:</strong> Romin</p>
-        <p><strong>📞 Number:</strong> +91 98234 56789</p>
-        <p><strong>ℹ️ About:</strong> Famous temple and cultural site in Goradka.</p>
-      </div>
-    </div> -->
-
-    <!-- Slide 3: Video -->
-    <!-- <div class="home-slide" data-duration="8000">
-          <video muted playsinline preload="metadata">
-            <source src="img/dron.mp4" type="video/mp4" />
-          </video>
-          <div class="home-slide-card">
-            <h3>🌍 Location: Goradka™</h3>
-            <p><strong>👤 Name:</strong>CHAUHAN ASHOKBHAI</p>
-            <p><strong>📞 Number:</strong> <a href="tel:7202072040">+91 72020
-                72040</a></p>
-            <p><strong>ℹ️ About:</strong>હનુમંત ફાર્મર સર્વિસીસ આધુનિક કૃષિ
-              સેવાઓ આપે છે જેમ કે ડ્રોનથી છંટકાવ, જમીન અને પાકનું નિરીક્ષણ, અને
-              ઉપજ વધારવા માટે રાસાયણિક/જીવજંતુ નિયંત્રણ. મદદ માટે સંપર્ક કરો</p>
-          </div>
-        </div> -->
-
-    <!-- Slide 4: Image
-    <div class="home-slide" data-duration="9000">
-      <img src="img/g.jpeg" alt="Goradka Temple" />
-      <div class="home-slide-card">
-        <h3>🌍 Location: Goradka Temple</h3>
-        <p><strong>👤 Name:</strong> Divay</p>
-        <p><strong>📞 Number:</strong> +91 92345 67890</p>
-        <p><strong>ℹ️ About:</strong> Historic temple and spiritual landmark in Goradka.</p>
-      </div>
-    </div> -->
-
-    <!-- </div>
-    </section> -->
 
     <section id="services" data-aos="fade-up">
       <h2>More Services</h2>
       <div class="service-cards">
         <div class="service-card">
-          <span>📚</span>
-          <h3>Village Library</h3>
-          <p>Explore knowledge & culture at our library</p>
+          <div class="img-container"><span>📚</span></div>
+          <div class="card-details">
+            <h3>Village Library</h3>
+            <p>Explore knowledge & culture at our library</p>
+          </div>
           <a href="tel:0000000000" class="call-btn">📞 Call</a>
         </div>
 
         <div class="service-card">
-          <span>🩺</span>
-          <h3>Sanjaybhai Yadav</h3>
-          <p>Village Doctor</p>
+          <div class="img-container"><span>🩺</span></div>
+          <div class="card-details">
+            <h3>Sanjaybhai Yadav</h3>
+            <p>Village Doctor</p>
+          </div>
           <a href="tel:9723699000" class="call-btn">📞 97236 99000</a>
         </div>
 
         <div class="service-card">
-          <span>🩺</span>
-          <h3>R.P. Solanki</h3>
-          <p>Village Doctor</p>
+          <div class="img-container"><span>🩺</span></div>
+          <div class="card-details">
+            <h3>R.P. Solanki</h3>
+            <p>Village Doctor</p>
+          </div>
           <a href="tel:9924078990" class="call-btn">📞 99240 78990</a>
         </div>
 
         <div class="service-card">
-          <span>📸🎥</span>
-          <h3>Vinodbhai Sarvaiya</h3>
-          <p>Madhuli studio</p>
+          <div class="img-container"><span>📸🎥</span></div>
+          <div class="card-details">
+            <h3>Vinodbhai Sarvaiya</h3>
+            <p>Madhuli studio</p>
+          </div>
           <a href="tel:9714888743" class="call-btn">📞 97148 88743</a>
         </div>
 
         <div class="service-card">
-          <span>🎗</span>
-          <h3>Pintubhai Vala</h3>
-          <p>Community Service</p>
+          <div class="img-container"><span>🎗</span></div>
+          <div class="card-details">
+            <h3>Pintubhai Vala</h3>
+            <p>Community Service</p>
+          </div>
           <a href="tel:7046100922" class="call-btn">📞 70461 00922</a>
         </div>
 
         <div class="service-card">
-          <span
-            ><h5>
-              <p>Shree Gordaka Dudh Utpadak Sahkari Mandali Ltd</p>
-            </h5></span
-          >
-          <h3>President- Nathabhai</h3>
-          <h3>Vice president - Bharatbhai</h3>
-
+          <div class="img-container">
+            <span class="text-icon">Dudh Utpadak Mandali</span>
+          </div>
+          <div class="card-details">
+            <h3>President- Nathabhai</h3>
+            <p>Vice president - Bharatbhai</p>
+          </div>
           <a href="tel:7096584896" class="call-btn">📞 7096584896</a>
         </div>
 
         <div class="service-card">
-          <span>🐄🥛</span>
-          <h3>Rangapara Ankit</h3>
-          <p>Chamunda dairy milk</p>
+          <div class="img-container"><span>🐄🥛</span></div>
+          <div class="card-details">
+            <h3>Rangapara Ankit</h3>
+            <p>Chamunda dairy milk</p>
+          </div>
           <a href="tel:7622939396" class="call-btn">📞 7622939396</a>
         </div>
       </div>

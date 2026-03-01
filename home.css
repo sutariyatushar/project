@@ -766,7 +766,7 @@ footer {
 .service-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px 30px;
+  gap: 25px 30px;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -774,74 +774,94 @@ footer {
 /* Card */
 .service-card {
   background: #ffffff;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   text-align: left;
-  transition: box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Only shadow on hover — NO zoom */
 .service-card:hover {
-  box-shadow: 0 12px 25px rgba(46, 125, 50, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
 }
 
-.service-card span {
-  font-size: 2rem;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.service-card h3 {
-  color: #2e7d32;
-  margin-bottom: 5px;
-}
-
-.service-card p {
-  color: #555;
+/* Green placeholder image block inside card */
+.img-container {
+  background: #abdebd; /* Soft green */
+  height: 160px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 15px;
 }
 
-/* Aesthetic Call Button */
+.img-container span {
+  font-size: 3rem;
+  margin: 0;
+  display: block;
+}
+
+/* Fix for large text inside icon box */
+.img-container span.text-icon {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2e7d32;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.card-details {
+  padding: 0 8px;
+  flex-grow: 1; /* Pushes button to bottom */
+}
+
+.card-details h3 {
+  color: #333;
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.card-details p {
+  color: #777;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+/* Full width blue action button like reference */
 .call-btn {
-  display: inline-block;
+  display: block;
+  width: 100%;
   padding: 12px 20px;
-  background: #179c46f2;
+  background: linear-gradient(135deg, #6c8bed, #4a6ee0);
   color: #fff;
   border-radius: 12px;
   text-decoration: none;
   font-weight: 600;
   font-size: 15px;
-
-  /* smooth animation */
-  transition: 
-    background 0.3s ease,
-    transform 0.2s ease,
-    box-shadow 0.3s ease;
-
-  /* soft glow */
-  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.4);
+  text-align: center;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
-/* Hover (Desktop) */
 .call-btn:hover {
-  background: #1b5e20;
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 6px 15px rgba(46, 125, 50, 0.5);
+  background: linear-gradient(135deg, #5a77d1, #3b5cbd);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(74, 110, 224, 0.4);
 }
 
-/* Mobile Tap Effect */
-@media (max-width: 768px) {
-  .call-btn:active {
-    transform: scale(0.95);
-    box-shadow: 0 3px 10px rgba(46, 125, 50, 0.4);
-  }
+.call-btn:active {
+  transform: scale(0.98);
 }
 
 /* MOBILE: show only 1 card per row (same as original) */
 @media (max-width: 768px) {
   .service-cards {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 
