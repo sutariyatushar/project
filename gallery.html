@@ -1,286 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="title"
+      content="Goradka Gallery – Village Photos, Events & Culture"
+    />
+    <meta
+      name="description"
+      content="Explore the Goradka gallery with village photos, events, temples, and local culture from Gadhada Taluka, Botad, Gujarat (364765)."
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="title" content="Goradka Gallery – Village Photos, Events & Culture" />
-  <meta name="description"
-    content="Explore the Goradka gallery with village photos, events, temples, and local culture from Gadhada Taluka, Botad, Gujarat (364765)." />
+    <title>
+      Goradka Village Photo Gallery – Images of Nature, Events & Culture
+    </title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <!-- Common SEO -->
+    <meta name="application-name" content="Goradka" />
+    <meta property="og:site_name" content="Goradka Village" />
 
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="About – Goradka Village" />
+    <meta
+      property="og:description"
+      content="History and culture of Goradka Village."
+    />
+    <meta
+      property="og:image"
+      content="https://goradka.netlify.app/img/about-banner.jpg"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="gallery.css" />
+  </head>
 
-  <title>Goradka Village Photo Gallery – Images of Nature, Events & Culture</title>
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
-  <!-- Common SEO -->
-  <meta name="application-name" content="Goradka" />
-  <meta property="og:site_name" content="Goradka Village" />
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <h2 class="logo">Goradka</h2>
 
-  <!-- Open Graph for social sharing -->
-  <meta property="og:title" content="About – Goradka Village" />
-  <meta property="og:description" content="History and culture of Goradka Village." />
-  <meta property="og:image" content="https://goradka.netlify.app/img/about-banner.jpg" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <link rel="stylesheet" href="gallery.css" />
-</head>
-
-<body>
-  <nav class="navbar">
-    <div class="nav-container">
-      <h2 class="logo">Goradka</h2>
-
-      <!-- New Hamburger (only mobile visible) -->
-      <div class="hamburgers">
-        <label class="hamburger">
-          <input type="checkbox" id="menuToggle" onclick="toggleMenu()" />
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </label>
-      </div>
-
-      <!-- Nav links (desktop + mobile) -->
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <section id="gallery" data-aos="zoom-in-up">
-    <h2 class="gallery-title">Visual Stories</h2>
-
-    <section class="gallery-showcase">
-      <!-- LEFT: Gallery Cards -->
-      <div class="gallery-visual">
-        <div class="gallery-main" id="galleryMain">
-          <img src="img/g5.jpeg" alt="Goradka Nature">
+        <!-- New Hamburger (only mobile visible) -->
+        <div class="hamburgers">
+          <label class="hamburger">
+            <input type="checkbox" id="menuToggle" onclick="toggleMenu()" />
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </label>
         </div>
 
-        <div class="gallery-thumbs">
-          <img src="img/g5.jpeg" onclick="changeMedia('img/g5.jpeg','img')" />
-          <img src="img/n1 (3).jpeg" onclick="changeMedia('img/n1 (3).jpeg','img')" />
-          <video src="img/goradka1.mp4" onclick="changeMedia('img/goradka1.mp4','video')"></video>
-          <img src="img/g6.jpeg" onclick="changeMedia('img/g6.jpeg','img')" />
-          <video src="img/shiv1.mp4" onclick="changeMedia('img/shiv1.mp4','video')"></video>
-        </div>
-      </div>
-
-      <!-- RIGHT: Content -->
-      <div class="gallery-content">
-        <h3>A Glimpse of Goradka</h3>
-        <p>
-          Goradka is filled with timeless memories — from peaceful nature views and
-          sacred temples to vibrant village festivals.
-          Our gallery captures the heart of Goradka through moments that reflect
-          tradition, culture, and everyday village life.
-        </p>
-        <p>
-          Explore a blend of photos and videos that tell real stories of Goradka’s
-          beauty and celebrations.
-        </p>
-
-        <a href="#gallery-photos" class="gallery-btn">View Full Gallery</a>
-
-      </div>
-    </section>
-    <!-- 📸 Image Gallery Section -->
-    <h2 id="gallery-photos" style="text-align: center">Gallery Photos</h2>
-
-    <div class="grid">
-      <img src="img/g3.jpeg" alt="Gallery" onclick="openLightbox(this)" />
-      <img src="img/librery (2).jpeg" alt="Gallery" onclick="openLightbox(this)" />
-      <img src="img/get2.jpeg" alt="Gallery" onclick="openLightbox(this)" />
-      <img src="img/shivm3.jpeg" alt="Gallery" onclick="openLightbox(this)" />
-      <img src="img/g7 (2).jpeg" alt="Gallery" onclick="openLightbox(this)" />
-      <img src="img/g7.jpeg" alt="Gallery" onclick="openLightbox(this)" />
-      <img src="img/gn1 (2).jpeg" alt="Gallery" onclick="openLightbox(this)" />
-      <img src="img/gn1 (3).jpeg" alt="Gallery" onclick="openLightbox(this)" />
-      <img src="img/gn1 (4).jpeg" alt="Gallery" onclick="openLightbox(this)" />
-      <img src="img/g8.jpeg" alt="Gallery" onclick="openLightbox(this)" />
-      <img src="img/gn1 (6).jpeg" alt="Gallery" onclick="openLightbox(this)" />
-      <img src="img/gn1 (7).jpeg" alt="Gallery" onclick="openLightbox(this)" />
-      <img src="img/gn1 (8).jpeg" alt="Gallery" onclick="openLightbox(this)" />
-      <img src="img/gn1 (9).jpeg" alt="Gallery" onclick="openLightbox(this)" />
-      <img src="img/villagek (3).webp" alt="Gallery" onclick="openLightbox(this)" />
-      <img src="img/villagek (2).webp" alt="Gallery" onclick="openLightbox(this)" />
-      <img src="img/villagek (1).webp" alt="Gallery" onclick="openLightbox(this)" />
-      <img src="img/gn1 (10).jpeg" alt="Gallery" onclick="openLightbox(this)" />
-      <img src="img/g4.jpeg" alt="Gallery" onclick="openLightbox(this)" />
-      <img src="img/n1 (1).jpeg" alt="Gallery" onclick="openLightbox(this)" />
-      <img src="img/n1 (2).jpeg" alt="Gallery" onclick="openLightbox(this)" />
-      <img src="img/n1 (3).jpeg" alt="Gallery" onclick="openLightbox(this)" />
-      <img src="img/n1 (4).jpeg" alt="Gallery" onclick="openLightbox(this)" />
-      <img src="img/n1 (5).jpeg" alt="Gallery" onclick="openLightbox(this)" />
-      <img src="img/n1 (7).jpeg" alt="Gallery" onclick="openLightbox(this)" />
-    </div>
-  </section>
-  <!-- 🎥 Video Gallery Section -->
-  <!-- <section id="videos" data-aos="zoom-in-up">
-      <h2 style="text-align: center">🎶 Village Moments (Videos)</h2>
-
-      <div class="video-grid"> -->
-  <!-- Video 1 -->
-  <!-- <div class="video-card">
-          <video
-            src="img/goradka1.mp4"
-            preload="metadata"
-            onclick="showLightbox(this)"
-          ></video> -->
-
-  <!-- Controls -->
-  <!-- <div class="video-controls">
-            <button class="play-btn" onclick="togglePlay(this)">
-              <i class="fa-solid fa-play"></i>
-            </button>
-            <button class="mute-btn" onclick="toggleMute(this)">
-              <i class="fa-solid fa-volume-xmark"></i>
-            </button>
-            <a class="download-btn" href="img/goradka1.mp4" download>
-              <i class="fa-solid fa-download"></i>
-            </a>
-            <div class="progress-bar"><div class="progress"></div></div>
-          </div> -->
-
-  <!-- Description -->
-  <!-- <div class="video-description">
-            <h3>our village</h3>
-            <p>
-              📍 Location: Goradka <br />
-              🌧 About: view every day in Monsoon.
-              created-by goradka_nagari01
-            </p>
-          </div>
-        </div> -->
-
-  <!-- Video 2 -->
-  <!-- <div class="video-card">
-          <video
-            src="img/shiv1.mp4"
-            preload="metadata"
-            onclick="showLightbox(this)"
-          ></video>
-
-          <div class="video-controls">
-            <button class="play-btn" onclick="togglePlay(this)">
-              <i class="fa-solid fa-play"></i>
-            </button>
-            <button class="mute-btn" onclick="toggleMute(this)">
-              <i class="fa-solid fa-volume-xmark"></i>
-            </button>
-            <a class="download-btn" href="img/shiv1.mp4" download>
-              <i class="fa-solid fa-download"></i>
-            </a>
-            <div class="progress-bar"><div class="progress"></div></div>
-          </div>
-
-          <div class="video-description">
-            <h3>Shiv Mandir Darshan</h3>
-            <p>
-              📍 Location: Shiv Mandir, Goradka <br />
-              🙏 About: Morning prayers and temple darshan.
-            </p>
-          </div>
-        </div> -->
-
-  <!-- Video 3 -->
-  <!-- <div class="video-card">
-          <video
-            src="img/video(1).mp4"
-            preload="metadata"
-            onclick="showLightbox(this)"
-          ></video>
-
-          <div class="video-controls">
-            <button class="play-btn" onclick="togglePlay(this)">
-              <i class="fa-solid fa-play"></i>
-            </button>
-            <button class="mute-btn" onclick="toggleMute(this)">
-              <i class="fa-solid fa-volume-xmark"></i>
-            </button>
-            <a class="download-btn" href="img/ganeshotsav.mp4" download>
-              <i class="fa-solid fa-download"></i>
-            </a>
-            <div class="progress-bar"><div class="progress"></div></div>
-          </div>
-
-          <div class="video-description">
-            <h3>Nadasadi</h3>
-            <p>
-              📍 Location: Goradka <br />
-              🪔 About: "Tying the sacred thread (Nadasadi/Nada) and performing
-              a circumambulation around the temple or the entire village is a
-              traditional religious practice."
-            </p>
-          </div>
-        </div> -->
-
-  <!-- Video 4 (Commented for future use) -->
-  <!--
-    <div class="video-card">
-      <video src="img/village-fair.mp4" preload="metadata"
-        onclick="showLightbox(this)"></video>
-
-      <div class="video-controls">
-        <button class="play-btn" onclick="togglePlay(this)">
-          <i class="fa-solid fa-play"></i>
-        </button>
-        <button class="mute-btn" onclick="toggleMute(this)">
-          <i class="fa-solid fa-volume-xmark"></i>
-        </button>
-        <a class="download-btn" href="img/village-fair.mp4" download>
-          <i class="fa-solid fa-download"></i>
-        </a>
-        <div class="progress-bar"><div class="progress"></div></div>
-      </div>
-
-      <div class="video-description">
-        <h3>Village Fair</h3>
-        <p>📍 Location: Goradka Ground <br>
-          🎡 About: Annual fair bringing joy, culture, and togetherness.</p>
-      </div>
-    </div>
-    -->
-  </div>
-  </section>
-
-  <!-- Gallery Upload Section -->
-  <section class="submit-section" data-aos="zoom-in">
-    <h2>📸 Upload Your Gallery Images</h2>
-
-    <form class="event-form" onsubmit="openGalleryForm(); return false;">
-      <button type="submit" class="submit-btn">Upload Your Images</button>
-    </form>
-  </section>
-
-
-  <footer>
-    <div class="footer-container">
-      <div class="footer-section about">
-        <h2>Goradka™</h2>
-        <p>
-          Goradka – where tradition meets progress in every corner. A peaceful
-          community built on unity, culture, and pride.
-        </p>
-        <div class="social-icons">
-          <a href="https://www.instagram.com/goradka_nagari01?igsh=Z29pa29nMjBzdWwx" target="_blank"
-            rel="noopener noreferrer">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="https://wa.me/919574750680  ?text=હેલ્લો%2C%20કૃપા%20કરીને%20મને%20ગોરડકા%20ગ્રૂપમાં%20જોડાવાનો%20લિંક%20મોકલો."
-            target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-whatsapp"></i>
-          </a>
-        </div>
-      </div>
-      <div class="footer-section links">
-        <h3>View all Pages</h3>
-        <ul>
+        <!-- Nav links (desktop + mobile) -->
+        <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="gallery.html">Gallery</a></li>
@@ -288,25 +62,309 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
-      <div class="footer-section contact">
-        <h3>Contact</h3>
-        <p>
-          Tushar Sutariya <br />
-          fore any type of queries
-        </p>
-        <br />
-        <!-- <p><a href="mailto:email@example.com">email@example.com</a></p>
-      <p><a href="tel:+16555555555">(555) 555-5555</a></p> -->
-        <p class="created-by">
-          ❤ Created by
-          <a href="https://ts.unaux.com" target="_blank" rel="noopener noreferrer">Tushar Sutariya</a>
-        </p>
+    </nav>
+
+    <section id="gallery" data-aos="zoom-in-up">
+      <h2 class="gallery-title">Visual Stories</h2>
+
+      <section class="gallery-showcase arch-layout">
+        <!-- Arch Images -->
+        <div class="arch-slider">
+          <div class="arch-item" style="--i: -4">
+            <img src="img/g3.jpeg" alt="Goradka" />
+          </div>
+          <div class="arch-item" style="--i: -3">
+            <img src="img/librery (2).jpeg" alt="Goradka" />
+          </div>
+          <div class="arch-item" style="--i: -2">
+            <img src="img/get2.jpeg" alt="Goradka" />
+          </div>
+          <div class="arch-item" style="--i: -1">
+            <img src="img/n1 (3).jpeg" alt="Goradka" />
+          </div>
+          <div class="arch-item" style="--i: 0">
+            <video
+              src="img/goradka1.mp4"
+              autoplay
+              loop
+              muted
+              playsinline
+            ></video>
+          </div>
+          <div class="arch-item" style="--i: 1">
+            <img src="img/g5.jpeg" alt="Goradka" />
+          </div>
+          <div class="arch-item" style="--i: 2">
+            <img src="img/g6.jpeg" alt="Goradka" />
+          </div>
+          <div class="arch-item" style="--i: 3">
+            <video src="img/shiv1.mp4" autoplay loop muted playsinline></video>
+          </div>
+          <div class="arch-item" style="--i: 4">
+            <img src="img/g8.jpeg" alt="Goradka" />
+          </div>
+        </div>
+
+        <!-- Content Below -->
+        <div class="arch-content">
+          <h2>A Glimpse of Goradka Village</h2>
+          <p>
+            Explore a blend of photos and videos that tell real stories of
+            Goradka’s beauty, peaceful nature views, sacred temples, and vibrant
+            village festivals.
+          </p>
+          <a href="#gallery-photos" class="arch-btn"
+            >View Full Gallery &rarr;</a
+          >
+
+          <div class="arch-features">
+            <div class="feature">
+              <h4>Timeless Memories</h4>
+              <p>Everyday village life</p>
+            </div>
+            <div class="feature">
+              <h4>Sacred Temples</h4>
+              <p>Peaceful nature views</p>
+            </div>
+            <div class="feature">
+              <h4>Culture & Tradition</h4>
+              <p>Vibrant village festivals</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 📸 Image Gallery Section -->
+      <h2 id="gallery-photos" style="text-align: center">Gallery Photos</h2>
+
+      <div class="grid">
+        <img
+          src="img/g3.jpeg"
+          alt="Gallery"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="img/librery (2).jpeg"
+          alt="Gallery"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="img/get2.jpeg"
+          alt="Gallery"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="img/shivm3.jpeg"
+          alt="Gallery"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="img/g7 (2).jpeg"
+          alt="Gallery"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="img/g7.jpeg"
+          alt="Gallery"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="img/gn1 (2).jpeg"
+          alt="Gallery"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="img/gn1 (3).jpeg"
+          alt="Gallery"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="img/gn1 (4).jpeg"
+          alt="Gallery"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="img/g8.jpeg"
+          alt="Gallery"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="img/gn1 (6).jpeg"
+          alt="Gallery"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="img/gn1 (7).jpeg"
+          alt="Gallery"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="img/gn1 (8).jpeg"
+          alt="Gallery"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="img/gn1 (9).jpeg"
+          alt="Gallery"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="img/villagek (3).webp"
+          alt="Gallery"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="img/villagek (2).webp"
+          alt="Gallery"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="img/villagek (1).webp"
+          alt="Gallery"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="img/gn1 (10).jpeg"
+          alt="Gallery"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="img/g4.jpeg"
+          alt="Gallery"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="img/n1 (1).jpeg"
+          alt="Gallery"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="img/n1 (2).jpeg"
+          alt="Gallery"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="img/n1 (3).jpeg"
+          alt="Gallery"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="img/n1 (4).jpeg"
+          alt="Gallery"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="img/n1 (5).jpeg"
+          alt="Gallery"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="img/n1 (7).jpeg"
+          alt="Gallery"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
       </div>
-    </div>
-  </footer>
+    </section>
 
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="script.js"></script>
-</body>
+    <!-- Gallery Upload Section -->
+    <section class="submit-section" data-aos="zoom-in">
+      <h2>📸 Upload Your Gallery Images</h2>
 
+      <form
+        class="event-form"
+        onsubmit="
+          openGalleryForm();
+          return false;
+        "
+      >
+        <button type="submit" class="submit-btn">Upload Your Images</button>
+      </form>
+    </section>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section about">
+          <h2>Goradka™</h2>
+          <p>
+            Goradka – where tradition meets progress in every corner. A peaceful
+            community built on unity, culture, and pride.
+          </p>
+          <div class="social-icons">
+            <a
+              href="https://www.instagram.com/goradka_nagari01?igsh=Z29pa29nMjBzdWwx"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a
+              href="https://wa.me/919574750680  ?text=હેલ્લો%2C%20કૃપા%20કરીને%20મને%20ગોરડકા%20ગ્રૂપમાં%20જોડાવાનો%20લિંક%20મોકલો."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-section links">
+          <h3>View all Pages</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section contact">
+          <h3>Contact</h3>
+          <p>
+            Tushar Sutariya <br />
+            fore any type of queries
+          </p>
+          <br />
+          <!-- <p><a href="mailto:email@example.com">email@example.com</a></p>
+      <p><a href="tel:+16555555555">(555) 555-5555</a></p> -->
+          <p class="created-by">
+            ❤ Created by
+            <a
+              href="https://ts.unaux.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Tushar Sutariya</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

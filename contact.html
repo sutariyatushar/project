@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -93,9 +93,6 @@
         <div class="portrait-card">
           <img src="img/romin.webp" alt="portrait 6" />
         </div>
-        <!-- <div class="portrait-card">
-          <img src="img/manf (3).jpg" alt="portrait 7" />
-        </div> -->
       </div>
     </section>
 
@@ -103,11 +100,6 @@
     <section class="features">
       <h2 class="features-title">Work Smarter Every Day</h2>
       <div class="features-grid">
-        <!-- <div class="feature">
-      <i class="fa-solid fa-bolt"></i>
-      <h3>Fast Setup</h3>
-      <p>Get started in minutes with our easy setup process.</p>
-    </div> -->
         <div class="feature">
           <i class="fa-solid fa-users"></i>
           <h3>Unity</h3>
@@ -157,6 +149,7 @@
               src="img/sarpanch.png"
               class="contact-img"
               alt="Rajubhai Soklanki"
+              loading="lazy"
             />
             <div class="card-details">
               <h3>Rajubhai Soklanki</h3>
@@ -169,7 +162,12 @@
           </div>
 
           <div class="contact-card" data-aos="fade-up">
-            <img src="img/anilsir.png" class="contact-img" alt="Jeel Dabhi" />
+            <img
+              src="img/anilsir.png"
+              class="contact-img"
+              alt="Jeel Dabhi"
+              loading="lazy"
+            />
             <div class="card-details">
               <h3>Anilbhai Rangpra</h3>
               <p>Library Handler with Good Villager</p>
@@ -181,7 +179,12 @@
           </div>
 
           <div class="contact-card" data-aos="fade-up">
-            <img src="img/jb.jpeg" class="contact-img" alt="Jeel Dabhi" />
+            <img
+              src="img/jb.jpeg"
+              class="contact-img"
+              alt="Jeel Dabhi"
+              loading="lazy"
+            />
             <div class="card-details">
               <h3>Jay Baraya</h3>
               <p>Social Media Handler</p>
@@ -197,6 +200,7 @@
               src="img/tushar.jpeg"
               class="contact-img"
               alt="Sanjaybhai Patel"
+              loading="lazy"
             />
             <div class="card-details">
               <h3>Tushar Sutariya</h3>
@@ -209,7 +213,12 @@
           </div>
 
           <div class="contact-card" data-aos="fade-up">
-            <img src="img/romin.webp" class="contact-img" alt="Jeel Dabhi" />
+            <img
+              src="img/romin.webp"
+              class="contact-img"
+              alt="Jeel Dabhi"
+              loading="lazy"
+            />
             <div class="card-details">
               <h3>Romin Sutariya</h3>
               <p>Marketer</p>
@@ -259,7 +268,7 @@
           placeholder="Your Mobile Number"
           maxlength="10"
           pattern="[0-9]{10}"
-          oninput="this.value=this.value.slice(0,10)"
+          oninput="this.value = this.value.slice(0, 10)"
           required
           class="no-spinner"
         />

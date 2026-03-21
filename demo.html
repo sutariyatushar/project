@@ -1,78 +1,152 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Directory</title>
-  <section class="event-section">
-  <h1>Goradka Village Events</h1>
-
-  <p>
-    Goradka is a village full of tradition, culture, and lively celebrations. 
-    Every year, our community comes together to honor festivals, fairs, and local events that bring joy and preserve the heritage of our village. 
-    From colorful celebrations to devotional festivals, Goradka’s events are a reflection of unity, happiness, and cultural pride.
-  </p>
-
-  <!-- Read More Content -->
-  <div id="event-full-content" class="extra-content" style="display: none; margin-top: 20px;">
-    
-    <h2>Goradka Utsav</h2>
-    <p>
-      Goradka Utsav is the most anticipated festival of the year. The entire village gathers at the main ground to enjoy traditional music, folk dances, and local cuisine. The air is filled with laughter and excitement as children participate in games, kite-flying competitions, and art workshops. 
-      Elders share stories about the history of Goradka, ensuring that traditions are passed down to the younger generation.
-    </p>
-    <p>
-      Local artisans display handicrafts like pottery, woven fabrics, and decorative items. Food stalls serve traditional snacks and sweets that have been part of Goradka’s heritage for decades. The festival is a feast for all senses — the colors, sounds, and aromas immerse visitors in village culture.
-    </p>
-
-    <h2>Diwali – Festival of Lights</h2>
-    <p>
-      Diwali in Goradka transforms the village into a glowing paradise. Homes are decorated with diyas and rangolis, symbolizing prosperity and positivity. Families come together to perform prayers to Goddess Lakshmi and Lord Ganesha, sharing sweets and festive meals.
-    </p>
-    <p>
-      Children take part in rangoli competitions and enjoy small fireworks, while the community participates in cultural programs at the village temple. Diwali is not just about lights; it is about strengthening bonds, celebrating togetherness, and filling hearts with joy.
-    </p>
-
-    <h2>Janmashtami – Devotion and Celebration</h2>
-    <p>
-      Janmashtami is celebrated with devotion and excitement. Villagers gather at Ramji Mandir to sing bhajans, perform rituals, and participate in the Dahi Handi competition. Young men form human pyramids to break the handi filled with curd and sweets, cheered on by everyone.
-    </p>
-    <p>
-      Evening celebrations include folk dances, devotional songs, and communal feasts. Families and friends share laughter and sweets, making Janmashtami a truly memorable festival that combines devotion, fun, and community spirit.
-    </p>
-
-    <h2>Holi – Festival of Colors</h2>
-    <p>
-      Holi in Goradka is a riot of colors and joy. Villagers play with gulal and water, celebrating friendship, unity, and the arrival of spring. Traditional sweets like gujiya and drinks like thandai fill every household, creating a festive atmosphere throughout the village.
-    </p>
-    <p>
-      Streets and homes are alive with music, laughter, and dance. Holi is a festival that brings everyone together, erasing differences and creating memories that last a lifetime.
-    </p>
-
-    <h2>Other Local Festivals</h2>
-    <p>
-      Apart from these major events, Goradka celebrates Makar Sankranti with kite flying and sesame-based sweets, Navratri with vibrant Garba nights, and seasonal village fairs that showcase local crafts and foods. Each festival strengthens the bonds within the community and keeps the rich traditions of Goradka alive.
-    </p>
-  </div>
-
-  <!-- Read More Button -->
-  <button id="read-more-btn" onclick="toggleEventContent()" style="margin-top: 20px;">Read More</button>
-</section>
-
-<script>
-  function toggleEventContent() {
-    const content = document.getElementById("event-full-content");
-    const btn = document.getElementById("read-more-btn");
-    if (content.style.display === "block") {
-      content.style.display = "none";
-      btn.innerText = "Read More";
-    } else {
-      content.style.display = "block";
-      btn.innerText = "Read Less";
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .stack-services {
+      padding: 60px 20px;
+      background: #f4f6f9;
+      text-align: center;
     }
-  }
-</script>
 
+    .stack-container {
+      position: relative;
+      height: 240px;
+      max-width: 340px;
+      margin: auto;
+    }
 
-</body>
+    .stack-card {
+      position: absolute;
+      width: 100%;
+      background: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.5s ease;
+      opacity: 0;
+      transform: scale(0.9) translateY(30px);
+    }
+
+    .stack-card.active {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      z-index: 2;
+    }
+
+    .card-top {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .card-image {
+      width: 70px;
+      height: 70px;
+      background: #e7f5ec;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+    }
+
+    .modern-call {
+      display: block;
+      padding: 12px;
+      background: linear-gradient(135deg, #12aa40, #30a24b);
+      color: white;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .stack-buttons {
+      margin-top: 30px;
+    }
+
+    .stack-buttons button {
+      border: none;
+      background: #fff;
+      font-size: 24px;
+      padding: 10px 15px;
+      margin: 0 10px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <section class="stack-services">
+      <h2 class="section-title">Village Services</h2>
+
+      <div class="stack-container">
+        <div class="stack-card active">
+          <div class="card-top">
+            <div class="card-image">🩺</div>
+            <div>
+              <h3>Sanjaybhai Yadav</h3>
+              <p>Village Doctor</p>
+            </div>
+          </div>
+          <a href="tel:9723699000" class="modern-call">📞 97236 99000</a>
+        </div>
+
+        <div class="stack-card">
+          <div class="card-top">
+            <div class="card-image">📚</div>
+            <div>
+              <h3>Village Library</h3>
+              <p>Knowledge & Culture</p>
+            </div>
+          </div>
+          <a href="tel:0000000000" class="modern-call">📞 Call</a>
+        </div>
+
+        <div class="stack-card">
+          <div class="card-top">
+            <div class="card-image">📸</div>
+            <div>
+              <h3>Vinodbhai Sarvaiya</h3>
+              <p>Madhuli Studio</p>
+            </div>
+          </div>
+          <a href="tel:9714888743" class="modern-call">📞 97148 88743</a>
+        </div>
+      </div>
+
+      <div class="stack-buttons">
+        <button id="prev">&#10094;</button>
+        <button id="next">&#10095;</button>
+      </div>
+    </section>
+    <script>
+      const cards = document.querySelectorAll(".stack-card");
+      const next = document.getElementById("next");
+      const prev = document.getElementById("prev");
+
+      let current = 0;
+
+      function showCard(index) {
+        cards.forEach((card) => card.classList.remove("active"));
+        cards[index].classList.add("active");
+      }
+
+      next.addEventListener("click", () => {
+        current++;
+        if (current >= cards.length) current = 0;
+        showCard(current);
+      });
+
+      prev.addEventListener("click", () => {
+        current--;
+        if (current < 0) current = cards.length - 1;
+        showCard(current);
+      });
+    </script>
+  </body>
 </html>
