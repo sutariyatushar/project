@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Goradka Village Blog | Culture, Life & Updates</title>
+    <meta name="description" content="Explore blog posts about Goradka Village including farming, lifestyle, culture, and development updates." />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="blog.css" />
+</head>
+<body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <h2 class="logo">Goradka</h2>
+        <div class="hamburgers">
+          <label class="hamburger">
+            <input type="checkbox" id="menuToggle" aria-label="Toggle Navigation Menu" onclick="toggleMenu()" />
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </label>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="blog.html" class="active" style="color:#1f1f1f;">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- MODERN HERO SECTION -->
+    <header class="modern-hero">
+      <!-- Background Shapes -->
+      <div class="hero-shape shape-1"></div>
+      <div class="hero-shape shape-2"></div>
+      <div class="hero-shape shape-3"></div>
+
+      <div class="hero-container">
+        <!-- Left Side: Text Details -->
+        <div class="hero-left">
+          <div class="hero-badge" data-aos="fade-up">🌿 Goradka Village Blog</div>
+          <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">Life in Goradka Village – Culture, Development & Rural Lifestyle in Gujarat</h1>
+          <h2 class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Discover the culture, growth, and peaceful life of Goradka Village in Gujarat</h2>
+          <p class="hero-desc" data-aos="fade-up" data-aos-delay="300">Explore stories, updates, and deep insights into how our community thrives together every single day.</p>
+          
+          <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
+            <div class="hero-stat"><i class="fa-solid fa-masks-theater"></i> Culture</div>
+            <div class="hero-stat"><i class="fa-solid fa-chart-line"></i> Development</div>
+            <div class="hero-stat"><i class="fa-solid fa-seedling"></i> Lifestyle</div>
+          </div>
+
+          <div class="hero-btn-group" data-aos="fade-up" data-aos-delay="500">
+            <a href="#featured" class="hero-btn hero-btn-primary">Read Blog <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="about.html" class="hero-btn hero-btn-secondary">Explore More</a>
+          </div>
+        </div>
+
+        <!-- Right Side: Glass Cards -->
+        <div class="hero-right">
+          <!-- Card 1 -->
+          <div class="glass-card card-top">
+            <span class="emoji">🌾</span>
+            <h4>Agriculture</h4>
+            <p>Sustainable village farming</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="glass-card card-right">
+            <span class="emoji">💧</span>
+            <h4>Clean Water</h4>
+            <p>Consistent local supply</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="glass-card card-bottom">
+            <span class="emoji">🏡</span>
+            <h4>Community</h4>
+            <p>A connected lifestyle</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Down Indicator -->
+      <a href="#featured" class="scroll-indicator">
+        Scroll Down
+        <i class="fa-solid fa-angle-down"></i>
+      </a>
+    </header>
+
+    <!-- FEATURED BLOG (EXTRA SECTION) -->
+    <section id="featured" class="featured-blog" data-aos="fade-up">
+      <a href="#" class="featured-card">
+        <img src="img/sivm2.jpeg" alt="Featured Village Story" class="featured-img" loading="lazy" />
+        <div class="featured-overlay"></div>
+        <div class="featured-content">
+          <span class="featured-tag">Featured</span>
+          <h2 class="featured-title">The Rich Heritage of Goradka's Deep Roots</h2>
+          <p class="featured-desc">Step back in time to discover the founding stories of our village and the ancestors who shaped our current community identity.</p>
+        </div>
+      </a>
+    </section>
+
+    <!-- BLOG SECTION (MAIN - LIKE REFERENCE IMAGE) -->
+    <section class="blog-section">
+      <div class="blog-section-tag" data-aos="fade-up">Latest Articles</div>
+      <h2 class="blog-headline" data-aos="fade-up">What can we share with you?</h2>
+
+      <div class="blog-grid">
+        <!-- Card 1 -->
+        <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="blog-img-wrapper">
+            <img src="img/villagers.png" alt="Village Life" class="blog-img" loading="lazy" />
+          </div>
+          <div class="blog-content">
+            <h3 class="blog-title">Village Life in Goradka</h3>
+            <p class="blog-desc">Experience the peaceful and traditional lifestyle of our village community.</p>
+            <a href="blog-post.html" class="blog-btn">Read More</a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="blog-img-wrapper">
+            <!-- Let's assume there's a good farming photo in img/ -->
+            <img src="img/area.png" alt="Farming & Agriculture" class="blog-img" loading="lazy" />
+          </div>
+          <div class="blog-content">
+            <h3 class="blog-title">Farming &amp; Agriculture</h3>
+            <p class="blog-desc">Discover how farmers in Goradka grow crops and manage sustainable farming.</p>
+            <a href="#" class="blog-btn">Read More</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="blog-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="blog-img-wrapper">
+            <img src="img/houses.png" alt="Village Development" class="blog-img" loading="lazy" />
+          </div>
+          <div class="blog-content">
+            <h3 class="blog-title">Village Development</h3>
+            <p class="blog-desc">Learn about new projects and improvements happening in Goradka Village.</p>
+            <a href="#" class="blog-btn">Read More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GUJARATI SECTION -->
+    <section class="gujarati-section" data-aos="zoom-in">
+      <h3>📍 ગુજરાતી બ્લોગ માહિતી:</h3>
+      <p>
+        અહીં ગોરડકા ગામના સમાચાર, સંસ્કૃતિ અને વિકાસ વિશેની માહિતી આપવામાં આવે છે.
+      </p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section about">
+          <h2>Goradka™</h2>
+          <p>Goradka – where tradition meets progress in every corner. A peaceful community built on unity, culture, and pride.</p>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/goradka_nagari01?igsh=Z29pa29nMjBzdWwx" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/9825687775?text=હેલ્લો%2C%20કૃપા%20કરીને%20મને%20ગોરડકા%20ગ્રૂપમાં%20જોડાવાનો%20લિંક%20મોકલો." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://wa.me/919574750680?text=હેલ્લો%2C%20કૃપા%20કરીને%20મને%20ગોરડકા%20ગ્રૂપમાં%20જોડાવાનો%20લિંક%20મોકલો." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-section links">
+          <h3>View all Pages</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section contact">
+          <h3>Contact</h3>
+          <p>Tushar Sutariya <br />fore any type of queries</p>
+          <br />
+          <p class="created-by">❤ Created by <a href="https://ts.unaux.com" target="_blank" rel="noopener noreferrer">Tushar Sutariya</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init({ once: true, offset: 50 });</script>
+    <script src="script.js"></script>
+</body>
+</html>
