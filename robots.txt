@@ -1,4 +1,25 @@
 User-agent: *
 Allow: /
 
+# Prevent crawling of unnecessary or private paths
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+
+# Allowed Generative AI / GEO Crawlers
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 Sitemap: https://goradka.netlify.app/sitemap.xml
