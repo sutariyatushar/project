@@ -2,43 +2,64 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Home -->
   <url>
-    <loc>https://goradka.netlify.app/</loc>
-    <lastmod>2026-03-26</lastmod>
+    <loc>https://goradka.netlify.app/index.html</loc>
+    <lastmod>2026-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <!-- About -->
   <url>
     <loc>https://goradka.netlify.app/about.html</loc>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- Services -->
   <url>
     <loc>https://goradka.netlify.app/services.html</loc>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <!-- Blog -->
+  <url>
+    <loc>https://goradka.netlify.app/blog.html</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Post 1: Life in Goradka -->
+  <url>
+    <loc>https://goradka.netlify.app/blog-life-in-goradka.html</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Blog Post 2: Farming & Agriculture -->
+  <url>
+    <loc>https://goradka.netlify.app/blog-farming-and-agriculture.html</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <!-- Events -->
   <url>
     <loc>https://goradka.netlify.app/events.html</loc>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <!-- Gallery -->
   <url>
     <loc>https://goradka.netlify.app/gallery.html</loc>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <!-- Contact -->
   <url>
     <loc>https://goradka.netlify.app/contact.html</loc>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-03-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
