@@ -332,15 +332,18 @@ backBtn.addEventListener("click", (e) => {
   }
 
 // ✅ Expand card functionality
- function toggleEventContent() {
+  function toggleEventContent() {
     const content = document.getElementById("event-full-content");
     const btn = document.getElementById("read-more-btn");
-    if (content.style.display === "block") {
-      content.style.display = "none";
-      btn.innerText = "Read More";
+    const btnText = btn.querySelector("span");
+    
+    content.classList.toggle("show");
+    btn.classList.toggle("active");
+
+    if (content.classList.contains("show")) {
+      btnText.innerText = "Read Less";
     } else {
-      content.style.display = "block";
-      btn.innerText = "Read Less";
+      btnText.innerText = "Read More";
     }
   }
 // ✅ Contact form submission
@@ -577,24 +580,56 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let isExpanded = false;
 
-  // Expand card
+  // --- NEW: Full-Size Event Detail Modal Logic ---
+  const eventModal = document.getElementById("eventDetailModal");
+
   grid.addEventListener("click", (e) => {
     const item = e.target.closest(".event-item");
     if (!item) return;
 
-    document.querySelectorAll(".event-item")
-      .forEach(i => i.classList.remove("active"));
+    // Get event data from the item
+    const img = item.querySelector("img").src;
+    const title = item.querySelector("h3").innerText;
+    
+    // Find the expanded content inside this item
+    const expandDiv = item.querySelector(".event-expand");
+    const fullTitle = expandDiv.querySelector("h4").innerText;
+    const fullDescHtml = expandDiv.querySelector("p").innerHTML;
 
-    item.classList.add("active");
+    // Split text into Location, Date and Description if possible
+    // (Assuming the structure: 📍 Location <br> 🗓️ Date <br><br> Description)
+    const contentParts = fullDescHtml.split("<br><br>");
+    const metaParts = contentParts[0].split("<br>");
+    
+    const loc = metaParts[0] || "📍 Goradka Village";
+    const date = metaParts[1] || "🗓️ Event Date";
+    const desc = contentParts[1] || "";
+
+    // Populate Modal
+    document.getElementById("modalFullImg").src = img;
+    document.getElementById("modalFullTitle").innerText = fullTitle;
+    document.getElementById("modalFullLoc").innerHTML = loc;
+    document.getElementById("modalFullDate").innerHTML = date;
+    document.getElementById("modalFullDesc").innerHTML = desc;
+
+    // Show Modal
+    eventModal.classList.add("active");
+    document.body.style.overflow = "hidden"; // Prevent background scroll
   });
 
-  // Close card
-  document.addEventListener("click", (e) => {
-    if (e.target.classList.contains("close-btn")) {
-      e.stopPropagation();
-      e.target.closest(".event-item").classList.remove("active");
+  // Global Close function
+  window.closeEventDetail = function() {
+    eventModal.classList.remove("active");
+    document.body.style.overflow = ""; // Restore scroll
+  };
+
+  // Close modal on click outside
+  window.onclick = function(event) {
+    if (event.target == eventModal) {
+      closeEventDetail();
     }
-  });
+  };
+
 
   // Show / Hide Events
   allEventsBtn.addEventListener("click", () => {

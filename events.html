@@ -71,79 +71,55 @@
 
 
 
-  <section class="event-section">
-  <h1>Goradka Village Events</h1>
+  <section class="event-intro-premium" data-aos="fade-up">
+    <div class="intro-badge">Our Heritage</div>
+    <h1 class="premium-h1">Goradka Village Events</h1>
+    
+    <div class="intro-main-text">
+      <p>
+        Goradka is a vibrant village where community, culture, and tradition come together through a variety of events throughout the year. 
+        From cultural festivals and religious celebrations to local fairs and village gatherings, Goradka offers something for everyone. 
+        These events are not only moments of joy but also a way to preserve our heritage and bring the community closer.
+      </p>
+    </div>
 
-  <p>
-    Goradka is a vibrant village where community, culture, and tradition come together through a variety of events throughout the year. 
-    From cultural festivals and religious celebrations to local fairs and village gatherings, Goradka offers something for everyone. 
-    These events are not only moments of joy but also a way to preserve our heritage and bring the community closer.
-  </p>
+    <!-- Smooth Expandable Content -->
+    <div id="event-full-content" class="intro-expandable-content">
+      <div class="expand-grid">
+        <div class="expand-card">
+          <i class="fa-solid fa-people-group"></i>
+          <h3>Community Spirit</h3>
+          <p>Events in Goradka are designed to strengthen community ties, celebrate culture, and provide fun and learning for people of all ages.</p>
+        </div>
+        
+        <div class="expand-card">
+          <i class="fa-solid fa-kaaba"></i>
+          <h3>Cultural Types</h3>
+          <p>Goradka hosts a variety of events that cater to different interests, including Folk music, Janmashtami, Diwali, and seasonal fairs.</p>
+        </div>
+        
+        <div class="expand-card">
+          <i class="fa-solid fa-heart-pulse"></i>
+          <h3>Why It Matters</h3>
+          <p>Village events are more than celebrations; they are a living record of our culture and traditions, fostering unity and pride.</p>
+        </div>
+      </div>
 
-  <!-- Read More Content -->
-  <div id="event-full-content" class="extra-content" style="display: none; margin-top: 20px;">
+      <div class="detailed-paragraphs">
+        <h2>Celebrating Together</h2>
+        <p>Every villager is encouraged to participate and contribute ideas to make each event enjoyable and inclusive. Families work together to prepare food, organize activities, and decorate spaces.</p>
+        <p>Whether you are organizing a new festival, joining a seasonal fair, or participating in a cultural workshop, Goradka’s events offer a space to celebrate life, culture, and togetherness.</p>
+      </div>
+    </div>
 
-    <h2>Understanding Goradka Village Events</h2>
-    <p>
-      Events in Goradka are designed to strengthen community ties, celebrate culture, and provide fun and learning for people of all ages. 
-      These can include large-scale festivals, seasonal fairs, religious gatherings, cultural programs, workshops, sports competitions, and even informal community meetups. 
-      Every event, big or small, reflects the traditions and spirit of Goradka.
-    </p>
-
-    <h2>How New Events are Created</h2>
-    <p>
-      If you wish to organize a new event in Goradka, the process is simple and community-oriented. 
-      Villagers usually discuss the purpose, date, and type of event in a local committee or during community meetings. 
-      Once agreed upon, necessary preparations are made, including assigning roles for organization, decoration, food arrangements, and activities. 
-      Every villager is encouraged to participate and contribute ideas to make the event enjoyable and inclusive.
-    </p>
-
-    <h2>Types of Village Events</h2>
-    <p>
-      Goradka hosts a variety of events that cater to different interests and age groups:
-    </p>
-    <ul>
-      <li><strong>Cultural Events:</strong> Folk music, dance performances, traditional art exhibitions, and local handicraft displays.</li>
-      <li><strong>Religious Celebrations:</strong> Festivals like Janmashtami, Diwali, Holi, Makar Sankranti, and Navratri where villagers come together for prayers and rituals.</li>
-      <li><strong>Seasonal Fairs:</strong> Markets showcasing local food, handicrafts, games for children, and activities for adults.</li>
-      <li><strong>Community Workshops:</strong> Art, craft, storytelling, and educational activities designed to engage all age groups.</li>
-      <li><strong>Sports & Competitions:</strong> Kite flying, traditional games, and competitions for youth and elders, promoting fun and camaraderie.</li>
-    </ul>
-
-    <h2>Celebrating Together</h2>
-    <p>
-      Every event in Goradka is about community spirit. Villagers, regardless of age, gender, or background, participate actively. 
-      Families work together to prepare food, organize activities, and decorate spaces. Children learn about traditions through interactive participation, while elders guide and mentor younger members. 
-      Events foster unity, cultural pride, and a sense of belonging.
-    </p>
-
-    <h2>Tips for Participating</h2>
-    <p>
-      To fully enjoy Goradka’s events, visitors and villagers alike are encouraged to: 
-    </p>
-    <ul>
-      <li>Engage in cultural and recreational activities actively.</li>
-      <li>Learn about the history and significance of each festival or event.</li>
-      <li>Support local artisans and food vendors by exploring their stalls.</li>
-      <li>Contribute ideas or volunteer in organizing events.</li>
-      <li>Capture and share memories while respecting traditions.</li>
-    </ul>
-
-    <h2>Why Goradka’s Events Matter</h2>
-    <p>
-      Village events in Goradka are more than celebrations; they are a living record of our culture and traditions. 
-      They create opportunities for social bonding, learning, and passing down heritage to younger generations. 
-      Each event strengthens the identity of Goradka, making it not just a village but a thriving community where every festival and gathering is a story waiting to be shared.
-    </p>
-
-    <p>
-      Whether you are organizing a new festival, joining a seasonal fair, or participating in a cultural workshop, Goradka’s events offer a space to celebrate life, culture, and togetherness.
-    </p>
-  </div>
-
-  <!-- Read More Button -->
-  <button id="read-more-btn" onclick="toggleEventContent()" style="margin-top: 20px;">Read More</button>
-</section>
+    <!-- Professional Read More Button -->
+    <div class="intro-btn-wrapper">
+      <button id="read-more-btn" class="modern-read-more-btn" onclick="toggleEventContent()">
+        <span>Read More</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+    </div>
+  </section>
 
 
 <section class="events-section">
@@ -154,8 +130,12 @@
 <!-- EVENT 1 -->
 <div class="event-item">
   <img src="img/holi.webp" alt="Holi Festival" loading="lazy">
+  <div class="event-item-overlay">
+    <div class="view-details-tag">View Details</div>
+  </div>
   <h3>HOLI</h3>
   <p>Festival of Colors & Joy</p>
+  <div class="event-read-more">Learn More <i class="fa-solid fa-arrow-right"></i></div>
 
   <div class="event-expand">
     <button class="close-btn">✕</button>
@@ -174,8 +154,12 @@
     <!-- EVENT 2 -->
     <div class="event-item">
       <img src="img/eventm (2).webp" alt="Diwali" loading="lazy">
+      <div class="event-item-overlay">
+        <div class="view-details-tag">View Details</div>
+      </div>
       <h3>DIWALI</h3>
       <p>Festival of lights</p>
+      <div class="event-read-more">Learn More <i class="fa-solid fa-arrow-right"></i></div>
 
       <div class="event-expand">
         <button class="close-btn">✕</button>
@@ -191,8 +175,12 @@
     <!-- EVENT 3 -->
     <div class="event-item">
       <img src="img/eventm (3).webp" alt="Utarayan" loading="lazy">
+      <div class="event-item-overlay">
+        <div class="view-details-tag">View Details</div>
+      </div>
       <h3>UTARAYAN</h3>
       <p>Kite flying festival</p>
+      <div class="event-read-more">Learn More <i class="fa-solid fa-arrow-right"></i></div>
 
       <div class="event-expand">
         <button class="close-btn">✕</button>
@@ -208,8 +196,12 @@
     <!-- EVENT 5 (HIDDEN INITIALLY) -->
     <div class="event-item hidden-event">
       <img src="img/eventm (1).webp" alt="Independence Day" loading="lazy">
+      <div class="event-item-overlay">
+        <div class="view-details-tag">View Details</div>
+      </div>
       <h3>INDEPENDENCE DAY</h3>
       <p>National celebration</p>
+      <div class="event-read-more">Learn More <i class="fa-solid fa-arrow-right"></i></div>
 
       <div class="event-expand">
         <button class="close-btn">✕</button>
@@ -222,7 +214,32 @@
       </div>
     </div>
 
-  </div>
+    </div>
+
+    <!-- MODERN EVENT DETAIL MODAL -->
+    <div id="eventDetailModal" class="event-modal-overlay">
+      <div class="event-modal-container">
+        <button class="event-modal-close" onclick="closeEventDetail()">✕</button>
+        <div class="event-modal-content">
+          <div class="event-modal-image">
+            <img id="modalFullImg" src="" alt="Event Detail">
+          </div>
+          <div class="event-modal-text">
+            <div class="modal-badge">Goradka Event</div>
+            <h2 id="modalFullTitle">Event Title</h2>
+            <div class="modal-meta">
+              <span id="modalFullLoc"><i class="fa-solid fa-location-dot"></i> Location</span>
+              <span id="modalFullDate"><i class="fa-solid fa-calendar-days"></i> March 14, 2026</span>
+            </div>
+            <div class="modal-divider"></div>
+            <p id="modalFullDesc">Detailed description goes here...</p>
+            <div class="modal-footer">
+              <p>Join us and celebrate the heart of Goradka.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
   <button class="all-events-btn" id="allEventsBtn">
     All Events
