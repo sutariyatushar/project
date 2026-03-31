@@ -514,90 +514,94 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeMap();
 });
 
-document.querySelectorAll(".read-more").forEach((button) => {
-  button.addEventListener("click", function () {
-    const card = this.closest(".card");
+// ✅ Universal Expansion Logic for all card types
+document.addEventListener("click", function(e) {
+  const btn = e.target.closest(".read-more, .expand-btn, .read-more-btn, .attraction-read-more");
+  if (!btn) return;
+
+  const card = btn.closest(".card, .stat-card, .event-card, .attraction-card");
+  if (!card) return;
+
+  const isStatCard = card.classList.contains("stat-card");
+  const isAttractionCard = card.classList.contains("attraction-card");
+
+  if (isStatCard) {
+    card.classList.toggle("active");
+    btn.innerHTML = card.classList.contains("active") 
+      ? `Read Less <i class="fa-solid fa-chevron-up"></i>` 
+      : `Read More <i class="fa-solid fa-chevron-down"></i>`;
+  } else if (isAttractionCard) {
+     card.classList.toggle("expanded");
+     btn.innerHTML = card.classList.contains("expanded")
+       ? 'Read Less <i class="fa-solid fa-arrow-up"></i>'
+       : 'Read More <i class="fa-solid fa-arrow-right"></i>';
+  } else {
+    // Original general card logic
     card.classList.toggle("expanded");
-
-    const moreText = card.querySelector(".more-text");
-    if (moreText.style.display === "block") {
-      moreText.style.display = "none";
-      this.textContent = "Read More";
-    } else {
-      moreText.style.display = "block";
-      this.textContent = "Read Less";
-    }
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const readMoreButtons = document.querySelectorAll(".read-more-btn");
-
-  readMoreButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      const card = button.closest(".event-card");
-      const extraContent = card.querySelector(".extra-content");
-
-      extraContent.classList.toggle("hidden");
-
-      if (extraContent.classList.contains("hidden")) {
-        button.textContent = "Read More";
+    const moreText = card.querySelector(".more-text, .extra-content");
+    if (moreText) {
+      if (moreText.style.display === "block" || moreText.classList.contains("show")) {
+        moreText.style.display = "none";
+        moreText.classList.remove("show");
+        btn.textContent = "Read More";
       } else {
-        button.textContent = "Show Less";
+        moreText.style.display = "block";
+        moreText.classList.add("show");
+        btn.textContent = "Read Less";
       }
-    });
-  });
+    }
+  }
 });
 
-  // ############################################### home page redemore botton ################################
 
 
 
-  document.querySelectorAll(".attraction-read-more").forEach(button => {
-  button.addEventListener("click", function () {
-    const card = this.closest(".attraction-card");
-    card.classList.toggle("expanded");
 
-    if (card.classList.contains("expanded")) {
-      this.innerHTML = 'Read Less <i class="fa-solid fa-arrow-up"></i>';
+
+
+// ✅ Timeline Progress Fill Logic (Only runs if timeline exists on page)
+window.addEventListener("scroll", function () {
+  const container = document.querySelector(".timeline-container");
+  if (!container) return;
+
+  const progressLine = document.querySelector(".timeline-progress-line");
+  const items = document.querySelectorAll(".timeline-item");
+
+  const containerRect = container.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  // Calculate progress based on how much of the container is in view
+  let progress = (windowHeight / 2 - containerRect.top) / containerRect.height;
+  progress = Math.max(0, Math.min(1, progress));
+
+  if (progressLine) progressLine.style.height = `${progress * 100}%`;
+
+  // Update dots based on progress
+  items.forEach((item) => {
+    const itemRect = item.getBoundingClientRect();
+    if (itemRect.top < windowHeight / 2) {
+      item.classList.add("reached");
     } else {
-      this.innerHTML = 'Read More <i class="fa-solid fa-arrow-right"></i>';
+      item.classList.remove("reached");
     }
   });
 });
 
+// ✅ Event main page card expand collapse
+const eventsGrid = document.getElementById("eventsGrid");
+const eventDetailModal = document.getElementById("eventDetailModal");
 
-
-
-
-
-
-// event main page card expand collapse /////////////////////////////////////////////////////
-
-  const grid = document.getElementById("eventsGrid");
-  const allEventsBtn = document.getElementById("allEventsBtn");
-  const hiddenEvents = document.querySelectorAll(".hidden-event");
-
-  let isExpanded = false;
-
-  // --- NEW: Full-Size Event Detail Modal Logic ---
-  const eventModal = document.getElementById("eventDetailModal");
-
-  grid.addEventListener("click", (e) => {
+if (eventsGrid && eventDetailModal) {
+  eventsGrid.addEventListener("click", (e) => {
     const item = e.target.closest(".event-item");
     if (!item) return;
 
-    // Get event data from the item
     const img = item.querySelector("img").src;
-    const title = item.querySelector("h3").innerText;
-    
-    // Find the expanded content inside this item
     const expandDiv = item.querySelector(".event-expand");
+    if (!expandDiv) return;
+
     const fullTitle = expandDiv.querySelector("h4").innerText;
     const fullDescHtml = expandDiv.querySelector("p").innerHTML;
-
-    // Split text into Location, Date and Description if possible
-    // (Assuming the structure: 📍 Location <br> 🗓️ Date <br><br> Description)
     const contentParts = fullDescHtml.split("<br><br>");
     const metaParts = contentParts[0].split("<br>");
     
@@ -613,34 +617,39 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("modalFullDesc").innerHTML = desc;
 
     // Show Modal
-    eventModal.classList.add("active");
-    document.body.style.overflow = "hidden"; // Prevent background scroll
+    eventDetailModal.classList.add("active");
+    document.body.style.overflow = "hidden";
   });
 
-  // Global Close function
+  // Global Close function for this modal
   window.closeEventDetail = function() {
-    eventModal.classList.remove("active");
-    document.body.style.overflow = ""; // Restore scroll
+    eventDetailModal.classList.remove("active");
+    document.body.style.overflow = "";
   };
 
   // Close modal on click outside
-  window.onclick = function(event) {
-    if (event.target == eventModal) {
+  window.addEventListener("click", (e) => {
+    if (e.target == eventDetailModal) {
       closeEventDetail();
     }
-  };
+  });
+}
 
 
   // Show / Hide Events
-  allEventsBtn.addEventListener("click", () => {
-    isExpanded = !isExpanded;
+  const allEvtBtn = document.getElementById("allEventsBtn");
+  const hiddenEvts = document.querySelectorAll(".hidden-event");
+  let isEvtExpanded = false;
 
-    hiddenEvents.forEach(event => {
-      event.style.display = isExpanded ? "block" : "none";
+  if (allEvtBtn) {
+    allEvtBtn.addEventListener("click", () => {
+      isEvtExpanded = !isEvtExpanded;
+      hiddenEvts.forEach(event => {
+        event.style.display = isEvtExpanded ? "block" : "none";
+      });
+      allEvtBtn.textContent = isEvtExpanded ? "Show Less" : "All Events";
     });
-
-    allEventsBtn.textContent = isExpanded ? "Show Less" : "All Events";
-  });
+  }
 
 
 
