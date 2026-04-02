@@ -49,6 +49,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <!-- Blog Post 4: Smart Village Future -->
+  <url>
+    <loc>https://goradka.netlify.app/blog-smart-village-future.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <!-- Events -->
   <url>
     <loc>https://goradka.netlify.app/events.html</loc>
