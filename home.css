@@ -1295,22 +1295,24 @@ footer {
 
 .about-text-card {
     background: #ffffff;
-    padding: 40px;
-    border-radius: 30px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(76, 175, 80, 0.1);
+    padding: 50px 35px;
+    border-radius: 45px; /* Large rounded corners as per image */
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.05);
     position: relative;
     overflow: hidden;
+    max-width: 850px;
+    margin: 0 auto;
+    border: 1px solid rgba(0,0,0,0.02);
 }
 
 .about-text-card::before {
     content: '';
     position: absolute;
-    top: -50px;
-    right: -50px;
-    width: 150px;
-    height: 150px;
-    background: rgba(76, 175, 80, 0.05);
+    top: -40px;
+    right: -40px;
+    width: 140px;
+    height: 140px;
+    background: rgba(76, 175, 80, 0.04); /* Subtle decorative circle */
     border-radius: 50%;
     z-index: 0;
 }
@@ -1320,35 +1322,79 @@ footer {
     z-index: 1;
 }
 
-.about-text-card h2 {
-    text-align: left;
-    font-size: 2.5rem;
-    color: #1b5e20;
-    margin-bottom: 20px;
-    font-family: 'Playfair Display', serif;
+.about-title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 35px;
 }
 
-.about-text-card p {
+.about-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.8rem;
+    line-height: 1.1;
+    color: #1b5e20;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+/* Vertical line visual from image */
+.title-line {
+    width: 6px;
+    height: 120px;
+    background: rgba(76, 175, 80, 0.1);
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.about-description {
+    font-family: 'Poppins', sans-serif;
     color: #555;
     font-size: 1.1rem;
     line-height: 1.8;
-    margin-bottom: 30px;
+    text-align: left;
+    margin-bottom: 35px;
 }
 
 .about-more-link {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    color: #2e7d32;
+    gap: 12px;
+    color: #1b5e20;
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     transition: all 0.3s ease;
 }
 
+.about-more-link i {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
 .about-more-link:hover {
-    gap: 15px;
-    color: #1b5e20;
+    color: #2e7d32;
+}
+
+.about-more-link:hover i {
+    transform: translateX(8px);
+}
+
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 3.2rem;
+    }
+    .about-text-card {
+        padding: 40px 25px;
+        border-radius: 40px;
+    }
+    .title-line {
+        height: 100px;
+        width: 4px;
+    }
+    .about-more-link {
+        font-size: 1.15rem;
+    }
 }
 
 /* Map Styling */
