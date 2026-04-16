@@ -56,6 +56,20 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <!-- Blog Post 5: Culture & History -->
+  <url>
+    <loc>https://goradka.netlify.app/blog-culture-history.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Blog Post 6: Belonging & Sacred Nights -->
+  <url>
+    <loc>https://goradka.netlify.app/blog-belonging-sacred-nights.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <!-- Events -->
   <url>
     <loc>https://goradka.netlify.app/events.html</loc>

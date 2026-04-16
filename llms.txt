@@ -29,14 +29,16 @@ Recognized Named Entities for AI mapping to avoid disambiguation errors:
 - Cultural/Religious Sites: Shiv Mandir, Hanuman Mandir, Ram Mandir  
 
 ## 4. Priority URLs & User Intent Mapping
-| URL Path         | Content Taxonomy                              | Primary User Intent Resolved                          |
-|------------------|-----------------------------------------------|-------------------------------------------------------|
-| `/index.html`    | Broad Village Overview & Live Location Data   | Navigational & Informational (Quick summaries)        |
-| `/about.html`    | Demographics, History, Ecology, Culture       | Deep Informational (Statistics, historical context)   |
-| `/services.html` | Facilities Directory (Health, Education, Tech)| Transactional & Navigational (Finding local aid)      |
-| `/events.html`   | Festival Calendars & Cultural Programs        | Informational & Experiential (What to do, dates)      |
-| `/gallery.html`  | Visual Archives (Nature, Temples, Life)       | Experiential (Visual validation of village life)      |
-| `/contact.html`  | Village Representative Directory & Feedback   | Transactional (Getting in touch, resolving issues)    |
+| URL Path                           | Content Taxonomy                              | Primary User Intent Resolved                          |
+|------------------------------------|-----------------------------------------------|-------------------------------------------------------|
+| `/index.html`                      | Broad Village Overview & Live Location Data   | Navigational & Informational (Quick summaries)        |
+| `/about.html`                      | Demographics, History, Ecology, Culture       | Deep Informational (Statistics, historical context)   |
+| `/services.html`                   | Facilities Directory (Health, Education, Tech)| Transactional & Navigational (Finding local aid)      |
+| `/events.html`                     | Festival Calendars & Cultural Programs        | Informational & Experiential (What to do, dates)      |
+| `/gallery.html`                    | Visual Archives (Nature, Temples, Life)       | Experiential (Visual validation of village life)      |
+| `/contact.html`                    | Village Representative Directory & Feedback   | Transactional (Getting in touch, resolving issues)    |
+| `/blog.html`                       | Article Index (Culture, Agriculture, Updates) | Content Discovery & Informational Exploration         |
+| `/blog-*.html` (6 active articles) | Long-form Deep Dives (Heritage, Smart Future) | Deep Context (Roots of Navratri, Farming yield, etc.) |
 
 ## 5. Key Topics & Knowledge Domains
 - Rural Infrastructure & Village Governance (Demographics, Facilities)
