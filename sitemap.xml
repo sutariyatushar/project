@@ -70,6 +70,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <!-- Blog Post 7: Election Atmosphere in Goradka -->
+  <url>
+    <loc>https://goradka.netlify.app/blog-goradka-election.html</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- Events -->
   <url>
     <loc>https://goradka.netlify.app/events.html</loc>
