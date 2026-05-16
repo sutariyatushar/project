@@ -98,4 +98,88 @@
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
+  <!-- Blog Post 8: Best Places in Goradka Village 2026 -->
+  <url>
+    <loc>https://goradka.netlify.app/blog-best-places.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Post 9: Why Goradka Village is One of the Best Villages in India -->
+  <url>
+    <loc>https://goradka.netlify.app/blog-best-villages-in-india.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Post 10: Best Village for Living, Tourism, Culture -->
+  <url>
+    <loc>https://goradka.netlify.app/blog-best-village-living-tourism-culture.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Post 11: Temples, Schools, Hospitals and Tourism -->
+  <url>
+    <loc>https://goradka.netlify.app/blog-goradka-village-temples-schools-hospitals-tourism.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Post 12: Explore Goradka Village -->
+  <url>
+    <loc>https://goradka.netlify.app/blog-explore-goradka-village-peaceful-life-development.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Post 13: Why People Love Goradka Village -->
+  <url>
+    <loc>https://goradka.netlify.app/blog-why-people-love-goradka-village-life-traditions.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Post 14: Complete Guide to Goradka Village -->
+  <url>
+    <loc>https://goradka.netlify.app/blog-complete-guide-goradka-village-tourism-local-life.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Post 15: The Success Story of Goradka Village -->
+  <url>
+    <loc>https://goradka.netlify.app/blog-success-story-goradka-smart-village-culture-growth.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Post 16: Best Things About Goradka Village -->
+  <url>
+    <loc>https://goradka.netlify.app/blog-best-things-about-goradka-village-people-nature.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Post 17: How Goradka Village is Growing -->
+  <url>
+    <loc>https://goradka.netlify.app/blog-goradka-village-growing-education-business-tourism.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Post 18: Discover the Heart of Gujarat -->
+  <url>
+    <loc>https://goradka.netlify.app/blog-discover-heart-of-gujarat-goradka-village-culture.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Post 19: Goradka Perfect Village -->
+  <url>
+    <loc>https://goradka.netlify.app/blog-goradka-perfect-village-tourism-education-peaceful-living.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
