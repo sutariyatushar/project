@@ -61,6 +61,14 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
 
+    <!-- Performance Optimizations: Preconnect & Preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="preload" as="image" href="img/g1.webp" />
+    <link rel="preload" href="home.css" as="style" />
+
     <!-- Styles & Fonts -->
     <link
       rel="stylesheet"
@@ -210,12 +218,12 @@
     <section id="gallery" data-aos="zoom-in-up">
       <h2>Gallery</h2>
       <div class="grid">
-        <img src="img/gn1 (8).jpeg" alt="Goradka village celebration event" onclick="openLightbox(this)" />
-        <img src="img/librery.jpeg"  alt="Goradka village celebration event" onclick="openLightbox(this)" />
-        <img src="img/sivmandir1.jpeg"  alt="Goradka village celebration event" onclick="openLightbox(this)" />
-        <img src="img/gn1 (7).jpeg"  alt="Goradka village celebration event" onclick="openLightbox(this)" />
-        <img src="img/gn1 (10).jpeg" alt="Goradka village celebration event" onclick="openLightbox(this)" />
-        <img src="img/getn1.jpeg"  alt="Goradka village celebration event" onclick="openLightbox(this)" />
+        <img src="img/gn1 (8).jpeg" alt="Goradka village celebration event" onclick="openLightbox(this)" loading="lazy" />
+        <img src="img/librery.jpeg"  alt="Goradka village celebration event" onclick="openLightbox(this)" loading="lazy" />
+        <img src="img/sivmandir1.jpeg"  alt="Goradka village celebration event" onclick="openLightbox(this)" loading="lazy" />
+        <img src="img/gn1 (7).jpeg"  alt="Goradka village celebration event" onclick="openLightbox(this)" loading="lazy" />
+        <img src="img/gn1 (10).jpeg" alt="Goradka village celebration event" onclick="openLightbox(this)" loading="lazy" />
+        <img src="img/getn1.jpeg"  alt="Goradka village celebration event" onclick="openLightbox(this)" loading="lazy" />
       </div>
       <!-- From Uiverse.io by FColombati -->
       <a href="gallery.html" style="text-align: center; display: block;">
@@ -365,6 +373,7 @@
         <!-- <img
           src="img/navratri-g.png"
           alt="Navratri Celebration Goradka"
+          loading="lazy"
           onclick="openEvent(
         'Navratri Celebration in Goradka',
         'img/navratri.jpg',
@@ -375,6 +384,7 @@
         <img
           src="img/diwali.png"
           alt="Diwali Festival Goradka"
+          loading="lazy"
           onclick="
             openEvent(
               'Diwali – Festival of Lights',
@@ -387,6 +397,7 @@
         <img
           src="img/holi.webp"
           alt="Holi Celebration Goradka"
+          loading="lazy"
           onclick="
             openEvent(
               'Holi – Festival of Colors',
@@ -399,6 +410,7 @@
         <img
           src="img/janmastami.png"
           alt="Janmashtami Festival Goradka"
+          loading="lazy"
           onclick="
             openEvent(
               'Janmashtami Celebration',
@@ -672,8 +684,8 @@
       </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>

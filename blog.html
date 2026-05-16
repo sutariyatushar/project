@@ -7,6 +7,13 @@
     <meta name="description" content="Explore blog posts about Goradka Village including farming, lifestyle, culture, and development updates." />
     <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
     
+    <!-- Performance Optimizations: Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="preload" href="blog.css" as="style" />
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
@@ -387,8 +394,12 @@
       </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>AOS.init({ once: true, offset: 50 });</script>
-    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+    <script>
+      window.addEventListener('load', function() {
+        if(typeof AOS !== 'undefined') AOS.init({ once: true, offset: 50 });
+      });
+    </script>
+    <script src="script.js" defer></script>
 </body>
 </html>
