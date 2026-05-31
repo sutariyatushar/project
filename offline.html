@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline | Goradka Village</title>
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #2e7d32;
+      --secondary-color: #4caf50;
+      --dark-green: #1b5e20;
+      --text-color: #333;
+      --bg-color: #f1ffee;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: linear-gradient(90deg, var(--dark-green) 0%, var(--secondary-color) 50%, var(--dark-green) 100%);
+      padding: 0.8rem 1.5rem;
+      color: white;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .navbar h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+    }
+
+    /* Main Content Container */
+    .offline-container {
+      flex: 1;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .offline-icon {
+      font-size: 4rem;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.05); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.9; }
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--dark-green);
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    p.status-msg {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .retry-btn {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .retry-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(46, 125, 50, 0.3);
+    }
+
+    /* Emergency Contacts */
+    .offline-info {
+      margin-top: 40px;
+      border-top: 1px solid #eee;
+      padding-top: 30px;
+      text-align: left;
+    }
+
+    .offline-info h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--dark-green);
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+      border-left: 4px solid var(--primary-color);
+      padding-left: 10px;
+    }
+
+    .contact-card {
+      background: #f9fbf9;
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(76, 175, 80, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .contact-card span.name {
+      font-weight: 600;
+      color: var(--text-color);
+    }
+
+    .contact-card span.role {
+      font-size: 0.85rem;
+      color: #666;
+      display: block;
+      margin-top: 2px;
+    }
+
+    .call-btn {
+      background: var(--primary-color);
+      color: white;
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .call-btn:hover {
+      background: var(--dark-green);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark-green);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #ffeb3b;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <h1>Goradka</h1>
+  </nav>
+
+  <main class="offline-container">
+    <div class="offline-icon">
+      <i class="fa-solid fa-wifi-slash"></i>
+    </div>
+    <h2>You are Offline</h2>
+    <p class="status-msg">
+      It seems you have lost your internet connection. Don't worry! You can still access key contact information below.
+    </p>
+
+    <button onclick="window.location.reload()" class="retry-btn">
+      <i class="fa-solid fa-rotate-right"></i> Retry Connection
+    </button>
+
+    <div class="offline-info">
+      <h3>📞 Key Village Contacts</h3>
+      
+      <div class="contact-card">
+        <div>
+          <span class="name">Rajubhai Solanki</span>
+          <span class="role">Sarpanch</span>
+        </div>
+        <a href="tel:9737421120" class="call-btn"><i class="fa-solid fa-phone"></i> Call</a>
+      </div>
+
+      <div class="contact-card">
+        <div>
+          <span class="name">Anilbhai Rangpra</span>
+          <span class="role">Villager Representative</span>
+        </div>
+        <a href="tel:9924026014" class="call-btn"><i class="fa-solid fa-phone"></i> Call</a>
+      </div>
+
+      <div class="contact-card">
+        <div>
+          <span class="name">Sanjaybhai Yadav</span>
+          <span class="role">Healthcare Services</span>
+        </div>
+        <a href="tel:9723699000" class="call-btn"><i class="fa-solid fa-phone"></i> Call</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Goradka Village. Created with &hearts; by <a href="https://tushar-sutariya.netlify.app" target="_blank">Tushar Sutariya</a></p>
+  </footer>
+
+  <script>
+    // Listen for online event and auto-reload
+    window.addEventListener('online', () => {
+      window.location.reload();
+    });
+  </script>
+</body>
+</html>
