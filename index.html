@@ -100,6 +100,11 @@
 </head>
 
   <body>
+  <noscript>
+    <div style="background-color: #ff5722; color: white; text-align: center; padding: 15px; font-weight: bold; z-index: 99999; position: relative;">
+      ⚠️ JavaScript is required for the full experience. Please enable it in your browser settings.
+    </div>
+  </noscript>
     <nav class="navbar">
       <div class="nav-container">
         <h1 class="logo">Goradka</h1>
@@ -219,7 +224,7 @@
           "
           onmouseover="this.style.background = '#27ae60'"
           onmouseout="this.style.background = '#2ecc71'"
-        >
+         rel="noopener noreferrer">
           🧭 Get Directions
         </a>
       </div>
@@ -604,26 +609,23 @@
           id="name"
           name="name"
           placeholder="Your Name"
-          required
-        />
+          required aria-label="Your Name" />
 
-        <input type="tel" name="phone" placeholder="Your Number" required />
+        <input type="tel" name="phone" placeholder="Your Number" required aria-label="Your Number" />
 
         <input
           type="email"
           id="email"
           name="email"
           placeholder="Your Email"
-          required
-        />
+          required aria-label="Your Email" />
 
         <textarea
           id="message"
           name="event_details"
           rows="4"
           placeholder="Your Message..."
-          required
-        ></textarea>
+          required aria-label="Your Message..."></textarea>
 
         <button type="submit" class="submit-btn">Submit Feedback</button>
       </form>
@@ -675,7 +677,7 @@
         <div class="footer-section contact">
           <h3>Contact</h3>
           <p>
-            <a href="https://tushar-sutariya.netlify.app" target="_blank" style="color: inherit; text-decoration: none;">Tushar Sutariya</a> <br />
+            <a href="https://tushar-sutariya.netlify.app" target="_blank" style="color: inherit; text-decoration: none;" rel="noopener noreferrer">Tushar Sutariya</a> <br />
             fore any type of queries
           </p>
           <br />

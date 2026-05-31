@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'goradka-pwa-v1.0.2';
+const CACHE_VERSION = 'goradka-pwa-v1.0.3';
 const CACHE_NAME = `goradka-cache-${CACHE_VERSION}`;
 const OFFLINE_URL = 'offline.html';
 
@@ -20,6 +20,8 @@ const PRECACHE_ASSETS = [
   './gallery.css',
   './blog.css',
   './script.js',
+  './pwa.js',
+  './pwa.css',
   './manifest.json',
   './img/favicon.ico',
   './img/icon-72x72.png',
@@ -87,7 +89,7 @@ self.addEventListener('activate', (event) => {
 // Fetch Interception
 self.addEventListener('fetch', (event) => {
   // Only handle GET requests and local/safe HTTP/HTTPS domains
-  if (event.request.method !== 'GET' || !event.request.url.startsWith(self.location.origin) && !event.request.url.startsWith('http')) {
+  if (event.request.method !== 'GET' || (!event.request.url.startsWith(self.location.origin) && !event.request.url.startsWith('http'))) {
     return;
   }
 
@@ -98,16 +100,18 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
       fetch(event.request)
         .then((response) => {
-          // Put standard page requests in cache dynamically
-          const responseClone = response.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, responseClone);
-          });
+          // Put standard page requests in cache dynamically if successful
+          if (response && response.status === 200) {
+            const responseClone = response.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, responseClone);
+            });
+          }
           return response;
         })
         .catch(() => {
           // If offline, check cache, or fallback to offline.html
-          return caches.match(event.request)
+          return caches.match(event.request, { ignoreSearch: true })
             .then((cachedResponse) => {
               if (cachedResponse) {
                 return cachedResponse;
@@ -119,15 +123,15 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Cache-First strategy for static assets
+  // Cache-First strategy for static assets (with Stale-While-Revalidate support)
   if (isStaticAsset(requestUrl)) {
     event.respondWith(
-      caches.match(event.request)
+      caches.match(event.request, { ignoreSearch: true })
         .then((cachedResponse) => {
           if (cachedResponse) {
-            // Serve from cache, and optionally update cache in background (Stale-While-Revalidate)
+            // Serve from cache, and update cache in background
             fetch(event.request).then((networkResponse) => {
-              if (networkResponse.status === 200) {
+              if (networkResponse && networkResponse.status === 200) {
                 caches.open(CACHE_NAME).then((cache) => {
                   cache.put(event.request, networkResponse);
                 });
@@ -155,10 +159,10 @@ self.addEventListener('fetch', (event) => {
 
   // Default Stale-While-Revalidate strategy for other resources
   event.respondWith(
-    caches.match(event.request)
+    caches.match(event.request, { ignoreSearch: true })
       .then((cachedResponse) => {
         const fetchPromise = fetch(event.request).then((networkResponse) => {
-          if (networkResponse.status === 200) {
+          if (networkResponse && networkResponse.status === 200) {
             caches.open(CACHE_NAME).then((cache) => {
               cache.put(event.request, networkResponse);
             });

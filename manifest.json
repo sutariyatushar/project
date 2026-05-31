@@ -1,4 +1,5 @@
 {
+  "id": "com.goradka.village.pwa",
   "name": "Goradka Village",
   "short_name": "Goradka",
   "description": "Explore Goradka Village in Botad District, Gujarat. Discover culture, temples, events, attractions, and village life.",
@@ -8,7 +9,7 @@
   "orientation": "any",
   "categories": ["travel", "news", "government"],
   "lang": "en",
-  "start_url": "index.html",
+  "start_url": "index.html?utm_source=pwa",
   "scope": "./",
   "icons": [
     {
@@ -100,7 +101,7 @@
     },
     {
       "src": "img/screenshot-mobile.png",
-      "sizes": "390x844",
+      "sizes": "500x693",
       "type": "image/png",
       "form_factor": "narrow",
       "label": "Mobile View of Goradka Village Homepage"

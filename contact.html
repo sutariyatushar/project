@@ -35,6 +35,11 @@
 </head>
 
 <body>
+  <noscript>
+    <div style="background-color: #ff5722; color: white; text-align: center; padding: 15px; font-weight: bold; z-index: 99999; position: relative;">
+      ⚠️ JavaScript is required for the full experience. Please enable it in your browser settings.
+    </div>
+  </noscript>
   <nav class="navbar">
     <div class="nav-container">
       <h1 class="logo">Goradka</h1>
@@ -116,7 +121,7 @@
   <section id="contact-directory" data-aos="zoom-in-up">
     <h2>📞 Directory</h2>
     <input type="text" id="directorySearch" class="directory-search"
-      placeholder="Search by name, surname, or number..." />
+      placeholder="Search by name, surname, or number..." aria-label="Search by name, surname, or number..." />
 
     <ul class="directory-list" id="directoryList">
       <!-- Default Directories -->
@@ -145,7 +150,7 @@
             <h3>Rajubhai Solanki</h3>
             <p>Sarpanch</p>
             <p>📞 <a href="tel:9737421120">97374 21120</a></p>
-            <a href="https://wa.me/9737421120" target="_blank">
+            <a href="https://wa.me/9737421120" target="_blank" rel="noopener noreferrer">
               <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
           </div>
@@ -157,7 +162,7 @@
             <h3>Anilbhai Rangpra</h3>
             <p>Library Handler with Good Villager</p>
             <p>📞 <a href="tel:9876543210">9876543210</a></p>
-            <a href="https://wa.me/919876543210" target="_blank">
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
               <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
           </div>
@@ -169,7 +174,7 @@
             <h3>Jay Baraiya</h3>
             <p>Social Media Handler</p>
             <p>📞 <a href="tel:9099236428"> 9099236428</a></p>
-            <a href="https://wa.me/919099236428" target="_blank">
+            <a href="https://wa.me/919099236428" target="_blank" rel="noopener noreferrer">
               <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
           </div>
@@ -181,7 +186,7 @@
             <h3>Tushar Sutariya</h3>
             <p>Social worker</p>
             <p>📞 <a href="tel:8780805275">8780805275</a></p>
-            <a href="https://wa.me/918780805275" target="_blank">
+            <a href="https://wa.me/918780805275" target="_blank" rel="noopener noreferrer">
               <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
           </div>
@@ -193,7 +198,7 @@
             <h3>Romin Sutariya</h3>
             <p>Marketer</p>
             <p>📞 9099226221</p>
-            <a href="https://wa.me/919099226221" target="_blank">
+            <a href="https://wa.me/919099226221" target="_blank" rel="noopener noreferrer">
               <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
           </div>
@@ -212,16 +217,16 @@
             margin-bottom: 15px;
             border-radius: 8px;
             border: 1px solid #ccc;
-          " />
+          " aria-label="Your Full Name" />
       <input type="number" id="number" name="number" placeholder="Your Mobile Number" maxlength="10" pattern="[0-9]{10}"
-        oninput="this.value = this.value.slice(0, 10)" required class="no-spinner" />
+        oninput="this.value = this.value.slice(0, 10)" required class="no-spinner" aria-label="Your Mobile Number" />
       <textarea name="message" placeholder="Your Effort" rows="5" required style="
             width: 100%;
             padding: 12px;
             margin-bottom: 15px;
             border-radius: 8px;
             border: 1px solid #ccc;
-          "></textarea>
+          " aria-label="Your Effort"></textarea>
       <button type="submit" style="
             padding: 12px 25px;
             border: none;
@@ -274,7 +279,7 @@
         <h3>Contact</h3>
         <p>
           <a href="https://tushar-sutariya.netlify.app" target="_blank"
-            style="color: inherit; text-decoration: none;">Tushar Sutariya</a> <br />
+            style="color: inherit; text-decoration: none;" rel="noopener noreferrer">Tushar Sutariya</a> <br />
           fore any type of queries
         </p>
         <br />

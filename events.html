@@ -40,6 +40,11 @@
     <script src="pwa.js" defer></script>
 </head>
   <body>
+  <noscript>
+    <div style="background-color: #ff5722; color: white; text-align: center; padding: 15px; font-weight: bold; z-index: 99999; position: relative;">
+      ⚠️ JavaScript is required for the full experience. Please enable it in your browser settings.
+    </div>
+  </noscript>
 
  <nav class="navbar">
   <div class="nav-container">
@@ -294,12 +299,12 @@
                 value="24cab8c0-5fa6-42af-ba52-39bb0a41d22c">
 
               <input type="text" id="name" name="name" placeholder="Your Name"
-                required>
-              <input type="number" id="mobile" name="mobile" placeholder="Your Mobile Number" required class="no-spinner">
+                required aria-label="Your Name">
+              <input type="number" id="mobile" name="mobile" placeholder="Your Mobile Number" required class="no-spinner" aria-label="Your Mobile Number">
               <input type="text" id="event" name="event_title"
-                placeholder="Event Title" required>
+                placeholder="Event Title" required aria-label="Event Title">
               <textarea id="message" name="event_details" rows="4"
-                placeholder="Event Details..." required></textarea>
+                placeholder="Event Details..." required aria-label="Event Details..."></textarea>
 
               <button type="submit" class="submit-btn">Submit Event</button>
               <p id="successMsg" class="success-message"
@@ -350,7 +355,7 @@ A peaceful community built on unity, culture, and pride.
     </div>
     <div class="footer-section contact">
       <h3>Contact</h3>
-      <p><a href="https://tushar-sutariya.netlify.app" target="_blank" style="color: inherit; text-decoration: none;">Tushar Sutariya</a> <br> fore any type of queries</p> <br>
+      <p><a href="https://tushar-sutariya.netlify.app" target="_blank" style="color: inherit; text-decoration: none;" rel="noopener noreferrer">Tushar Sutariya</a> <br> fore any type of queries</p> <br>
       <!-- <p><a href="mailto:email@example.com">email@example.com</a></p>
       <p><a href="tel:+16555555555">(555) 555-5555</a></p> -->
       <p class="created-by">
