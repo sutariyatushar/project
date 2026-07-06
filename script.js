@@ -143,6 +143,13 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "Pravinbhai Sarvaiya", number: "9924249804" },
     { name: "Thakarshibhai Gopani", number: "9925880060" },
     { name: "Jay Baraiya", number: "9099236428" },
+    { name: "Jaydip Chauhan", number: "7284989855" },
+    { name: "Solanki amart", number: "8799620249" },
+    { name: "Subhas Rangpra", number: "9624180557" },
+    { name: "મેર બિજલભાઈ ભરવાડ", number: "9924311586" },
+    { name: "DILIP OLAKIYA", number: "9898867072" },
+    { name: "Solanki sureshbhai g", number: "9904393144" },
+    { name: "GOHIL VIJAYBHAI NAGJIBHAI", number: "9662191667" },
     { name: "Gopal.R Mer", number: "7096584896" },
     { name: "Bharat.M Yadav", number: "9904367436" },
     { name: "Darshan.D Gohil", number: "9316021319" },
@@ -220,46 +227,46 @@ function openLightbox(img) {
   lightbox.style.opacity = "0"; // Start hidden
   lightbox.style.transition = "opacity 0.4s ease";
 
- // Create Back Arrow Button (Top Left)
-const backBtn = document.createElement("button");
-backBtn.innerHTML = "←"; // Arrow
-backBtn.style.position = "fixed";
-backBtn.style.top = "15px";
-backBtn.style.left = "15px";
-backBtn.style.fontSize = "1.1rem";
-backBtn.style.padding = "6px 14px";
-backBtn.style.border = "none";
-backBtn.style.borderRadius = "6px";
-backBtn.style.backgroundColor = "#333";
-backBtn.style.color = "#fff";
-backBtn.style.cursor = "pointer";
-backBtn.style.zIndex = "10000";
-backBtn.style.transition = "0.3s";
-
-// Hover effect
-backBtn.addEventListener("mouseenter", () => {
-  backBtn.style.backgroundColor = "#555";
-});
-backBtn.addEventListener("mouseleave", () => {
+  // Create Back Arrow Button (Top Left)
+  const backBtn = document.createElement("button");
+  backBtn.innerHTML = "←"; // Arrow
+  backBtn.style.position = "fixed";
+  backBtn.style.top = "15px";
+  backBtn.style.left = "15px";
+  backBtn.style.fontSize = "1.1rem";
+  backBtn.style.padding = "6px 14px";
+  backBtn.style.border = "none";
+  backBtn.style.borderRadius = "6px";
   backBtn.style.backgroundColor = "#333";
-});
+  backBtn.style.color = "#fff";
+  backBtn.style.cursor = "pointer";
+  backBtn.style.zIndex = "10000";
+  backBtn.style.transition = "0.3s";
 
-// Close on click function with animation
-function closeLightbox() {
-  lightbox.style.opacity = "0";
-  lightboxImg.style.transform = "scale(0.8)";
-  setTimeout(() => {
-    if (document.body.contains(lightbox)) {
-      document.body.removeChild(lightbox);
-    }
-  }, 400);
-}
+  // Hover effect
+  backBtn.addEventListener("mouseenter", () => {
+    backBtn.style.backgroundColor = "#555";
+  });
+  backBtn.addEventListener("mouseleave", () => {
+    backBtn.style.backgroundColor = "#333";
+  });
 
-// Close on click
-backBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
-  closeLightbox();
-});
+  // Close on click function with animation
+  function closeLightbox() {
+    lightbox.style.opacity = "0";
+    lightboxImg.style.transform = "scale(0.8)";
+    setTimeout(() => {
+      if (document.body.contains(lightbox)) {
+        document.body.removeChild(lightbox);
+      }
+    }, 400);
+  }
+
+  // Close on click
+  backBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    closeLightbox();
+  });
 
   // Create image element
   const lightboxImg = document.createElement("img");
@@ -327,25 +334,25 @@ backBtn.addEventListener("click", (e) => {
 }
 
 // ✅ Open Gallery Upload Form
-  function openGalleryForm() {
-    window.open("https://forms.gle/iv1nieQV2YQ2dmEm7", "_blank");
-  }
+function openGalleryForm() {
+  window.open("https://forms.gle/iv1nieQV2YQ2dmEm7", "_blank");
+}
 
 // ✅ Expand card functionality
-  function toggleEventContent() {
-    const content = document.getElementById("event-full-content");
-    const btn = document.getElementById("read-more-btn");
-    const btnText = btn.querySelector("span");
-    
-    content.classList.toggle("show");
-    btn.classList.toggle("active");
+function toggleEventContent() {
+  const content = document.getElementById("event-full-content");
+  const btn = document.getElementById("read-more-btn");
+  const btnText = btn.querySelector("span");
 
-    if (content.classList.contains("show")) {
-      btnText.innerText = "Read Less";
-    } else {
-      btnText.innerText = "Read More";
-    }
+  content.classList.toggle("show");
+  btn.classList.toggle("active");
+
+  if (content.classList.contains("show")) {
+    btnText.innerText = "Read Less";
+  } else {
+    btnText.innerText = "Read More";
   }
+}
 // ✅ Contact form submission
 document
   .getElementById("contact-form")
@@ -412,16 +419,14 @@ function fetchWeatherData(lat, lon) {
       .map((day, i) => {
         const cond =
           weatherConditions[
-            Math.floor(Math.random() * weatherConditions.length)
+          Math.floor(Math.random() * weatherConditions.length)
           ];
         const temp = cond.temp + Math.floor(Math.random() * 6) - 3;
         return `
-        <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 15px; text-align: center; border: 2px solid rgba(255,255,255,0.2); animation: slideUp 0.6s ease-out ${
-          i * 0.1
-        }s both;">
+        <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 15px; text-align: center; border: 2px solid rgba(255,255,255,0.2); animation: slideUp 0.6s ease-out ${i * 0.1
+          }s both;">
           <div style="font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">${day}</div>
-          <div style="font-size: 2.5rem; margin: 1rem 0; animation: bounce 3s ease-in-out infinite ${
-            i * 0.2
+          <div style="font-size: 2.5rem; margin: 1rem 0; animation: bounce 3s ease-in-out infinite ${i * 0.2
           }s;">${cond.condition}</div>
           <div style="font-size: 1.3rem; font-weight: bold;">${temp}°C</div>
         </div>
@@ -515,7 +520,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // ✅ Universal Expansion Logic for all card types
-document.addEventListener("click", function(e) {
+document.addEventListener("click", function (e) {
   const btn = e.target.closest(".read-more, .expand-btn, .read-more-btn, .attraction-read-more");
   if (!btn) return;
 
@@ -527,14 +532,14 @@ document.addEventListener("click", function(e) {
 
   if (isStatCard) {
     card.classList.toggle("active");
-    btn.innerHTML = card.classList.contains("active") 
-      ? `Read Less <i class="fa-solid fa-chevron-up"></i>` 
+    btn.innerHTML = card.classList.contains("active")
+      ? `Read Less <i class="fa-solid fa-chevron-up"></i>`
       : `Read More <i class="fa-solid fa-chevron-down"></i>`;
   } else if (isAttractionCard) {
-     card.classList.toggle("expanded");
-     btn.innerHTML = card.classList.contains("expanded")
-       ? 'Read Less <i class="fa-solid fa-arrow-up"></i>'
-       : 'Read More <i class="fa-solid fa-arrow-right"></i>';
+    card.classList.toggle("expanded");
+    btn.innerHTML = card.classList.contains("expanded")
+      ? 'Read Less <i class="fa-solid fa-arrow-up"></i>'
+      : 'Read More <i class="fa-solid fa-arrow-right"></i>';
   } else {
     // Original general card logic
     card.classList.toggle("expanded");
@@ -604,7 +609,7 @@ if (eventsGrid && eventDetailModal) {
     const fullDescHtml = expandDiv.querySelector("p").innerHTML;
     const contentParts = fullDescHtml.split("<br><br>");
     const metaParts = contentParts[0].split("<br>");
-    
+
     const loc = metaParts[0] || "📍 Goradka Village";
     const date = metaParts[1] || "🗓️ Event Date";
     const desc = contentParts[1] || "";
@@ -622,7 +627,7 @@ if (eventsGrid && eventDetailModal) {
   });
 
   // Global Close function for this modal
-  window.closeEventDetail = function() {
+  window.closeEventDetail = function () {
     eventDetailModal.classList.remove("active");
     document.body.style.overflow = "";
   };
@@ -636,20 +641,20 @@ if (eventsGrid && eventDetailModal) {
 }
 
 
-  // Show / Hide Events
-  const allEvtBtn = document.getElementById("allEventsBtn");
-  const hiddenEvts = document.querySelectorAll(".hidden-event");
-  let isEvtExpanded = false;
+// Show / Hide Events
+const allEvtBtn = document.getElementById("allEventsBtn");
+const hiddenEvts = document.querySelectorAll(".hidden-event");
+let isEvtExpanded = false;
 
-  if (allEvtBtn) {
-    allEvtBtn.addEventListener("click", () => {
-      isEvtExpanded = !isEvtExpanded;
-      hiddenEvts.forEach(event => {
-        event.style.display = isEvtExpanded ? "block" : "none";
-      });
-      allEvtBtn.textContent = isEvtExpanded ? "Show Less" : "All Events";
+if (allEvtBtn) {
+  allEvtBtn.addEventListener("click", () => {
+    isEvtExpanded = !isEvtExpanded;
+    hiddenEvts.forEach(event => {
+      event.style.display = isEvtExpanded ? "block" : "none";
     });
-  }
+    allEvtBtn.textContent = isEvtExpanded ? "Show Less" : "All Events";
+  });
+}
 
 
 
@@ -684,36 +689,36 @@ arc.addEventListener("wheel", (e) => {
 });
 
 
- 
+
 // home page event section modal popup/////////////////////////////////////////////////////
 
-  function openEvent(title, img, desc) {
-    document.getElementById("modalTitle").innerText = title;
-    document.getElementById("modalImg").src = img;
-    document.getElementById("modalDesc").innerText = desc;
-    document.getElementById("eventModal").style.display = "flex";
-  }
+function openEvent(title, img, desc) {
+  document.getElementById("modalTitle").innerText = title;
+  document.getElementById("modalImg").src = img;
+  document.getElementById("modalDesc").innerText = desc;
+  document.getElementById("eventModal").style.display = "flex";
+}
 
-  function closeEvent() {
-    document.getElementById("eventModal").style.display = "none";
-  }
+function closeEvent() {
+  document.getElementById("eventModal").style.display = "none";
+}
 
-  document.getElementById("eventModal").addEventListener("click", function (e) {
-    if (e.target === this) closeEvent();
-  });
+document.getElementById("eventModal").addEventListener("click", function (e) {
+  if (e.target === this) closeEvent();
+});
 // ================= EVENTS SECTION END ================= //
 
-  function changeMedia(src, type) {
-    const main = document.getElementById("galleryMain");
+function changeMedia(src, type) {
+  const main = document.getElementById("galleryMain");
 
-    if (type === "video") {
-      main.innerHTML = `<video src="${src}" controls autoplay></video>`;
-    } else {
-      main.innerHTML = `<img src="${src}" alt="Goradka Gallery">`;
-    }
-
-    document.querySelectorAll('.gallery-thumbs img, .gallery-thumbs video')
-      .forEach(el => el.classList.remove('active-thumb'));
-
-    event.target.classList.add('active-thumb');
+  if (type === "video") {
+    main.innerHTML = `<video src="${src}" controls autoplay></video>`;
+  } else {
+    main.innerHTML = `<img src="${src}" alt="Goradka Gallery">`;
   }
+
+  document.querySelectorAll('.gallery-thumbs img, .gallery-thumbs video')
+    .forEach(el => el.classList.remove('active-thumb'));
+
+  event.target.classList.add('active-thumb');
+}
