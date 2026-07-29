@@ -37,87 +37,157 @@
     .detail-card {
       background: white;
       padding: 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      margin-bottom: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      margin-bottom: 2.5rem;
+      border: 1px solid rgba(0,0,0,0.03);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .detail-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(46, 125, 50, 0.08);
     }
 
     .detail-card h2 {
       color: #2e7d32;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       font-size: 1.8rem;
-      border-bottom: 2px solid #e0e0e0;
-      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e8f5e9;
+      padding-bottom: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .detail-card h3 {
       color: #1b5e20;
-      margin-top: 1.5rem;
-      margin-bottom: 0.5rem;
+      margin-top: 1.8rem;
+      margin-bottom: 0.8rem;
+      font-size: 1.3rem;
+      font-weight: 600;
     }
 
     .detail-card p {
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
+      color: #555;
     }
 
     .detail-card ul {
       margin-left: 20px;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .detail-card li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.8rem;
+      color: #444;
+    }
+
+    /* Table Design */
+    .table-responsive {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+      border: 1px solid #e0e0e0;
+      -webkit-overflow-scrolling: touch;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 1rem;
+      min-width: 600px;
     }
 
-    table,
-    th,
-    td {
-      border: 1px solid #ddd;
-    }
-
-    th,
-    td {
-      padding: 12px;
+    th, td {
+      padding: 14px 16px;
       text-align: left;
+      border-bottom: 1px solid #eee;
     }
 
     th {
       background-color: #2e7d32;
       color: white;
+      font-weight: 600;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background-color: #fcfdfe;
     }
 
     .step-box {
       background: #e8f5e9;
-      padding: 15px;
+      padding: 20px;
       border-left: 5px solid #2e7d32;
-      margin-bottom: 10px;
-      border-radius: 5px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      transition: background 0.3s;
     }
 
-    .contact-table th,
-    .contact-table td {
-      border: 1px solid #e0e0e0;
+    .step-box:hover {
+      background: #c8e6c9;
+    }
+
+    .contact-link {
+      color: #2e7d32;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    
+    .contact-link:hover {
+      text-decoration: underline;
     }
 
     .back-btn {
-      display: inline-block;
-      margin-top: 2rem;
-      padding: 10px 20px;
-      background: #2e7d32;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 1rem;
+      padding: 12px 28px;
+      background: linear-gradient(135deg, #2e7d32, #1b5e20);
       color: white;
       text-decoration: none;
-      border-radius: 5px;
-      transition: 0.3s;
+      border-radius: 30px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(46, 125, 50, 0.2);
+      transition: all 0.3s ease;
     }
 
     .back-btn:hover {
-      background: #1b5e20;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(46, 125, 50, 0.3);
+      color: white;
+    }
+
+    /* Mobile Responsive Settings */
+    @media (max-width: 768px) {
+      .detail-section {
+        padding: 2rem 15px;
+      }
+
+      .detail-card {
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin-bottom: 1.5rem;
+      }
+
+      .detail-card h2 {
+        font-size: 1.4rem;
+      }
+
+      .detail-card h3 {
+        font-size: 1.15rem;
+      }
+
+      th, td {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
@@ -145,6 +215,17 @@
       </ul>
     </div>
   </nav>
+
+  <!-- Google Translate Widget -->
+  <div style="text-align: right; padding: 10px 5%; background: #f4f4f4; border-bottom: 1px solid #ddd;">
+    <div id="google_translate_element" style="display: inline-block;"></div>
+  </div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,gu,hi', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   <header class="services-hero"
     style="min-height: 40vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/hero-bg.jpg') center/cover;">
@@ -245,7 +326,7 @@
     <div class="detail-card" data-aos="fade-up">
       <h2>🌾 ૩. જમીન દફતર અને મહેસૂલી સેવાઓ (Land Records & e-Dhara)</h2>
       <p>ખેડૂતો અને જમીન ધારકો માટે પંચાયત અને ઈ-ધરા કેન્દ્ર મારફતે પૂરી પાડવામાં આવતી સેવાઓ:</p>
-      <div style="overflow-x:auto;">
+      <div class="table-responsive">
         <table>
           <tr>
             <th>અ.નં.</th>
@@ -366,7 +447,7 @@
     <div class="detail-card" data-aos="fade-up">
       <h2>📞 ૮. મહત્વના સંપર્ક નંબરો અને સ્થાનિક હેલ્પલાઇન (Local Emergency & Useful Contacts)</h2>
       <p>ગોરાડકા ગામના રહીશો માટે જરૂરી સ્થાનિક હોદ્દેદારો અને સેવા આપતા સભ્યોની યાદી:</p>
-      <div style="overflow-x:auto;">
+      <div class="table-responsive">
         <table class="contact-table">
           <tr>
             <th>ક્રમ</th>
