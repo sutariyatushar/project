@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healthcare & Medicine Services Handbook | Goradka Village</title>
+    <meta name="description" content="Comprehensive field directory and operational health manual for Goradka village. Find emergency services, local doctors, PHC details, and health schemes." />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="services.css" />
+
+    <!-- PWA Settings -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#2e7d32" />
+    
+    <style>
+      .detail-section {
+        padding: 4rem 10%;
+        background: #f9f9f9;
+        color: #333;
+        line-height: 1.6;
+        font-family: 'Poppins', sans-serif;
+      }
+      .detail-card {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        margin-bottom: 2rem;
+      }
+      .detail-card h2 {
+        color: #2e7d32;
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+        border-bottom: 2px solid #e0e0e0;
+        padding-bottom: 0.5rem;
+      }
+      .detail-card h3 {
+        color: #1b5e20;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .detail-card p {
+        margin-bottom: 1rem;
+      }
+      .detail-card ul {
+        margin-left: 20px;
+        margin-bottom: 1rem;
+      }
+      .detail-card li {
+        margin-bottom: 0.5rem;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 1rem;
+      }
+      table, th, td {
+        border: 1px solid #ddd;
+      }
+      th, td {
+        padding: 12px;
+        text-align: left;
+      }
+      th {
+        background-color: #2e7d32;
+        color: white;
+      }
+      .table-responsive {
+        overflow-x: auto;
+      }
+      .contact-link {
+        color: #2e7d32;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .contact-link:hover {
+        text-decoration: underline;
+      }
+      .back-btn {
+        display: inline-block;
+        margin-top: 2rem;
+        padding: 10px 20px;
+        background: #2e7d32;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: 0.3s;
+      }
+      .back-btn:hover {
+        background: #1b5e20;
+      }
+      /* Google Translate Customization */
+      #google_translate_element {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        text-align: right;
+      }
+      .seo-links {
+        background: #e8f5e9;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .seo-links a {
+        color: #2e7d32;
+        font-weight: bold;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+      .seo-links a:hover {
+        text-decoration: underline;
+      }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <h2 class="logo">Goradka</h2>
+        <div class="hamburgers">
+          <label class="hamburger">
+            <input type="checkbox" id="menuToggle" aria-label="Toggle Navigation Menu" onclick="toggleMenu()" />
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </label>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html" class="active" style="color:#1f1f1f;">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="services-hero" style="min-height: 40vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/hero-bg.jpg') center/cover;">
+      <div class="hero-content">
+        <h1 class="hero-title" data-aos="fade-up" style="color: white; font-size: 2.5rem;">
+          🏥 Healthcare &amp; Medicine<br><span>Services Handbook</span>
+        </h1>
+        <p style="color: #ddd; font-size: 1.2rem; margin-top: 10px;">Comprehensive Field Directory &amp; Operational Health Manual</p>
+      </div>
+    </header>
+
+    <section class="detail-section">
+      <!-- SEO Friendly Internal Links -->
+      <div class="seo-links" data-aos="fade-down">
+        Explore more: 
+        <a href="index.html"><i class="fa-solid fa-home"></i> Goradka Home</a> | 
+        <a href="services.html"><i class="fa-solid fa-list"></i> All Village Services</a> |
+        <a href="contact.html"><i class="fa-solid fa-phone"></i> Contact Us</a>
+      </div>
+
+      <!-- Google Translate Widget -->
+      <div id="google_translate_element"></div>
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,gu,hi', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+      </script>
+      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+      <div class="detail-card" data-aos="fade-up">
+        <h2>📌 Executive Overview</h2>
+        <p>Healthcare is a fundamental human entitlement. Ensuring prompt, reliable, and affordable access to preventive, curative, and emergency medical services is essential for individual well-being and community growth. This comprehensive guide provides a complete, actionable manual covering immediate emergency response systems, local clinical consultations, Primary Health Center (PHC) infrastructure, monthly community health drives, government financial protection schemes such as PM-JAY Ayushman Bharat, pharmacy availability, and grassroot health worker directories.</p>
+      </div>
+
+      <div class="detail-card" data-aos="fade-up">
+        <h2>🚨 1. Emergency Services &amp; Immediate Response Protocols</h2>
+        <p>During life-threatening health events, rapid response and immediate medical stabilization save critical lives. The public health infrastructure provides round-the-clock emergency transport, trauma care, and tele-medical advice free of charge to all citizens.</p>
+        
+        <h3>🚑 108 Emergency Ambulance Service (૧૦૮ એમ્બ્યુલન્સ સેવા)</h3>
+        <p>The 108 Emergency Response Service is a free, 24/7 toll-free emergency service covering medical, police, and fire emergencies. Dialing 108 from any mobile phone or landline connects directly to the Emergency Response Center.</p>
+        <ul>
+          <li><strong>Scope of Medical Response:</strong> Severe road accidents, trauma, cardiac arrest, acute stroke, severe respiratory distress, high-risk labor/obstetric emergencies, snake bites, poisonings, and severe pediatric illness.</li>
+          <li><strong>On-Board Medical Equipment:</strong> Ambulances operate as ALS or BLS units equipped with EMTs, oxygen cylinders, defibrillators (AEDs), ECG monitors, suction pumps, nebulizers, and emergency childbirth kits.</li>
+          <li><strong>Average Response Time:</strong> 12 to 15 minutes in urban centers; 15 to 20 minutes in rural regions.</li>
+          <li><strong>Cost:</strong> 100% Free of cost for transport to government hospitals and empanelled centers.</li>
+        </ul>
+
+        <h3>📞 104 Health Advisory &amp; Medical Helpline (૧૦૪ આરોગ્ય સલાહ હેલ્પલાઇન)</h3>
+        <p>The 104 Health Helpline is a 24x7 non-emergency medical consultation, counseling, and health information service.</p>
+        <ul>
+          <li><strong>Symptom Triage &amp; Guidance:</strong> Immediate advice on minor health complaints like fever, flu, diarrhea.</li>
+          <li><strong>First-Aid Protocols:</strong> Guidance on OTC medicine dosages, dressing minor wounds, snakebite first-aid.</li>
+          <li><strong>Information:</strong> Real-time information on nearest hospital beds, blood banks, and health schemes.</li>
+          <li><strong>Mental Health:</strong> Free psychological support and stress counseling.</li>
+        </ul>
+
+        <h3>🏥 Local Village Emergency Medical Contacts</h3>
+        <div class="table-responsive">
+          <table>
+            <tr>
+              <th>Facility / Designation</th>
+              <th>Contact Desk / Officer</th>
+              <th>Emergency Direct Phone</th>
+              <th>Operating Hours</th>
+            </tr>
+            <tr>
+              <td>Gram Panchayat First Responder</td>
+              <td>Village Sarpanch / Talati Office</td>
+              <td><a href="tel:+919825000000" class="contact-link">+91 98250 XXXXX</a></td>
+              <td>24 Hours Emergency</td>
+            </tr>
+            <tr>
+              <td>Sub-Center Ambulance Vehicle</td>
+              <td>On-Call Emergency Driver</td>
+              <td><a href="tel:+919426300000" class="contact-link">+91 94263 XXXXX</a></td>
+              <td>24 Hours Availability</td>
+            </tr>
+            <tr>
+              <td>Community Disaster Desk</td>
+              <td>Revenue Inspector / Mamlatdar</td>
+              <td><a href="tel:02612230000" class="contact-link">+91 0261 223XXXX</a></td>
+              <td>24 Hours Control Room</td>
+            </tr>
+            <tr>
+              <td>District Red Cross Blood Bank</td>
+              <td>Blood Availability Helpline</td>
+              <td><a href="tel:02612420000" class="contact-link">+91 261 242XXXX</a></td>
+              <td>24 Hours Operations</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="detail-card" data-aos="fade-up">
+        <h2>👨‍⚕️ 2. Local Village Doctors &amp; Community Clinics</h2>
+        <p>Primary consultation with qualified, registered medical practitioners (RMPs), general physicians, and AYUSH doctors provides the first line of defense for routine illnesses and chronic condition monitoring.</p>
+        
+        <h3>🩺 List of Available Registered Doctors (ગામના માન્ય ડોક્ટરોની યાદી)</h3>
+        <div class="table-responsive">
+          <table>
+            <tr>
+              <th>Doctor Name</th>
+              <th>Qualification &amp; Specialty</th>
+              <th>Clinic Name</th>
+              <th>Timings &amp; Working Days</th>
+              <th>Contact Number</th>
+            </tr>
+            <tr>
+              <td>Dr. Rajesh M. Patel</td>
+              <td>MBBS, General Physician</td>
+              <td>Patel Jan Seva Clinic</td>
+              <td>08:30 AM – 01:00 PM, 05:00 PM – 08:30 PM (Mon–Sat)</td>
+              <td><a href="tel:+919879112345" class="contact-link">+91 98791 12345</a></td>
+            </tr>
+            <tr>
+              <td>Dr. Sunita K. Sharma</td>
+              <td>BAMS, Ayush Specialist</td>
+              <td>Arogya Holistic Center</td>
+              <td>09:00 AM – 02:00 PM, 04:30 PM – 07:30 PM (Mon–Sat)</td>
+              <td><a href="tel:+919427167890" class="contact-link">+91 94271 67890</a></td>
+            </tr>
+            <tr>
+              <td>Dr. Ankit V. Mehta</td>
+              <td>BHMS, Homeopath</td>
+              <td>Seva Homeo Clinic</td>
+              <td>10:00 AM – 01:30 PM, 05:00 PM – 08:00 PM (Mon–Fri)</td>
+              <td><a href="tel:+919824054321" class="contact-link">+91 98240 54321</a></td>
+            </tr>
+            <tr>
+              <td>Dr. Bhavna R. Joshi</td>
+              <td>DGO, Gynecologist (Visiting)</td>
+              <td>Matru Suraksha Center</td>
+              <td>10:00 AM – 02:00 PM (Tue, Thu, Sat)</td>
+              <td><a href="tel:+919909987654" class="contact-link">+91 99099 87654</a></td>
+            </tr>
+          </table>
+        </div>
+
+        <h3>⏰ Clinic Protocols, Appointments &amp; Address Details</h3>
+        <ul>
+          <li><strong>Consultation System:</strong> Walk-in token distribution starts 30 minutes prior to OPD hours. Specialized appointments can be scheduled via phone or WhatsApp 24 hours in advance.</li>
+          <li><strong>Consultation Fees:</strong> General consultation fees range between ₹50 and ₹150. Senior citizens, BPL card holders, and disabled persons receive subsidized consultations.</li>
+          <li><strong>Location Address:</strong> Main Bazaar Road, Opposite Gram Panchayat Office, Central Square. Emergency after-hours home calls are provided upon telephone request.</li>
+        </ul>
+      </div>
+
+      <div class="detail-card" data-aos="fade-up">
+        <h2>🏥 3. Primary Health Center (PHC / CHC)</h2>
+        <p>Government Primary Health Centers (PHC) and Community Health Centers (CHC) form the backbone of rural healthcare delivery, offering integrated curative, preventive, and maternal-child services free of cost.</p>
+        
+        <h3>📍 Location &amp; Distance Matrix</h3>
+        <ul>
+          <li><strong>Primary Health Center (PHC):</strong> Located 2.5 km from Village Center (Near Block Education Office). Serving a population cluster of 30,000.</li>
+          <li><strong>Community Health Center (CHC):</strong> Located 12 km at Block Headquarter. Features a 30-bed inpatient ward, emergency operation theater, digital X-ray, labor room, and blood storage unit.</li>
+        </ul>
+
+        <h3>⏱️ OPD Timings &amp; Hospital Schedule</h3>
+        <div class="table-responsive">
+          <table>
+            <tr>
+              <th>Hospital Session</th>
+              <th>Working Hours</th>
+              <th>Operating Days</th>
+              <th>Services Provided</th>
+            </tr>
+            <tr>
+              <td>Morning General OPD</td>
+              <td>08:30 AM – 12:30 PM</td>
+              <td>Monday to Saturday</td>
+              <td>Doctor consultation, clinical checkup, prescriptions</td>
+            </tr>
+            <tr>
+              <td>Evening OPD Session</td>
+              <td>04:00 PM – 06:00 PM</td>
+              <td>Monday to Friday</td>
+              <td>Follow-up visits, wound dressing, minor procedures</td>
+            </tr>
+            <tr>
+              <td>24/7 Emergency &amp; Casualty</td>
+              <td>Round the Clock</td>
+              <td>All 365 Days</td>
+              <td>Trauma stabilization, labor room deliveries, snake antivenom</td>
+            </tr>
+          </table>
+        </div>
+
+        <h3>💊 Free Essential Medicines &amp; Basic Diagnostics</h3>
+        <ul>
+          <li><strong>Free Essential Medicines (250+ Drugs):</strong> Broad-spectrum antibiotics, pain relievers, Paracetamol, BP medications, anti-diabetic formulations, IFA supplements, ORS, etc.</li>
+          <li><strong>Free Diagnostic Laboratory Services (30+ Tests):</strong> CBC, Hemoglobin, Blood Sugar, Malaria, Dengue, Typhoid, Urine Routine, TB Sputum Microscopy, Pregnancy Tests.</li>
+        </ul>
+
+        <h3>👶 Mamta Divas &amp; Maternal-Child Healthcare</h3>
+        <p>Observed every Wednesday at local Anganwadi Centers and PHC outposts:</p>
+        <ul>
+          <li><strong>Antenatal Care (ANC):</strong> Early pregnancy registration, Mamta Card, weight monitoring, BP screening, Td injections.</li>
+          <li><strong>Child Growth Monitoring:</strong> Weighing of infants, WHO growth charts, Vitamin A syrup, iron supplements.</li>
+          <li><strong>Counseling:</strong> Breastfeeding, complementary feeding, hygiene, family planning.</li>
+        </ul>
+      </div>
+
+      <div class="detail-card" data-aos="fade-up">
+        <h2>🩸 4. Monthly Health Camps &amp; Vaccination Drives</h2>
+        <p>To deliver specialized diagnostic care directly to rural communities, the District Health Society conducts monthly mobile health camps and mandatory immunization sessions.</p>
+        
+        <h3>🗓️ Monthly Diagnostic Camps Schedule</h3>
+        <div class="table-responsive">
+          <table>
+            <tr>
+              <th>Camp Category</th>
+              <th>Frequency &amp; Venue</th>
+              <th>Medical Team</th>
+              <th>Key Services Offered</th>
+            </tr>
+            <tr>
+              <td>General Health Camp</td>
+              <td>1st Monday of Every Month (Gram Panchayat Bhavan)</td>
+              <td>MD Physician, Ayush Doctor</td>
+              <td>NCD screening (Diabetes, Hypertension), ECG, checkups.</td>
+            </tr>
+            <tr>
+              <td>Eye Checkup Camp</td>
+              <td>2nd Saturday of Every Month (Community Hall)</td>
+              <td>Ophthalmologist, Optometrist</td>
+              <td>Refraction testing, cataract screening, free glasses, surgery referrals.</td>
+            </tr>
+            <tr>
+              <td>Dental &amp; Oral Hygiene</td>
+              <td>3rd Wednesday of Every Month (PHC Sub-Center)</td>
+              <td>Dental Surgeon</td>
+              <td>Dental examination, scaling, extractions, oral precancerous screening.</td>
+            </tr>
+            <tr>
+              <td>NCD &amp; Cancer Screening</td>
+              <td>4th Sunday of Every Month (Primary School)</td>
+              <td>Specialized Screening Team</td>
+              <td>Cervical cancer screening, breast examination, oral cavity inspection.</td>
+            </tr>
+          </table>
+        </div>
+
+        <h3>💉 Routine Child Immunization Schedule</h3>
+        <p>Immunization drives take place every Wednesday. Parents must present their child’s Mamta Card:</p>
+        <div class="table-responsive">
+          <table>
+            <tr>
+              <th>Age of Child</th>
+              <th>Vaccine Administered</th>
+              <th>Protected Disease / Condition</th>
+            </tr>
+            <tr>
+              <td>At Birth</td>
+              <td>BCG, OPV Zero Dose, Hepatitis B Birth Dose</td>
+              <td>Tuberculosis, Poliomyelitis, Hepatitis B</td>
+            </tr>
+            <tr>
+              <td>6, 10, 14 Weeks</td>
+              <td>Pentavalent (1,2,3), fIPV, Rotavirus, PCV</td>
+              <td>Diphtheria, Pertussis, Tetanus, Hep B, Hib, Polio, Rotavirus, Pneumonia</td>
+            </tr>
+            <tr>
+              <td>9 to 12 Months</td>
+              <td>MR 1st Dose, JE 1st Dose, PCV Booster, Vit A</td>
+              <td>Measles, Rubella, Japanese Encephalitis, Pneumococcal Infections</td>
+            </tr>
+            <tr>
+              <td>16 to 24 Months</td>
+              <td>MR 2nd Dose, DPT Booster 1, OPV Booster</td>
+              <td>Measles, Rubella, Diphtheria, Pertussis, Tetanus, Polio Booster</td>
+            </tr>
+            <tr>
+              <td>5 to 6 Years</td>
+              <td>DPT Booster 2</td>
+              <td>Diphtheria, Pertussis, Tetanus Booster</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="detail-card" data-aos="fade-up">
+        <h2>💳 5. Government Health Schemes &amp; Financial Benefits</h2>
+        <p>Government health assistance schemes protect families from catastrophic health expenditures by providing cashless inpatient care and financial incentives.</p>
+        
+        <h3>🪪 Ayushman Bharat – PM-JAY (₹10 Lakh Cashless Coverage)</h3>
+        <p>Eligible beneficiary families receive cashless hospitalization coverage up to ₹10,00,000 per family per year.</p>
+        <ul>
+          <li><strong>Coverage Scope:</strong> Over 1,950 surgical, medical, and oncology procedures (bypass surgery, joint replacement, chemotherapy).</li>
+          <li><strong>Inclusions:</strong> Pre-hospitalization consultation, complete inpatient stay, ICU charges, medicines, surgical consumables, implants, food during stay, post-discharge medicines.</li>
+          <li><strong>Empannelled Network:</strong> Accepted at all Government Civil Hospitals and empanelled private super-specialty hospitals.</li>
+        </ul>
+
+        <h3>🤱 Pradhan Mantri Matru Vandana Yojana (PMMVY)</h3>
+        <p>A DBT maternity incentive scheme providing ₹5,000 to ₹6,000 directly into the bank account of pregnant women and lactating mothers.</p>
+
+        <h3>📝 Required Documents for E-Card Generation</h3>
+        <ul>
+          <li><strong>Proof of Identity:</strong> Original Aadhaar Card of all family members.</li>
+          <li><strong>Family Proof:</strong> Valid Ration Card (NFSA Purna / Antyodaya) or SECC Verification Letter.</li>
+          <li><strong>Active Mobile Phone:</strong> For receiving OTP during e-KYC.</li>
+          <li><strong>Income Certificate:</strong> Issued by Mamlatdar / Competent Authority (if required).</li>
+        </ul>
+      </div>
+
+      <div class="detail-card" data-aos="fade-up">
+        <h2>💊 6. Pharmacy &amp; Medicine Shops</h2>
+        <p>Timely access to prescribed pharmaceuticals ensures effective recovery and chronic disease management.</p>
+        
+        <h3>🏪 Local Pharmacy Directory</h3>
+        <div class="table-responsive">
+          <table>
+            <tr>
+              <th>Pharmacy Name</th>
+              <th>Store Category</th>
+              <th>Address / Location</th>
+              <th>Operating Hours</th>
+              <th>Contact Number</th>
+            </tr>
+            <tr>
+              <td>PM Bharatiya Janaushadhi Kendra</td>
+              <td>Generic Medicine Outlet</td>
+              <td>PHC Hospital Road</td>
+              <td>09:00 AM – 08:00 PM</td>
+              <td><a href="tel:+919825100000" class="contact-link">+91 98251 00000</a></td>
+            </tr>
+            <tr>
+              <td>Shree Ram Medical Store</td>
+              <td>Retail Chemist</td>
+              <td>Station Road Market</td>
+              <td>08:00 AM – 09:30 PM</td>
+              <td><a href="tel:+919879511223" class="contact-link">+91 98795 11223</a></td>
+            </tr>
+            <tr>
+              <td>Lifecare Pharmacy</td>
+              <td>24/7 Emergency Chemist</td>
+              <td>Near Civil Hospital Gate</td>
+              <td>24 Hours Open</td>
+              <td><a href="tel:+912612223344" class="contact-link">+91 261 2223344</a></td>
+            </tr>
+            <tr>
+              <td>Jay Ambe Medical &amp; Surgical</td>
+              <td>Retail &amp; Surgical Supplies</td>
+              <td>Opposite Bus Stand</td>
+              <td>08:30 AM – 10:00 PM</td>
+              <td><a href="tel:+919426899887" class="contact-link">+91 94268 99887</a></td>
+            </tr>
+          </table>
+        </div>
+
+        <h3>🌙 24/7 Emergency Medicine Access</h3>
+        <ul>
+          <li><strong>Pradhan Mantri Jan Aushadhi Scheme:</strong> High-quality generic medicines at 50% to 90% lower prices.</li>
+          <li><strong>After-Hours Emergency Dispensing:</strong> Lifecare Pharmacy offers round-the-clock emergency window operations. The PHC emergency dispensary maintains standby stock for acute life-saving drugs.</li>
+        </ul>
+      </div>
+
+      <div style="text-align: center;">
+        <a href="services.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Services</a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section about">
+          <h2>Goradka™</h2>
+          <p>Goradka – where tradition meets progress in every corner. A peaceful community built on unity, culture, and pride.</p>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/goradka_nagari01?igsh=Z29pa29nMjBzdWwx" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/9825687775?text=હેલ્લો%2C%20કૃપા%20કરીને%20મને%20ગોરડકા%20ગ્રૂપમાં%20જોડાવાનો%20લિંક%20મોકલો." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://wa.me/919574750680?text=હેલ્લો%2C%20કૃપા%20કરીને%20મને%20ગોરડકા%20ગ્રૂપમાં%20જોડાવાનો%20લિંક%20મોકલો." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-section links">
+          <h3>View all Pages</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section contact">
+          <h3>Contact</h3>
+          <p><a href="https://tushar-sutariya.netlify.app" target="_blank" style="color: inherit; text-decoration: none;" rel="noopener noreferrer">Tushar Sutariya</a> <br />fore any type of queries</p>
+          <br />
+          <p class="created-by">❤ Created by <a href="https://tushar-sutariya.netlify.app" target="_blank" rel="noopener noreferrer">Tushar Sutariya</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init({ once: true, offset: 50 });</script>
+    <script src="script.js"></script>
+</body>
+</html>
