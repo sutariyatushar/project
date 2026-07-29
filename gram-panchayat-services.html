@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="gu">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ગોરાડકા ગ્રામ પંચાયત - સેવાઓ અને નાગરિક માર્ગદર્શિકા</title>
+  <meta name="description" content="ગોરાડકા ગ્રામ પંચાયત સેવાઓ, પ્રમાણપત્રો અને અન્ય માહિતી." />
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="services.css" />
+
+  <!-- PWA Settings -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#2e7d32" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Goradka" />
+  <link rel="apple-touch-icon" href="img/icon-152x152.png" />
+  <link rel="stylesheet" href="pwa.css" />
+  <script src="pwa.js" defer></script>
+  <style>
+    .detail-section {
+      padding: 4rem 10%;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .detail-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+    }
+
+    .detail-card h2 {
+      color: #2e7d32;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 0.5rem;
+    }
+
+    .detail-card h3 {
+      color: #1b5e20;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .detail-card p {
+      margin-bottom: 1rem;
+    }
+
+    .detail-card ul {
+      margin-left: 20px;
+      margin-bottom: 1rem;
+    }
+
+    .detail-card li {
+      margin-bottom: 0.5rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1rem;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #2e7d32;
+      color: white;
+    }
+
+    .step-box {
+      background: #e8f5e9;
+      padding: 15px;
+      border-left: 5px solid #2e7d32;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+
+    .contact-table th,
+    .contact-table td {
+      border: 1px solid #e0e0e0;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 10px 20px;
+      background: #2e7d32;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #1b5e20;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <h2 class="logo">Goradka</h2>
+      <div class="hamburgers">
+        <label class="hamburger">
+          <input type="checkbox" id="menuToggle" aria-label="Toggle Navigation Menu" onclick="toggleMenu()" />
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </label>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active" style="color:#1f1f1f;">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="services-hero"
+    style="min-height: 40vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/hero-bg.jpg') center/cover;">
+    <div class="hero-content">
+      <h1 class="hero-title" data-aos="fade-up" style="color: white; font-size: 2.5rem;">
+        🏛️ ગોરાડકા ગ્રામ પંચાયત<br><span>સેવાઓ અને નાગરિક માર્ગદર્શિકા</span>
+      </h1>
+      <p style="color: #ddd; font-size: 1.2rem; margin-top: 10px;">ગામ: ગોરાડકા | તાલુકો: ગઢડા | જિલ્લો: બોટાદ | રાજ્ય:
+        ગુજરાત</p>
+    </div>
+  </header>
+
+  <section class="detail-section">
+    <div class="detail-card" data-aos="fade-up">
+      <h2>📌 પ્રસ્તાવના (Welcome to Goradka Services Portal)</h2>
+      <p>ગોરાડકા ગ્રામ પંચાયત ગામના તમામ નાગરિકો, ખેડૂતો, વિદ્યાર્થીઓ અને પંચાયતના રહીશોને પારદર્શક, ઝડપી અને સરળ વહીવટી
+        સેવાઓ પૂરી પાડવા માટે કટિબદ્ધ છે. આ સેવા પેજનો મુખ્ય હેતુ ગ્રામજનોને પંચાયત કચેરીના સમય, તલાટી-કમ-મંત્રીશ્રીની
+        કચેરીએ હાજરીના દિવસો, વિવિધ દાખલાઓ અને સરકારી પ્રમાણપત્રો મેળવવાની સરળ પ્રક્રિયા, કરવેરા ચુકવણી તથા સરકારી
+        યોજનાઓ અંગેની સંપૂર્ણ માહિતી આપવાનો છે, જેથી સમય અને શક્તિનો બચાવ થઈ શકે.</p>
+    </div>
+
+    <div class="detail-card" data-aos="fade-up">
+      <h2>⏰ ૧. કચેરી સમય અને તલાટી-કમ-મંત્રીશ્રી સમયપત્રક (Office Hours & Schedule)</h2>
+      <p>ગોરાડકા ગ્રામ પંચાયત કચેરી ખાતે વહીવટી કામગીરી નીચે મુજબના સમયે હાથ ધરવામાં આવે છે:</p>
+
+      <h3>🏛️ પંચાયત કચેરીનો સમય:</h3>
+      <ul>
+        <li><strong>કામકાજના દિવસો:</strong> સોમવાર થી શનિવાર</li>
+        <li><strong>કચેરી ખોલવાનો સમય:</strong> સવારે ૧૦:૩૦ વાગ્યે</li>
+        <li><strong>કચેરી બંધ થવાનો સમય:</strong> સાંજે ૦5:૧૦ વાગ્યે</li>
+        <li><strong>બપોરનો રિસેસ (વિરામ) સમય:</strong> બપોરે ૦૧:૩૦ થી ૦૨:૦૦ વાગ્યા સુધી</li>
+      </ul>
+      <p style="color: #d32f2f; font-size: 0.9rem;">(નોંધ: મહિનાના બીજા અને ચોથા શનિવારે તેમજ જાહેર સરકારી રજાના
+        દિવસોમાં કચેરી બંધ રહેશે.)</p>
+
+      <h3>👨‍💼 તલાટી-કમ-મંત્રીશ્રીની હાજરીનું સમયપત્રક:</h3>
+      <ul>
+        <li><strong>🟢 રૂબરૂ હાજરીના દિવસો:</strong> સોમવાર, બુધવાર અને શુક્રવાર</li>
+        <li><strong>🟢 હાજરીનો સમય:</strong> સવારે ૧૧:૦૦ વાગ્યાથી સાંજે ૦૫:૦૦ વાગ્યા સુધી</li>
+        <li><strong>🟡 મંગળવાર અને ગુરુવાર:</strong> તાલુકા પંચાયત ગઢડા ખાતેની મિટિંગ, ક્ષેત્રિય તપાસ (ફિલ્ડ વિઝિટ) અથવા
+          અન્ય સરકારી કામગીરી.</li>
+      </ul>
+
+      <h3>📋 કામગીરીનો વિશિષ્ટ સમય:</h3>
+      <ul>
+        <li><strong>નવી અરજીઓ અને દસ્તાવેજ સ્વીકારવાનો સમય:</strong> સવારે ૧૧:૦૦ થી બપોરે ૦૨:૦૦</li>
+        <li><strong>દાખલા / પ્રમાણપત્ર વિતરણ સમય:</strong> બપોરે ૦૩:૦૦ થી સાંજે ૦૫:૦૦</li>
+        <li><strong>પંચાયત કરવેરા / રોકડ સ્વીકારવાનો સમય:</strong> સવારે ૧૧:૦૦ થી બપોરે ૦૧:૩૦</li>
+      </ul>
+    </div>
+
+    <div class="detail-card" data-aos="fade-up">
+      <h2>📜 ૨. પ્રમાણપત્રો અને દાખલાઓની સેવાઓ (Certificates & Documentation)</h2>
+      <p>ગોરાડકા ગ્રામ પંચાયતમાંથી નાગરિકોને નીચે મુજબના મુખ્ય દાખલાઓ અને પ્રમાણપત્રો આપવામાં આવે છે. દરેક દાખલા માટે
+        જરૂરી પુરાવા અને સમયમર્યાદા નીચે મુજબ છે:</p>
+
+      <h3>(A) જન્મ અને મરણ પ્રમાણપત્ર (Birth & Death Registration)</h3>
+      <p><strong>વિગત:</strong> બાળકના જન્મ કે વ્યક્તિના અવસાન અંગેની પંચાયત ચોપડે નોંધણી અને પ્રમાણપત્ર.</p>
+      <p><strong>નોંધણી સમયમર્યાદા:</strong> ઘટના બન્યાના ૨૧ દિવસની અંદર નોંધણી કરાવવી ફરજિયાત અને નિઃશુલ્ક છે.</p>
+      <p><strong>જરૂરી પુરાવા:</strong></p>
+      <ul>
+        <li>હોસ્પિટલનો ડિસ્ચાર્જ રિપોર્ટ / સ્લિપ અથવા ડોક્ટરનું પ્રમાણપત્ર.</li>
+        <li>માતા-પિતા (જન્મ માટે) અથવા મૃતક (મરણ માટે) નું આધારકાર્ડ.</li>
+        <li>અરજદારનું રેશનકાર્ડ અને કચેરીનું નિયત અરજી ફોર્મ.</li>
+      </ul>
+
+      <h3>(B) આવકનો દાખલો (Income Certificate)</h3>
+      <p><strong>ઉપયોગ:</strong> શિષ્યવૃત્તિ, આયુષ્યમાન ભારત કાર્ડ, રેશનકાર્ડ, સરકારી સહાય યોજનાઓ માટે.</p>
+      <p><strong>જરૂરી પુરાવા:</strong></p>
+      <ul>
+        <li>રેશનકાર્ડની નકલ.</li>
+        <li>અરજદારનું આધારકાર્ડ.</li>
+        <li>ઘરવેરા / પાણીવેરાની નવીનતમ પહોંચ.</li>
+        <li>આવક અંગેનું સોગંદનામું અથવા આવકનો આધાર (જેમ કે પગાર સ્લિપ કે ખેતી આવકનો આધાર).</li>
+      </ul>
+      <p><strong>નિકાલની સમયમર્યાદા:</strong> ૧ થી ૨ કામકાજના દિવસો.</p>
+
+      <h3>(C) વારસાઈ / પેઢીનામું (Pedhinamu / Heirship Certificate)</h3>
+      <p><strong>ઉપયોગ:</strong> મિલકત વારસાઈ, જમીનમાં નામ દાખલ કરવા અથવા બેંક ખાતામાંથી રકમ મેળવવા માટે.</p>
+      <p><strong>જરૂરી પુરાવા:</strong></p>
+      <ul>
+        <li>મૃતકનું મરણ પ્રમાણપત્ર.</li>
+        <li>તમામ હયાત વારસદારોના આધારકાર્ડ અને રેશનકાર્ડ.</li>
+        <li>રૂ. ૩૦૦ ના સ્ટેમ્પ પેપર પર તૈયાર કરેલું સોગંદનામું.</li>
+        <li>ગામના ૨ તટસ્થ પંચોના આધારકાર્ડ અને પંચનામામાં સહી.</li>
+        <li>કચેરીનું વારસાઈ અરજી ફોર્મ.</li>
+      </ul>
+
+      <h3>(D) રહેઠાણ અને ચારિત્ર્યનું પ્રમાણપત્ર (Residence & Character Certificate)</h3>
+      <p><strong>ઉપયોગ:</strong> નોકરી, શાળા/કોલેજ પ્રવેશ અથવા પાસપોર્ટ/લાઇસન્સ માટે.</p>
+      <p><strong>જરૂરી પુરાવા:</strong> આધારકાર્ડ, રેશનકાર્ડ અને લાઈટબિલ/ટેક્સ પહોંચ.</p>
+
+      <h3>(E) જાતિ પ્રમાણપત્ર ભલામણ (Caste Certificate Recommendation)</h3>
+      <p><strong>ઉપયોગ:</strong> સામાજિક શૈક્ષણિક પછાત વર્ગ (SEBC/OBC), એસ.સી., એસ.ટી. અથવા EWS પ્રમાણપત્ર માટે
+        તલાટીશ્રીનો અભિપ્રાય.</p>
+    </div>
+
+    <div class="detail-card" data-aos="fade-up">
+      <h2>🌾 ૩. જમીન દફતર અને મહેસૂલી સેવાઓ (Land Records & e-Dhara)</h2>
+      <p>ખેડૂતો અને જમીન ધારકો માટે પંચાયત અને ઈ-ધરા કેન્દ્ર મારફતે પૂરી પાડવામાં આવતી સેવાઓ:</p>
+      <div style="overflow-x:auto;">
+        <table>
+          <tr>
+            <th>અ.નં.</th>
+            <th>સેવાઓનું નામ</th>
+            <th>વિગત અને પ્રક્રિયા</th>
+            <th>જરૂરી આધાર-પુરાવા</th>
+          </tr>
+          <tr>
+            <td>૧</td>
+            <td>૭/૧૨ અને ૮-અ ઉતારા</td>
+            <td>જમીનની માલિકી અને ક્ષેત્રફળ દર્શાવતો દસ્તાવેજ. (AnyRoR પોર્ટલ પરથી પણ ઉપલબ્ધ)</td>
+            <td>ખાતા નંબર અથવા સર્વે નંબર</td>
+          </tr>
+          <tr>
+            <td>૨</td>
+            <td>હક્ક પત્રક નોંધ (Mutation Entry)</td>
+            <td>જમીન ખરીદ-વેચાણ, વારસાઈ, બોજો દાખલ કે દૂર કરવાની નોંધ (ગામ નમૂના નંબર-૬).</td>
+            <td>નોંધણી દસ્તાવેજ / વારસાઈ હુકમ / આધાર</td>
+          </tr>
+          <tr>
+            <td>૩</td>
+            <td>૧૩૫-ડી નોટિસ (135-D Notice)</td>
+            <td>જમીનમાં ફેરફાર નોંધ પડ્યા બાદ હિતધારોકોને વાંધા રજૂ કરવા આપવાની નોટિસ.</td>
+            <td>નોટિસ મળ્યાના ૩૦ દિવસમાં વાંધા રજૂ કરવા</td>
+          </tr>
+          <tr>
+            <td>૪</td>
+            <td>જમીન મહેસૂલ વસૂલાત</td>
+            <td>વાર્ષિક જમીનનો વેરો ભરવો અને ખાતાદાર તરીકે પહોંચ મેળવવી.</td>
+            <td>જૂની મહેસૂલ પહોંચ કે ખાતા નંબર</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="detail-card" data-aos="fade-up">
+      <h2>🏡 ૪. પંચાયત કરવેરા, મકાન બાંધકામ અને NOC (Local Taxes & Permissions)</h2>
+      <p>ગોરાડકા ગામના સર્વાંગી વિકાસ અને મૂળભૂત સુવિધાઓની જાળવણી માટે સમયસર કરવેરા ભરવા એ દરેક ગ્રામજનની ફરજ છે.</p>
+
+      <h3>💰 પંચાયત કરવેરા:</h3>
+      <ul>
+        <li><strong>ઘરવેરો (Property Tax):</strong> મકાન આકારણી મુજબ વાર્ષિક આકારણી વેરો.</li>
+        <li><strong>પાણીવેરો (Water Tax):</strong> પીવાના પાણીના કનેક્શનનો વાર્ષિક દર.</li>
+        <li><strong>દીવાબત્તી વેરો (Light Tax):</strong> શેરી લાઇટ અને જાહેર સુવિધાનો વેરો.</li>
+      </ul>
+      <p><strong>વેરો ભરવાનો સમય:</strong> દરરોજ સવારે ૧૧:૦૦ થી બપોરે ૦૧:૩૦ વાગ્યા સુધી.</p>
+
+      <h3>🏢 મકાન બાંધકામ અને ધંધાકીય પરવાનગીઓ:</h3>
+      <p><strong>નવા મકાન બાંધકામ પરવાનગી (Building Permission):</strong></p>
+      <ul>
+        <li>પંચાયતમાંથી મકાન બાંધકામ મંજૂરી મેળવવી ફરજિયાત છે.</li>
+        <li><strong>જરૂરી કાગળો:</strong> ગામતળ પ્લોટ/સનદના કાગળો, પ્લાન નકશો, પડોશીઓની સંમતિ અને અરજી ફોર્મ.</li>
+      </ul>
+      <p><strong>ધંધા/વેપાર માટે ના-વાંધા પ્રમાણપત્ર (NOC for Commercial/Electricity Connection):</strong></p>
+      <ul>
+        <li>નવી દુકાન, વ્યવસાય અથવા નવું વીજ જોડાણ (PGVCL) મેળવવા માટે પંચાયતનું NOC.</li>
+      </ul>
+    </div>
+
+    <div class="detail-card" data-aos="fade-up">
+      <h2>🎁 ૫. સરકારી કલ્યાણકારી યોજનાઓ અને સહાય (Government Schemes)</h2>
+      <p>ગોરાડકા ગ્રામ પંચાયત દ્વારા રાજ્ય અને કેન્દ્ર સરકારની વિવિધ યોજનાઓનો લાભ ગ્રામજનો સુધી પહોંચાડવામાં આવે છે:</p>
+      <ul>
+        <li><strong>ખેડૂત સહાય યોજનાઓ (i-Khedut Portal):</strong> ખેતી ઓજારો, બિયારણ સહાય, ટપક સિંચાઈ અને ખાતર સબસીડી
+          અરજી ચકાસણી.</li>
+        <li><strong>PM-KISAN Samman Nidhi:</strong> ખેડૂતોના ખાતામાં વાર્ષિક ₹૬,૦૦૦ સહાય માટે e-KYC અને આધાર લિંકિંગ.
+        </li>
+        <li><strong>આયુષ્યમાન ભારત / પીએમ-જેએવાય કાર્ડ (Ayushman Card):</strong> વાર્ષિક ₹૧૦ લાખ સુધીની નિઃશુલ્ક તબીબી
+          સારવાર આપતું કાર્ડ બનાવવાની સહાય.</li>
+        <li><strong>સામાજિક સુરક્ષા પેન્શન યોજનાઓ:</strong>
+          <ul>
+            <li><strong>ગંગા સ્વરૂપા યોજના (વિધવા સહાય):</strong> વિધવા બહેનોને માસિક આર્થિક સહાય.</li>
+            <li><strong>નિરાધાર વૃદ્ધ પેન્શન યોજના:</strong> ૬૦ વર્ષથી વધુ વયના વૃદ્ધોને નહિવત આવક હોય ત્યારે માસિક
+              પેન્શન.</li>
+          </ul>
+        </li>
+        <li><strong>પ્રધાનમંત્રી આવાસ યોજના (PMAY-G):</strong> કાચા મકાન ધરાવતા અને ઘરવિહોણા ગ્રામજનો માટે પક્કા મકાન
+          બનાવવા આર્થિક સહાય.</li>
+      </ul>
+    </div>
+
+    <div class="detail-card" data-aos="fade-up">
+      <h2>🗳️ ૬. ગ્રામસભા અને લોક ભાગીદારી (Gram Sabha & Citizen Charter)</h2>
+      <p>ગ્રામસભા એ ગ્રામ પંચાયતનું સૌથી મહત્વનું લોકશાહી અંગ છે. ગોરાડકા ગામના વિકાસમાં દરેક નાગરિકનો અવાજ મહત્વનો છે.
+      </p>
+      <h3>📅 વાર્ષિક ગ્રામસભાના દિવસો:</h3>
+      <ul>
+        <li>૨૬ જાન્યુઆરી (પ્રજાસત્તાક દિન)</li>
+        <li>૧ મે (ગુજરાત સ્થાપના દિન)</li>
+        <li>૧૫ ઓગસ્ટ (સ્વાતંત્ર્ય દિન)</li>
+        <li>૨ ઓક્ટોબર (ગાંધી જયંતી)</li>
+      </ul>
+      <p><strong>ગ્રામજનોને અપીલ:</strong> ગામના રસ્તા, પાણીની લાઈન, સ્વચ્છતા, લાઈટ અને શાળા/આરોગ્ય વિષયક પ્રશ્નો માટે
+        ગ્રામસભામાં અચૂક હાજરી આપો.</p>
+    </div>
+
+    <div class="detail-card" data-aos="fade-up">
+      <h2>📝 ૭. અરજી કરવાની તબક્કાવાર પ્રક્રિયા (Step-by-Step Application Process)</h2>
+      <p>તમારા કોઈપણ કામ માટે ગ્રામ પંચાયતમાં સરળતાથી અરજી કરવા માટે આ ૪ તબક્કા અનુસરો:</p>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; font-weight: bold; color: #2e7d32;">
+        <span>[પગલું ૧: ફોર્મ મેળવવું]</span> ➔
+        <span>[પગલું ૨: પુરાવા જોડવા]</span> ➔
+        <span>[પગલું ૩: કચેરીએ જમા કરાવવું]</span> ➔
+        <span>[પગલું ૪: રસીદ/દાખલો મેળવવો]</span>
+      </div>
+
+      <div class="step-box"><strong>પગલું ૧ (ફોર્મ મેળવવું):</strong> ગ્રામ પંચાયત કચેરીમાંથી જે-તે સેવા માટેનું નિયત
+        ફોર્મ મેળવો અથવા ડાઉનલોડ કરો.</div>
+      <div class="step-box"><strong>પગલું ૨ (દસ્તાવેજો જોડવા):</strong> ફોર્મ સંપૂર્ણ ભરીને તેની સાથે જરૂરી આધારકાર્ડ,
+        રેશનકાર્ડ, વેરા પહોંચ અને અન્ય સાધનિક કાગળોની સ્વ-પ્રમાણિત (Self-attested) નકલો જોડો.</div>
+      <div class="step-box"><strong>પગલું ૩ (અરજી જમા કરાવવી):</strong> તલાટી-કમ-મંત્રીશ્રીની હાજરીના દિવસે (સોમવાર,
+        બુધવાર, શુક્રવાર) સવારે ૧૧:૦૦ થી ૦૨૦૦ ની વચ્ચે અરજી રૂબરૂ જમા કરાવો.</div>
+      <div class="step-box"><strong>પગલું ૪ (ચકાસણી અને નિકાલ):</strong> કચેરી દ્વારા દસ્તાવેજોની ચકાસણી થયા બાદ નિયત
+        સમયમાં તમારું પ્રમાણપત્ર અથવા દાખલો મેળવી લો.</div>
+    </div>
+
+    <div class="detail-card" data-aos="fade-up">
+      <h2>📞 ૮. મહત્વના સંપર્ક નંબરો અને સ્થાનિક હેલ્પલાઇન (Local Emergency & Useful Contacts)</h2>
+      <p>ગોરાડકા ગામના રહીશો માટે જરૂરી સ્થાનિક હોદ્દેદારો અને સેવા આપતા સભ્યોની યાદી:</p>
+      <div style="overflow-x:auto;">
+        <table class="contact-table">
+          <tr>
+            <th>ક્રમ</th>
+            <th>હોદ્દો / સેવા</th>
+            <th>સંપર્ક વ્યક્તિનું નામ</th>
+            <th>મોબાઇલ નંબર / સરનામું</th>
+          </tr>
+          <tr>
+            <td>૧</td>
+            <td>સરપંચશ્રી</td>
+            <td>રાજુભાઈ સોલંકી</td>
+            <td>📞 ૯૭૩૭૪ ૨૧૧૨૦</td>
+          </tr>
+          <tr>
+            <td>૨</td>
+            <td>સ્થાનિક અગ્રણી / ગ્રામજન</td>
+            <td>અંકિતભાઈ રંગપરા</td>
+            <td>📞 ૯૯૨૪૦ ૨૬૦૧૪</td>
+          </tr>
+          <tr>
+            <td>૩</td>
+            <td>આરોગ્ય અને તબીબી સેવા</td>
+            <td>સંજયભાઈ યાદવ</td>
+            <td>📞 ૯૭૨૩૬ ૯૯૦૦૦</td>
+          </tr>
+          <tr>
+            <td>૪</td>
+            <td>આરોગ્ય સેવાઓ</td>
+            <td>આર.પી. સોલંકી</td>
+            <td>📞 ૯૯૨૪૦ ૭૮૯૯૦</td>
+          </tr>
+          <tr>
+            <td>૫</td>
+            <td>ફોટોગ્રાફી અને મિડિયા (મધૂલી સ્ટુડિયો)</td>
+            <td>વિનોદભાઈ સરવૈયા</td>
+            <td>📞 ૯૭૧૪૮ ૮૮૭૪૩</td>
+          </tr>
+          <tr>
+            <td>૬</td>
+            <td>સામાજિક સેવાઓ અને સહાય</td>
+            <td>પિન્ટુભાઈ વાળા</td>
+            <td>📞 ૭૦૪૬૧ ૦૦૯૨૨</td>
+          </tr>
+          <tr>
+            <td>૭</td>
+            <td>દૂધ ઉત્પાદક મંડળી</td>
+            <td>ગ્રામીણ ડેરી સહકારી</td>
+            <td>📞 ૭૦૯૬૫ ૮૪૮૯૬</td>
+          </tr>
+          <tr>
+            <td>૮</td>
+            <td>ચામુંડા ડેરી (તાજા દૂધ વિતરણ)</td>
+            <td>રંગાપરા અંકિત</td>
+            <td>📞 ૭૬૨૨૯ ૩૯૩૯૬</td>
+          </tr>
+          <tr>
+            <td>૯</td>
+            <td>વેબસાઈટ ડેવલપર / આઈટી સર્વિસ</td>
+            <td>તુષાર સુતરિયા</td>
+            <td>કચેરી સંપર્ક પેજ</td>
+          </tr>
+        </table>
+      </div>
+
+      <h3>📍 કચેરીનું સરનામું:</h3>
+      <p><strong>ગોરાડકા ગ્રામ પંચાયત કચેરી,</strong><br>મુ. ગોરાડકા, તા. ગઢડા, જી. બોટાદ, ગુજરાત - ૩૬૪૭૫૦</p>
+      <p><em>લાઈવ નેવિગેશન માટે વેબસાઈટના મેપ (Live Map) નો ઉપયોગ કરો.</em></p>
+    </div>
+
+    <div style="text-align: center;">
+      <a href="services.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Services</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section about">
+        <h2>Goradka™</h2>
+        <p>Goradka – where tradition meets progress in every corner. A peaceful community built on unity, culture, and
+          pride.</p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/goradka_nagari01?igsh=Z29pa29nMjBzdWwx" target="_blank"
+            rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/9825687775?text=હેલ્લો%2C%20કૃપા%20કરીને%20મને%20ગોરડકા%20ગ્રૂપમાં%20જોડાવાનો%20લિંક%20મોકલો."
+            target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://wa.me/919574750680?text=હેલ્લો%2C%20કૃપા%20કરીને%20મને%20ગોરડકા%20ગ્રૂપમાં%20જોડાવાનો%20લિંક%20મોકલો."
+            target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-section links">
+        <h3>View all Pages</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section contact">
+        <h3>Contact</h3>
+        <p><a href="https://tushar-sutariya.netlify.app" target="_blank" style="color: inherit; text-decoration: none;"
+            rel="noopener noreferrer">Tushar Sutariya</a> <br />fore any type of queries</p>
+        <br />
+        <p class="created-by">❤ Created by <a href="https://tushar-sutariya.netlify.app" target="_blank"
+            rel="noopener noreferrer">Tushar Sutariya</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>AOS.init({ once: true, offset: 50 });</script>
+  <script src="script.js"></script>
+</body>
+
+</html>
