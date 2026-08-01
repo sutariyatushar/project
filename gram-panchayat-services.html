@@ -85,7 +85,8 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 600px; /* Ensures table columns don't squish too much on mobile */
+      min-width: 600px;
+      /* Ensures table columns don't squish too much on mobile */
     }
 
     table,
@@ -169,7 +170,8 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      transform: rotate(90deg); /* Point downwards on mobile */
+      transform: rotate(90deg);
+      /* Point downwards on mobile */
     }
 
     /* Medium Devices (Tablets, 768px and up) */
@@ -207,7 +209,8 @@
       }
 
       .step-arrow {
-        transform: none; /* Point right on desktop */
+        transform: none;
+        /* Point right on desktop */
       }
     }
 
@@ -224,6 +227,538 @@
       .detail-card h2 {
         font-size: 1.8rem;
       }
+    }
+
+    /* Custom Mobile-First Reference Hero Styling */
+    .panchayat-hero {
+      background: radial-gradient(circle, #ffffff 0%, #f6fcf8 100%);
+      position: relative;
+      padding: 3rem 1rem 2.5rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(46, 125, 50, 0.1);
+    }
+
+    .panchayat-hero::before {
+      content: "";
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      border: 1px dashed rgba(46, 125, 50, 0.08);
+      border-radius: 50%;
+      z-index: 1;
+      pointer-events: none;
+      bottom: -200px;
+    }
+
+    .panchayat-hero::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 1px dashed rgba(46, 125, 50, 0.05);
+      border-radius: 50%;
+      z-index: 1;
+      pointer-events: none;
+      bottom: -120px;
+    }
+
+    .top-pill-badge {
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #2e7d32;
+      margin-bottom: 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      z-index: 2;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .panchayat-hero-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #2c3e50;
+      line-height: 1.3;
+      letter-spacing: -0.5px;
+      max-width: 550px;
+      margin-bottom: 1.5rem;
+      z-index: 2;
+    }
+
+    .panchayat-hero-title span.highlight-text {
+      color: #7f8c8d;
+      font-weight: 400;
+    }
+
+    .logo-box-inline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #2e7d32;
+      color: white;
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      font-size: 1rem;
+      vertical-align: middle;
+      margin: 0 4px;
+      box-shadow: 0 4px 10px rgba(46, 125, 50, 0.25);
+    }
+
+    .comparison-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      max-width: 320px;
+      margin-bottom: 2rem;
+      z-index: 2;
+    }
+
+    .comparison-card {
+      background: white;
+      border-radius: 16px;
+      padding: 12px 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      transition: transform 0.2s ease;
+    }
+
+    .comparison-card.dark-theme {
+      background: #1b5e20;
+      color: white;
+      box-shadow: 0 10px 25px rgba(27, 94, 32, 0.2);
+      border: none;
+    }
+
+    .comparison-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .comparison-card.light-theme .comparison-icon {
+      background: #f5f5f5;
+      color: #7f8c8d;
+    }
+
+    .comparison-card.dark-theme .comparison-icon {
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+    }
+
+    .comparison-text h4 {
+      margin: 0 0 2px 0;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .comparison-text p {
+      margin: 0;
+      font-size: 0.75rem;
+      color: #7f8c8d;
+    }
+
+    .comparison-card.dark-theme .comparison-text p {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .bottom-envelope-container {
+      position: relative;
+      width: 100%;
+      max-width: 320px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      z-index: 2;
+      margin-top: 0.5rem;
+    }
+
+    .envelope-card {
+      position: absolute;
+      width: 120px;
+      height: 75px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .envelope-card.card-left-env {
+      transform: translateX(-40px) rotate(-6deg);
+      z-index: 1;
+    }
+
+    .envelope-card.card-right-env {
+      transform: translateX(40px) rotate(6deg);
+      z-index: 2;
+    }
+
+    .envelope-card-header {
+      font-size: 0.6rem;
+      color: #95a5a6;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-weight: 600;
+    }
+
+    .envelope-card-header span {
+      width: 12px;
+      height: 12px;
+      background: #f5f5f5;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.5rem;
+      font-weight: bold;
+      color: #7f8c8d;
+    }
+
+    .envelope-card-value {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #7f8c8d;
+      text-align: center;
+      margin: auto 0;
+    }
+
+    .card-right-env .envelope-card-value {
+      color: #2e7d32;
+    }
+
+    .envelope-wrapper-graphic {
+      position: absolute;
+      bottom: 0;
+      width: 200px;
+      height: 40px;
+      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.03);
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(46, 125, 50, 0.15);
+      border-bottom: none;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #2e7d32;
+    }
+
+    @media (min-width: 768px) {
+      .panchayat-hero {
+        padding: 4rem 2rem 3rem 2rem;
+      }
+
+      .panchayat-hero::before {
+        width: 600px;
+        height: 600px;
+      }
+
+      .panchayat-hero-title {
+        font-size: 2.5rem;
+      }
+
+      .comparison-container {
+        flex-direction: row;
+        max-width: 680px;
+        gap: 20px;
+      }
+
+      .comparison-card {
+        flex: 1;
+      }
+
+      .bottom-envelope-container {
+        height: 120px;
+      }
+
+      .envelope-card {
+        width: 140px;
+        height: 90px;
+      }
+
+      .envelope-card.card-left-env {
+        transform: translateX(-50px) rotate(-6deg);
+      }
+
+      .envelope-card.card-right-env {
+        transform: translateX(50px) rotate(6deg);
+      }
+
+      .envelope-card-value {
+        font-size: 1.1rem;
+      }
+
+      .envelope-wrapper-graphic {
+        width: 240px;
+        height: 50px;
+        font-size: 0.75rem;
+      }
+    }
+
+    /* Premium Layouts for Main Content */
+    .office-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 1.5rem;
+    }
+
+    .office-card {
+      background: #fdfdfd;
+      border-radius: 20px;
+      padding: 1.5rem;
+      border: 1px solid rgba(46, 125, 50, 0.08);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+
+    .office-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(46, 125, 50, 0.08);
+    }
+
+    .office-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #1b5e20 !important;
+      margin-top: 0 !important;
+      margin-bottom: 1rem !important;
+      font-size: 1.15rem !important;
+    }
+
+    .office-card ul {
+      margin-left: 0 !important;
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0 !important;
+    }
+
+    .office-card li {
+      position: relative;
+      padding-left: 20px;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+      color: #555;
+      line-height: 1.4;
+    }
+
+    .office-card li::before {
+      content: "\f00c";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: #2e7d32;
+      font-size: 0.75rem;
+    }
+
+    /* Document Services Grid */
+    .doc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 1.5rem;
+    }
+
+    .doc-card {
+      background: white;
+      border-radius: 24px;
+      padding: 1.5rem;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.02);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .doc-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(46, 125, 50, 0.1);
+    }
+
+    .doc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .doc-icon {
+      width: 44px;
+      height: 44px;
+      background: #e8f5e9;
+      color: #2e7d32;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+
+    .doc-badge {
+      font-size: 0.7rem;
+      background: #f1f8e9;
+      color: #2e7d32;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .doc-card h3 {
+      margin: 0 0 0.5rem 0 !important;
+      font-size: 1.15rem !important;
+      color: #1b5e20 !important;
+    }
+
+    .doc-card p {
+      font-size: 0.85rem !important;
+      color: #666;
+      margin-bottom: 0.75rem !important;
+      line-height: 1.4;
+    }
+
+    .doc-meta {
+      background: #f9f9f9;
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      color: #555;
+      margin-bottom: 0.75rem;
+    }
+
+    .doc-card ul {
+      margin-left: 0 !important;
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.25rem;
+    }
+
+    .doc-card li {
+      position: relative;
+      padding-left: 18px;
+      font-size: 0.8rem;
+      color: #666;
+      margin-bottom: 0.4rem;
+      line-height: 1.3;
+    }
+
+    .doc-card li::before {
+      content: "•";
+      color: #2e7d32;
+      font-weight: bold;
+      position: absolute;
+      left: 5px;
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    /* Sabha Timeline */
+    .sabha-timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .sabha-item {
+      background: #f1f8e9;
+      border-radius: 16px;
+      padding: 1rem 0.5rem;
+      text-align: center;
+      border: 1px solid rgba(46, 125, 50, 0.15);
+    }
+
+    .sabha-date {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: #1b5e20;
+      margin-bottom: 4px;
+    }
+
+    .sabha-desc {
+      font-size: 0.75rem;
+      color: #555;
+      font-weight: 600;
+    }
+
+    /* Contact Cards */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 1.5rem;
+    }
+
+    .contact-profile-card {
+      background: white;
+      border-radius: 24px;
+      padding: 1.25rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-profile-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(46, 125, 50, 0.08);
+    }
+
+    .contact-role-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      background: #e8f5e9;
+      color: #2e7d32;
+      padding: 3px 8px;
+      border-radius: 6px;
+      align-self: flex-start;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-profile-card h4 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.1rem;
+      color: #1b5e20;
+    }
+
+    .contact-profile-card .doctor-call-btn {
+      margin-top: auto;
+      justify-content: center;
+      padding: 8px;
+      font-size: 0.85rem;
     }
   </style>
 </head>
@@ -252,202 +787,317 @@
     </div>
   </nav>
 
-  <header class="services-hero"
-    style="min-height: 40vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/hero-bg.jpg') center/cover;">
-    <div class="hero-content">
-      <h1 class="hero-title" data-aos="fade-up" style="color: white; font-size: 2.5rem;">
-        🏛️ ગોરાડકા ગ્રામ પંચાયત<br><span>સેવાઓ અને નાગરિક માર્ગદર્શિકા</span>
-      </h1>
-      <p style="color: #ddd; font-size: 1.2rem; margin-top: 10px;">ગામ: ગોરાડકા | તાલુકો: ગઢડા | જિલ્લો: બોટાદ | રાજ્ય:
-        ગુજરાત</p>
+  <header class="panchayat-hero">
+    <div class="top-pill-badge" data-aos="fade-down">
+      🏛️ ગોરાડકા નાગરિક માર્ગદર્શિકા
+    </div>
+
+    <h1 class="panchayat-hero-title" data-aos="fade-up">
+      ગ્રામ પંચાયતની સેવાઓ મેળવવી <span class="logo-box-inline">🏛️</span> <br><span class="highlight-text">હવે થઈ સાવ
+        સરળ!</span>
+    </h1>
+
+    <div class="comparison-container" data-aos="zoom-in" data-aos-delay="100">
+      <!-- Point A -->
+      <div class="comparison-card light-theme">
+        <div class="comparison-icon"><i class="fa-regular fa-face-frown"></i></div>
+        <div class="comparison-text">
+          <h4>પહેલાં (Point A)</h4>
+          <p>વારંવાર ધક્કા અને સમયનો બગાડ</p>
+        </div>
+      </div>
+
+      <!-- Point B -->
+      <div class="comparison-card dark-theme">
+        <div class="comparison-icon"><i class="fa-regular fa-face-smile"></i></div>
+        <div class="comparison-text">
+          <h4>હવે (Point B)</h4>
+          <p>ઘરે બેઠા સચોટ માર્ગદર્શન</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Envelope Cards -->
+    <div class="bottom-envelope-container" data-aos="fade-up" data-aos-delay="200">
+      <div class="envelope-card card-left-env">
+        <div class="envelope-card-header">
+          <span>A</span> પંચાયત ધક્કા
+        </div>
+        <div class="envelope-card-value">ઓફલાઇન માહિતી</div>
+      </div>
+      <div class="envelope-card card-right-env">
+        <div class="envelope-card-header">
+          <span>B</span> ઘરે બેઠા ઉકેલ
+        </div>
+        <div class="envelope-card-value">ડિજિટલ માર્ગદર્શિકા</div>
+      </div>
+      <div class="envelope-wrapper-graphic">
+        નાગરિક સેવા પોર્ટલ 🏛️
+      </div>
     </div>
   </header>
 
   <section class="detail-section">
+    <!-- Intro Card -->
     <div class="detail-card" data-aos="fade-up">
       <h2>📌 પ્રસ્તાવના (Welcome to Goradka Services Portal)</h2>
-      <p>ગોરાડકા ગ્રામ પંચાયત ગામના તમામ નાગરિકો, ખેડૂતો, વિદ્યાર્થીઓ અને પંચાયતના રહીશોને પારદર્શક, ઝડપી અને સરળ વહીવટી
-        સેવાઓ પૂરી પાડવા માટે કટિબદ્ધ છે. આ સેવા પેજનો મુખ્ય હેતુ ગ્રામજનોને પંચાયત કચેરીના સમય, તલાટી-કમ-મંત્રીશ્રીની
-        કચેરીએ હાજરીના દિવસો, વિવિધ દાખલાઓ અને સરકારી પ્રમાણપત્રો મેળવવાની સરળ પ્રક્રિયા, કરવેરા ચુકવણી તથા સરકારી
-        યોજનાઓ અંગેની સંપૂર્ણ માહિતી આપવાનો છે, જેથી સમય અને શક્તિનો બચાવ થઈ શકે.</p>
+      <p style="font-size: 1.05rem; line-height: 1.8; color: #444;">
+        ગોરાડકા ગ્રામ પંચાયત ગામના તમામ નાગરિકો, ખેડૂતો, વિદ્યાર્થીઓ અને પંચાયતના રહીશોને પારદર્શક, ઝડપી અને સરળ
+        વહીવટી સેવાઓ પૂરી પાડવા માટે કટિબદ્ધ છે. આ સેવા પેજનો મુખ્ય હેતુ ગ્રામજનોને પંચાયત કચેરીના સમય,
+        તલાટી-કમ-મંત્રીશ્રીની કચેરીએ હાજરીના દિવસો, વિવિધ દાખલાઓ અને સરકારી પ્રમાણપત્રો મેળવવાની સરળ પ્રક્રિયા,
+        કરવેરા ચુકવણી તથા સરકારી યોજનાઓ અંગેની સંપૂર્ણ માહિતી આપવાનો છે, જેથી આપનો કિંમતી સમય અને શક્તિ બચી શકે.
+      </p>
     </div>
 
+    <!-- Section 1: Office Hours -->
     <div class="detail-card" data-aos="fade-up">
       <h2>⏰ ૧. કચેરી સમય અને તલાટી-કમ-મંત્રીશ્રી સમયપત્રક (Office Hours & Schedule)</h2>
       <p>ગોરાડકા ગ્રામ પંચાયત કચેરી ખાતે વહીવટી કામગીરી નીચે મુજબના સમયે હાથ ધરવામાં આવે છે:</p>
 
-      <h3>🏛️ પંચાયત કચેરીનો સમય:</h3>
-      <ul>
-        <li><strong>કામકાજના દિવસો:</strong> સોમવાર થી શનિવાર</li>
-        <li><strong>કચેરી ખોલવાનો સમય:</strong> સવારે ૧૦:૩૦ વાગ્યે</li>
-        <li><strong>કચેરી બંધ થવાનો સમય:</strong> સાંજે ૦5:૧૦ વાગ્યે</li>
-        <li><strong>બપોરનો રિસેસ (વિરામ) સમય:</strong> બપોરે ૦૧:૩૦ થી ૦૨:૦૦ વાગ્યા સુધી</li>
-      </ul>
-      <p style="color: #d32f2f; font-size: 0.9rem;">(નોંધ: મહિનાના બીજા અને ચોથા શનિવારે તેમજ જાહેર સરકારી રજાના
-        દિવસોમાં કચેરી બંધ રહેશે.)</p>
+      <div class="office-grid">
+        <!-- Panchayat Office -->
+        <div class="office-card" data-aos="fade-up">
+          <h3><i class="fa-solid fa-building-flag"></i> પંચાયત કચેરી સમય</h3>
+          <ul>
+            <li><strong>દિવસો:</strong> સોમવાર થી શનિવાર</li>
+            <li><strong>સમય:</strong> સવારે ૧૦:૩૦ થી સાંજે ૦૫:૧૦</li>
+            <li><strong>રિસેસ સમય:</strong> બપોરે ૦૧:૩૦ થી ૦૨:૦૦</li>
+            <li style="color: #c62828;"><strong>રજાઓ:</strong> ૨જા અને ૪થા શનિવારે તેમજ સરકારી જાહેર રજાના
+              દિવસોમાં બંધ.</li>
+          </ul>
+        </div>
 
-      <h3>👨‍💼 તલાટી-કમ-મંત્રીશ્રીની હાજરીનું સમયપત્રક:</h3>
-      <ul>
-        <li><strong>🟢 રૂબરૂ હાજરીના દિવસો:</strong> સોમવાર, બુધવાર અને શુક્રવાર</li>
-        <li><strong>🟢 હાજરીનો સમય:</strong> સવારે ૧૧:૦૦ વાગ્યાથી સાંજે ૦૫:૦૦ વાગ્યા સુધી</li>
-        <li><strong>🟡 મંગળવાર અને ગુરુવાર:</strong> તાલુકા પંચાયત ગઢડા ખાતેની મિટિંગ, ક્ષેત્રિય તપાસ (ફિલ્ડ વિઝિટ) અથવા
-          અન્ય સરકારી કામગીરી.</li>
-      </ul>
+        <!-- Talati Schedule -->
+        <div class="office-card" data-aos="fade-up" data-aos-delay="100">
+          <h3><i class="fa-solid fa-user-tie"></i> તલાટી-કમ-મંત્રીશ્રી</h3>
+          <ul>
+            <li><strong>રૂબરૂ હાજરી:</strong> સોમવાર, બુધવાર, શુક્રવાર</li>
+            <li><strong>હાજરી સમય:</strong> સવારે ૧૧:૦૦ થી સાંજે ૦૫:૦૦</li>
+            <li style="color: #e65100;"><strong>મંગળવાર / ગુરુવાર:</strong> તાલુકા કચેરી મીટિંગ, ક્ષેત્રિય તપાસ
+              અથવા અન્ય વહીવટી સરકારી કામ.</li>
+          </ul>
+        </div>
 
-      <h3>📋 કામગીરીનો વિશિષ્ટ સમય:</h3>
-      <ul>
-        <li><strong>નવી અરજીઓ અને દસ્તાવેજ સ્વીકારવાનો સમય:</strong> સવારે ૧૧:૦૦ થી બપોરે ૦૨:૦૦</li>
-        <li><strong>દાખલા / પ્રમાણપત્ર વિતરણ સમય:</strong> બપોરે ૦૩:૦૦ થી સાંજે ૦૫:૦૦</li>
-        <li><strong>પંચાયત કરવેરા / રોકડ સ્વીકારવાનો સમય:</strong> સવારે ૧૧:૦૦ થી બપોરે ૦૧:૩૦</li>
-      </ul>
-    </div>
-
-    <div class="detail-card" data-aos="fade-up">
-      <h2>📜 ૨. પ્રમાણપત્રો અને દાખલાઓની સેવાઓ (Certificates & Documentation)</h2>
-      <p>ગોરાડકા ગ્રામ પંચાયતમાંથી નાગરિકોને નીચે મુજબના મુખ્ય દાખલાઓ અને પ્રમાણપત્રો આપવામાં આવે છે. દરેક દાખલા માટે
-        જરૂરી પુરાવા અને સમયમર્યાદા નીચે મુજબ છે:</p>
-
-      <h3>(A) જન્મ અને મરણ પ્રમાણપત્ર (Birth & Death Registration)</h3>
-      <p><strong>વિગત:</strong> બાળકના જન્મ કે વ્યક્તિના અવસાન અંગેની પંચાયત ચોપડે નોંધણી અને પ્રમાણપત્ર.</p>
-      <p><strong>નોંધણી સમયમર્યાદા:</strong> ઘટના બન્યાના ૨૧ દિવસની અંદર નોંધણી કરાવવી ફરજિયાત અને નિઃશુલ્ક છે.</p>
-      <p><strong>જરૂરી પુરાવા:</strong></p>
-      <ul>
-        <li>હોસ્પિટલનો ડિસ્ચાર્જ રિપોર્ટ / સ્લિપ અથવા ડોક્ટરનું પ્રમાણપત્ર.</li>
-        <li>માતા-પિતા (જન્મ માટે) અથવા મૃતક (મરણ માટે) નું આધારકાર્ડ.</li>
-        <li>અરજદારનું રેશનકાર્ડ અને કચેરીનું નિયત અરજી ફોર્મ.</li>
-      </ul>
-
-      <h3>(B) આવકનો દાખલો (Income Certificate)</h3>
-      <p><strong>ઉપયોગ:</strong> શિષ્યવૃત્તિ, આયુષ્યમાન ભારત કાર્ડ, રેશનકાર્ડ, સરકારી સહાય યોજનાઓ માટે.</p>
-      <p><strong>જરૂરી પુરાવા:</strong></p>
-      <ul>
-        <li>રેશનકાર્ડની નકલ.</li>
-        <li>અરજદારનું આધારકાર્ડ.</li>
-        <li>ઘરવેરા / પાણીવેરાની નવીનતમ પહોંચ.</li>
-        <li>આવક અંગેનું સોગંદનામું અથવા આવકનો આધાર (જેમ કે પગાર સ્લિપ કે ખેતી આવકનો આધાર).</li>
-      </ul>
-      <p><strong>નિકાલની સમયમર્યાદા:</strong> ૧ થી ૨ કામકાજના દિવસો.</p>
-
-      <h3>(C) વારસાઈ / પેઢીનામું (Pedhinamu / Heirship Certificate)</h3>
-      <p><strong>ઉપયોગ:</strong> મિલકત વારસાઈ, જમીનમાં નામ દાખલ કરવા અથવા બેંક ખાતામાંથી રકમ મેળવવા માટે.</p>
-      <p><strong>જરૂરી પુરાવા:</strong></p>
-      <ul>
-        <li>મૃતકનું મરણ પ્રમાણપત્ર.</li>
-        <li>તમામ હયાત વારસદારોના આધારકાર્ડ અને રેશનકાર્ડ.</li>
-        <li>રૂ. ૩૦૦ ના સ્ટેમ્પ પેપર પર તૈયાર કરેલું સોગંદનામું.</li>
-        <li>ગામના ૨ તટસ્થ પંચોના આધારકાર્ડ અને પંચનામામાં સહી.</li>
-        <li>કચેરીનું વારસાઈ અરજી ફોર્મ.</li>
-      </ul>
-
-      <h3>(D) રહેઠાણ અને ચારિત્ર્યનું પ્રમાણપત્ર (Residence & Character Certificate)</h3>
-      <p><strong>ઉપયોગ:</strong> નોકરી, શાળા/કોલેજ પ્રવેશ અથવા પાસપોર્ટ/લાઇસન્સ માટે.</p>
-      <p><strong>જરૂરી પુરાવા:</strong> આધારકાર્ડ, રેશનકાર્ડ અને લાઈટબિલ/ટેક્સ પહોંચ.</p>
-
-      <h3>(E) જાતિ પ્રમાણપત્ર ભલામણ (Caste Certificate Recommendation)</h3>
-      <p><strong>ઉપયોગ:</strong> સામાજિક શૈક્ષણિક પછાત વર્ગ (SEBC/OBC), એસ.સી., એસ.ટી. અથવા EWS પ્રમાણપત્ર માટે
-        તલાટીશ્રીનો અભિપ્રાય.</p>
-    </div>
-
-    <div class="detail-card" data-aos="fade-up">
-      <h2>🌾 ૩. જમીન દફતર અને મહેસૂલી સેવાઓ (Land Records & e-Dhara)</h2>
-      <p>ખેડૂતો અને જમીન ધારકો માટે પંચાયત અને ઈ-ધરા કેન્દ્ર મારફતે પૂરી પાડવામાં આવતી સેવાઓ:</p>
-      <div class="table-responsive">
-        <table>
-          <tr>
-            <th>અ.નં.</th>
-            <th>સેવાઓનું નામ</th>
-            <th>વિગત અને પ્રક્રિયા</th>
-            <th>જરૂરી આધાર-પુરાવા</th>
-          </tr>
-          <tr>
-            <td>૧</td>
-            <td>૭/૧૨ અને ૮-અ ઉતારા</td>
-            <td>જમીનની માલિકી અને ક્ષેત્રફળ દર્શાવતો દસ્તાવેજ. (AnyRoR પોર્ટલ પરથી પણ ઉપલબ્ધ)</td>
-            <td>ખાતા નંબર અથવા સર્વે નંબર</td>
-          </tr>
-          <tr>
-            <td>૨</td>
-            <td>હક્ક પત્રક નોંધ (Mutation Entry)</td>
-            <td>જમીન ખરીદ-વેચાણ, વારસાઈ, બોજો દાખલ કે દૂર કરવાની નોંધ (ગામ નમૂના નંબર-૬).</td>
-            <td>નોંધણી દસ્તાવેજ / વારસાઈ હુકમ / આધાર</td>
-          </tr>
-          <tr>
-            <td>૩</td>
-            <td>૧૩૫-ડી નોટિસ (135-D Notice)</td>
-            <td>જમીનમાં ફેરફાર નોંધ પડ્યા બાદ હિતધારોકોને વાંધા રજૂ કરવા આપવાની નોટિસ.</td>
-            <td>નોટિસ મળ્યાના ૩૦ દિવસમાં વાંધા રજૂ કરવા</td>
-          </tr>
-          <tr>
-            <td>૪</td>
-            <td>જમીન મહેસૂલ વસૂલાત</td>
-            <td>વાર્ષિક જમીનનો વેરો ભરવો અને ખાતાદાર તરીકે પહોંચ મેળવવી.</td>
-            <td>જૂની મહેસૂલ પહોંચ કે ખાતા નંબર</td>
-          </tr>
-        </table>
+        <!-- Custom Timings -->
+        <div class="office-card" data-aos="fade-up" data-aos-delay="200">
+          <h3><i class="fa-solid fa-clock-rotate-left"></i> વહીવટી કામગીરી સમય</h3>
+          <ul>
+            <li><strong>નવી અરજી સ્વીકાર:</strong> સવારે ૧૧:૦૦ થી બપોરે ૦૨:૦૦</li>
+            <li><strong>પ્રમાણપત્ર વિતરણ:</strong> બપોરે ૦૩:૦૦ થી સાંજે ૦૫:૦૦</li>
+            <li><strong>ટેક્સ / કરવેરા સ્વીકાર:</strong> સવારે ૧૧:૦૦ થી બપોરે ૦૧:૩૦</li>
+          </ul>
+        </div>
       </div>
     </div>
 
+    <!-- Section 2: Certificates -->
+    <div class="detail-card" data-aos="fade-up">
+      <h2>📜 ૨. પ્રમાણપત્રો અને દાખલાઓની સેવાઓ (Certificates & Documentation)</h2>
+      <p>ગોરાડકા ગ્રામ પંચાયતમાંથી નાગરિકોને આપવામાં આવતા મુખ્ય દાખલાઓ મેળવવા માટેની જરૂરી વિગતો:</p>
+
+      <div class="doc-grid">
+        <!-- Birth & Death -->
+        <div class="doc-card" data-aos="fade-up">
+          <div class="doc-header">
+            <div class="doc-icon"><i class="fa-solid fa-baby-carriage"></i></div>
+            <span class="doc-badge">જન્મ અને મરણ</span>
+          </div>
+          <h3>જન્મ-મરણ પ્રમાણપત્ર</h3>
+          <p>બાળકના જન્મ કે વ્યક્તિના અવસાન અંગેની પંચાયત ચોપડે નોંધણી અને પ્રમાણપત્ર.</p>
+          <div class="doc-meta">
+            <strong>સમયમર્યાદા:</strong> ૨૧ દિવસમાં નોંધણી મફત
+          </div>
+          <ul>
+            <li>હોસ્પિટલ ડિસ્ચાર્જ સ્લિપ અથવા ડોક્ટરનું ફોર્મ</li>
+            <li>માતા-પિતા / મૃતકનું આધારકાર્ડ</li>
+            <li>રેશનકાર્ડ અને નિયત ફોર્મ</li>
+          </ul>
+        </div>
+
+        <!-- Income -->
+        <div class="doc-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="doc-header">
+            <div class="doc-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+            <span class="doc-badge">આવકનો દાખલો</span>
+          </div>
+          <h3>આવક પ્રમાણપત્ર</h3>
+          <p>શિષ્યવૃત્તિ, આયુષ્યમાન કાર્ડ, રેશનકાર્ડ કે સરકારી યોજનાઓમાં સહાય માટે ઉપયોગી.</p>
+          <div class="doc-meta">
+            <strong>સમયમર્યાદા:</strong> ૧ થી ૨ દિવસ
+          </div>
+          <ul>
+            <li>રેશનકાર્ડ તથા આધારકાર્ડની નકલ</li>
+            <li>ઘરવેરા / પાણીવેરાની છેલ્લી પહોંચ</li>
+            <li>આવક અંગેનું સોગંદનામું અથવા પગાર સ્લિપ</li>
+          </ul>
+        </div>
+
+        <!-- Pedhinamu -->
+        <div class="doc-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="doc-header">
+            <div class="doc-icon"><i class="fa-solid fa-users-between-lines"></i></div>
+            <span class="doc-badge">પેઢીનામું</span>
+          </div>
+          <h3>વારસાઈ / પેઢીનામું</h3>
+          <p>જમીનમાં નામ દાખલ કરવા કે બેંક ખાતામાંથી વારસાઈ રકમ મેળવવા માટે.</p>
+          <div class="doc-meta">
+            <strong>સમયમર્યાદા:</strong> ૩ થી ૫ દિવસ
+          </div>
+          <ul>
+            <li>મૃતકનું મરણ પ્રમાણપત્ર</li>
+            <li>તમામ હયાત વારસદારોના આધાર-રેશનકાર્ડ</li>
+            <li>રૂ. ૩૦૦ ના સ્ટેમ્પ પેપર પર સોગંદનામું</li>
+            <li>ગામના ૨ તટસ્થ પંચોના આધાર અને સહી</li>
+          </ul>
+        </div>
+
+        <!-- Residence -->
+        <div class="doc-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="doc-header">
+            <div class="doc-icon"><i class="fa-solid fa-house-chimney-window"></i></div>
+            <span class="doc-badge">રહેઠાણ</span>
+          </div>
+          <h3>રહેઠાણ અને ચારિત્ર્ય દાખલો</h3>
+          <p>સરકારી નોકરી, કોલેજ પ્રવેશ, પાસપોર્ટ કે નવીન જોડાણો મેળવવા ભલામણ પત્ર.</p>
+          <div class="doc-meta">
+            <strong>સમયમર્યાદા:</strong> ૧ દિવસ
+          </div>
+          <ul>
+            <li>અરજદારનું આધારકાર્ડ અને રેશનકાર્ડ</li>
+            <li>ટેક્સ બિલ / લાઈટબિલ નકલ</li>
+            <li>રહેવાસી હોવાની પુરાવા નકલ</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Land Records -->
+    <div class="detail-card" data-aos="fade-up">
+      <h2>🌾 ૩. જમીન દફતર અને મહેસૂલી સેવાઓ (Land Records & e-Dhara)</h2>
+      <p>ખેડૂતો અને જમીન ધારકો માટે પંચાયત અને ઈ-ધરા કેન્દ્ર મારફતે પૂરી પાડવામાં આવતી વહીવટી સેવાઓ:</p>
+
+      <div class="doc-grid">
+        <!-- 7/12 -->
+        <div class="doc-card" data-aos="fade-up">
+          <div class="doc-header">
+            <div class="doc-icon"><i class="fa-solid fa-file-invoice"></i></div>
+            <span class="doc-badge">AnyRoR</span>
+          </div>
+          <h3>૭/૧૨ અને ૮-અ ઉતારા</h3>
+          <p>જમીનની માલિકી, ક્ષેત્રફળ અને ખાતાની માહિતી દર્શાવતા ઓનલાઇન પ્રમાણિત દસ્તાવેજો.</p>
+          <div class="doc-meta">
+            <strong>જરૂરી વિગત:</strong> ખાતા નંબર અથવા સર્વે નંબર
+          </div>
+        </div>
+
+        <!-- Mutation -->
+        <div class="doc-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="doc-header">
+            <div class="doc-icon"><i class="fa-solid fa-arrows-spin"></i></div>
+            <span class="doc-badge">હક્ક પત્રક</span>
+          </div>
+          <h3>નોંધ દાખલ (Mutation Entry)</h3>
+          <p>ખરીદ-વેચાણ, વારસાઈ કે બોજો દૂર કરવા અંગેની નોંધ નં. ૬ ચોપડે ચડાવવા અંગેની અરજી.</p>
+          <div class="doc-meta">
+            <strong>જરૂરી પુરાવા:</strong> રજીસ્ટર દસ્તાવેજ / વારસાઈ હુકમ
+          </div>
+        </div>
+
+        <!-- 135-D -->
+        <div class="doc-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="doc-header">
+            <div class="doc-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+            <span class="doc-badge">૧૩૫-ડી નોટિસ</span>
+          </div>
+          <h3>વાંધા અરજી મુદત</h3>
+          <p>જમીનમાં ફેરફાર નોંધ પડ્યા બાદ હિતધારકોને સુનાવણી માટે આપવામાં આવતી સત્તાવાર નોટિસ.</p>
+          <div class="doc-meta">
+            <strong>મળ્યાના ૩૦ દિવસમાં લેખિત વાંધો</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 4: Taxes & NOC -->
     <div class="detail-card" data-aos="fade-up">
       <h2>🏡 ૪. પંચાયત કરવેરા, મકાન બાંધકામ અને NOC (Local Taxes & Permissions)</h2>
-      <p>ગોરાડકા ગામના સર્વાંગી વિકાસ અને મૂળભૂત સુવિધાઓની જાળવણી માટે સમયસર કરવેરા ભરવા એ દરેક ગ્રામજનની ફરજ છે.</p>
+      <p>ગામના સર્વાંગી વિકાસ અને સુવિધાઓ જાળવી રાખવા સમયસર વેરો ભરવો આપણી સમાન ફરજ છે.</p>
 
-      <h3>💰 પંચાયત કરવેરા:</h3>
-      <ul>
-        <li><strong>ઘરવેરો (Property Tax):</strong> મકાન આકારણી મુજબ વાર્ષિક આકારણી વેરો.</li>
-        <li><strong>પાણીવેરો (Water Tax):</strong> પીવાના પાણીના કનેક્શનનો વાર્ષિક દર.</li>
-        <li><strong>દીવાબત્તી વેરો (Light Tax):</strong> શેરી લાઇટ અને જાહેર સુવિધાનો વેરો.</li>
-      </ul>
-      <p><strong>વેરો ભરવાનો સમય:</strong> દરરોજ સવારે ૧૧:૦૦ થી બપોરે ૦૧:૩૦ વાગ્યા સુધી.</p>
+      <div class="office-grid">
+        <!-- Local Taxes -->
+        <div class="office-card" data-aos="fade-up">
+          <h3><i class="fa-solid fa-hand-holding-dollar"></i> પંચાયત વેરા</h3>
+          <ul>
+            <li><strong>ઘરવેરો (Property Tax):</strong> મકાન આકારણી મુજબ વાર્ષિક વેરો</li>
+            <li><strong>પાણીવેરો (Water Tax):</strong> નળ જોડાણનો નક્કી કરેલ વાર્ષિક ચાર્જ</li>
+            <li><strong>દીવાબત્તી વેરો:</strong> સ્ટ્રીટ લાઈટ અને જાહેર સેવાનો વેરો</li>
+            <li style="color: #2e7d32;"><strong>વેરો સ્વીકાર સમય:</strong> સવારે ૧૧:૦૦ થી બપોરે ૦૧:૩૦</li>
+          </ul>
+        </div>
 
-      <h3>🏢 મકાન બાંધકામ અને ધંધાકીય પરવાનગીઓ:</h3>
-      <p><strong>નવા મકાન બાંધકામ પરવાનગી (Building Permission):</strong></p>
-      <ul>
-        <li>પંચાયતમાંથી મકાન બાંધકામ મંજૂરી મેળવવી ફરજિયાત છે.</li>
-        <li><strong>જરૂરી કાગળો:</strong> ગામતળ પ્લોટ/સનદના કાગળો, પ્લાન નકશો, પડોશીઓની સંમતિ અને અરજી ફોર્મ.</li>
-      </ul>
-      <p><strong>ધંધા/વેપાર માટે ના-વાંધા પ્રમાણપત્ર (NOC for Commercial/Electricity Connection):</strong></p>
-      <ul>
-        <li>નવી દુકાન, વ્યવસાય અથવા નવું વીજ જોડાણ (PGVCL) મેળવવા માટે પંચાયતનું NOC.</li>
-      </ul>
+        <!-- Building Permission -->
+        <div class="office-card" data-aos="fade-up" data-aos-delay="100">
+          <h3><i class="fa-solid fa-trowel-bricks"></i> બાંધકામ મંજુરી</h3>
+          <ul>
+            <li>નવા મકાન કે મિલકત બાંધકામ માટે પંચાયત પરવાનગી ફરજિયાત છે.</li>
+            <li><strong>આધાર દસ્તાવેજો:</strong> પ્લોટ સનદ, પ્લાન નકશો, પડોશી પંચ સંમતિ.</li>
+          </ul>
+        </div>
+
+        <!-- NOC -->
+        <div class="office-card" data-aos="fade-up" data-aos-delay="200">
+          <h3><i class="fa-solid fa-file-shield"></i> વ્યાપારી NOC</h3>
+          <ul>
+            <li>નવો વ્યવસાય, વીજ કનેક્શન (PGVCL) કે પેઢી માટે પંચાયતનું ના-વાંધા પ્રમાણપત્ર.</li>
+            <li><strong>આધાર:</strong> ધંધાનું સ્થળ, માલિકી આધાર અને ટેક્સ ભરપાઈ પહોંચ.</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
+    <!-- Section 5: Schemes -->
     <div class="detail-card" data-aos="fade-up">
       <h2>🎁 ૫. સરકારી કલ્યાણકારી યોજનાઓ અને સહાય (Government Schemes)</h2>
-      <p>ગોરાડકા ગ્રામ પંચાયત દ્વારા રાજ્ય અને કેન્દ્ર સરકારની વિવિધ યોજનાઓનો લાભ ગ્રામજનો સુધી પહોંચાડવામાં આવે છે:</p>
-      <ul>
-        <li><strong>ખેડૂત સહાય યોજનાઓ (i-Khedut Portal):</strong> ખેતી ઓજારો, બિયારણ સહાય, ટપક સિંચાઈ અને ખાતર સબસીડી
-          અરજી ચકાસણી.</li>
-        <li><strong>PM-KISAN Samman Nidhi:</strong> ખેડૂતોના ખાતામાં વાર્ષિક ₹૬,૦૦૦ સહાય માટે e-KYC અને આધાર લિંકિંગ.
-        </li>
-        <li><strong>આયુષ્યમાન ભારત / પીએમ-જેએવાય કાર્ડ (Ayushman Card):</strong> વાર્ષિક ₹૧૦ લાખ સુધીની નિઃશુલ્ક તબીબી
-          સારવાર આપતું કાર્ડ બનાવવાની સહાય.</li>
-        <li><strong>સામાજિક સુરક્ષા પેન્શન યોજનાઓ:</strong>
-          <ul>
-            <li><strong>ગંગા સ્વરૂપા યોજના (વિધવા સહાય):</strong> વિધવા બહેનોને માસિક આર્થિક સહાય.</li>
-            <li><strong>નિરાધાર વૃદ્ધ પેન્શન યોજના:</strong> ૬૦ વર્ષથી વધુ વયના વૃદ્ધોને નહિવત આવક હોય ત્યારે માસિક
-              પેન્શન.</li>
-          </ul>
-        </li>
-        <li><strong>પ્રધાનમંત્રી આવાસ યોજના (PMAY-G):</strong> કાચા મકાન ધરાવતા અને ઘરવિહોણા ગ્રામજનો માટે પક્કા મકાન
-          બનાવવા આર્થિક સહાય.</li>
-      </ul>
+      <p>રાજ્ય અને કેન્દ્ર સરકારની વિવિધ ગ્રામીણ યોજનાઓનો લાભ મેળવવા માટે તલાટીશ્રીનો સંપર્ક કરવો:</p>
+
+      <div class="chip-container">
+        <span class="pill-chip" style="display: inline-block; background: #e8f5e9; color: #2e7d32; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; margin: 5px; font-weight: 600;"><i class="fa-solid fa-tractor"></i> i-Khedut ખેડૂત સહાય (બિયારણ, ખાતર, ટ્રેક્ટર ઓજાર સહાય)</span>
+        <span class="pill-chip" style="display: inline-block; background: #e8f5e9; color: #2e7d32; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; margin: 5px; font-weight: 600;"><i class="fa-solid fa-hand-holding-hand"></i> PM-KISAN સન્માન નિધિ (વાર્ષિક રૂ. ૬,૦૦૦ સહાય e-KYC)</span>
+        <span class="pill-chip" style="display: inline-block; background: #e8f5e9; color: #2e7d32; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; margin: 5px; font-weight: 600;"><i class="fa-solid fa-address-card"></i> આયુષ્યમાન કાર્ડ (રૂ. ૧૦ લાખ સુધીની મફત તબીબી સારવાર)</span>
+        <span class="pill-chip" style="display: inline-block; background: #e8f5e9; color: #2e7d32; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; margin: 5px; font-weight: 600;"><i class="fa-solid fa-person-breastfeeding"></i> ગંગા સ્વરૂપા વિધવા સહાય (માસિક નાણાકીય સહાય યોજના)</span>
+        <span class="pill-chip" style="display: inline-block; background: #e8f5e9; color: #2e7d32; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; margin: 5px; font-weight: 600;"><i class="fa-solid fa-person-cane"></i> નિરાધાર વૃદ્ધ પેન્શન (વયોવૃદ્ધ માસિક પેન્શન યોજના)</span>
+        <span class="pill-chip" style="display: inline-block; background: #e8f5e9; color: #2e7d32; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; margin: 5px; font-weight: 600;"><i class="fa-solid fa-house-chimney"></i> પ્રધાનમંત્રી આવાસ યોજના (PMAY-G પાકું મકાન સહાય)</span>
+      </div>
     </div>
 
+    <!-- Section 6: Gram Sabha -->
     <div class="detail-card" data-aos="fade-up">
       <h2>🗳️ ૬. ગ્રામસભા અને લોક ભાગીદારી (Gram Sabha & Citizen Charter)</h2>
-      <p>ગ્રામસભા એ ગ્રામ પંચાયતનું સૌથી મહત્વનું લોકશાહી અંગ છે. ગોરાડકા ગામના વિકાસમાં દરેક નાગરિકનો અવાજ મહત્વનો છે.
-      </p>
-      <h3>📅 વાર્ષિક ગ્રામસભાના દિવસો:</h3>
-      <ul>
-        <li>૨૬ જાન્યુઆરી (પ્રજાસત્તાક દિન)</li>
-        <li>૧ મે (ગુજરાત સ્થાપના દિન)</li>
-        <li>૧૫ ઓગસ્ટ (સ્વાતંત્ર્ય દિન)</li>
-        <li>૨ ઓક્ટોબર (ગાંધી જયંતી)</li>
-      </ul>
-      <p><strong>ગ્રામજનોને અપીલ:</strong> ગામના રસ્તા, પાણીની લાઈન, સ્વચ્છતા, લાઈટ અને શાળા/આરોગ્ય વિષયક પ્રશ્નો માટે
-        ગ્રામસભામાં અચૂક હાજરી આપો.</p>
+      <p>ગ્રામસભા એ પંચાયતનું સૌથી મોટું લોકશાહી અંગ છે. ગામના પ્રશ્નો અને આયોજન માટે તમામ નાગરિકોની હાજરી અનિવાર્ય છે.</p>
+
+      <h3>📅 વાર્ષિક નિયત ગ્રામસભા તારીખો:</h3>
+      <div class="sabha-timeline">
+        <div class="sabha-item" data-aos="zoom-in">
+          <div class="sabha-date">૨૬ જાન્યુઆરી</div>
+          <div class="sabha-desc">પ્રજાસત્તાક દિન સભા</div>
+        </div>
+        <div class="sabha-item" data-aos="zoom-in" data-aos-delay="100">
+          <div class="sabha-date">૧ મે</div>
+          <div class="sabha-desc">ગુજરાત સ્થાપના દિન</div>
+        </div>
+        <div class="sabha-item" data-aos="zoom-in" data-aos-delay="200">
+          <div class="sabha-date">૧૫ ઓગસ્ટ</div>
+          <div class="sabha-desc">સ્વાતંત્ર્ય દિન સભા</div>
+        </div>
+        <div class="sabha-item" data-aos="zoom-in" data-aos-delay="300">
+          <div class="sabha-date">૨ ઓક્ટોબર</div>
+          <div class="sabha-desc">ગાંધી જયંતી સભા</div>
+        </div>
+      </div>
+      <p style="color: #1b5e20; font-weight: bold; font-size: 0.95rem; text-align: center;">💡 ગામના વિકાસના નિર્ણયોમાં આપનો સક્રિય સહયોગ આપો.</p>
     </div>
 
+    <!-- Section 7: Process -->
     <div class="detail-card" data-aos="fade-up">
       <h2>📝 ૭. અરજી કરવાની તબક્કાવાર પ્રક્રિયા (Step-by-Step Application Process)</h2>
       <p>તમારા કોઈપણ કામ માટે ગ્રામ પંચાયતમાં સરળતાથી અરજી કરવા માટે આ ૪ તબક્કા અનુસરો:</p>
@@ -462,85 +1112,92 @@
         <span class="step-item">પગલું ૪: રસીદ/દાખલો મેળવવો</span>
       </div>
 
-      <div class="step-box"><strong>પગલું ૧ (ફોર્મ મેળવવું):</strong> ગ્રામ પંચાયત કચેરીમાંથી જે-તે સેવા માટેનું નિયત
-        ફોર્મ મેળવો અથવા ડાઉનલોડ કરો.</div>
-      <div class="step-box"><strong>પગલું ૨ (દસ્તાવેજો જોડવા):</strong> ફોર્મ સંપૂર્ણ ભરીને તેની સાથે જરૂરી આધારકાર્ડ,
-        રેશનકાર્ડ, વેરા પહોંચ અને અન્ય સાધનિક કાગળોની સ્વ-પ્રમાણિત (Self-attested) નકલો જોડો.</div>
-      <div class="step-box"><strong>પગલું ૩ (અરજી જમા કરાવવી):</strong> તલાટી-કમ-મંત્રીશ્રીની હાજરીના દિવસે (સોમવાર,
-        બુધવાર, શુક્રવાર) સવારે ૧૧:૦૦ થી ૦૨૦૦ ની વચ્ચે અરજી રૂબરૂ જમા કરાવો.</div>
-      <div class="step-box"><strong>પગલું ૪ (ચકાસણી અને નિકાલ):</strong> કચેરી દ્વારા દસ્તાવેજોની ચકાસણી થયા બાદ નિયત
-        સમયમાં તમારું પ્રમાણપત્ર અથવા દાખલો મેળવી લો.</div>
+      <div class="step-box"><strong>પગલું ૧ (ફોર્મ મેળવવું):</strong> ગ્રામ પંચાયત કચેરીમાંથી જે-તે સેવા માટેનું નિયત ફોર્મ મેળવો અથવા ઓનલાઇન પોર્ટલ પરથી ડાઉનલોડ કરો.</div>
+      <div class="step-box"><strong>પગલું ૨ (દસ્તાવેજો જોડવા):</strong> ફોર્મ સંપૂર્ણ ભરીને તેની સાથે જરૂરી આધારકાર્ડ, રેશનકાર્ડ, વેરા પહોંચ અને અન્ય સાધનિક કાગળોની સ્વ-પ્રમાણિત (Self-attested) નકલો જોડો.</div>
+      <div class="step-box"><strong>પગલું ૩ (અરજી જમા કરાવવી):</strong> તલાટી-કમ-મંત્રીશ્રીની હાજરીના દિવસે (સોમવાર, બુધવાર, શુક્રવાર) સવારે ૧૧:૦૦ થી ૦૨:૦૦ ની વચ્ચે અરજી રૂબરૂ જમા કરાવો.</div>
+      <div class="step-box"><strong>પગલું ૪ (ચકાસણી અને નિકાલ):</strong> કચેરી દ્વારા દસ્તાવેજોની ચકાસણી થયા બાદ નિયત સમયમાં તમારું પ્રમાણપત્ર અથવા દાખલો મેળવી લો.</div>
     </div>
 
+    <!-- Section 8: Contacts -->
     <div class="detail-card" data-aos="fade-up">
       <h2>📞 ૮. મહત્વના સંપર્ક નંબરો અને સ્થાનિક હેલ્પલાઇન (Local Emergency & Useful Contacts)</h2>
       <p>ગોરાડકા ગામના રહીશો માટે જરૂરી સ્થાનિક હોદ્દેદારો અને સેવા આપતા સભ્યોની યાદી:</p>
-      <div class="table-responsive">
-        <table class="contact-table">
-          <tr>
-            <th>ક્રમ</th>
-            <th>હોદ્દો / સેવા</th>
-            <th>સંપર્ક વ્યક્તિનું નામ</th>
-            <th>મોબાઇલ નંબર / સરનામું</th>
-          </tr>
-          <tr>
-            <td>૧</td>
-            <td>સરપંચશ્રી</td>
-            <td>રાજુભાઈ સોલંકી</td>
-            <td>📞 ૯૭૩૭૪ ૨૧૧૨૦</td>
-          </tr>
-          <tr>
-            <td>૨</td>
-            <td>સ્થાનિક અગ્રણી / ગ્રામજન</td>
-            <td>અંકિતભાઈ રંગપરા</td>
-            <td>📞 ૯૯૨૪૦ ૨૬૦૧૪</td>
-          </tr>
-          <tr>
-            <td>૩</td>
-            <td>આરોગ્ય અને તબીબી સેવા</td>
-            <td>સંજયભાઈ યાદવ</td>
-            <td>📞 ૯૭૨૩૬ ૯૯૦૦૦</td>
-          </tr>
-          <tr>
-            <td>૪</td>
-            <td>આરોગ્ય સેવાઓ</td>
-            <td>આર.પી. સોલંકી</td>
-            <td>📞 ૯૯૨૪૦ ૭૮૯૯૦</td>
-          </tr>
-          <tr>
-            <td>૫</td>
-            <td>ફોટોગ્રાફી અને મિડિયા (મધૂલી સ્ટુડિયો)</td>
-            <td>વિનોદભાઈ સરવૈયા</td>
-            <td>📞 ૯૭૧૪૮ ૮૮૭૪૩</td>
-          </tr>
-          <tr>
-            <td>૬</td>
-            <td>સામાજિક સેવાઓ અને સહાય</td>
-            <td>પિન્ટુભાઈ વાળા</td>
-            <td>📞 ૭૦૪૬૧ ૦૦૯૨૨</td>
-          </tr>
-          <tr>
-            <td>૭</td>
-            <td>દૂધ ઉત્પાદક મંડળી</td>
-            <td>ગ્રામીણ ડેરી સહકારી</td>
-            <td>📞 ૭૦૯૬૫ ૮૪૮૯૬</td>
-          </tr>
-          <tr>
-            <td>૮</td>
-            <td>ચામુંડા ડેરી (તાજા દૂધ વિતરણ)</td>
-            <td>રંગાપરા અંકિત</td>
-            <td>📞 ૭૬૨૨૯ ૩૯૩૯૬</td>
-          </tr>
-          <tr>
-            <td>૯</td>
-            <td>વેબસાઈટ ડેવલપર / આઈટી સર્વિસ</td>
-            <td>તુષાર સુતરિયા</td>
-            <td>કચેરી સંપર્ક પેજ</td>
-          </tr>
-        </table>
+
+      <div class="contact-grid">
+        <!-- Sarpanch -->
+        <div class="contact-profile-card" data-aos="fade-up">
+          <span class="contact-role-badge">સરપંચશ્રી</span>
+          <h4>રાજુભાઈ સોલંકી</h4>
+          <p style="font-size: 0.8rem; color: #666; margin-bottom: 1rem;">ગામના લોકપ્રિય વડા અને જનપ્રતિનિધિ</p>
+          <a href="tel:+919737421120" class="doctor-call-btn">Call 📞 ૯૭૩૭૪ ૨૧૧૨૦</a>
+        </div>
+
+        <!-- Leader -->
+        <div class="contact-profile-card" data-aos="fade-up" data-aos-delay="50">
+          <span class="contact-role-badge">સ્થાનિક અગ્રણી</span>
+          <h4>અંકિતભાઈ રંગપરા</h4>
+          <p style="font-size: 0.8rem; color: #666; margin-bottom: 1rem;">નાગરિક સલાહ અને સામાજિક મદદગાર</p>
+          <a href="tel:+919924026014" class="doctor-call-btn">Call 📞 ૯૯૨૪૦ ૨૬૦૧૪</a>
+        </div>
+
+        <!-- Health Sanjay -->
+        <div class="contact-profile-card" data-aos="fade-up" data-aos-delay="100">
+          <span class="contact-role-badge">આરોગ્ય અને તબીબી</span>
+          <h4>સંજયભાઈ યાદવ</h4>
+          <p style="font-size: 0.8rem; color: #666; margin-bottom: 1rem;">તબીબી કટોકટી અને ક્લિનિકલ સેવાઓ</p>
+          <a href="tel:+919723699000" class="doctor-call-btn">Call 📞 ૯૭૨૩૬ ૯૯૦૦૦</a>
+        </div>
+
+        <!-- Health RP -->
+        <div class="contact-profile-card" data-aos="fade-up" data-aos-delay="150">
+          <span class="contact-role-badge">આરોગ્ય સેવાઓ</span>
+          <h4>આર.પી. સોલંકી</h4>
+          <p style="font-size: 0.8rem; color: #666; margin-bottom: 1rem;">સ્થાનિક આરોગ્ય કાર્યકર અને સારવાર</p>
+          <a href="tel:+919924078990" class="doctor-call-btn">Call 📞 ૯૯૨૪૦ ૭૮૯૯૦</a>
+        </div>
+
+        <!-- Studio -->
+        <div class="contact-profile-card" data-aos="fade-up" data-aos-delay="200">
+          <span class="contact-role-badge">ફોટોગ્રાફી અને મિડિયા</span>
+          <h4>વિનોદભાઈ સરવૈયા</h4>
+          <p style="font-size: 0.8rem; color: #666; margin-bottom: 1rem;">મધૂલી સ્ટુડિયો - ડિજિટલ સેવાઓ</p>
+          <a href="tel:+919714888743" class="doctor-call-btn">Call 📞 ૯૭૧૪૮ ૮૮૭૪૩</a>
+        </div>
+
+        <!-- Social -->
+        <div class="contact-profile-card" data-aos="fade-up" data-aos-delay="250">
+          <span class="contact-role-badge">સામાજિક સેવાઓ</span>
+          <h4>પિન્ટુભાઈ વાળા</h4>
+          <p style="font-size: 0.8rem; color: #666; margin-bottom: 1rem;">યુવા અગ્રણી અને સામાજિક કલ્યાણ પ્રવૃત્તિઓ</p>
+          <a href="tel:+917046100922" class="doctor-call-btn">Call 📞 ૭૦૪૬૧ ૦૦૯૨૨</a>
+        </div>
+
+        <!-- Dairy 1 -->
+        <div class="contact-profile-card" data-aos="fade-up" data-aos-delay="300">
+          <span class="contact-role-badge">દૂધ ઉત્પાદક મંડળી</span>
+          <h4>ગ્રામીણ ડેરી સહકારી</h4>
+          <p style="font-size: 0.8rem; color: #666; margin-bottom: 1rem;">દૂધ સંગ્રહ અને ખેડૂત પશુપાલન કેન્દ્ર</p>
+          <a href="tel:+917096584896" class="doctor-call-btn">Call 📞 ૭૦૯૬૫ ૮૪૮૯૬</a>
+        </div>
+
+        <!-- Dairy 2 -->
+        <div class="contact-profile-card" data-aos="fade-up" data-aos-delay="350">
+          <span class="contact-role-badge">ચામુંડા ડેરી</span>
+          <h4>રંગાપરા અંકિત</h4>
+          <p style="font-size: 0.8rem; color: #666; margin-bottom: 1rem;">તાજા દૂધ વિતરણ અને ડેરી ઉત્પાદન</p>
+          <a href="tel:+917622939396" class="doctor-call-btn">Call 📞 ૭૬૨૨૯ ૩૯૩૯૬</a>
+        </div>
+
+        <!-- Developer -->
+        <div class="contact-profile-card" data-aos="fade-up" data-aos-delay="400">
+          <span class="contact-role-badge">વેબસાઈટ ડેવલપર / આઈટી</span>
+          <h4>તુષારભાઈ સુતરિયા</h4>
+          <p style="font-size: 0.8rem; color: #666; margin-bottom: 1rem;">ડિજિટલ સેવાઓ અને વેબસાઇટ પ્રબંધન</p>
+          <a href="contact.html" class="doctor-call-btn">સંપર્ક કરો ✉️</a>
+        </div>
       </div>
 
-      <h3>📍 કચેરીનું સરનામું:</h3>
+      <h3 style="margin-top: 1.5rem;">📍 કચેરીનું સરનામું:</h3>
       <p><strong>ગોરાડકા ગ્રામ પંચાયત કચેરી,</strong><br>મુ. ગોરાડકા, તા. ગઢડા, જી. બોટાદ, ગુજરાત - ૩૬૪૭૫૦</p>
       <p><em>લાઈવ નેવિગેશન માટે વેબસાઈટના મેપ (Live Map) નો ઉપયોગ કરો.</em></p>
     </div>
@@ -555,16 +1212,12 @@
     <div class="footer-container">
       <div class="footer-section about">
         <h2>Goradka™</h2>
-        <p>Goradka – where tradition meets progress in every corner. A peaceful community built on unity, culture, and
-          pride.</p>
+        <p>Goradka – where tradition meets progress in every corner. A peaceful community built on unity, culture, and pride.</p>
         <div class="social-icons">
-          <a href="https://www.instagram.com/goradka_nagari01?igsh=Z29pa29nMjBzdWwx" target="_blank"
-            rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.instagram.com/goradka_nagari01?igsh=Z29pa29nMjBzdWwx" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
           <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://wa.me/9825687775?text=હેલ્લો%2C%20કૃપા%20કરીને%20મને%20ગોરડકા%20ગ્રૂપમાં%20જોડાવાનો%20લિંક%20મોકલો."
-            target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
-          <a href="https://wa.me/919574750680?text=હેલ્લો%2C%20કૃપા%20કરીને%20મને%20ગોરડકા%20ગ્રૂપમાં%20જોડાવાનો%20લિંક%20મોકલો."
-            target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://wa.me/9825687775?text=હેલ્લો%2C%20કૃપા%20કરીને%20મને%20ગોરડકા%20ગ્રૂપમાં%20જોડાવાનો%20લિંક%20મોકલો." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://wa.me/919574750680?text=હેલ્લો%2C%20કૃપા%20કરીને%20મને%20ગોરડકા%20ગ્રૂપમાં%20જોડાવાનો%20લિંક%20મોકલો." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
       <div class="footer-section links">
@@ -581,11 +1234,10 @@
       </div>
       <div class="footer-section contact">
         <h3>Contact</h3>
-        <p><a href="https://tushar-sutariya.netlify.app" target="_blank" style="color: inherit; text-decoration: none;"
-            rel="noopener noreferrer">Tushar Sutariya</a> <br />fore any type of queries</p>
+        <p><a href="https://tushar-sutariya.netlify.app" target="_blank" style="color: inherit; text-decoration: none;" rel="noopener noreferrer">Tushar Sutariya</a>
+          <br />fore any type of queries</p>
         <br />
-        <p class="created-by">❤ Created by <a href="https://tushar-sutariya.netlify.app" target="_blank"
-            rel="noopener noreferrer">Tushar Sutariya</a></p>
+        <p class="created-by">❤ Created by <a href="https://tushar-sutariya.netlify.app" target="_blank" rel="noopener noreferrer">Tushar Sutariya</a></p>
       </div>
     </div>
   </footer>
