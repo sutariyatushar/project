@@ -1,527 +1,748 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Village Services in Goradka | Gram Panchayat & Local Facilities</title>
-    <meta name="description" content="Explore all essential village services in Goradka, Gujarat including Panchayat services, water supply, electricity, healthcare, education, and digital support for residents." />
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-    
-    <link rel="stylesheet" href="services.css?v=1.0.5" />
 
-    <!-- PWA Settings -->
-    <link rel="manifest" href="manifest.json" />
-    <meta name="theme-color" content="#2e7d32" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="Goradka" />
-    <link rel="apple-touch-icon" href="img/icon-152x152.png" />
-    <link rel="stylesheet" href="pwa.css" />
-    <script src="pwa.js" defer></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Village Services in Goradka | Gram Panchayat & Local Facilities</title>
+  <meta name="description"
+    content="Explore all essential village services in Goradka, Gujarat including Panchayat services, water supply, electricity, healthcare, education, and digital support for residents." />
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="services.css?v=1.0.5" />
+
+  <!-- PWA Settings -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#2e7d32" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Goradka" />
+  <link rel="apple-touch-icon" href="img/icon-152x152.png" />
+  <link rel="stylesheet" href="pwa.css" />
+  <script src="pwa.js" defer></script>
 </head>
+
 <body>
   <noscript>
-    <div style="background-color: #ff5722; color: white; text-align: center; padding: 15px; font-weight: bold; z-index: 99999; position: relative;">
+    <div
+      style="background-color: #ff5722; color: white; text-align: center; padding: 15px; font-weight: bold; z-index: 99999; position: relative;">
       ⚠️ JavaScript is required for the full experience. Please enable it in your browser settings.
     </div>
   </noscript>
-    <nav class="navbar">
-      <div class="nav-container">
-        <h2 class="logo">Goradka</h2>
-        <div class="hamburgers">
-          <label class="hamburger">
-            <input type="checkbox" id="menuToggle" aria-label="Toggle Navigation Menu" onclick="toggleMenu()" />
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </label>
+  <nav class="navbar">
+    <div class="nav-container">
+      <h2 class="logo">Goradka</h2>
+      <div class="hamburgers">
+        <label class="hamburger">
+          <input type="checkbox" id="menuToggle" aria-label="Toggle Navigation Menu" onclick="toggleMenu()" />
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </label>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active" style="color:#1f1f1f;">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="services-hero">
+    <div class="orbit-wrapper">
+      <div class="orbit-container">
+        <!-- Concentric Orbits -->
+        <div class="orbit-ring ring-1"></div>
+        <div class="orbit-ring ring-2"></div>
+        <div class="orbit-ring ring-3"></div>
+
+        <!-- Orbiting Items -->
+        <!-- Calendar -->
+        <div class="orbit-item calendar-badge">
+          <div class="mini-calendar">
+            <div class="cal-top"></div>
+            <div class="cal-dots">
+              <span></span><span></span>
+            </div>
+            <div class="cal-val">09</div>
+          </div>
         </div>
-        <ul class="nav-links">
+
+        <!-- Cake Slice -->
+        <div class="orbit-item cake-badge">
+          <svg viewBox="0 0 100 100" class="matcha-cake-svg">
+            <ellipse cx="50" cy="80" rx="35" ry="10" fill="#cbd5e1" />
+            <path d="M 25,65 L 75,65 L 50,25 Z" fill="#84cc16" />
+            <path d="M 25,65 L 75,65 L 75,72 L 25,72 Z" fill="#65a30d" />
+            <path d="M 25,72 L 75,72 L 75,76 L 25,76 Z" fill="#a16207" />
+            <path d="M 45,25 Q 50,15 55,25 Q 50,30 45,25 Z" fill="#ffffff" />
+            <path d="M 25,65 Q 50,68 75,65 L 75,68 Q 50,71 25,68 Z" fill="#ffffff" opacity="0.9" />
+          </svg>
+        </div>
+
+        <!-- Confetti Popper -->
+        <div class="orbit-item confetti-badge">
+          <svg viewBox="0 0 100 100" class="confetti-svg">
+            <path d="M30,70 L50,50 L60,80 Z" fill="#f97316" />
+            <path d="M30,70 Q45,75 60,80 L50,50 Z" fill="#fdba74" />
+            <circle cx="55" cy="40" r="5" fill="#facc15" />
+            <circle cx="70" cy="45" r="4" fill="#2dd4bf" />
+            <circle cx="65" cy="30" r="3" fill="#f43f5e" />
+            <circle cx="45" cy="35" r="4" fill="#6366f1" />
+            <path d="M50,50 Q60,35 75,35" fill="none" stroke="#2dd4bf" stroke-width="3" stroke-linecap="round" />
+            <path d="M45,45 Q55,20 60,15" fill="none" stroke="#f43f5e" stroke-width="3" stroke-linecap="round" />
+          </svg>
+        </div>
+
+        <!-- Avatars -->
+        <div class="orbit-item avatar-item av-1">
+          <img src="img/doctor_ankit.png" alt="Doctor Ankit" />
+        </div>
+        <div class="orbit-item avatar-item av-2">
+          <img src="img/doctor_bhavna.png" alt="Doctor Bhavna" />
+        </div>
+        <div class="orbit-item avatar-item av-3">
+          <img src="img/doctor_rajesh.png" alt="Doctor Rajesh" />
+        </div>
+        <div class="orbit-item avatar-item av-4">
+          <img src="img/doctor_sunita.png" alt="Doctor Sunita" />
+        </div>
+
+        <!-- Central Speech Bubble -->
+        <div class="central-bubble">
+          <div class="bubble-text">
+            <p>I'm passionate about sharing not just the drinks, but the journey.</p>
+            <p>I get to connect with you, share the wins and challenges, and grow a community that's as much about
+              people as it is about matcha.</p>
+            <p>Every cup is an invitation to be part of that story 😊</p>
+          </div>
+          <div class="bubble-tail"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action items below the main orbit section -->
+    <div class="hero-action-container">
+      <a href="/contact.html" class="join-waitlist-btn" target="_blank" rel="noopener noreferrer">
+        Join Waitlist <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+      <div class="hero-links">
+        <a href="#intro" class="hero-link-item">
+          <i class="fa-solid fa-video"></i> Behind-the-scenes
+        </a>
+        <a href="about.html" class="hero-link-item">
+          <i class="fa-solid fa-leaf"></i> How it all started
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MORE SERVICES SECTION -->
+  <section id="services" class="premium-services" data-aos="fade-up">
+    <div class="section-header">
+      <span class="section-badge">Our Community</span>
+      <h2>More Services</h2>
+      <p>Reliable support and essential local resources for every Goradka resident.</p>
+    </div>
+
+    <div class="service-grid">
+      <!-- Service 1: Library -->
+      <div class="service-card-new" data-aos="fade-up" data-aos-delay="100">
+        <div class="card-cover" style="background-image: url('img/librery.jpeg');">
+          <button class="bookmark-btn" aria-label="Bookmark"><i class="fa-regular fa-bookmark"></i></button>
+        </div>
+        <div class="card-avatar">
+          <img src="img/profile.jpeg" alt="Library Avatar" />
+        </div>
+        <div class="card-body-new">
+          <div class="card-header-row">
+            <div class="card-title-group">
+              <h3 class="card-title">Village Library</h3>
+              <p class="card-subtitle">A quiet space for knowledge & culture</p>
+            </div>
+            <span class="card-tag"><i class="fa-solid fa-book-open-reader"></i> Library</span>
+          </div>
+          <div class="card-divider"></div>
+          <div class="card-footer-row">
+            <div class="card-stats">
+              <div class="stat-col">
+                <span class="stat-val"><i class="fa-solid fa-star"></i> 4.8</span>
+                <span class="stat-lbl">rating</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-col">
+                <span class="stat-val">9AM - 6PM</span>
+                <span class="stat-lbl">timings</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-col">
+                <span class="stat-val">Free</span>
+                <span class="stat-lbl">access</span>
+              </div>
+            </div>
+            <a href="tel:0000000000" class="get-in-touch-btn">Call Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 2: Sanjaybhai Yadav -->
+      <div class="service-card-new" data-aos="fade-up" data-aos-delay="200">
+        <div class="card-cover" style="background-image: url('img/g1.webp');">
+          <button class="bookmark-btn" aria-label="Bookmark"><i class="fa-regular fa-bookmark"></i></button>
+        </div>
+        <div class="card-avatar">
+          <img src="img/doctor_rajesh.png" alt="Sanjaybhai Yadav" />
+        </div>
+        <div class="card-body-new">
+          <div class="card-header-row">
+            <div class="card-title-group">
+              <h3 class="card-title">Sanjaybhai Yadav</h3>
+              <p class="card-subtitle">Trusted medical assistance for all</p>
+            </div>
+            <span class="card-tag"><i class="fa-solid fa-user-doctor"></i> Medical</span>
+          </div>
+          <div class="card-divider"></div>
+          <div class="card-footer-row">
+            <div class="card-stats">
+              <div class="stat-col">
+                <span class="stat-val"><i class="fa-solid fa-star"></i> 4.9</span>
+                <span class="stat-lbl">rating</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-col">
+                <span class="stat-val">24/7</span>
+                <span class="stat-lbl">availability</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-col">
+                <span class="stat-val">Doctor</span>
+                <span class="stat-lbl">role</span>
+              </div>
+            </div>
+            <a href="tel:9723699000" class="get-in-touch-btn">97236 99000</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 3: R.P. Solanki -->
+      <div class="service-card-new" data-aos="fade-up" data-aos-delay="300">
+        <div class="card-cover" style="background-image: url('img/g2.jpeg');">
+          <button class="bookmark-btn" aria-label="Bookmark"><i class="fa-regular fa-bookmark"></i></button>
+        </div>
+        <div class="card-avatar">
+          <img src="img/doctor_ankit.png" alt="R.P. Solanki" />
+        </div>
+        <div class="card-body-new">
+          <div class="card-header-row">
+            <div class="card-title-group">
+              <h3 class="card-title">R.P. Solanki</h3>
+              <p class="card-subtitle">Dedicated medical care & health support</p>
+            </div>
+            <span class="card-tag"><i class="fa-solid fa-stethoscope"></i> Health</span>
+          </div>
+          <div class="card-divider"></div>
+          <div class="card-footer-row">
+            <div class="card-stats">
+              <div class="stat-col">
+                <span class="stat-val"><i class="fa-solid fa-star"></i> 4.7</span>
+                <span class="stat-lbl">rating</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-col">
+                <span class="stat-val">Mon - Sat</span>
+                <span class="stat-lbl">schedule</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-col">
+                <span class="stat-val">Doctor</span>
+                <span class="stat-lbl">role</span>
+              </div>
+            </div>
+            <a href="tel:9924078990" class="get-in-touch-btn">99240 78990</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 4: Vinodbhai Sarvaiya -->
+      <div class="service-card-new" data-aos="fade-up" data-aos-delay="400">
+        <div class="card-cover" style="background-image: url('img/g4.jpeg');">
+          <button class="bookmark-btn" aria-label="Bookmark"><i class="fa-regular fa-bookmark"></i></button>
+        </div>
+        <div class="card-avatar">
+          <img src="img/anilsir.png" alt="Vinodbhai Sarvaiya" />
+        </div>
+        <div class="card-body-new">
+          <div class="card-header-row">
+            <div class="card-title-group">
+              <h3 class="card-title">Vinodbhai Sarvaiya</h3>
+              <p class="card-subtitle">Madhuli Studio media & photography</p>
+            </div>
+            <span class="card-tag"><i class="fa-solid fa-camera-retro"></i> Studio</span>
+          </div>
+          <div class="card-divider"></div>
+          <div class="card-footer-row">
+            <div class="card-stats">
+              <div class="stat-col">
+                <span class="stat-val"><i class="fa-solid fa-star"></i> 4.8</span>
+                <span class="stat-lbl">rating</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-col">
+                <span class="stat-val">9AM - 8PM</span>
+                <span class="stat-lbl">timings</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-col">
+                <span class="stat-val">Photo</span>
+                <span class="stat-lbl">service</span>
+              </div>
+            </div>
+            <a href="tel:9714888743" class="get-in-touch-btn">97148 88743</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 5: Pintubhai Vala -->
+      <div class="service-card-new" data-aos="fade-up" data-aos-delay="500">
+        <div class="card-cover" style="background-image: url('img/g5.jpeg');">
+          <button class="bookmark-btn" aria-label="Bookmark"><i class="fa-regular fa-bookmark"></i></button>
+        </div>
+        <div class="card-avatar">
+          <img src="img/sarpanch.png" alt="Pintubhai Vala" />
+        </div>
+        <div class="card-body-new">
+          <div class="card-header-row">
+            <div class="card-title-group">
+              <h3 class="card-title">Pintubhai Vala</h3>
+              <p class="card-subtitle">Active community & social service support</p>
+            </div>
+            <span class="card-tag"><i class="fa-solid fa-handshake-angle"></i> Social</span>
+          </div>
+          <div class="card-divider"></div>
+          <div class="card-footer-row">
+            <div class="card-stats">
+              <div class="stat-col">
+                <span class="stat-val"><i class="fa-solid fa-star"></i> 5.0</span>
+                <span class="stat-lbl">rating</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-col">
+                <span class="stat-val">Available</span>
+                <span class="stat-lbl">support</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-col">
+                <span class="stat-val">Leader</span>
+                <span class="stat-lbl">role</span>
+              </div>
+            </div>
+            <a href="tel:7046100922" class="get-in-touch-btn">70461 00922</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 6: Dudh Utpadak Mandali -->
+      <div class="service-card-new" data-aos="fade-up" data-aos-delay="600">
+        <div class="card-cover" style="background-image: url('img/g8.jpeg');">
+          <button class="bookmark-btn" aria-label="Bookmark"><i class="fa-regular fa-bookmark"></i></button>
+        </div>
+        <div class="card-avatar">
+          <img src="img/g1.webp" alt="Dudh Utpadak Mandali" />
+        </div>
+        <div class="card-body-new">
+          <div class="card-header-row">
+            <div class="card-title-group">
+              <h3 class="card-title">Dudh Mandali</h3>
+              <p class="card-subtitle">Dairy cooperative village support</p>
+            </div>
+            <span class="card-tag"><i class="fa-solid fa-industry"></i> Dairy</span>
+          </div>
+          <div class="card-divider"></div>
+          <div class="card-footer-row">
+            <div class="card-stats">
+              <div class="stat-col">
+                <span class="stat-val"><i class="fa-solid fa-star"></i> 4.6</span>
+                <span class="stat-lbl">rating</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-col">
+                <span class="stat-val">Morn/Eve</span>
+                <span class="stat-lbl">timings</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-col">
+                <span class="stat-val">Coop</span>
+                <span class="stat-lbl">access</span>
+              </div>
+            </div>
+            <a href="tel:7096584896" class="get-in-touch-btn">7096584896</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 7: Rangapara Ankit -->
+      <div class="service-card-new" data-aos="fade-up" data-aos-delay="700">
+        <div class="card-cover" style="background-image: url('img/g9 (1).jpeg');">
+          <button class="bookmark-btn" aria-label="Bookmark"><i class="fa-regular fa-bookmark"></i></button>
+        </div>
+        <div class="card-avatar">
+          <img src="img/tushar.jpeg" alt="Rangapara Ankit" />
+        </div>
+        <div class="card-body-new">
+          <div class="card-header-row">
+            <div class="card-title-group">
+              <h3 class="card-title">Rangapara Ankit</h3>
+              <p class="card-subtitle">Chamunda Dairy milk & supply</p>
+            </div>
+            <span class="card-tag"><i class="fa-solid fa-cow"></i> Supply</span>
+          </div>
+          <div class="card-divider"></div>
+          <div class="card-footer-row">
+            <div class="card-stats">
+              <div class="stat-col">
+                <span class="stat-val"><i class="fa-solid fa-star"></i> 4.8</span>
+                <span class="stat-lbl">rating</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-col">
+                <span class="stat-val">Daily</span>
+                <span class="stat-lbl">schedule</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-col">
+                <span class="stat-val">Fresh</span>
+                <span class="stat-lbl">quality</span>
+              </div>
+            </div>
+            <a href="tel:7622939396" class="get-in-touch-btn">7622939396</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO SECTION -->
+  <section id="intro" class="intro-section" data-aos="fade-up">
+    <h2>Commitment to Progress</h2>
+    <p>
+      Goradka Village, located in Gujarat, is committed to providing modern and accessible services to its residents
+      while preserving its cultural roots. Our goal is to make daily life easier by offering well-organized services in
+      areas like administration, health, education, and digital support.
+    </p>
+    <p>
+      Whether you are a local resident or a visitor, this page helps you quickly find the services you need in Goradka.
+    </p>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <section class="services-main">
+    <h2 data-aos="fade-up">Essential Village Services</h2>
+    <div class="service-cards">
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100"
+        style="position: relative; padding-bottom: 60px;">
+        <div class="img-container"><i class="fa-solid fa-landmark"></i></div>
+        <div class="card-details">
+          <h3>Gram Panchayat Services</h3>
+          <p>Efficient local government support for villagers.</p>
+          <ul>
+            <li>Birth &amp; Death Certificates</li>
+            <li>Tax Payments &amp; Records</li>
+            <li>Government Scheme Guidance</li>
+          </ul>
+        </div>
+        <a href="gram-panchayat-services.html" class="read-more-btn"
+          style="position: absolute; bottom: 20px; left: 20px; right: 20px; text-align: center; background: #2e7d32; color: white; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">Read
+          More</a>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="img-container"><i class="fa-solid fa-faucet-drip"></i></div>
+        <div class="card-details">
+          <h3>Water Supply Facility</h3>
+          <p>Ensuring clean and regular water for every household.</p>
+          <ul>
+            <li>Daily RO Plant Drinking Water</li>
+            <li>Agricultural Water Supply</li>
+            <li>Pipeline Maintenance</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300"
+        style="position: relative; padding-bottom: 60px;">
+        <div class="img-container"><i class="fa-solid fa-stethoscope"></i></div>
+        <div class="card-details">
+          <h3>Healthcare &amp; Medicine</h3>
+          <p>Accessible medical facilities for immediate care.</p>
+          <ul>
+            <li>Local Village Doctors</li>
+            <li>Primary Health Center (PHC)</li>
+            <li>Monthly Health Camps</li>
+          </ul>
+        </div>
+        <a href="healthcare-services.html" class="read-more-btn"
+          style="position: absolute; bottom: 20px; left: 20px; right: 20px; text-align: center; background: #2e7d32; color: white; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">Read
+          More</a>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="img-container"><i class="fa-solid fa-book-open"></i></div>
+        <div class="card-details">
+          <h3>Education &amp; Library</h3>
+          <p>Empowering children and youth through knowledge.</p>
+          <ul>
+            <li>Primary Village School</li>
+            <li>Community Library Area</li>
+            <li>Student Guidance Programs</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="img-container"><i class="fa-solid fa-lightbulb"></i></div>
+        <div class="card-details">
+          <h3>Electricity &amp; Lights</h3>
+          <p>Reliable power infrastructure for a bright village.</p>
+          <ul>
+            <li>24/7 Power Supply Grid</li>
+            <li>Solar Street Lights</li>
+            <li>Fault Repair Services</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+        <div class="img-container"><i class="fa-solid fa-laptop-code"></i></div>
+        <div class="card-details">
+          <h3>Digital &amp; E-Gram Support</h3>
+          <p>Connecting Goradka to the modern digital world.</p>
+          <ul>
+            <li>Online Form Submissions</li>
+            <li>Printing &amp; Xerox Facility</li>
+            <li>Digital E-Gram Center</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="700">
+        <div class="img-container"><i class="fa-solid fa-tractor"></i></div>
+        <div class="card-details">
+          <h3>Agriculture &amp; Dairy</h3>
+          <p>Supporting farmers and local dairy business.</p>
+          <ul>
+            <li>Dudh Utpadak Mandali</li>
+            <li>Farming Subsidies Info</li>
+            <li>Veterinary Assistance</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="800">
+        <div class="img-container"><i class="fa-solid fa-broom"></i></div>
+        <div class="card-details">
+          <h3>Cleaning &amp; Sanitation</h3>
+          <p>Maintaining a clean, beautiful, and healthy environment.</p>
+          <ul>
+            <li>Swachh Bharat Initiatives</li>
+            <li>Daily Garbage Collection</li>
+            <li>Public Toilet Maintenance</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TIMINGS & AVAILABILITY SECTION -->
+  <section class="timings-section" data-aos="fade-up" style="padding: 4rem 10%; background-color: #f4f8f4;">
+    <h2
+      style="text-align: center; margin-bottom: 3rem; color: #1f1f1f; font-family: 'Playfair Display', serif; font-size: 2.2rem;">
+      🏛️ Goradka Gram Panchayat Timings &amp; Availability</h2>
+
+    <div class="timings-grid"
+      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+
+      <!-- Panchayat Office Timings -->
+      <div class="timing-card"
+        style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;"
+        onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+        <h3
+          style="color: #2e7d32; font-size: 1.4rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
+          <i class="fa-solid fa-clock"></i> 1. Panchayat Office Timings
+        </h3>
+        <p style="margin-bottom: 0.8rem; line-height: 1.5; color: #444;"><strong>Working Days:</strong> Monday to
+          Saturday<br><span style="font-size: 0.9rem; color: #777;">(Closed on 2nd &amp; 4th Saturdays and Public
+            Holidays)</span></p>
+        <p style="margin-bottom: 0.8rem; line-height: 1.5; color: #444;"><strong>Morning Opening Time:</strong> From
+          10:30 AM</p>
+        <p style="margin-bottom: 0.8rem; line-height: 1.5; color: #444;"><strong>Evening Closing Time:</strong> Until
+          06:10 PM</p>
+        <p style="margin-bottom: 0; line-height: 1.5; color: #444;"><strong>Lunch Break:</strong> 01:30 PM to 02:00 PM
+        </p>
+      </div>
+
+      <!-- Talati-cum-Mantri Office Schedule -->
+      <div class="timing-card"
+        style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;"
+        onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+        <h3
+          style="color: #2e7d32; font-size: 1.4rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
+          <i class="fa-solid fa-user-tie"></i> 2. Talati-cum-Mantri Schedule
+        </h3>
+        <p style="margin-bottom: 0.8rem; line-height: 1.5; color: #444;"><strong>In-Person Availability Days:</strong>
+        </p>
+        <p style="margin-bottom: 0.8rem; line-height: 1.5; color: #1b5e20;"><strong>🟢 Monday, Wednesday, and
+            Friday</strong><br><span style="font-size: 0.9rem; color: #777;">(For office work and application
+            processing)</span></p>
+        <p style="margin-bottom: 1.2rem; line-height: 1.5; color: #444;"><strong>Timing:</strong> 11:00 AM to 05:00 PM
+        </p>
+        <div
+          style="background: #fff3cd; color: #856404; padding: 1rem; border-radius: 8px; font-size: 0.9rem; line-height: 1.4; border-left: 4px solid #ffeeba;">
+          ⚠️ <strong>Note:</strong> On Tuesdays and Thursdays, the Talati-cum-Mantri may be away due to Taluka Panchayat
+          meetings, official work, or field visits.
+        </div>
+      </div>
+
+      <!-- Service & Application Processing Hours -->
+      <div class="timing-card"
+        style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;"
+        onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+        <h3
+          style="color: #2e7d32; font-size: 1.4rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
+          <i class="fa-solid fa-clipboard-list"></i> 3. Service Processing Hours
+        </h3>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="margin-bottom: 1.2rem; color: #444; display: flex; gap: 12px; align-items: flex-start;">
+            <i class="fa-solid fa-file-pen" style="color: #2e7d32; font-size: 1.2rem; margin-top: 3px;"></i>
+            <div>
+              <strong>Accepting Applications &amp; Documents:</strong><br>
+              <span style="color: #555;">11:00 AM to 02:00 PM</span>
+            </div>
+          </li>
+          <li style="margin-bottom: 1.2rem; color: #444; display: flex; gap: 12px; align-items: flex-start;">
+            <i class="fa-solid fa-certificate" style="color: #2e7d32; font-size: 1.2rem; margin-top: 3px;"></i>
+            <div>
+              <strong>Issuing Certificates &amp; Proofs:</strong><br>
+              <span style="color: #555;">03:00 PM to 05:00 PM</span>
+            </div>
+          </li>
+          <li style="color: #444; display: flex; gap: 12px; align-items: flex-start;">
+            <i class="fa-solid fa-house" style="color: #2e7d32; font-size: 1.2rem; margin-top: 3px;"></i>
+            <div>
+              <strong>Payment of House Tax, Water Tax &amp; Land Revenue:</strong><br>
+              <span style="color: #555;">Daily from 11:00 AM to 02:00 PM</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- WHY CHOOSE US -->
+  <section class="why-choose-us" data-aos="fade-up">
+    <h2>Why Goradka Services Stand Out</h2>
+    <div class="features-grid">
+      <div class="feature-item" data-aos="fade-right" data-aos-delay="100">
+        <i class="fa-solid fa-check-circle"></i>
+        <h4>Easy Access to Essential Facilities</h4>
+      </div>
+      <div class="feature-item" data-aos="fade-right" data-aos-delay="200">
+        <i class="fa-solid fa-users"></i>
+        <h4>Community-Focused Development</h4>
+      </div>
+      <div class="feature-item" data-aos="fade-right" data-aos-delay="300">
+        <i class="fa-solid fa-building-columns"></i>
+        <h4>Government Support Integration</h4>
+      </div>
+      <div class="feature-item" data-aos="fade-right" data-aos-delay="400">
+        <i class="fa-solid fa-leaf"></i>
+        <h4>Clean &amp; Organized Systems</h4>
+      </div>
+      <div class="feature-item" data-aos="fade-right" data-aos-delay="500">
+        <i class="fa-solid fa-wifi"></i>
+        <h4>Growing Digital Infrastructure</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUJARATI LOCAL SECTION -->
+  <section class="gujarati-section" data-aos="zoom-in">
+    <h3>📍 ગુજરાતી માહિતી:</h3>
+    <p>
+      ગોરડકા ગામમાં વિવિધ જરૂરી સેવાઓ ઉપલબ્ધ છે જેમ કે પાણી, વીજળી, આરોગ્ય, શિક્ષણ અને ગ્રામ પંચાયત સેવાઓ. આ સેવાઓ ગામના
+      વિકાસ અને લોકોની સુવિધા માટે ખૂબ જ મહત્વપૂર્ણ છે.
+    </p>
+  </section>
+
+  <!-- CALL TO ACTION -->
+  <section class="cta-section" data-aos="zoom-in">
+    <h2>Need Help with Any Service?</h2>
+    <p>If you are looking for any assistance related to village services, feel free to contact us or visit the Panchayat
+      office. We are here to help you.</p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="cta-btn">Contact Us</a>
+      <a href="about.html" class="cta-btn outline">View More Details</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section about">
+        <h2>Goradka™</h2>
+        <p>Goradka – where tradition meets progress in every corner. A peaceful community built on unity, culture, and
+          pride.</p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/goradka_nagari01?igsh=Z29pa29nMjBzdWwx" target="_blank"
+            rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/9825687775?text=હેલ્લો%2C%20કૃપા%20કરીને%20મને%20ગોરડકા%20ગ્રૂપમાં%20જોડાવાનો%20લિંક%20મોકલો."
+            target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://wa.me/919574750680?text=હેલ્લો%2C%20કૃપા%20કરીને%20મને%20ગોરડકા%20ગ્રૂપમાં%20જોડાવાનો%20લિંક%20મોકલો."
+            target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-section links">
+        <h3>View all Pages</h3>
+        <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="services.html" class="active" style="color:#1f1f1f;">Services</a></li>
+          <li><a href="services.html">Services</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="events.html">Events</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <header class="services-hero">
-      <div class="orbit-wrapper">
-        <div class="orbit-container">
-          <!-- Concentric Orbits -->
-          <div class="orbit-ring ring-1"></div>
-          <div class="orbit-ring ring-2"></div>
-          <div class="orbit-ring ring-3"></div>
-
-          <!-- Orbiting Items -->
-          <!-- Calendar -->
-          <div class="orbit-item calendar-badge">
-            <div class="mini-calendar">
-              <div class="cal-top"></div>
-              <div class="cal-dots">
-                <span></span><span></span>
-              </div>
-              <div class="cal-val">09</div>
-            </div>
-          </div>
-
-          <!-- Cake Slice -->
-          <div class="orbit-item cake-badge">
-            <svg viewBox="0 0 100 100" class="matcha-cake-svg">
-              <ellipse cx="50" cy="80" rx="35" ry="10" fill="#cbd5e1" />
-              <path d="M 25,65 L 75,65 L 50,25 Z" fill="#84cc16" />
-              <path d="M 25,65 L 75,65 L 75,72 L 25,72 Z" fill="#65a30d" />
-              <path d="M 25,72 L 75,72 L 75,76 L 25,76 Z" fill="#a16207" />
-              <path d="M 45,25 Q 50,15 55,25 Q 50,30 45,25 Z" fill="#ffffff" />
-              <path d="M 25,65 Q 50,68 75,65 L 75,68 Q 50,71 25,68 Z" fill="#ffffff" opacity="0.9" />
-            </svg>
-          </div>
-
-          <!-- Confetti Popper -->
-          <div class="orbit-item confetti-badge">
-            <svg viewBox="0 0 100 100" class="confetti-svg">
-              <path d="M30,70 L50,50 L60,80 Z" fill="#f97316" />
-              <path d="M30,70 Q45,75 60,80 L50,50 Z" fill="#fdba74" />
-              <circle cx="55" cy="40" r="5" fill="#facc15" />
-              <circle cx="70" cy="45" r="4" fill="#2dd4bf" />
-              <circle cx="65" cy="30" r="3" fill="#f43f5e" />
-              <circle cx="45" cy="35" r="4" fill="#6366f1" />
-              <path d="M50,50 Q60,35 75,35" fill="none" stroke="#2dd4bf" stroke-width="3" stroke-linecap="round" />
-              <path d="M45,45 Q55,20 60,15" fill="none" stroke="#f43f5e" stroke-width="3" stroke-linecap="round" />
-            </svg>
-          </div>
-
-          <!-- Avatars -->
-          <div class="orbit-item avatar-item av-1">
-            <img src="img/doctor_ankit.png" alt="Doctor Ankit" />
-          </div>
-          <div class="orbit-item avatar-item av-2">
-            <img src="img/doctor_bhavna.png" alt="Doctor Bhavna" />
-          </div>
-          <div class="orbit-item avatar-item av-3">
-            <img src="img/doctor_rajesh.png" alt="Doctor Rajesh" />
-          </div>
-          <div class="orbit-item avatar-item av-4">
-            <img src="img/doctor_sunita.png" alt="Doctor Sunita" />
-          </div>
-
-          <!-- Central Speech Bubble -->
-          <div class="central-bubble">
-            <div class="bubble-text">
-              <p>I'm passionate about sharing not just the drinks, but the journey.</p>
-              <p>I get to connect with you, share the wins and challenges, and grow a community that's as much about people as it is about matcha.</p>
-              <p>Every cup is an invitation to be part of that story 😊</p>
-            </div>
-            <div class="bubble-tail"></div>
-          </div>
-        </div>
+      <div class="footer-section contact">
+        <h3>Contact</h3>
+        <p><a href="https://tushar-sutariya.netlify.app" target="_blank" style="color: inherit; text-decoration: none;"
+            rel="noopener noreferrer">Tushar Sutariya</a> <br />fore any type of queries</p>
+        <br />
+        <p class="created-by">❤ Created by <a href="https://tushar-sutariya.netlify.app" target="_blank"
+            rel="noopener noreferrer">Tushar Sutariya</a></p>
       </div>
+    </div>
+  </footer>
 
-      <!-- Action items below the main orbit section -->
-      <div class="hero-action-container">
-        <a href="https://wa.me/9825687775?text=I%20want%20to%20join%20the%20Waitlist" class="join-waitlist-btn" target="_blank" rel="noopener noreferrer">
-          Join Waitlist <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-        <div class="hero-links">
-          <a href="#intro" class="hero-link-item">
-            <i class="fa-solid fa-video"></i> Behind-the-scenes
-          </a>
-          <a href="about.html" class="hero-link-item">
-            <i class="fa-solid fa-leaf"></i> How it all started
-          </a>
-        </div>
-      </div>
-    </header>
-
-    <!-- MORE SERVICES SECTION -->
-    <section id="services" class="premium-services" data-aos="fade-up">
-      <div class="section-header">
-        <span class="section-badge">Our Community</span>
-        <h2>More Services</h2>
-        <p>Reliable support and essential local resources for every Goradka resident.</p>
-      </div>
-
-      <div class="service-grid">
-        <!-- Service 1 -->
-        <div class="service-item" data-aos="fade-up" data-aos-delay="100">
-          <div class="service-icon-box">
-            <i class="fa-solid fa-book-open-reader"></i>
-          </div>
-          <div class="service-info">
-            <h3>Village Library</h3>
-            <p>A quiet space for knowledge, culture, and community learning.</p>
-            <a href="tel:0000000000" class="service-action-btn">
-              <i class="fa-solid fa-phone"></i> Call Now
-            </a>
-          </div>
-        </div>
-
-        <!-- Service 2 -->
-        <div class="service-item" data-aos="fade-up" data-aos-delay="200">
-          <div class="service-icon-box">
-            <i class="fa-solid fa-user-doctor"></i>
-          </div>
-          <div class="service-info">
-            <h3>Sanjaybhai Yadav</h3>
-            <p>Trusted medical assistance and healthcare services for the village.</p>
-            <a href="tel:9723699000" class="service-action-btn">
-              <i class="fa-solid fa-phone"></i> 97236 99000
-            </a>
-          </div>
-        </div>
-
-        <!-- Service 3 -->
-        <div class="service-item" data-aos="fade-up" data-aos-delay="300">
-          <div class="service-icon-box">
-            <i class="fa-solid fa-stethoscope"></i>
-          </div>
-          <div class="service-info">
-            <h3>R.P. Solanki</h3>
-            <p>Dedicated medical care and health support for all residents.</p>
-            <a href="tel:9924078990" class="service-action-btn">
-              <i class="fa-solid fa-phone"></i> 99240 78990
-            </a>
-          </div>
-        </div>
-
-        <!-- Service 4 -->
-        <div class="service-item" data-aos="fade-up" data-aos-delay="400">
-          <div class="service-icon-box">
-            <i class="fa-solid fa-camera-retro"></i>
-          </div>
-          <div class="service-info">
-            <h3>Vinodbhai Sarvaiya</h3>
-            <p>Professional photography and media support at Madhuli Studio.</p>
-            <a href="tel:9714888743" class="service-action-btn">
-              <i class="fa-solid fa-phone"></i> 97148 88743
-            </a>
-          </div>
-        </div>
-
-        <!-- Service 5 -->
-        <div class="service-item" data-aos="fade-up" data-aos-delay="500">
-          <div class="service-icon-box">
-            <i class="fa-solid fa-handshake-angle"></i>
-          </div>
-          <div class="service-info">
-            <h3>Pintubhai Vala</h3>
-            <p>Active community service and social support initiatives.</p>
-            <a href="tel:7046100922" class="service-action-btn">
-              <i class="fa-solid fa-phone"></i> 70461 00922
-            </a>
-          </div>
-        </div>
-
-        <!-- Service 6 -->
-        <div class="service-item" data-aos="fade-up" data-aos-delay="600">
-          <div class="service-icon-box">
-            <i class="fa-solid fa-industry"></i>
-          </div>
-          <div class="service-info">
-            <h3>Dudh Utpadak Mandali</h3>
-            <p>Dairy cooperative support managed by village representatives.</p>
-            <a href="tel:7096584896" class="service-action-btn">
-              <i class="fa-solid fa-phone"></i> 7096584896
-            </a>
-          </div>
-        </div>
-
-        <!-- Service 7 -->
-        <div class="service-item" data-aos="fade-up" data-aos-delay="700">
-          <div class="service-icon-box">
-            <i class="fa-solid fa-cow"></i>
-          </div>
-          <div class="service-info">
-            <h3>Rangapara Ankit</h3>
-            <p>Chamunda Dairy for fresh milk and essential dairy supplies.</p>
-            <a href="tel:7622939396" class="service-action-btn">
-              <i class="fa-solid fa-phone"></i> 7622939396
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- INTRO SECTION -->
-    <section id="intro" class="intro-section" data-aos="fade-up">
-      <h2>Commitment to Progress</h2>
-      <p>
-        Goradka Village, located in Gujarat, is committed to providing modern and accessible services to its residents while preserving its cultural roots. Our goal is to make daily life easier by offering well-organized services in areas like administration, health, education, and digital support.
-      </p>
-      <p>
-        Whether you are a local resident or a visitor, this page helps you quickly find the services you need in Goradka.
-      </p>
-    </section>
-
-    <!-- SERVICES GRID -->
-    <section class="services-main">
-      <h2 data-aos="fade-up">Essential Village Services</h2>
-      <div class="service-cards">
-        
-        <div class="service-card" data-aos="fade-up" data-aos-delay="100" style="position: relative; padding-bottom: 60px;">
-          <div class="img-container"><i class="fa-solid fa-landmark"></i></div>
-          <div class="card-details">
-            <h3>Gram Panchayat Services</h3>
-            <p>Efficient local government support for villagers.</p>
-            <ul>
-              <li>Birth &amp; Death Certificates</li>
-              <li>Tax Payments &amp; Records</li>
-              <li>Government Scheme Guidance</li>
-            </ul>
-          </div>
-          <a href="gram-panchayat-services.html" class="read-more-btn" style="position: absolute; bottom: 20px; left: 20px; right: 20px; text-align: center; background: #2e7d32; color: white; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">Read More</a>
-        </div>
-        
-        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="img-container"><i class="fa-solid fa-faucet-drip"></i></div>
-          <div class="card-details">
-            <h3>Water Supply Facility</h3>
-            <p>Ensuring clean and regular water for every household.</p>
-            <ul>
-              <li>Daily RO Plant Drinking Water</li>
-              <li>Agricultural Water Supply</li>
-              <li>Pipeline Maintenance</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="service-card" data-aos="fade-up" data-aos-delay="300" style="position: relative; padding-bottom: 60px;">
-          <div class="img-container"><i class="fa-solid fa-stethoscope"></i></div>
-          <div class="card-details">
-            <h3>Healthcare &amp; Medicine</h3>
-            <p>Accessible medical facilities for immediate care.</p>
-            <ul>
-              <li>Local Village Doctors</li>
-              <li>Primary Health Center (PHC)</li>
-              <li>Monthly Health Camps</li>
-            </ul>
-          </div>
-          <a href="healthcare-services.html" class="read-more-btn" style="position: absolute; bottom: 20px; left: 20px; right: 20px; text-align: center; background: #2e7d32; color: white; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">Read More</a>
-        </div>
-
-        <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-          <div class="img-container"><i class="fa-solid fa-book-open"></i></div>
-          <div class="card-details">
-            <h3>Education &amp; Library</h3>
-            <p>Empowering children and youth through knowledge.</p>
-            <ul>
-              <li>Primary Village School</li>
-              <li>Community Library Area</li>
-              <li>Student Guidance Programs</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="service-card" data-aos="fade-up" data-aos-delay="500">
-          <div class="img-container"><i class="fa-solid fa-lightbulb"></i></div>
-          <div class="card-details">
-            <h3>Electricity &amp; Lights</h3>
-            <p>Reliable power infrastructure for a bright village.</p>
-            <ul>
-              <li>24/7 Power Supply Grid</li>
-              <li>Solar Street Lights</li>
-              <li>Fault Repair Services</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="service-card" data-aos="fade-up" data-aos-delay="600">
-          <div class="img-container"><i class="fa-solid fa-laptop-code"></i></div>
-          <div class="card-details">
-            <h3>Digital &amp; E-Gram Support</h3>
-            <p>Connecting Goradka to the modern digital world.</p>
-            <ul>
-              <li>Online Form Submissions</li>
-              <li>Printing &amp; Xerox Facility</li>
-              <li>Digital E-Gram Center</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="service-card" data-aos="fade-up" data-aos-delay="700">
-          <div class="img-container"><i class="fa-solid fa-tractor"></i></div>
-          <div class="card-details">
-            <h3>Agriculture &amp; Dairy</h3>
-            <p>Supporting farmers and local dairy business.</p>
-            <ul>
-              <li>Dudh Utpadak Mandali</li>
-              <li>Farming Subsidies Info</li>
-              <li>Veterinary Assistance</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="service-card" data-aos="fade-up" data-aos-delay="800">
-          <div class="img-container"><i class="fa-solid fa-broom"></i></div>
-          <div class="card-details">
-            <h3>Cleaning &amp; Sanitation</h3>
-            <p>Maintaining a clean, beautiful, and healthy environment.</p>
-            <ul>
-              <li>Swachh Bharat Initiatives</li>
-              <li>Daily Garbage Collection</li>
-              <li>Public Toilet Maintenance</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- TIMINGS & AVAILABILITY SECTION -->
-    <section class="timings-section" data-aos="fade-up" style="padding: 4rem 10%; background-color: #f4f8f4;">
-      <h2 style="text-align: center; margin-bottom: 3rem; color: #1f1f1f; font-family: 'Playfair Display', serif; font-size: 2.2rem;">🏛️ Goradka Gram Panchayat Timings &amp; Availability</h2>
-      
-      <div class="timings-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-        
-        <!-- Panchayat Office Timings -->
-        <div class="timing-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-          <h3 style="color: #2e7d32; font-size: 1.4rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
-            <i class="fa-solid fa-clock"></i> 1. Panchayat Office Timings
-          </h3>
-          <p style="margin-bottom: 0.8rem; line-height: 1.5; color: #444;"><strong>Working Days:</strong> Monday to Saturday<br><span style="font-size: 0.9rem; color: #777;">(Closed on 2nd &amp; 4th Saturdays and Public Holidays)</span></p>
-          <p style="margin-bottom: 0.8rem; line-height: 1.5; color: #444;"><strong>Morning Opening Time:</strong> From 10:30 AM</p>
-          <p style="margin-bottom: 0.8rem; line-height: 1.5; color: #444;"><strong>Evening Closing Time:</strong> Until 06:10 PM</p>
-          <p style="margin-bottom: 0; line-height: 1.5; color: #444;"><strong>Lunch Break:</strong> 01:30 PM to 02:00 PM</p>
-        </div>
-
-        <!-- Talati-cum-Mantri Office Schedule -->
-        <div class="timing-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-          <h3 style="color: #2e7d32; font-size: 1.4rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
-            <i class="fa-solid fa-user-tie"></i> 2. Talati-cum-Mantri Schedule
-          </h3>
-          <p style="margin-bottom: 0.8rem; line-height: 1.5; color: #444;"><strong>In-Person Availability Days:</strong></p>
-          <p style="margin-bottom: 0.8rem; line-height: 1.5; color: #1b5e20;"><strong>🟢 Monday, Wednesday, and Friday</strong><br><span style="font-size: 0.9rem; color: #777;">(For office work and application processing)</span></p>
-          <p style="margin-bottom: 1.2rem; line-height: 1.5; color: #444;"><strong>Timing:</strong> 11:00 AM to 05:00 PM</p>
-          <div style="background: #fff3cd; color: #856404; padding: 1rem; border-radius: 8px; font-size: 0.9rem; line-height: 1.4; border-left: 4px solid #ffeeba;">
-            ⚠️ <strong>Note:</strong> On Tuesdays and Thursdays, the Talati-cum-Mantri may be away due to Taluka Panchayat meetings, official work, or field visits.
-          </div>
-        </div>
-
-        <!-- Service & Application Processing Hours -->
-        <div class="timing-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-          <h3 style="color: #2e7d32; font-size: 1.4rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
-            <i class="fa-solid fa-clipboard-list"></i> 3. Service Processing Hours
-          </h3>
-          <ul style="list-style: none; padding: 0; margin: 0;">
-            <li style="margin-bottom: 1.2rem; color: #444; display: flex; gap: 12px; align-items: flex-start;">
-              <i class="fa-solid fa-file-pen" style="color: #2e7d32; font-size: 1.2rem; margin-top: 3px;"></i> 
-              <div>
-                <strong>Accepting Applications &amp; Documents:</strong><br>
-                <span style="color: #555;">11:00 AM to 02:00 PM</span>
-              </div>
-            </li>
-            <li style="margin-bottom: 1.2rem; color: #444; display: flex; gap: 12px; align-items: flex-start;">
-              <i class="fa-solid fa-certificate" style="color: #2e7d32; font-size: 1.2rem; margin-top: 3px;"></i> 
-              <div>
-                <strong>Issuing Certificates &amp; Proofs:</strong><br>
-                <span style="color: #555;">03:00 PM to 05:00 PM</span>
-              </div>
-            </li>
-            <li style="color: #444; display: flex; gap: 12px; align-items: flex-start;">
-              <i class="fa-solid fa-house" style="color: #2e7d32; font-size: 1.2rem; margin-top: 3px;"></i> 
-              <div>
-                <strong>Payment of House Tax, Water Tax &amp; Land Revenue:</strong><br>
-                <span style="color: #555;">Daily from 11:00 AM to 02:00 PM</span>
-              </div>
-            </li>
-          </ul>
-        </div>
-        
-      </div>
-    </section>
-
-
-
-    <!-- WHY CHOOSE US -->
-    <section class="why-choose-us" data-aos="fade-up">
-      <h2>Why Goradka Services Stand Out</h2>
-      <div class="features-grid">
-        <div class="feature-item" data-aos="fade-right" data-aos-delay="100">
-          <i class="fa-solid fa-check-circle"></i>
-          <h4>Easy Access to Essential Facilities</h4>
-        </div>
-        <div class="feature-item" data-aos="fade-right" data-aos-delay="200">
-          <i class="fa-solid fa-users"></i>
-          <h4>Community-Focused Development</h4>
-        </div>
-        <div class="feature-item" data-aos="fade-right" data-aos-delay="300">
-          <i class="fa-solid fa-building-columns"></i>
-          <h4>Government Support Integration</h4>
-        </div>
-        <div class="feature-item" data-aos="fade-right" data-aos-delay="400">
-          <i class="fa-solid fa-leaf"></i>
-          <h4>Clean &amp; Organized Systems</h4>
-        </div>
-        <div class="feature-item" data-aos="fade-right" data-aos-delay="500">
-          <i class="fa-solid fa-wifi"></i>
-          <h4>Growing Digital Infrastructure</h4>
-        </div>
-      </div>
-    </section>
-
-    <!-- GUJARATI LOCAL SECTION -->
-    <section class="gujarati-section" data-aos="zoom-in">
-      <h3>📍 ગુજરાતી માહિતી:</h3>
-      <p>
-        ગોરડકા ગામમાં વિવિધ જરૂરી સેવાઓ ઉપલબ્ધ છે જેમ કે પાણી, વીજળી, આરોગ્ય, શિક્ષણ અને ગ્રામ પંચાયત સેવાઓ. આ સેવાઓ ગામના વિકાસ અને લોકોની સુવિધા માટે ખૂબ જ મહત્વપૂર્ણ છે.
-      </p>
-    </section>
-
-    <!-- CALL TO ACTION -->
-    <section class="cta-section" data-aos="zoom-in">
-      <h2>Need Help with Any Service?</h2>
-      <p>If you are looking for any assistance related to village services, feel free to contact us or visit the Panchayat office. We are here to help you.</p>
-      <div class="cta-buttons">
-        <a href="contact.html" class="cta-btn">Contact Us</a>
-        <a href="about.html" class="cta-btn outline">View More Details</a>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-      <div class="footer-container">
-        <div class="footer-section about">
-          <h2>Goradka™</h2>
-          <p>Goradka – where tradition meets progress in every corner. A peaceful community built on unity, culture, and pride.</p>
-          <div class="social-icons">
-            <a href="https://www.instagram.com/goradka_nagari01?igsh=Z29pa29nMjBzdWwx" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://wa.me/9825687775?text=હેલ્લો%2C%20કૃપા%20કરીને%20મને%20ગોરડકા%20ગ્રૂપમાં%20જોડાવાનો%20લિંક%20મોકલો." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://wa.me/919574750680?text=હેલ્લો%2C%20કૃપા%20કરીને%20મને%20ગોરડકા%20ગ્રૂપમાં%20જોડાવાનો%20લિંક%20મોકલો." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
-          </div>
-        </div>
-        <div class="footer-section links">
-          <h3>View all Pages</h3>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-section contact">
-          <h3>Contact</h3>
-          <p><a href="https://tushar-sutariya.netlify.app" target="_blank" style="color: inherit; text-decoration: none;" rel="noopener noreferrer">Tushar Sutariya</a> <br />fore any type of queries</p>
-          <br />
-          <p class="created-by">❤ Created by <a href="https://tushar-sutariya.netlify.app" target="_blank" rel="noopener noreferrer">Tushar Sutariya</a></p>
-        </div>
-      </div>
-    </footer>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>AOS.init({ once: true, offset: 50 });</script>
-    <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>AOS.init({ once: true, offset: 50 });</script>
+  <script src="script.js"></script>
 </body>
+
 </html>
