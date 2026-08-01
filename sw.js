@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'goradka-pwa-v1.0.3';
+const CACHE_VERSION = 'goradka-pwa-v1.0.4';
 const CACHE_NAME = `goradka-cache-${CACHE_VERSION}`;
 const OFFLINE_URL = 'offline.html';
 

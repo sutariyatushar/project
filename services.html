@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
     
-    <link rel="stylesheet" href="services.css" />
+    <link rel="stylesheet" href="services.css?v=1.0.5" />
 
     <!-- PWA Settings -->
     <link rel="manifest" href="manifest.json" />
@@ -54,26 +54,89 @@
     </nav>
 
     <!-- HERO SECTION -->
-    <!-- CLEAN & PROFESSIONAL SERVICES HERO -->
     <header class="services-hero">
-      <div class="hero-content">
-        <div class="hero-badge" data-aos="fade-down">
-          <i class="fa-solid fa-hand-holding-heart"></i> Supporting Goradka
+      <div class="orbit-wrapper">
+        <div class="orbit-container">
+          <!-- Concentric Orbits -->
+          <div class="orbit-ring ring-1"></div>
+          <div class="orbit-ring ring-2"></div>
+          <div class="orbit-ring ring-3"></div>
+
+          <!-- Orbiting Items -->
+          <!-- Calendar -->
+          <div class="orbit-item calendar-badge">
+            <div class="mini-calendar">
+              <div class="cal-top"></div>
+              <div class="cal-dots">
+                <span></span><span></span>
+              </div>
+              <div class="cal-val">09</div>
+            </div>
+          </div>
+
+          <!-- Cake Slice -->
+          <div class="orbit-item cake-badge">
+            <svg viewBox="0 0 100 100" class="matcha-cake-svg">
+              <ellipse cx="50" cy="80" rx="35" ry="10" fill="#cbd5e1" />
+              <path d="M 25,65 L 75,65 L 50,25 Z" fill="#84cc16" />
+              <path d="M 25,65 L 75,65 L 75,72 L 25,72 Z" fill="#65a30d" />
+              <path d="M 25,72 L 75,72 L 75,76 L 25,76 Z" fill="#a16207" />
+              <path d="M 45,25 Q 50,15 55,25 Q 50,30 45,25 Z" fill="#ffffff" />
+              <path d="M 25,65 Q 50,68 75,65 L 75,68 Q 50,71 25,68 Z" fill="#ffffff" opacity="0.9" />
+            </svg>
+          </div>
+
+          <!-- Confetti Popper -->
+          <div class="orbit-item confetti-badge">
+            <svg viewBox="0 0 100 100" class="confetti-svg">
+              <path d="M30,70 L50,50 L60,80 Z" fill="#f97316" />
+              <path d="M30,70 Q45,75 60,80 L50,50 Z" fill="#fdba74" />
+              <circle cx="55" cy="40" r="5" fill="#facc15" />
+              <circle cx="70" cy="45" r="4" fill="#2dd4bf" />
+              <circle cx="65" cy="30" r="3" fill="#f43f5e" />
+              <circle cx="45" cy="35" r="4" fill="#6366f1" />
+              <path d="M50,50 Q60,35 75,35" fill="none" stroke="#2dd4bf" stroke-width="3" stroke-linecap="round" />
+              <path d="M45,45 Q55,20 60,15" fill="none" stroke="#f43f5e" stroke-width="3" stroke-linecap="round" />
+            </svg>
+          </div>
+
+          <!-- Avatars -->
+          <div class="orbit-item avatar-item av-1">
+            <img src="img/doctor_ankit.png" alt="Doctor Ankit" />
+          </div>
+          <div class="orbit-item avatar-item av-2">
+            <img src="img/doctor_bhavna.png" alt="Doctor Bhavna" />
+          </div>
+          <div class="orbit-item avatar-item av-3">
+            <img src="img/doctor_rajesh.png" alt="Doctor Rajesh" />
+          </div>
+          <div class="orbit-item avatar-item av-4">
+            <img src="img/doctor_sunita.png" alt="Doctor Sunita" />
+          </div>
+
+          <!-- Central Speech Bubble -->
+          <div class="central-bubble">
+            <div class="bubble-text">
+              <p>I'm passionate about sharing not just the drinks, but the journey.</p>
+              <p>I get to connect with you, share the wins and challenges, and grow a community that's as much about people as it is about matcha.</p>
+              <p>Every cup is an invitation to be part of that story 😊</p>
+            </div>
+            <div class="bubble-tail"></div>
+          </div>
         </div>
-        <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
-          Village Services & <br>
-          <span>Community Support</span>
-        </h1>
-        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="400">
-          Empowering every resident of Goradka with modern infrastructure, 
-          essential health resources, and dedicated local government facilities.
-        </p>
-        <div class="hero-actions" data-aos="zoom-in" data-aos-delay="600">
-          <a href="#intro" class="hero-btn-primary">
-            Explore Facilities
+      </div>
+
+      <!-- Action items below the main orbit section -->
+      <div class="hero-action-container">
+        <a href="https://wa.me/9825687775?text=I%20want%20to%20join%20the%20Waitlist" class="join-waitlist-btn" target="_blank" rel="noopener noreferrer">
+          Join Waitlist <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+        <div class="hero-links">
+          <a href="#intro" class="hero-link-item">
+            <i class="fa-solid fa-video"></i> Behind-the-scenes
           </a>
-          <a href="contact.html" class="hero-btn-secondary">
-            Get Support
+          <a href="about.html" class="hero-link-item">
+            <i class="fa-solid fa-leaf"></i> How it all started
           </a>
         </div>
       </div>
