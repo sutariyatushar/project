@@ -20,7 +20,7 @@
     
     <style>
       .detail-section {
-        padding: 4rem 10%;
+        padding: 1.5rem 1rem;
         background: #f9f9f9;
         color: #333;
         line-height: 1.6;
@@ -28,15 +28,15 @@
       }
       .detail-card {
         background: white;
-        padding: 2.5rem;
+        padding: 1.25rem;
         border-radius: 12px;
         box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
       }
       .detail-card h2 {
         color: #2e7d32;
         margin-bottom: 1rem;
-        font-size: 1.8rem;
+        font-size: 1.35rem;
         border-bottom: 2px solid #e0e0e0;
         padding-bottom: 0.5rem;
       }
@@ -44,9 +44,11 @@
         color: #1b5e20;
         margin-top: 1.5rem;
         margin-bottom: 0.5rem;
+        font-size: 1.15rem;
       }
       .detail-card p {
         margin-bottom: 1rem;
+        font-size: 0.95rem;
       }
       .detail-card ul {
         margin-left: 20px;
@@ -54,25 +56,37 @@
       }
       .detail-card li {
         margin-bottom: 0.5rem;
+        font-size: 0.95rem;
+      }
+      .table-responsive {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
       }
       table {
         width: 100%;
         border-collapse: collapse;
-        margin-bottom: 1rem;
+        min-width: 600px;
       }
       table, th, td {
-        border: 1px solid #ddd;
+        border: none;
       }
       th, td {
         padding: 12px;
         text-align: left;
+        border-bottom: 1px solid #eee;
+        font-size: 0.9rem;
       }
       th {
         background-color: #2e7d32;
         color: white;
+        font-weight: 600;
       }
-      .table-responsive {
-        overflow-x: auto;
+      tr:last-child td {
+        border-bottom: none;
       }
       .contact-link {
         color: #2e7d32;
@@ -91,6 +105,7 @@
         text-decoration: none;
         border-radius: 5px;
         transition: 0.3s;
+        font-size: 0.95rem;
       }
       .back-btn:hover {
         background: #1b5e20;
@@ -107,15 +122,605 @@
         border-radius: 8px;
         margin-bottom: 20px;
         text-align: center;
+        font-size: 0.9rem;
       }
       .seo-links a {
         color: #2e7d32;
         font-weight: bold;
         text-decoration: none;
-        margin: 0 10px;
+        margin: 0 5px;
+        display: inline-block;
+        white-space: nowrap;
       }
       .seo-links a:hover {
         text-decoration: underline;
+      }
+
+      /* Medium Devices (Tablets, 768px and up) */
+      @media (min-width: 768px) {
+        .detail-section {
+          padding: 3rem 5%;
+        }
+        .detail-card {
+          padding: 2rem;
+          margin-bottom: 2rem;
+        }
+        .detail-card h2 {
+          font-size: 1.6rem;
+        }
+        .detail-card h3 {
+          font-size: 1.3rem;
+        }
+        .detail-card p,
+        .detail-card li {
+          font-size: 1rem;
+        }
+        .seo-links {
+          font-size: 1rem;
+        }
+        .seo-links a {
+          margin: 0 10px;
+        }
+      }
+
+      /* Large Devices (Desktops, 1024px and up) */
+      @media (min-width: 1024px) {
+        .detail-section {
+          padding: 4rem 10%;
+        }
+        .detail-card {
+          padding: 2.5rem;
+        }
+        .detail-card h2 {
+          font-size: 1.8rem;
+        }
+      }
+
+      /* Custom Mobile-First Reference Hero Styling */
+      .healthcare-hero {
+        background: radial-gradient(circle, #f8fff9 0%, #f0fcf2 100%);
+        position: relative;
+        padding: 3rem 1rem 2.5rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(46, 125, 50, 0.1);
+      }
+      .healthcare-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: 
+          linear-gradient(rgba(46, 125, 50, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(46, 125, 50, 0.04) 1px, transparent 1px);
+        background-size: 40px 40px;
+        background-position: center;
+        z-index: 1;
+        pointer-events: none;
+      }
+      .hero-cards-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 180px;
+        margin-bottom: 1.5rem;
+        z-index: 2;
+        width: 100%;
+        max-width: 320px;
+      }
+      .hero-card {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 4px solid #fff;
+        transition: all 0.3s ease;
+      }
+      .card-icon-wrapper {
+        font-size: 2.2rem;
+        color: #2e7d32;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .card-pill {
+        position: absolute;
+        background: #2e7d32;
+        color: white;
+        padding: 4px 10px;
+        border-radius: 50px;
+        font-size: 0.65rem;
+        font-weight: 600;
+        white-space: nowrap;
+        box-shadow: 0 4px 10px rgba(46, 125, 50, 0.15);
+      }
+      .card-left {
+        transform: translateX(-60px) translateY(10px) rotate(-10deg);
+        z-index: 1;
+      }
+      .card-left .card-pill {
+        background: #e8f5e9;
+        color: #2e7d32;
+        top: -15px;
+        left: -15px;
+        border: 1px solid rgba(46, 125, 50, 0.2);
+      }
+      .card-center {
+        transform: translateY(-10px);
+        width: 110px;
+        height: 110px;
+        z-index: 3;
+        border-color: #2e7d32;
+        box-shadow: 0 15px 30px rgba(46, 125, 50, 0.15);
+      }
+      .card-center .card-pill {
+        background: #2e7d32;
+        color: white;
+        top: -18px;
+      }
+      .card-center .card-icon-wrapper {
+        font-size: 2.6rem;
+      }
+      .card-right {
+        transform: translateX(60px) translateY(10px) rotate(10deg);
+        z-index: 2;
+      }
+      .card-right .card-pill {
+        background: #fff9c4;
+        color: #f57f17;
+        bottom: -15px;
+        right: -15px;
+        border: 1px solid rgba(245, 127, 23, 0.2);
+      }
+      .hero-title-main {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: #1b5e20;
+        margin-top: 0.5rem;
+        margin-bottom: 0.25rem;
+        line-height: 1.1;
+        letter-spacing: -1px;
+        z-index: 2;
+      }
+      .hero-subtitle-main {
+        font-size: 1.4rem;
+        font-family: 'Playfair Display', serif;
+        color: #2e7d32;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 0.75rem;
+        z-index: 2;
+      }
+      .hero-desc-main {
+        font-size: 0.7rem;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        color: #666;
+        font-weight: 600;
+        max-width: 290px;
+        margin: 0 auto;
+        line-height: 1.4;
+        z-index: 2;
+      }
+
+      @media (min-width: 768px) {
+        .healthcare-hero {
+          padding: 4rem 2rem;
+        }
+        .hero-cards-container {
+          height: 220px;
+          max-width: 400px;
+        }
+        .hero-card {
+          width: 120px;
+          height: 120px;
+        }
+        .card-left {
+          transform: translateX(-70px) translateY(10px) rotate(-10deg);
+        }
+        .card-center {
+          width: 130px;
+          height: 130px;
+        }
+        .card-right {
+          transform: translateX(70px) translateY(10px) rotate(10deg);
+        }
+        .hero-title-main {
+          font-size: 3rem;
+        }
+        .hero-subtitle-main {
+          font-size: 1.8rem;
+        }
+        .hero-desc-main {
+          font-size: 0.8rem;
+          max-width: 500px;
+        }
+      }
+
+      /* Doctor Profiles Modern Grid & Cards */
+      .doctor-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
+      }
+      .doctor-card {
+        background: white;
+        border-radius: 28px;
+        padding: 1rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgba(0, 0, 0, 0.03);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .doctor-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(46, 125, 50, 0.1);
+      }
+      .doctor-img-container {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 1rem;
+        border: 1px solid #f0f0f0;
+      }
+      .doctor-img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .doctor-info-wrap {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 0 0.25rem;
+      }
+      .doctor-name-title {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #1b5e20;
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.25rem;
+      }
+      .doctor-name-title i {
+        font-size: 1rem;
+        color: #2e7d32;
+        margin-left: 6px;
+      }
+      .doctor-specialty {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 0.4rem;
+        line-height: 1.3;
+        font-weight: 500;
+      }
+      .doctor-clinic {
+        font-size: 0.8rem;
+        color: #2e7d32;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        background: #e8f5e9;
+        padding: 4px 8px;
+        border-radius: 6px;
+        display: inline-block;
+        align-self: flex-start;
+      }
+      .doctor-desc {
+        font-size: 0.85rem;
+        color: #555;
+        line-height: 1.4;
+        margin-bottom: 1rem;
+      }
+      .doctor-footer-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: auto;
+        padding-top: 0.75rem;
+        border-top: 1px solid #f0f0f0;
+      }
+      .doctor-stats {
+        display: flex;
+        gap: 12px;
+        font-size: 0.8rem;
+        color: #666;
+        font-weight: 600;
+      }
+      .doctor-stats span {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .doctor-stats i {
+        color: #ffa000;
+      }
+      .doctor-stats i.fa-calendar-check {
+        color: #2e7d32;
+      }
+      .doctor-call-btn {
+        background: #2e7d32;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        box-shadow: 0 4px 10px rgba(46, 125, 50, 0.15);
+      }
+      .doctor-call-btn:hover {
+        background: #1b5e20;
+        transform: scale(1.05);
+      }
+
+      /* Emergency Section CSS */
+      .emergency-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 1.5rem;
+      }
+      .emergency-card {
+        background: white;
+        border-radius: 20px;
+        padding: 1.5rem;
+        border: 1px solid rgba(198, 40, 40, 0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease;
+      }
+      .emergency-card:hover {
+        transform: translateY(-3px);
+      }
+      .emergency-card.card-108 {
+        border-top: 4px solid #c62828;
+      }
+      .emergency-card.card-104 {
+        border-top: 4px solid #1565c0;
+        border-color: rgba(21, 101, 192, 0.1);
+      }
+      .emergency-card h3 {
+        font-size: 1.15rem !important;
+        margin-top: 0 !important;
+        margin-bottom: 1rem !important;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #333 !important;
+      }
+      .emergency-card.card-108 h3 { color: #c62828 !important; }
+      .emergency-card.card-104 h3 { color: #1565c0 !important; }
+      .emergency-badge {
+        font-size: 0.7rem;
+        padding: 3px 8px;
+        border-radius: 12px;
+        font-weight: 700;
+        margin-left: auto;
+        text-transform: uppercase;
+      }
+      .card-108 .emergency-badge { background: #ffebee; color: #c62828; }
+      .card-104 .emergency-badge { background: #e3f2fd; color: #1565c0; }
+      .emergency-card ul {
+        margin-left: 0 !important;
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 1.5rem !important;
+      }
+      .emergency-card li {
+        position: relative;
+        padding-left: 20px;
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+        color: #555;
+        line-height: 1.4;
+      }
+      .emergency-card li::before {
+        content: "\f00c";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        font-size: 0.75rem;
+      }
+      .card-108 li::before { color: #c62828; }
+      .card-104 li::before { color: #1565c0; }
+      .emergency-meta-info {
+        font-size: 0.8rem;
+        color: #777;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+        background: #f9f9f9;
+        padding: 8px 12px;
+        border-radius: 8px;
+      }
+      .emergency-dial-btn {
+        text-align: center;
+        padding: 10px;
+        border-radius: 30px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-top: auto;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: all 0.2s ease;
+      }
+      .card-108 .emergency-dial-btn { background: #c62828; color: white; box-shadow: 0 4px 10px rgba(198, 40, 40, 0.2); }
+      .card-104 .emergency-dial-btn { background: #1565c0; color: white; box-shadow: 0 4px 10px rgba(21, 101, 192, 0.2); }
+      .emergency-dial-btn:hover {
+        transform: scale(1.03);
+      }
+
+      /* PHC Section CSS */
+      .location-matrix {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 15px;
+        margin-bottom: 1.5rem;
+      }
+      .location-card {
+        background: #e8f5e9;
+        border-radius: 16px;
+        padding: 1rem;
+        border-left: 4px solid #2e7d32;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .location-icon {
+        font-size: 1.8rem;
+        color: #2e7d32;
+      }
+      .location-details h4 {
+        margin: 0;
+        font-size: 0.95rem;
+        color: #1b5e20;
+      }
+      .location-details p {
+        margin: 0;
+        font-size: 0.8rem;
+        color: #555;
+      }
+
+      .timeline-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 1.5rem;
+      }
+      .timeline-item {
+        background: white;
+        border-radius: 12px;
+        padding: 10px 15px;
+        border: 1px solid #eee;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+      }
+      .timeline-badge {
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 20px;
+        text-transform: uppercase;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .timeline-badge.morning { background: #fff8e1; color: #ff8f00; }
+      .timeline-badge.evening { background: #e1f5fe; color: #0288d1; }
+      .timeline-badge.all-day { background: #ffebee; color: #c62828; }
+      .timeline-time {
+        font-weight: 600;
+        font-size: 0.85rem;
+        color: #333;
+      }
+      .timeline-desc {
+        font-size: 0.8rem;
+        color: #666;
+        flex-grow: 1;
+        text-align: right;
+      }
+
+      .chip-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 1.25rem;
+      }
+      .pill-chip {
+        background: #f1f8e9;
+        color: #2e7d32;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        border: 1px solid rgba(46, 125, 50, 0.15);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      /* Pharmacy Shop CSS */
+      .pharmacy-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+        margin-top: 1rem;
+      }
+      .pharmacy-card {
+        background: white;
+        border-radius: 24px;
+        padding: 1.25rem;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+        border: 1px solid rgba(0, 0, 0, 0.03);
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease;
+      }
+      .pharmacy-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 25px rgba(46, 125, 50, 0.08);
+      }
+      .pharmacy-badge {
+        font-size: 0.7rem;
+        font-weight: 700;
+        background: #e8f5e9;
+        color: #2e7d32;
+        padding: 3px 8px;
+        border-radius: 6px;
+        align-self: flex-start;
+        margin-bottom: 0.75rem;
+      }
+      .pharmacy-badge.emergency {
+        background: #ffebee;
+        color: #c62828;
+      }
+      .pharmacy-card h4 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.05rem;
+        color: #1b5e20;
+      }
+      .pharmacy-info {
+        font-size: 0.8rem;
+        color: #666;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .pharmacy-info i {
+        color: #2e7d32;
+        width: 14px;
+      }
+      .pharmacy-card .doctor-call-btn {
+        margin-top: auto;
+        justify-content: center;
+        padding: 8px;
+        font-size: 0.85rem;
       }
     </style>
 </head>
@@ -143,13 +748,33 @@
       </div>
     </nav>
 
-    <header class="services-hero" style="min-height: 40vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/hero-bg.jpg') center/cover;">
-      <div class="hero-content">
-        <h1 class="hero-title" data-aos="fade-up" style="color: white; font-size: 2.5rem;">
-          🏥 Healthcare &amp; Medicine<br><span>Services Handbook</span>
-        </h1>
-        <p style="color: #ddd; font-size: 1.2rem; margin-top: 10px;">Comprehensive Field Directory &amp; Operational Health Manual</p>
+    <header class="healthcare-hero">
+      <div class="hero-cards-container" data-aos="zoom-in">
+        <!-- Card 1 -->
+        <div class="hero-card card-left">
+          <span class="card-pill">24/7 Ambulance</span>
+          <div class="card-icon-wrapper">
+            <i class="fa-solid fa-truck-medical"></i>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="hero-card card-center">
+          <span class="card-pill">Primary Care</span>
+          <div class="card-icon-wrapper">
+            <i class="fa-solid fa-user-doctor"></i>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="hero-card card-right">
+          <span class="card-pill">Free Pharmacy</span>
+          <div class="card-icon-wrapper">
+            <i class="fa-solid fa-pills"></i>
+          </div>
+        </div>
       </div>
+      <h1 class="hero-title-main" data-aos="fade-up">Healthcare &amp; Medicine</h1>
+      <span class="hero-subtitle-main" data-aos="fade-up" data-aos-delay="100">Services Handbook</span>
+      <p class="hero-desc-main" data-aos="fade-up" data-aos-delay="200">Comprehensive Field Directory &amp; Operational Health Manual</p>
     </header>
 
     <section class="detail-section">
@@ -176,107 +801,97 @@
       </div>
 
       <div class="detail-card" data-aos="fade-up">
-        <h2>🚨 1. Emergency Services &amp; Immediate Response Protocols</h2>
-        <p>During life-threatening health events, rapid response and immediate medical stabilization save critical lives. The public health infrastructure provides round-the-clock emergency transport, trauma care, and tele-medical advice free of charge to all citizens.</p>
-        
-        <h3>🚑 108 Emergency Ambulance Service (૧૦૮ એમ્બ્યુલન્સ સેવા)</h3>
-        <p>The 108 Emergency Response Service is a free, 24/7 toll-free emergency service covering medical, police, and fire emergencies. Dialing 108 from any mobile phone or landline connects directly to the Emergency Response Center.</p>
-        <ul>
-          <li><strong>Scope of Medical Response:</strong> Severe road accidents, trauma, cardiac arrest, acute stroke, severe respiratory distress, high-risk labor/obstetric emergencies, snake bites, poisonings, and severe pediatric illness.</li>
-          <li><strong>On-Board Medical Equipment:</strong> Ambulances operate as ALS or BLS units equipped with EMTs, oxygen cylinders, defibrillators (AEDs), ECG monitors, suction pumps, nebulizers, and emergency childbirth kits.</li>
-          <li><strong>Average Response Time:</strong> 12 to 15 minutes in urban centers; 15 to 20 minutes in rural regions.</li>
-          <li><strong>Cost:</strong> 100% Free of cost for transport to government hospitals and empanelled centers.</li>
-        </ul>
-
-        <h3>📞 104 Health Advisory &amp; Medical Helpline (૧૦૪ આરોગ્ય સલાહ હેલ્પલાઇન)</h3>
-        <p>The 104 Health Helpline is a 24x7 non-emergency medical consultation, counseling, and health information service.</p>
-        <ul>
-          <li><strong>Symptom Triage &amp; Guidance:</strong> Immediate advice on minor health complaints like fever, flu, diarrhea.</li>
-          <li><strong>First-Aid Protocols:</strong> Guidance on OTC medicine dosages, dressing minor wounds, snakebite first-aid.</li>
-          <li><strong>Information:</strong> Real-time information on nearest hospital beds, blood banks, and health schemes.</li>
-          <li><strong>Mental Health:</strong> Free psychological support and stress counseling.</li>
-        </ul>
-
-        <h3>🏥 Local Village Emergency Medical Contacts</h3>
-        <div class="table-responsive">
-          <table>
-            <tr>
-              <th>Facility / Designation</th>
-              <th>Contact Desk / Officer</th>
-              <th>Emergency Direct Phone</th>
-              <th>Operating Hours</th>
-            </tr>
-            <tr>
-              <td>Gram Panchayat First Responder</td>
-              <td>Village Sarpanch / Talati Office</td>
-              <td><a href="tel:+919825000000" class="contact-link">+91 98250 XXXXX</a></td>
-              <td>24 Hours Emergency</td>
-            </tr>
-            <tr>
-              <td>Sub-Center Ambulance Vehicle</td>
-              <td>On-Call Emergency Driver</td>
-              <td><a href="tel:+919426300000" class="contact-link">+91 94263 XXXXX</a></td>
-              <td>24 Hours Availability</td>
-            </tr>
-            <tr>
-              <td>Community Disaster Desk</td>
-              <td>Revenue Inspector / Mamlatdar</td>
-              <td><a href="tel:02612230000" class="contact-link">+91 0261 223XXXX</a></td>
-              <td>24 Hours Control Room</td>
-            </tr>
-            <tr>
-              <td>District Red Cross Blood Bank</td>
-              <td>Blood Availability Helpline</td>
-              <td><a href="tel:02612420000" class="contact-link">+91 261 242XXXX</a></td>
-              <td>24 Hours Operations</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-
-      <div class="detail-card" data-aos="fade-up">
-        <h2>👨‍⚕️ 2. Local Village Doctors &amp; Community Clinics</h2>
+        <h2>👨‍⚕️ 1. Local Village Doctors &amp; Community Clinics</h2>
         <p>Primary consultation with qualified, registered medical practitioners (RMPs), general physicians, and AYUSH doctors provides the first line of defense for routine illnesses and chronic condition monitoring.</p>
         
-        <h3>🩺 List of Available Registered Doctors (ગામના માન્ય ડોક્ટરોની યાદી)</h3>
-        <div class="table-responsive">
-          <table>
-            <tr>
-              <th>Doctor Name</th>
-              <th>Qualification &amp; Specialty</th>
-              <th>Clinic Name</th>
-              <th>Timings &amp; Working Days</th>
-              <th>Contact Number</th>
-            </tr>
-            <tr>
-              <td>Dr. Rajesh M. Patel</td>
-              <td>MBBS, General Physician</td>
-              <td>Patel Jan Seva Clinic</td>
-              <td>08:30 AM – 01:00 PM, 05:00 PM – 08:30 PM (Mon–Sat)</td>
-              <td><a href="tel:+919879112345" class="contact-link">+91 98791 12345</a></td>
-            </tr>
-            <tr>
-              <td>Dr. Sunita K. Sharma</td>
-              <td>BAMS, Ayush Specialist</td>
-              <td>Arogya Holistic Center</td>
-              <td>09:00 AM – 02:00 PM, 04:30 PM – 07:30 PM (Mon–Sat)</td>
-              <td><a href="tel:+919427167890" class="contact-link">+91 94271 67890</a></td>
-            </tr>
-            <tr>
-              <td>Dr. Ankit V. Mehta</td>
-              <td>BHMS, Homeopath</td>
-              <td>Seva Homeo Clinic</td>
-              <td>10:00 AM – 01:30 PM, 05:00 PM – 08:00 PM (Mon–Fri)</td>
-              <td><a href="tel:+919824054321" class="contact-link">+91 98240 54321</a></td>
-            </tr>
-            <tr>
-              <td>Dr. Bhavna R. Joshi</td>
-              <td>DGO, Gynecologist (Visiting)</td>
-              <td>Matru Suraksha Center</td>
-              <td>10:00 AM – 02:00 PM (Tue, Thu, Sat)</td>
-              <td><a href="tel:+919909987654" class="contact-link">+91 99099 87654</a></td>
-            </tr>
-          </table>
+        <div class="doctor-grid">
+          <!-- Doctor 1 -->
+          <div class="doctor-card" data-aos="fade-up">
+            <div class="doctor-img-container">
+              <img src="img/doctor_rajesh.png" alt="Dr. Rajesh M. Patel" />
+            </div>
+            <div class="doctor-info-wrap">
+              <div class="doctor-name-title">
+                Dr. Rajesh M. Patel <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <div class="doctor-specialty">MBBS, General Physician</div>
+              <span class="doctor-clinic">Patel Jan Seva Clinic</span>
+              <p class="doctor-desc">Consultation for acute illnesses, chronic health conditions, wellness checkups, and family medicine.</p>
+              <div class="doctor-footer-row">
+                <div class="doctor-stats">
+                  <span><i class="fa-solid fa-star"></i> 4.9</span>
+                  <span><i class="fa-solid fa-calendar-check"></i> Mon-Sat</span>
+                </div>
+                <a href="tel:+919879112345" class="doctor-call-btn">Call <i class="fa-solid fa-phone"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Doctor 2 -->
+          <div class="doctor-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="doctor-img-container">
+              <img src="img/doctor_sunita.png" alt="Dr. Sunita K. Sharma" />
+            </div>
+            <div class="doctor-info-wrap">
+              <div class="doctor-name-title">
+                Dr. Sunita K. Sharma <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <div class="doctor-specialty">BAMS, Ayush Specialist</div>
+              <span class="doctor-clinic">Arogya Holistic Center</span>
+              <p class="doctor-desc">Specialized Ayurvedic treatment, natural wellness consultations, dietary planning, and holistic therapies.</p>
+              <div class="doctor-footer-row">
+                <div class="doctor-stats">
+                  <span><i class="fa-solid fa-star"></i> 4.8</span>
+                  <span><i class="fa-solid fa-calendar-check"></i> Mon-Sat</span>
+                </div>
+                <a href="tel:+919427167890" class="doctor-call-btn">Call <i class="fa-solid fa-phone"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Doctor 3 -->
+          <div class="doctor-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="doctor-img-container">
+              <img src="img/doctor_ankit.png" alt="Dr. Ankit V. Mehta" />
+            </div>
+            <div class="doctor-info-wrap">
+              <div class="doctor-name-title">
+                Dr. Ankit V. Mehta <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <div class="doctor-specialty">BHMS, Homeopath</div>
+              <span class="doctor-clinic">Seva Homeo Clinic</span>
+              <p class="doctor-desc">Homeopathic remedies for chronic diseases, allergy management, pediatric care, and immune health guidance.</p>
+              <div class="doctor-footer-row">
+                <div class="doctor-stats">
+                  <span><i class="fa-solid fa-star"></i> 4.7</span>
+                  <span><i class="fa-solid fa-calendar-check"></i> Mon-Fri</span>
+                </div>
+                <a href="tel:+919824054321" class="doctor-call-btn">Call <i class="fa-solid fa-phone"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Doctor 4 -->
+          <div class="doctor-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="doctor-img-container">
+              <img src="img/doctor_bhavna.png" alt="Dr. Bhavna R. Joshi" />
+            </div>
+            <div class="doctor-info-wrap">
+              <div class="doctor-name-title">
+                Dr. Bhavna R. Joshi <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <div class="doctor-specialty">DGO, Gynecologist (Visiting)</div>
+              <span class="doctor-clinic">Matru Suraksha Center</span>
+              <p class="doctor-desc">Maternal health assistance, prenatal and postnatal counseling, and visiting specialist gynecological consultation.</p>
+              <div class="doctor-footer-row">
+                <div class="doctor-stats">
+                  <span><i class="fa-solid fa-star"></i> 5.0</span>
+                  <span><i class="fa-solid fa-calendar-check"></i> Tue,Thu,Sat</span>
+                </div>
+                <a href="tel:+919909987654" class="doctor-call-btn">Call <i class="fa-solid fa-phone"></i></a>
+              </div>
+            </div>
+          </div>
         </div>
 
         <h3>⏰ Clinic Protocols, Appointments &amp; Address Details</h3>
@@ -288,212 +903,165 @@
       </div>
 
       <div class="detail-card" data-aos="fade-up">
+        <h2>🚨 2. Emergency Services &amp; Immediate Response Protocols</h2>
+        <p>During life-threatening health events, rapid response and immediate medical stabilization save critical lives. The public health infrastructure provides round-the-clock emergency transport, trauma care, and tele-medical advice free of charge to all citizens.</p>
+        
+        <div class="emergency-grid">
+          <!-- Card 108 -->
+          <div class="emergency-card card-108" data-aos="fade-up">
+            <h3>
+              <i class="fa-solid fa-truck-medical"></i> 108 Ambulance
+              <span class="emergency-badge">Toll-Free 24/7</span>
+            </h3>
+            <div class="emergency-meta-info">
+              <span><strong>Avg Response:</strong> 15-20 Min</span>
+              <span><strong>Cost:</strong> 100% Free</span>
+            </div>
+            <ul>
+              <li>Severe road accidents and trauma care stabilization</li>
+              <li>Cardiac arrest, acute stroke, and severe respiratory distress</li>
+              <li>High-risk labor and obstetric emergencies</li>
+              <li>Fully equipped ALS/BLS with EMTs and oxygen systems</li>
+            </ul>
+            <a href="tel:108" class="emergency-dial-btn"><i class="fa-solid fa-phone"></i> Dial 108</a>
+          </div>
+
+          <!-- Card 104 -->
+          <div class="emergency-card card-104" data-aos="fade-up" data-aos-delay="100">
+            <h3>
+              <i class="fa-solid fa-phone-volume"></i> 104 Advisory
+              <span class="emergency-badge">Consultation</span>
+            </h3>
+            <div class="emergency-meta-info">
+              <span><strong>Service:</strong> 24/7 Helpline</span>
+              <span><strong>Counseling:</strong> Free</span>
+            </div>
+            <ul>
+              <li>Symptom triage and minor illness guidance (fever, flu)</li>
+              <li>First aid guidance and OTC dosage advisory</li>
+              <li>Real-time blood bank and hospital bed search</li>
+              <li>Free psychological support and stress counseling</li>
+            </ul>
+            <a href="tel:104" class="emergency-dial-btn"><i class="fa-solid fa-phone"></i> Dial 104</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-card" data-aos="fade-up">
         <h2>🏥 3. Primary Health Center (PHC / CHC)</h2>
         <p>Government Primary Health Centers (PHC) and Community Health Centers (CHC) form the backbone of rural healthcare delivery, offering integrated curative, preventive, and maternal-child services free of cost.</p>
         
         <h3>📍 Location &amp; Distance Matrix</h3>
-        <ul>
-          <li><strong>Primary Health Center (PHC):</strong> Located 2.5 km from Village Center (Near Block Education Office). Serving a population cluster of 30,000.</li>
-          <li><strong>Community Health Center (CHC):</strong> Located 12 km at Block Headquarter. Features a 30-bed inpatient ward, emergency operation theater, digital X-ray, labor room, and blood storage unit.</li>
-        </ul>
+        <div class="location-matrix">
+          <div class="location-card" data-aos="fade-right">
+            <div class="location-icon"><i class="fa-solid fa-building-circle-check"></i></div>
+            <div class="location-details">
+              <h4>Primary Health Center (PHC)</h4>
+              <p>2.5 km away | Near Block Education Office</p>
+            </div>
+          </div>
+          <div class="location-card" data-aos="fade-left">
+            <div class="location-icon"><i class="fa-solid fa-hospital"></i></div>
+            <div class="location-details">
+              <h4>Community Health Center (CHC)</h4>
+              <p>12 km away | Block Headquarter (30 beds)</p>
+            </div>
+          </div>
+        </div>
 
         <h3>⏱️ OPD Timings &amp; Hospital Schedule</h3>
-        <div class="table-responsive">
-          <table>
-            <tr>
-              <th>Hospital Session</th>
-              <th>Working Hours</th>
-              <th>Operating Days</th>
-              <th>Services Provided</th>
-            </tr>
-            <tr>
-              <td>Morning General OPD</td>
-              <td>08:30 AM – 12:30 PM</td>
-              <td>Monday to Saturday</td>
-              <td>Doctor consultation, clinical checkup, prescriptions</td>
-            </tr>
-            <tr>
-              <td>Evening OPD Session</td>
-              <td>04:00 PM – 06:00 PM</td>
-              <td>Monday to Friday</td>
-              <td>Follow-up visits, wound dressing, minor procedures</td>
-            </tr>
-            <tr>
-              <td>24/7 Emergency &amp; Casualty</td>
-              <td>Round the Clock</td>
-              <td>All 365 Days</td>
-              <td>Trauma stabilization, labor room deliveries, snake antivenom</td>
-            </tr>
-          </table>
+        <div class="timeline-grid">
+          <div class="timeline-item" data-aos="fade-up">
+            <span class="timeline-badge morning"><i class="fa-solid fa-sun"></i> Morning OPD</span>
+            <span class="timeline-time">08:30 AM – 12:30 PM</span>
+            <span class="timeline-desc">Mon - Sat | General clinical checkups</span>
+          </div>
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+            <span class="timeline-badge evening"><i class="fa-solid fa-moon"></i> Evening OPD</span>
+            <span class="timeline-time">04:00 PM – 06:00 PM</span>
+            <span class="timeline-desc">Mon - Fri | Follow-ups and dressings</span>
+          </div>
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+            <span class="timeline-badge all-day"><i class="fa-solid fa-bell"></i> Emergency &amp; Casualty</span>
+            <span class="timeline-time">Round the Clock</span>
+            <span class="timeline-desc">24/7/365 | Trauma stabilization &amp; Labor room</span>
+          </div>
         </div>
 
-        <h3>💊 Free Essential Medicines &amp; Basic Diagnostics</h3>
-        <ul>
-          <li><strong>Free Essential Medicines (250+ Drugs):</strong> Broad-spectrum antibiotics, pain relievers, Paracetamol, BP medications, anti-diabetic formulations, IFA supplements, ORS, etc.</li>
-          <li><strong>Free Diagnostic Laboratory Services (30+ Tests):</strong> CBC, Hemoglobin, Blood Sugar, Malaria, Dengue, Typhoid, Urine Routine, TB Sputum Microscopy, Pregnancy Tests.</li>
-        </ul>
-
-        <h3>👶 Mamta Divas &amp; Maternal-Child Healthcare</h3>
-        <p>Observed every Wednesday at local Anganwadi Centers and PHC outposts:</p>
-        <ul>
-          <li><strong>Antenatal Care (ANC):</strong> Early pregnancy registration, Mamta Card, weight monitoring, BP screening, Td injections.</li>
-          <li><strong>Child Growth Monitoring:</strong> Weighing of infants, WHO growth charts, Vitamin A syrup, iron supplements.</li>
-          <li><strong>Counseling:</strong> Breastfeeding, complementary feeding, hygiene, family planning.</li>
-        </ul>
-      </div>
-
-      <div class="detail-card" data-aos="fade-up">
-        <h2>🩸 4. Monthly Health Camps &amp; Vaccination Drives</h2>
-        <p>To deliver specialized diagnostic care directly to rural communities, the District Health Society conducts monthly mobile health camps and mandatory immunization sessions.</p>
-        
-        <h3>🗓️ Monthly Diagnostic Camps Schedule</h3>
-        <div class="table-responsive">
-          <table>
-            <tr>
-              <th>Camp Category</th>
-              <th>Frequency &amp; Venue</th>
-              <th>Medical Team</th>
-              <th>Key Services Offered</th>
-            </tr>
-            <tr>
-              <td>General Health Camp</td>
-              <td>1st Monday of Every Month (Gram Panchayat Bhavan)</td>
-              <td>MD Physician, Ayush Doctor</td>
-              <td>NCD screening (Diabetes, Hypertension), ECG, checkups.</td>
-            </tr>
-            <tr>
-              <td>Eye Checkup Camp</td>
-              <td>2nd Saturday of Every Month (Community Hall)</td>
-              <td>Ophthalmologist, Optometrist</td>
-              <td>Refraction testing, cataract screening, free glasses, surgery referrals.</td>
-            </tr>
-            <tr>
-              <td>Dental &amp; Oral Hygiene</td>
-              <td>3rd Wednesday of Every Month (PHC Sub-Center)</td>
-              <td>Dental Surgeon</td>
-              <td>Dental examination, scaling, extractions, oral precancerous screening.</td>
-            </tr>
-            <tr>
-              <td>NCD &amp; Cancer Screening</td>
-              <td>4th Sunday of Every Month (Primary School)</td>
-              <td>Specialized Screening Team</td>
-              <td>Cervical cancer screening, breast examination, oral cavity inspection.</td>
-            </tr>
-          </table>
+        <h3>💊 Free Essential Medicines (250+ Drugs)</h3>
+        <div class="chip-container">
+          <span class="pill-chip"><i class="fa-solid fa-capsules"></i> Antibiotics</span>
+          <span class="pill-chip"><i class="fa-solid fa-droplet"></i> Pain Relievers</span>
+          <span class="pill-chip"><i class="fa-solid fa-heart-pulse"></i> BP Meds</span>
+          <span class="pill-chip"><i class="fa-solid fa-syringe"></i> Insulin</span>
+          <span class="pill-chip"><i class="fa-solid fa-prescription-bottle-medical"></i> Iron Supplements</span>
+          <span class="pill-chip"><i class="fa-solid fa-prescription"></i> OTC Formulations</span>
         </div>
 
-        <h3>💉 Routine Child Immunization Schedule</h3>
-        <p>Immunization drives take place every Wednesday. Parents must present their child’s Mamta Card:</p>
-        <div class="table-responsive">
-          <table>
-            <tr>
-              <th>Age of Child</th>
-              <th>Vaccine Administered</th>
-              <th>Protected Disease / Condition</th>
-            </tr>
-            <tr>
-              <td>At Birth</td>
-              <td>BCG, OPV Zero Dose, Hepatitis B Birth Dose</td>
-              <td>Tuberculosis, Poliomyelitis, Hepatitis B</td>
-            </tr>
-            <tr>
-              <td>6, 10, 14 Weeks</td>
-              <td>Pentavalent (1,2,3), fIPV, Rotavirus, PCV</td>
-              <td>Diphtheria, Pertussis, Tetanus, Hep B, Hib, Polio, Rotavirus, Pneumonia</td>
-            </tr>
-            <tr>
-              <td>9 to 12 Months</td>
-              <td>MR 1st Dose, JE 1st Dose, PCV Booster, Vit A</td>
-              <td>Measles, Rubella, Japanese Encephalitis, Pneumococcal Infections</td>
-            </tr>
-            <tr>
-              <td>16 to 24 Months</td>
-              <td>MR 2nd Dose, DPT Booster 1, OPV Booster</td>
-              <td>Measles, Rubella, Diphtheria, Pertussis, Tetanus, Polio Booster</td>
-            </tr>
-            <tr>
-              <td>5 to 6 Years</td>
-              <td>DPT Booster 2</td>
-              <td>Diphtheria, Pertussis, Tetanus Booster</td>
-            </tr>
-          </table>
+        <h3>🔬 Free Diagnostic Laboratory Services</h3>
+        <div class="chip-container">
+          <span class="pill-chip"><i class="fa-solid fa-vial"></i> Complete Blood Count (CBC)</span>
+          <span class="pill-chip"><i class="fa-solid fa-vials"></i> Hemoglobin Test</span>
+          <span class="pill-chip"><i class="fa-solid fa-vial-virus"></i> Malaria &amp; Dengue Test</span>
+          <span class="pill-chip"><i class="fa-solid fa-vial-circle-check"></i> Urine Routine</span>
+          <span class="pill-chip"><i class="fa-solid fa-microscope"></i> TB Sputum Test</span>
+        </div>
+
+        <h3>👶 Mamta Divas (Every Wednesday)</h3>
+        <p>Observed at Anganwadi Centers for maternal-child care:</p>
+        <div class="chip-container">
+          <span class="pill-chip"><i class="fa-solid fa-baby"></i> Child Growth Monitoring</span>
+          <span class="pill-chip"><i class="fa-solid fa-clipboard-user"></i> Mamta Card Entry</span>
+          <span class="pill-chip"><i class="fa-solid fa-baby-carriage"></i> Nutrition Counseling</span>
+          <span class="pill-chip"><i class="fa-solid fa-shield-virus"></i> Immunizations (Td/BCG)</span>
         </div>
       </div>
 
       <div class="detail-card" data-aos="fade-up">
-        <h2>💳 5. Government Health Schemes &amp; Financial Benefits</h2>
-        <p>Government health assistance schemes protect families from catastrophic health expenditures by providing cashless inpatient care and financial incentives.</p>
-        
-        <h3>🪪 Ayushman Bharat – PM-JAY (₹10 Lakh Cashless Coverage)</h3>
-        <p>Eligible beneficiary families receive cashless hospitalization coverage up to ₹10,00,000 per family per year.</p>
-        <ul>
-          <li><strong>Coverage Scope:</strong> Over 1,950 surgical, medical, and oncology procedures (bypass surgery, joint replacement, chemotherapy).</li>
-          <li><strong>Inclusions:</strong> Pre-hospitalization consultation, complete inpatient stay, ICU charges, medicines, surgical consumables, implants, food during stay, post-discharge medicines.</li>
-          <li><strong>Empannelled Network:</strong> Accepted at all Government Civil Hospitals and empanelled private super-specialty hospitals.</li>
-        </ul>
-
-        <h3>🤱 Pradhan Mantri Matru Vandana Yojana (PMMVY)</h3>
-        <p>A DBT maternity incentive scheme providing ₹5,000 to ₹6,000 directly into the bank account of pregnant women and lactating mothers.</p>
-
-        <h3>📝 Required Documents for E-Card Generation</h3>
-        <ul>
-          <li><strong>Proof of Identity:</strong> Original Aadhaar Card of all family members.</li>
-          <li><strong>Family Proof:</strong> Valid Ration Card (NFSA Purna / Antyodaya) or SECC Verification Letter.</li>
-          <li><strong>Active Mobile Phone:</strong> For receiving OTP during e-KYC.</li>
-          <li><strong>Income Certificate:</strong> Issued by Mamlatdar / Competent Authority (if required).</li>
-        </ul>
-      </div>
-
-      <div class="detail-card" data-aos="fade-up">
-        <h2>💊 6. Pharmacy &amp; Medicine Shops</h2>
+        <h2>💊 4. Pharmacy &amp; Medicine Shops</h2>
         <p>Timely access to prescribed pharmaceuticals ensures effective recovery and chronic disease management.</p>
         
-        <h3>🏪 Local Pharmacy Directory</h3>
-        <div class="table-responsive">
-          <table>
-            <tr>
-              <th>Pharmacy Name</th>
-              <th>Store Category</th>
-              <th>Address / Location</th>
-              <th>Operating Hours</th>
-              <th>Contact Number</th>
-            </tr>
-            <tr>
-              <td>PM Bharatiya Janaushadhi Kendra</td>
-              <td>Generic Medicine Outlet</td>
-              <td>PHC Hospital Road</td>
-              <td>09:00 AM – 08:00 PM</td>
-              <td><a href="tel:+919825100000" class="contact-link">+91 98251 00000</a></td>
-            </tr>
-            <tr>
-              <td>Shree Ram Medical Store</td>
-              <td>Retail Chemist</td>
-              <td>Station Road Market</td>
-              <td>08:00 AM – 09:30 PM</td>
-              <td><a href="tel:+919879511223" class="contact-link">+91 98795 11223</a></td>
-            </tr>
-            <tr>
-              <td>Lifecare Pharmacy</td>
-              <td>24/7 Emergency Chemist</td>
-              <td>Near Civil Hospital Gate</td>
-              <td>24 Hours Open</td>
-              <td><a href="tel:+912612223344" class="contact-link">+91 261 2223344</a></td>
-            </tr>
-            <tr>
-              <td>Jay Ambe Medical &amp; Surgical</td>
-              <td>Retail &amp; Surgical Supplies</td>
-              <td>Opposite Bus Stand</td>
-              <td>08:30 AM – 10:00 PM</td>
-              <td><a href="tel:+919426899887" class="contact-link">+91 94268 99887</a></td>
-            </tr>
-          </table>
-        </div>
+        <div class="pharmacy-grid">
+          <!-- Shop 1 -->
+          <div class="pharmacy-card" data-aos="fade-up">
+            <span class="pharmacy-badge">Generic Center</span>
+            <h4>Janaushadhi Kendra</h4>
+            <div class="pharmacy-info"><i class="fa-solid fa-map-location-dot"></i> PHC Hospital Road</div>
+            <div class="pharmacy-info"><i class="fa-solid fa-clock"></i> 09:00 AM – 08:00 PM</div>
+            <div class="pharmacy-info"><i class="fa-solid fa-percent"></i> 50%-90% Discounted generics</div>
+            <a href="tel:+919825100000" class="doctor-call-btn">Call Store <i class="fa-solid fa-phone"></i></a>
+          </div>
 
-        <h3>🌙 24/7 Emergency Medicine Access</h3>
-        <ul>
-          <li><strong>Pradhan Mantri Jan Aushadhi Scheme:</strong> High-quality generic medicines at 50% to 90% lower prices.</li>
-          <li><strong>After-Hours Emergency Dispensing:</strong> Lifecare Pharmacy offers round-the-clock emergency window operations. The PHC emergency dispensary maintains standby stock for acute life-saving drugs.</li>
-        </ul>
+          <!-- Shop 2 -->
+          <div class="pharmacy-card" data-aos="fade-up" data-aos-delay="100">
+            <span class="pharmacy-badge">Retail Chemist</span>
+            <h4>Shree Ram Medical</h4>
+            <div class="pharmacy-info"><i class="fa-solid fa-map-location-dot"></i> Station Road Market</div>
+            <div class="pharmacy-info"><i class="fa-solid fa-clock"></i> 08:00 AM – 09:30 PM</div>
+            <div class="pharmacy-info"><i class="fa-solid fa-truck"></i> Home Delivery Available</div>
+            <a href="tel:+919879511223" class="doctor-call-btn">Call Store <i class="fa-solid fa-phone"></i></a>
+          </div>
+
+          <!-- Shop 3 -->
+          <div class="pharmacy-card" data-aos="fade-up" data-aos-delay="200">
+            <span class="pharmacy-badge emergency">24/7 Open</span>
+            <h4>Lifecare Pharmacy</h4>
+            <div class="pharmacy-info"><i class="fa-solid fa-map-location-dot"></i> Civil Hospital Gate</div>
+            <div class="pharmacy-info"><i class="fa-solid fa-clock"></i> Open 24 Hours</div>
+            <div class="pharmacy-info"><i class="fa-solid fa-kit-medical"></i> Emergency Medicines</div>
+            <a href="tel:+912612223344" class="doctor-call-btn">Call Store <i class="fa-solid fa-phone"></i></a>
+          </div>
+
+          <!-- Shop 4 -->
+          <div class="pharmacy-card" data-aos="fade-up" data-aos-delay="300">
+            <span class="pharmacy-badge">Retail &amp; Surgical</span>
+            <h4>Jay Ambe Medical</h4>
+            <div class="pharmacy-info"><i class="fa-solid fa-map-location-dot"></i> Opposite Bus Stand</div>
+            <div class="pharmacy-info"><i class="fa-solid fa-clock"></i> 08:30 AM – 10:00 PM</div>
+            <div class="pharmacy-info"><i class="fa-solid fa-wheelchair"></i> Surgical Equipment</div>
+            <a href="tel:+919426899887" class="doctor-call-btn">Call Store <i class="fa-solid fa-phone"></i></a>
+          </div>
+        </div>
       </div>
 
       <div style="text-align: center;">

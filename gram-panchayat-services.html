@@ -27,7 +27,7 @@
   <script src="pwa.js" defer></script>
   <style>
     .detail-section {
-      padding: 4rem 10%;
+      padding: 1.5rem 1rem;
       background: #f9f9f9;
       color: #333;
       line-height: 1.6;
@@ -36,16 +36,16 @@
 
     .detail-card {
       background: white;
-      padding: 2.5rem;
+      padding: 1.25rem;
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
 
     .detail-card h2 {
       color: #2e7d32;
       margin-bottom: 1rem;
-      font-size: 1.8rem;
+      font-size: 1.35rem;
       border-bottom: 2px solid #e0e0e0;
       padding-bottom: 0.5rem;
     }
@@ -54,10 +54,12 @@
       color: #1b5e20;
       margin-top: 1.5rem;
       margin-bottom: 0.5rem;
+      font-size: 1.15rem;
     }
 
     .detail-card p {
       margin-bottom: 1rem;
+      font-size: 0.95rem;
     }
 
     .detail-card ul {
@@ -67,29 +69,47 @@
 
     .detail-card li {
       margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive Table Styles */
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 1rem;
+      min-width: 600px; /* Ensures table columns don't squish too much on mobile */
     }
 
     table,
     th,
     td {
-      border: 1px solid #ddd;
+      border: none;
     }
 
     th,
     td {
       padding: 12px;
       text-align: left;
+      border-bottom: 1px solid #eee;
+      font-size: 0.9rem;
     }
 
     th {
       background-color: #2e7d32;
       color: white;
+      font-weight: 600;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
     }
 
     .step-box {
@@ -98,11 +118,12 @@
       border-left: 5px solid #2e7d32;
       margin-bottom: 10px;
       border-radius: 5px;
+      font-size: 0.95rem;
     }
 
     .contact-table th,
     .contact-table td {
-      border: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
     }
 
     .back-btn {
@@ -114,10 +135,95 @@
       text-decoration: none;
       border-radius: 5px;
       transition: 0.3s;
+      font-size: 0.95rem;
     }
 
     .back-btn:hover {
       background: #1b5e20;
+    }
+
+    /* Step Flow Component */
+    .step-flow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #2e7d32;
+      width: 100%;
+    }
+
+    .step-item {
+      background: #e8f5e9;
+      padding: 10px 15px;
+      border-radius: 8px;
+      width: 100%;
+      text-align: center;
+      border: 1px dashed #2e7d32;
+      font-size: 0.9rem;
+    }
+
+    .step-arrow {
+      font-size: 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transform: rotate(90deg); /* Point downwards on mobile */
+    }
+
+    /* Medium Devices (Tablets, 768px and up) */
+    @media (min-width: 768px) {
+      .detail-section {
+        padding: 3rem 5%;
+      }
+
+      .detail-card {
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .detail-card h2 {
+        font-size: 1.6rem;
+      }
+
+      .detail-card h3 {
+        font-size: 1.3rem;
+      }
+
+      .detail-card p,
+      .detail-card li {
+        font-size: 1rem;
+      }
+
+      .step-flow {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .step-item {
+        width: auto;
+        flex: 1;
+      }
+
+      .step-arrow {
+        transform: none; /* Point right on desktop */
+      }
+    }
+
+    /* Large Devices (Desktops, 1024px and up) */
+    @media (min-width: 1024px) {
+      .detail-section {
+        padding: 4rem 10%;
+      }
+
+      .detail-card {
+        padding: 2.5rem;
+      }
+
+      .detail-card h2 {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
@@ -245,7 +351,7 @@
     <div class="detail-card" data-aos="fade-up">
       <h2>🌾 ૩. જમીન દફતર અને મહેસૂલી સેવાઓ (Land Records & e-Dhara)</h2>
       <p>ખેડૂતો અને જમીન ધારકો માટે પંચાયત અને ઈ-ધરા કેન્દ્ર મારફતે પૂરી પાડવામાં આવતી સેવાઓ:</p>
-      <div style="overflow-x:auto;">
+      <div class="table-responsive">
         <table>
           <tr>
             <th>અ.નં.</th>
@@ -346,11 +452,14 @@
       <h2>📝 ૭. અરજી કરવાની તબક્કાવાર પ્રક્રિયા (Step-by-Step Application Process)</h2>
       <p>તમારા કોઈપણ કામ માટે ગ્રામ પંચાયતમાં સરળતાથી અરજી કરવા માટે આ ૪ તબક્કા અનુસરો:</p>
 
-      <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; font-weight: bold; color: #2e7d32;">
-        <span>[પગલું ૧: ફોર્મ મેળવવું]</span> ➔
-        <span>[પગલું ૨: પુરાવા જોડવા]</span> ➔
-        <span>[પગલું ૩: કચેરીએ જમા કરાવવું]</span> ➔
-        <span>[પગલું ૪: રસીદ/દાખલો મેળવવો]</span>
+      <div class="step-flow">
+        <span class="step-item">પગલું ૧: ફોર્મ મેળવવું</span>
+        <span class="step-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+        <span class="step-item">પગલું ૨: પુરાવા જોડવા</span>
+        <span class="step-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+        <span class="step-item">પગલું ૩: કચેરીએ જમા કરાવવું</span>
+        <span class="step-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+        <span class="step-item">પગલું ૪: રસીદ/દાખલો મેળવવો</span>
       </div>
 
       <div class="step-box"><strong>પગલું ૧ (ફોર્મ મેળવવું):</strong> ગ્રામ પંચાયત કચેરીમાંથી જે-તે સેવા માટેનું નિયત
@@ -366,7 +475,7 @@
     <div class="detail-card" data-aos="fade-up">
       <h2>📞 ૮. મહત્વના સંપર્ક નંબરો અને સ્થાનિક હેલ્પલાઇન (Local Emergency & Useful Contacts)</h2>
       <p>ગોરાડકા ગામના રહીશો માટે જરૂરી સ્થાનિક હોદ્દેદારો અને સેવા આપતા સભ્યોની યાદી:</p>
-      <div style="overflow-x:auto;">
+      <div class="table-responsive">
         <table class="contact-table">
           <tr>
             <th>ક્રમ</th>
